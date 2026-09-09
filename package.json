@@ -9,7 +9,7 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "next typegen && tsc --noEmit",
     "validate:content": "tsx scripts/validate-content.ts",
     "gen:audio": "tsx scripts/generate-audio.ts",
     "verify:audio": "tsx scripts/verify-audio.ts",
