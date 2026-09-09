@@ -76,28 +76,56 @@ function codePointCost(a: string, b: string, base: number): number {
   return COST.unrelated
 }
 
-/** Generic weighted Levenshtein. Returns distance in cost units. */
+/**
+ * Generic weighted Levenshtein with weighted insertions and deletions.
+ *
+ * Weighting indels matters as much as weighting substitutions here. Dropping the
+ * anusvara from नहीं is a nasalization difference; substituting प for ठ is a
+ * different word. Charging both a flat 1.0 made them score identically (0.500),
+ * which left no threshold that could accept the first and reject the second.
+ */
 export function weightedDistance<T>(
   a: readonly T[],
   b: readonly T[],
   subCost: (x: T, y: T) => number,
+  indelCost: (x: T) => number = () => 1,
 ): number {
-  if (a.length === 0) return b.length
-  if (b.length === 0) return a.length
-  let prev = Array.from({ length: b.length + 1 }, (_, j) => j)
-  const curr = new Array<number>(b.length + 1)
-  for (let i = 1; i <= a.length; i++) {
-    curr[0] = i
-    for (let j = 1; j <= b.length; j++) {
+  const n = a.length
+  const m = b.length
+  if (n === 0) return b.reduce((t, x) => t + indelCost(x), 0)
+  if (m === 0) return a.reduce((t, x) => t + indelCost(x), 0)
+
+  let prev = new Array<number>(m + 1)
+  prev[0] = 0
+  for (let j = 1; j <= m; j++) prev[j] = prev[j - 1] + indelCost(b[j - 1])
+
+  const curr = new Array<number>(m + 1)
+  for (let i = 1; i <= n; i++) {
+    curr[0] = prev[0] + indelCost(a[i - 1])
+    for (let j = 1; j <= m; j++) {
       curr[j] = Math.min(
-        prev[j] + 1,
-        curr[j - 1] + 1,
+        prev[j] + indelCost(a[i - 1]),
+        curr[j - 1] + indelCost(b[j - 1]),
         prev[j - 1] + subCost(a[i - 1], b[j - 1]),
       )
     }
     prev = curr.slice()
   }
-  return prev[b.length]
+  return prev[m]
+}
+
+/** Combining marks -- matras, anusvara, candrabindu, nukta, virama -- modify a
+ *  syllable rather than replacing it, so adding or losing one is a small error. */
+const MARK_INDEL = 0.35
+
+function isCombiningMark(o: number): boolean {
+  return o === 0x01 || o === 0x02 || o === 0x03 || o === 0x3c ||
+         (o >= 0x3e && o <= 0x4d)
+}
+
+function codePointIndel(c: string, base: number): number {
+  const o = c.codePointAt(0)! - base
+  return isCombiningMark(o) ? MARK_INDEL : 1
 }
 
 /**
@@ -106,12 +134,26 @@ export function weightedDistance<T>(
  * A cluster can be several code points (स्ते), so cluster substitution cost is
  * itself a normalized weighted distance over the code points inside it.
  */
+function isConsonant(c: string, base: number): boolean {
+  const o = c.codePointAt(0)! - base
+  return o >= 0x15 && o <= 0x39
+}
+
 function clusterCost(a: string, b: string, base: number): number {
   if (a === b) return 0
   const ca = [...a]
   const cb = [...b]
-  const d = weightedDistance(ca, cb, (x, y) => codePointCost(x, y, base))
-  return Math.min(1, d / Math.max(ca.length, cb.length))
+  const d = weightedDistance(ca, cb, (x, y) => codePointCost(x, y, base), (x) => codePointIndel(x, base))
+  // Normalize by consonant count, not total code points. A cluster's identity is
+  // carried by its consonants; dividing by the full length lets a matching vowel
+  // sign halve the penalty for a wrong consonant, so ठीक heard as पीक scored 0.86
+  // and passed. Matra-only differences still cost little because their own
+  // substitution cost is low.
+  const consonants = Math.max(
+    ca.filter((c) => isConsonant(c, base)).length,
+    cb.filter((c) => isConsonant(c, base)).length,
+  )
+  return Math.min(1, d / Math.max(1, consonants))
 }
 
 /**

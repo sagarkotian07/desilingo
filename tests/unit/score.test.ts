@@ -36,7 +36,9 @@ const rows: Row[] = [
   { name: 'orthographic variant ये/ए', target: 'नहीं चाहिए', heard: 'नहीं चाहिये', expect: ['perfect', 'good'], passes: true },
   { name: 'lost aspiration', target: 'नहीं चाहिए', heard: 'नहीं चाहिक', expect: ['good', 'close'], passes: true },
   { name: 'STT hallucinated a filler word', target: 'नहीं चाहिए', heard: 'नहीं चाहिए जी', expect: ['perfect', 'good'], passes: true },
-  { name: 'one wrong consonant in a short word', target: 'चलो', heard: 'कलो', expect: ['good', 'close'], passes: true },
+  // Diacritic-level slips are forgiven; a different consonant is a different
+  // word and is not, however short the target.
+  { name: 'vowel length slip still passes', target: 'दिन', heard: 'दीन', expect: ['perfect', 'good'], passes: true },
 
   // --- genuinely wrong: must NOT pass ----------------------------------------
   {
@@ -45,6 +47,11 @@ const rows: Row[] = [
   },
   { name: 'dropped a whole word', target: 'नहीं चाहिए', heard: 'नहीं', expect: ['retry', 'try-again'], passes: false },
   { name: 'entirely different phrase', target: 'नहीं चाहिए', heard: 'मुझे पानी दो', expect: 'try-again', passes: false },
+  // Regression: a matching vowel sign used to halve the penalty for a wrong
+  // consonant, so ठीक heard as पीक scored 0.86 and passed. Cluster cost is now
+  // normalized by consonant count.
+  { name: 'wrong initial consonant is not rescued by a matching matra', target: 'ठीक है', heard: 'पीक है', expect: ['retry', 'try-again'], passes: false },
+  { name: 'wrong consonant in a short word does not pass', target: 'चलो', heard: 'कलो', expect: ['retry', 'try-again'], passes: false },
   { name: 'unrelated short word', target: 'चलो', heard: 'बड़ा', expect: 'try-again', passes: false },
 
   // --- not the learner's fault ----------------------------------------------

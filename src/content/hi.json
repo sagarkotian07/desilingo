@@ -1,0 +1,428 @@
+{
+  "lang": "hi",
+  "tagline": "Everyday Hindi. Not textbook Hindi.",
+  "units": [
+    {
+      "id": "unit-1",
+      "title": "Everyday Responses",
+      "emoji": "💬",
+      "lessons": [
+        {
+          "id": "lesson-1-1",
+          "title": "Saying Yes & No",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "नहीं चाहिए", "romanized": "Nahin chahiye", "english": "I don't need it",
+              "hint": "turning down an offer",
+              "options": ["Give me more", "Yes, I want it", "I don't need it", "Not now"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "हाँ, ठीक है", "romanized": "Haan, theek hai", "english": "Yes, that's fine"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "अभी नहीं", "romanized": "Abhi nahin", "english": "Not right now",
+              "options": [
+                { "text": "बाद में", "romanized": "Baad mein" },
+                { "text": "अभी नहीं", "romanized": "Abhi nahin" },
+                { "text": "हाँ, ठीक है", "romanized": "Haan, theek hai" },
+                { "text": "चलो", "romanized": "Chalo" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "बिल्कुल", "romanized": "Bilkul", "english": "Absolutely",
+              "hint": "strong agreement",
+              "options": ["Maybe", "Absolutely", "Never", "Later"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "हाँ, ठीक है", "romanized": "Haan, theek hai", "english": "Yes, that's fine",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "नहीं", "romanized": "Nahin", "english": "No"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-2",
+          "title": "Quick Replies",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "It's okay, no problem",
+              "hint": "brushing off an apology",
+              "options": ["Thank you", "It's okay, no problem", "What happened?", "I'm busy"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "शुक्रिया", "romanized": "Shukriya", "english": "Thank you"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "एक मिनट", "romanized": "Ek minute", "english": "One minute",
+              "options": [
+                { "text": "समझ गया", "romanized": "Samajh gaya" },
+                { "text": "कोई बात नहीं", "romanized": "Koi baat nahin" },
+                { "text": "शुक्रिया", "romanized": "Shukriya" },
+                { "text": "एक मिनट", "romanized": "Ek minute" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "समझ गया", "romanized": "Samajh gaya", "english": "Got it",
+              "options": ["Got it", "Say that again", "I'm coming", "I'm not sure"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "शुक्रिया", "romanized": "Shukriya", "english": "Thank you" },
+                { "target": "एक मिनट", "romanized": "Ek minute", "english": "One minute" },
+                { "target": "समझ गया", "romanized": "Samajh gaya", "english": "Got it" },
+                { "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "No problem" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "It's okay, no problem"
+            }
+          ]
+        },
+        {
+          "id": "lesson-1-3",
+          "title": "Expressing Needs",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "मुझे पानी चाहिए", "romanized": "Mujhe paani chahiye", "english": "I need water",
+              "options": ["I need help", "I need water", "I'm hungry", "I'm leaving"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "मुझे मदद चाहिए", "romanized": "Mujhe madad chahiye", "english": "I need help"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "थोड़ा और", "romanized": "Thoda aur", "english": "A little more",
+              "options": [
+                { "text": "थोड़ा और", "romanized": "Thoda aur" },
+                { "text": "बस, इतना ही", "romanized": "Bas, itna hi" },
+                { "text": "मुझे मदद चाहिए", "romanized": "Mujhe madad chahiye" },
+                { "text": "पानी", "romanized": "Paani" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "मुझे पानी चाहिए", "romanized": "Mujhe paani chahiye", "english": "I need water",
+              "extraWords": ["नहीं", "मदद"]
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "बस, इतना ही", "romanized": "Bas, itna hi", "english": "That's enough",
+              "hint": "stopping someone serving you",
+              "options": ["A little more", "One more time", "That's enough", "Not for me"],
+              "answer": 2
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "पानी", "romanized": "Paani", "english": "Water"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-2",
+      "title": "Out and About",
+      "emoji": "🛺",
+      "lessons": [
+        {
+          "id": "lesson-2-1",
+          "title": "At the Chai Stall",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "एक चाय देना", "romanized": "Ek chai dena", "english": "One tea, please",
+              "options": ["Two teas", "One tea, please", "No tea for me", "How much is the tea?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "कम चीनी", "romanized": "Kam cheeni", "english": "Less sugar"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "बिना चीनी", "romanized": "Bina cheeni", "english": "Without sugar",
+              "options": [
+                { "text": "कम चीनी", "romanized": "Kam cheeni" },
+                { "text": "ज़्यादा चीनी", "romanized": "Zyada cheeni" },
+                { "text": "बिना चीनी", "romanized": "Bina cheeni" },
+                { "text": "एक चाय देना", "romanized": "Ek chai dena" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "कितने का?", "romanized": "Kitne ka?", "english": "How much?",
+              "options": ["How much?", "How many?", "Where is it?", "Who is it for?"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "एक चाय देना", "romanized": "Ek chai dena", "english": "One tea, please",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e6", "type": "match-pairs",
+              "pairs": [
+                { "target": "कम चीनी", "romanized": "Kam cheeni", "english": "Less sugar" },
+                { "target": "बिना चीनी", "romanized": "Bina cheeni", "english": "Without sugar" },
+                { "target": "कितने का?", "romanized": "Kitne ka?", "english": "How much?" },
+                { "target": "एक चाय देना", "romanized": "Ek chai dena", "english": "One tea, please" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lesson-2-2",
+          "title": "At the Market",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ये कितने का है?", "romanized": "Ye kitne ka hai?", "english": "How much is this?",
+              "options": ["What is this?", "Do you have this?", "How much is this?", "Where is this from?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "बहुत महँगा है", "romanized": "Bahut mehanga hai", "english": "That's very expensive"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "थोड़ा कम करो", "romanized": "Thoda kam karo", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "बहुत महँगा है", "romanized": "Bahut mehanga hai" },
+                { "text": "थोड़ा कम करो", "romanized": "Thoda kam karo" },
+                { "text": "दो किलो दे दो", "romanized": "Do kilo de do" },
+                { "text": "ये कितने का है?", "romanized": "Ye kitne ka hai?" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "दो किलो दे दो", "romanized": "Do kilo de do", "english": "Give me two kilos",
+              "options": ["Give me two kilos", "That's too much", "Give me one more", "Two hundred rupees"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "listen-type-roman",
+              "target": "महँगा", "romanized": "Mehanga", "english": "Expensive"
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ठीक है, दे दो", "romanized": "Theek hai, de do", "english": "Fine, I'll take it"
+            }
+          ]
+        },
+        {
+          "id": "lesson-2-3",
+          "title": "Getting an Auto",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "स्टेशन चलोगे?", "romanized": "Station chaloge?", "english": "Will you go to the station?",
+              "hint": "flagging down an auto",
+              "options": ["Where is the station?", "Will you go to the station?", "Is the station far?", "Stop at the station"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "मीटर से चलो", "romanized": "Meter se chalo", "english": "Go by the meter"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "यहीं रोक दो", "romanized": "Yahin rok do", "english": "Stop right here",
+              "options": [
+                { "text": "आगे चलो", "romanized": "Aage chalo" },
+                { "text": "कितना लोगे?", "romanized": "Kitna loge?" },
+                { "text": "मीटर से चलो", "romanized": "Meter se chalo" },
+                { "text": "यहीं रोक दो", "romanized": "Yahin rok do" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "कितना लोगे?", "romanized": "Kitna loge?", "english": "How much will you charge?",
+              "options": ["How far is it?", "How long will it take?", "How much will you charge?", "Which way are you going?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "मीटर से चलो", "romanized": "Meter se chalo", "english": "Go by the meter",
+              "extraWords": ["नहीं", "रोक"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "आगे चलो", "romanized": "Aage chalo", "english": "Keep going"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
+        {
+          "id": "lesson-3-1",
+          "title": "Making Plans",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "कब मिलते हैं?", "romanized": "Kab milte hain?", "english": "When shall we meet?",
+              "options": ["Where shall we meet?", "When shall we meet?", "Shall we go?", "Did you meet him?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "कल मिलते हैं", "romanized": "Kal milte hain", "english": "Let's meet tomorrow"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "बाद में फ़ोन करता हूँ", "romanized": "Baad mein phone karta hoon", "english": "I'll call you later",
+              "options": [
+                { "text": "बाद में फ़ोन करता हूँ", "romanized": "Baad mein phone karta hoon" },
+                { "text": "कल मिलते हैं", "romanized": "Kal milte hain" },
+                { "text": "घर पर हो?", "romanized": "Ghar par ho?" },
+                { "text": "चलो चलते हैं", "romanized": "Chalo chalte hain" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "घर पर हो?", "romanized": "Ghar par ho?", "english": "Are you at home?",
+              "options": ["Are you coming?", "Are you free?", "Are you at home?", "Are you alone?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "कब मिलते हैं?", "romanized": "Kab milte hain?", "english": "When shall we meet?" },
+                { "target": "कल मिलते हैं", "romanized": "Kal milte hain", "english": "Let's meet tomorrow" },
+                { "target": "घर पर हो?", "romanized": "Ghar par ho?", "english": "Are you at home?" },
+                { "target": "चलो चलते हैं", "romanized": "Chalo chalte hain", "english": "Let's get going" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "चलो चलते हैं", "romanized": "Chalo chalte hain", "english": "Let's get going"
+            }
+          ]
+        },
+        {
+          "id": "lesson-3-2",
+          "title": "Small Talk",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "क्या हाल है?", "romanized": "Kya haal hai?", "english": "How's it going?",
+              "options": ["How's it going?", "What happened?", "What is this?", "Where were you?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "सब ठीक है", "romanized": "Sab theek hai", "english": "All good"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "आप क्या करते हो?", "romanized": "Aap kya karte ho?", "english": "What do you do?",
+              "options": [
+                { "text": "क्या हाल है?", "romanized": "Kya haal hai?" },
+                { "text": "आप क्या करते हो?", "romanized": "Aap kya karte ho?" },
+                { "text": "सब ठीक है", "romanized": "Sab theek hai" },
+                { "text": "बहुत दिनों बाद!", "romanized": "Bahut dinon baad!" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "बहुत दिनों बाद!", "romanized": "Bahut dinon baad!", "english": "Long time no see!",
+              "hint": "greeting someone you haven't seen in a while",
+              "options": ["See you soon!", "Long time no see!", "Come again!", "Where have you been?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "सब ठीक है", "romanized": "Sab theek hai", "english": "All good",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "क्या हाल है?", "romanized": "Kya haal hai?", "english": "How's it going?"
+            }
+          ]
+        },
+        {
+          "id": "lesson-3-3",
+          "title": "Bowing Out Politely",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "माफ़ कीजिए", "romanized": "Maaf kijiye", "english": "Excuse me / sorry",
+              "options": ["Thank you", "Excuse me / sorry", "Please come", "Never mind"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "आज नहीं, फिर कभी", "romanized": "Aaj nahin, phir kabhi", "english": "Not today, some other time"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "थोड़ा काम है", "romanized": "Thoda kaam hai", "english": "I'm a bit tied up",
+              "options": [
+                { "text": "रहने दो", "romanized": "Rehne do" },
+                { "text": "माफ़ कीजिए", "romanized": "Maaf kijiye" },
+                { "text": "थोड़ा काम है", "romanized": "Thoda kaam hai" },
+                { "text": "फिर मिलेंगे", "romanized": "Phir milenge" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "रहने दो", "romanized": "Rehne do", "english": "Leave it, never mind",
+              "hint": "waving something off",
+              "options": ["Keep it", "Leave it, never mind", "Let's do it", "Bring it here"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "माफ़ कीजिए", "romanized": "Maaf kijiye", "english": "Excuse me" },
+                { "target": "रहने दो", "romanized": "Rehne do", "english": "Never mind" },
+                { "target": "थोड़ा काम है", "romanized": "Thoda kaam hai", "english": "I'm a bit tied up" },
+                { "target": "फिर मिलेंगे", "romanized": "Phir milenge", "english": "See you again" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "फिर मिलेंगे", "romanized": "Phir milenge", "english": "See you again"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

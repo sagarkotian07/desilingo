@@ -46,8 +46,6 @@ export interface ManifestEntry {
   text: string
   pace: number
   speaker: string
-  /** Roman transliteration, fetched once at build time. */
-  roman?: string
   bytes: number
 }
 

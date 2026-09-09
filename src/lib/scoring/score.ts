@@ -1,6 +1,6 @@
 import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
 import { alignWords, overallScore, type WordJudgement } from './align'
-import { graphemeDistance, weightedDistance } from './similarity'
+import { graphemeDistance } from './similarity'
 import { graphemes, wordTokens, normalizeIndic } from './normalize'
 import { phonemize } from './phonemize'
 
@@ -42,7 +42,7 @@ const TRUNCATED_RATIO = 0.25
 /** Any target word scoring below this is simply not the word that was asked for.
  *  Without this rule the length-weighted mean lets a wholly wrong word pass when
  *  the rest of the phrase matched -- saying "yes" for "no" scored 0.73 and passed. */
-const WORD_FLOOR = 0.4
+const WORD_FLOOR = 0.55
 
 const BANDS: ReadonlyArray<readonly [number, Verdict]> = [
   [0.92, 'perfect'],
@@ -51,15 +51,44 @@ const BANDS: ReadonlyArray<readonly [number, Verdict]> = [
   [0.5, 'retry'],
 ]
 
-/** Flat-cost similarity over phoneme tokens (they're Latin, so the Indic
- *  substitution matrix doesn't apply). */
+const VOWEL_PHONEMES = new Set(['a', 'aa', 'i', 'ii', 'u', 'uu', 'e', 'ee', 'ai', 'o', 'oo', 'au', 'ri'])
+
+/** Consonants carry a syllable's identity; vowels colour it. Weighting them
+ *  equally let one wrong consonant in a seven-phoneme phrase score 0.857 and
+ *  pass, which defeats the point of the phonetic path being a rescue for
+ *  spelling variants rather than a second chance at a different word. */
+function phonemeWeight(token: string): number {
+  if (token === '|') return 0
+  return VOWEL_PHONEMES.has(token) ? 1 : 2
+}
+
+/** Weighted similarity over phoneme tokens. They're Latin, so the Indic
+ *  substitution matrix doesn't apply, but the consonant/vowel split does. */
 function phonemeSim(a: string, b: string): number {
   const ta = a.split(' ').filter(Boolean)
   const tb = b.split(' ').filter(Boolean)
-  const max = Math.max(ta.length, tb.length)
-  if (max === 0) return 1
-  const d = weightedDistance(ta, tb, (x, y) => (x === y ? 0 : 1))
-  return Math.max(0, 1 - d / max)
+  const sum = (xs: string[]) => xs.reduce((n, t) => n + phonemeWeight(t), 0)
+  const total = Math.max(sum(ta), sum(tb))
+  if (total === 0) return 1
+
+  const n = ta.length
+  const m = tb.length
+  const d: number[][] = Array.from({ length: n + 1 }, () => new Array<number>(m + 1).fill(0))
+  for (let i = 1; i <= n; i++) d[i][0] = d[i - 1][0] + phonemeWeight(ta[i - 1])
+  for (let j = 1; j <= m; j++) d[0][j] = d[0][j - 1] + phonemeWeight(tb[j - 1])
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= m; j++) {
+      const sub = ta[i - 1] === tb[j - 1]
+        ? 0
+        : Math.max(phonemeWeight(ta[i - 1]), phonemeWeight(tb[j - 1]))
+      d[i][j] = Math.min(
+        d[i - 1][j] + phonemeWeight(ta[i - 1]),
+        d[i][j - 1] + phonemeWeight(tb[j - 1]),
+        d[i - 1][j - 1] + sub,
+      )
+    }
+  }
+  return Math.max(0, 1 - d[n][m] / total)
 }
 
 /**
