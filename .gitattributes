@@ -1,0 +1,7 @@
+# Audio is pre-generated and committed. Never let git try to diff or convert it.
+# NOTE: deliberately not Git LFS — Vercel builds do not fetch LFS objects, so an
+# LFS-tracked repo deploys pointer files and every audio URL 404s in production.
+*.mp3 binary
+*.wav binary
+*.webm binary
+*.m4a binary
