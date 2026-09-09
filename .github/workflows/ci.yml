@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        # The live Sarvam suite is gated behind SARVAM_LIVE and never runs here:
+        # it costs money and consumes rate-limit budget.
+        run: npm test
+
+      - name: Validate content
+        run: npm run validate:content
+
+      - name: Verify audio is committed
+        # Catches generating clips locally and forgetting to commit the MP3s,
+        # which would otherwise reach production as silent 404s.
+        run: npm run verify:audio
+
+      - name: Ensure the API key was never exposed to the client
+        run: |
+          if grep -rn "NEXT_PUBLIC_SARVAM" src/ scripts/ 2>/dev/null; then
+            echo "::error::SARVAM_API_KEY must never be NEXT_PUBLIC_ — that inlines it into the client bundle."
+            exit 1
+          fi
+          echo "OK: no NEXT_PUBLIC_SARVAM references."
+
+      - name: Build
+        run: npm run build

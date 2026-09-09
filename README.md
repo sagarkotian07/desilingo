@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Indiligo
 
-## Getting Started
+**Learn India's languages by ear.** Short, voice-first lessons in Hindi, Kannada, Tamil, Telugu, Bengali and Marathi — built on [Sarvam AI](https://sarvam.ai)'s Indian speech models.
 
-First, run the development server:
+No signup, no database. Every phrase is spoken by a native voice, and the speaking exercises actually listen to you and tell you which word slipped.
+
+---
+
+## What's in it
+
+- **6 languages** · 39 lessons · 234 exercises · 237 pre-generated audio clips
+- **6 exercise types** — listen-and-choose, pick-the-phrase, speak-and-be-scored, build-the-sentence, match-pairs, and type-the-romanization
+- **Real pronunciation scoring** — record, transcribe with Sarvam `saaras:v4`, and get a word-level diff rather than a bare number
+- **Instant audio** — clips are generated at build time and served as static files, so nothing waits on an API call
+- **Phrasebook** — "how do I say…?" in colloquial register, with romanization
+
+## Why the phrases sound like this
+
+The content is written in spoken register, not textbook register. Tamil is *இப்ப வேணாம்*, not *இப்பொழுது வேண்டாம்*. Kannada is *ಗೊತ್ತಾಯ್ತು*. Marathi is *समजलं*. The vocabulary is what gets said at a tea stall, in a market, and to an auto driver — the situations you actually need a language for in your first week somewhere new.
+
+---
+
+## Running it
 
 ```bash
+npm install
+cp .env.example .env.local     # add your Sarvam key
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**The app works without an API key.** All lesson audio is committed, so a fresh clone plays every clip offline. A key is only needed for the two live features: pronunciation scoring and the phrasebook.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Get one at [dashboard.sarvam.ai](https://dashboard.sarvam.ai) — signup includes ₹100 of credit, which is more than enough (see *Cost* below).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Scripts
 
-## Learn More
+| Command | What it does |
+|---|---|
+| `npm run dev` | Dev server |
+| `npm test` | Unit tests — scoring, progress, content invariants |
+| `npm run validate:content` | Schema plus the invariants a schema can't express |
+| `npm run gen:audio -- --dry-run` | **Print the exact cost before spending anything** |
+| `npm run gen:audio` | Generate missing clips (idempotent; skips what exists) |
+| `npm run verify:audio` | Assert every manifest entry has a file. Runs on `prebuild` |
 
-To learn more about Next.js, take a look at the following resources:
+Live API tests are gated so they never run by accident:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+SARVAM_LIVE=1 npx vitest run tests/integration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## How it works
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Audio is generated once, not per request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Lesson content is static, so synthesizing at request time means every visitor waits on a paid API call for a phrase that never changes. `scripts/generate-audio.ts` synthesizes each clip once and writes it to `public/audio/<lang>/<hash>.mp3`, committed to the repo. Playback is a static CDN fetch: instant, free, and working with no key at all.
+
+Filenames are a hash of the whole tuple — language, text, speaker, model, pace — so changing a voice produces new files rather than silently serving the old one forever.
+
+`/api/tts` exists only as a repair path for a missing file. It takes a **manifest key, never free text**, so it cannot be turned into a general-purpose text-to-speech API billed to your account.
+
+### Pronunciation scoring
+
+Record → `/api/stt` → Sarvam `saaras:v4` → normalize → align → verdict.
+
+The interesting part is the metric. Comparison uses a **weighted edit distance over grapheme clusters**, with:
+
+- **Normalization** that strips the danda Sarvam appends, folds native digits, and removes ZWJ/ZWNJ.
+- **Orthographic folding** so हिन्दी and हिंदी are the same word — both are correct standard spellings, and treating them as different tells a learner who was right that they were wrong.
+- **Substitution costs** reflecting real confusions: aspiration 0.4, retroflex↔dental 0.5, voicing 0.6. These are the pairs Sarvam's own STT mixes up, so charging full price punishes the learner for the model's error.
+- **Weighted insertions and deletions**, because losing a nasalization mark is a small slip while swapping a consonant is a different word.
+- **Word-level alignment**, so the UI can say *which* word came out wrong instead of showing 0.62.
+
+Thresholds lean forgiving, and a speaking exercise **never blocks progress**. False negatives are the expensive failure: a learner told they're wrong when they weren't concludes the app is broken. "We couldn't hear you" and "that sounded like English" are separate verdicts from "incorrect", and the raw transcript is always shown so a model error is visible as a model error.
+
+### Cost
+
+Real numbers from building this:
+
+| | |
+|---|---|
+| All 237 clips, 6 languages | **₹7.38**, one-time |
+| One pronunciation attempt | ~₹0.03 |
+| Repeat visitor | **₹0** — static files |
+
+Slow-pace audio is generated only for speaking drills, not every phrase, which roughly halves the bill for no pedagogical loss.
+
+### Not leaving the door open
+
+A public deployment proxying a personal API key is a way for a stranger to spend your credits. In order of importance:
+
+1. `/api/tts` accepts a manifest key, not text.
+2. `/api/stt` checks `Content-Length` and rejects oversized uploads **before** reading the body — Vercel's limit is 100 MB and will not save you.
+3. A Vercel WAF rate-limit rule on `/api/stt` is the load-bearing control; requests it blocks never reach a function.
+4. Per-IP throttling in-process as defence in depth — honestly imperfect, since counters are per instance.
+5. `SARVAM_ENABLED=0` as a kill switch.
+
+Being straight about it: no unauthenticated public endpoint that spends money can be made fully safe. Keeping the account balance small is the only real guarantee.
+
+---
+
+## Deploying
+
+```bash
+vercel
+vercel env add SARVAM_API_KEY production
+```
+
+`vercel.ts` pins the region to `bom1`. The default is Washington, and Sarvam's API is in India — every pronunciation attempt would otherwise cross the Pacific twice. It also marks `/audio/*` immutable, since Next only long-caches `/_next/static` by default and the filenames are content hashes.
+
+Add the rate-limit rule once:
+
+```bash
+vercel firewall rules add "Limit STT" \
+  --condition '{"type":"path","op":"pre","value":"/api/stt"}' \
+  --action rate_limit --rate-limit-window 60 --rate-limit-requests 12 \
+  --rate-limit-keys ip --rate-limit-action deny
+```
+
+**Never run `gen:audio` in CI or the Vercel build** — every preview deploy would re-spend credits. Generation is local and deliberate; `verify:audio` runs on `prebuild` instead and makes no API calls.
+
+---
+
+## Adding a language
+
+1. Write `src/content/<lang>.json` against the schema in `src/content/schema.ts`.
+2. Register it in `src/content/index.ts` (one line).
+3. `npm run validate:content`
+4. `npm run gen:audio -- --lang <lang> --dry-run`, then without `--dry-run`.
+5. Commit the MP3s.
+
+Sarvam's TTS covers 11 Indian languages, so Gujarati, Malayalam, Odia and Punjabi are all available. Its STT covers 23 — you can transcribe more than you can synthesize, so plan around the TTS list.
+
+## Adding an exercise type
+
+Add it to the discriminated union in `src/content/schema.ts`, write the component in `src/components/exercises/`, and add a case to `ExerciseView` in `ExerciseRunner.tsx`. TypeScript will point at anything you missed.
+
+---
+
+## Notes on the Sarvam API
+
+Several field names in circulation are out of date. Current as of `bulbul:v3` / `saaras:v4`:
+
+- TTS takes **`language_code`**, not `target_language_code`.
+- The STT model family is **`saaras`**. `saarika` no longer exists.
+- `pitch`, `loudness` and `enable_preprocessing` are v2-only and **silently ignored** on `bulbul:v3`. Use `temperature`.
+- Auth is `api-subscription-key`, and a bad key returns **403**, not 401.
+- Translation's `modern-colloquial` mode substitutes English loanwords transliterated into the native script — "the nearest railway station" comes back as *नियरेस्ट रेलवे स्टेशन*. This app uses **`classic-colloquial`**, which is spoken register with real words.
+
+## Acknowledgements
+
+The idea, and the shape of the lesson flow, come from [`03shraddha/indian-duolingo`](https://github.com/03shraddha/indian-duolingo). This is an independent rebuild.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
