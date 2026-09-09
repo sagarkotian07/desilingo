@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // There is a lockfile above this directory, so Turbopack's root inference is
+  // ambiguous. Pin it to this project.
+  turbopack: { root: import.meta.dirname },
+}
 
-export default nextConfig;
+export default nextConfig

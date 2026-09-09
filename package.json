@@ -13,7 +13,8 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "gen:audio": "tsx scripts/generate-audio.ts",
     "verify:audio": "tsx scripts/verify-audio.ts",
-    "romanize": "tsx scripts/romanize.ts"
+    "romanize": "tsx scripts/romanize.ts",
+    "prebuild": "npm run verify:audio"
   },
   "dependencies": {
     "next": "16.3.4",
@@ -26,6 +27,7 @@
     "@types/node": "^22.20.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vercel/config": "^0.7.0",
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",

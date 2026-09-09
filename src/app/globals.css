@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
+/*
+ * Indiligo's palette: indigo, marigold and terracotta.
+ *
+ * Deliberately not Duolingo green, and deliberately not the reference app's
+ * orange-on-cream either. Indigo is the dye India traded to the world and gives
+ * the app its name; marigold is reserved for progress and reward, terracotta for
+ * warnings and near-misses.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --ground: #faf6ef;
+  --surface: #ffffff;
+  --surface-sunk: #f3ede2;
+  --ink: #221c33;
+  --ink-soft: #5d5470;
+  --ink-faint: #8b829c;
+  --line: #e6ddcd;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --indigo: #3b3378;
+  --indigo-deep: #241f4d;
+  --indigo-soft: #ece9f7;
+  --marigold: #e8a020;
+  --marigold-soft: #fdf1d8;
+  --terracotta: #c2592f;
+  --terracotta-soft: #fbe8e0;
+  --leaf: #3f7d5c;
+  --leaf-soft: #e3f1e8;
+
+  --shadow: 0 1px 2px rgb(34 28 51 / 0.05), 0 8px 24px -12px rgb(34 28 51 / 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --ground: #14111f;
+    --surface: #1d1930;
+    --surface-sunk: #17142575;
+    --ink: #f2eee9;
+    --ink-soft: #b9b1cb;
+    --ink-faint: #857c9b;
+    --line: #2e2846;
+
+    --indigo: #a89ef0;
+    --indigo-deep: #cec7ff;
+    --indigo-soft: #241f4d;
+    --marigold: #f5b743;
+    --marigold-soft: #3a2c11;
+    --terracotta: #e8845c;
+    --terracotta-soft: #3d2119;
+    --leaf: #71b98f;
+    --leaf-soft: #17301f;
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-surface-sunk: var(--surface-sunk);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-indigo: var(--indigo);
+  --color-indigo-deep: var(--indigo-deep);
+  --color-indigo-soft: var(--indigo-soft);
+  --color-marigold: var(--marigold);
+  --color-marigold-soft: var(--marigold-soft);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+
+  --font-sans: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
 }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+}
+
+/* Script fonts. Indic text is set larger than Latin at the same nominal size
+   because the matras and conjuncts carry meaning and need the vertical room. */
+.script {
+  font-family: var(--font-deva), var(--font-ui), sans-serif;
+  line-height: 1.7;
+}
+.script-kn { font-family: var(--font-knda), var(--font-ui), sans-serif; }
+.script-ta { font-family: var(--font-taml), var(--font-ui), sans-serif; }
+.script-te { font-family: var(--font-telu), var(--font-ui), sans-serif; }
+.script-bn { font-family: var(--font-beng), var(--font-ui), sans-serif; }
+
+/* One visible focus treatment everywhere. The reference app had none, which made
+   the whole quiz unusable from a keyboard. */
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--indigo);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
+.animate-rise { animation: rise 0.28s ease-out both }
+
+@keyframes pop { 0% { transform: scale(0.94); opacity: 0 } 60% { transform: scale(1.02) } 100% { transform: scale(1); opacity: 1 } }
+.animate-pop { animation: pop 0.3s ease-out both }
+
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--terracotta) 45%, transparent) } 100% { box-shadow: 0 0 0 18px transparent } }
+.animate-pulse-ring { animation: pulse-ring 1.4s ease-out infinite }

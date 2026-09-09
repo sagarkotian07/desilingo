@@ -1,6 +1,7 @@
 import type { Course, Exercise } from '@/content/schema'
 import { LANGUAGE_CONFIG, type LangCode } from './languages'
-import { audioKey, PACE_NORMAL, PACE_SLOW } from './audio'
+import { PACE_NORMAL, PACE_SLOW } from './audio'
+import { audioKey } from './audio-key'
 
 export interface PhraseJob {
   key: string

@@ -2,7 +2,7 @@ import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
 import { TTS_MODEL, TTS_SAMPLE_RATE, TTS_CODEC, PACE_NORMAL } from '@/lib/audio'
 import {
   VoiceError,
-  type SynthesizeRequest, type TranscribeRequest, type TranscribeResult,
+  type SynthesizeRequest, type TranscribeRequest,
   type TranslateRequest, type VoiceProvider,
 } from './types'
 
@@ -128,9 +128,13 @@ export const sarvam: VoiceProvider = {
       source_language_code: code(from),
       target_language_code: code(to),
       model: 'mayura:v1',
-      // Colloquial register: this app teaches how people actually speak, and the
-      // default 'formal' mode produces stilted textbook phrasing.
-      mode: 'modern-colloquial',
+      // classic-colloquial, not modern-colloquial. Both are spoken register, but
+      // 'modern' substitutes English loanwords transliterated into the native
+      // script -- "Where is the nearest station" comes back as नियरेस्ट रेलवे
+      // स्टेशन, and "cost" as कॉस्ट. That teaches a learner nothing. 'classic'
+      // gives the real words in the way people actually say them
+      // (सबसे पास का, इसकी कीमत), while 'formal' is stiff and literary (निकटतम).
+      mode: 'classic-colloquial',
       output_script: script === 'roman' ? 'roman' : 'fully-native',
     })
     return json.translated_text
