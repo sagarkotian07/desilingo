@@ -6,6 +6,7 @@ import { useProgress } from '@/lib/progress'
 import { ProgressRing } from '@/components/ui/ProgressRing'
 import { Script } from '@/components/ui/Script'
 import { Kolam } from '@/components/ui/Motifs'
+import { ProgressBackup } from './ProgressBackup'
 
 interface LessonSummary {
   id: string
@@ -69,6 +70,8 @@ export function HomeDashboard({
           Change language
         </Link>
       </div>
+
+      <ProgressBackup lang={lang} />
     </main>
   )
 }
