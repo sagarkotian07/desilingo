@@ -6,6 +6,34 @@
     "speaker": "ritu",
     "bytes": 11904
   },
+  "01fe27b67acf08ea": {
+    "lang": "bn",
+    "text": "সামনে চলুন",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 16128
+  },
+  "0338f69093dd66f6": {
+    "lang": "bn",
+    "text": "কত নেবেন?",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 18816
+  },
+  "03551f095b2e531c": {
+    "lang": "mr",
+    "text": "हे किती आहे?",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 19968
+  },
+  "052500bc08d73261": {
+    "lang": "te",
+    "text": "పర్వాలేదు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 16128
+  },
   "053d52eedd5aa8a7": {
     "lang": "hi",
     "text": "मुझे मदद चाहिए",
@@ -19,6 +47,20 @@
     "pace": 1,
     "speaker": "ritu",
     "bytes": 21504
+  },
+  "07b67ff97455aaac": {
+    "lang": "bn",
+    "text": "কত?",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 17280
+  },
+  "0813cbd99b00124d": {
+    "lang": "kn",
+    "text": "ಇಲ್ಲ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 14592
   },
   "08ac9e2a3d61ca65": {
     "lang": "hi",
@@ -48,12 +90,82 @@
     "speaker": "ritu",
     "bytes": 18816
   },
+  "0b0e05898cc3faca": {
+    "lang": "ta",
+    "text": "இப்ப வேணாம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 14592
+  },
+  "0bf00976feabbdce": {
+    "lang": "kn",
+    "text": "ದುಬಾರಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 22656
+  },
   "0c56e8d5db63e5b6": {
     "lang": "hi",
     "text": "बाद में फ़ोन करता हूँ",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 24192
+  },
+  "0c72df4ed10604ee": {
+    "lang": "kn",
+    "text": "ಹೌದು, ಸರಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 28416
+  },
+  "0e12ac847e98d835": {
+    "lang": "ta",
+    "text": "கொஞ்சம் குறையுங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 18816
+  },
+  "0fc0533020d1acaf": {
+    "lang": "kn",
+    "text": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 29568
+  },
+  "107e00aa7b7efbe9": {
+    "lang": "te",
+    "text": "చాలా ఎక్కువ",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 22272
+  },
+  "12307352f3d7fd8b": {
+    "lang": "mr",
+    "text": "खूप महाग आहे",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 19968
+  },
+  "17743bbd319e125f": {
+    "lang": "ta",
+    "text": "இல்ல",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 11904
+  },
+  "17f33c4766af219e": {
+    "lang": "mr",
+    "text": "आत्ता नको",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 17280
+  },
+  "186e1798e3e75d3b": {
+    "lang": "bn",
+    "text": "একটু কমান",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 18816
   },
   "1a6f047769dbe797": {
     "lang": "hi",
@@ -69,6 +181,34 @@
     "speaker": "ritu",
     "bytes": 18816
   },
+  "1afe93a2ab628cc8": {
+    "lang": "mr",
+    "text": "नको",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 11904
+  },
+  "1c30ca08062419f8": {
+    "lang": "ta",
+    "text": "தண்ணி",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 11904
+  },
+  "1dd071c8f4251738": {
+    "lang": "te",
+    "text": "కొంచెం నీళ్లు కావాలి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 21504
+  },
+  "1e2472a39ea47dd5": {
+    "lang": "ta",
+    "text": "கொஞ்சம் உதவி வேணும்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 25344
+  },
   "1fa015608f079a49": {
     "lang": "hi",
     "text": "बहुत महँगा है",
@@ -76,12 +216,61 @@
     "speaker": "ritu",
     "bytes": 22272
   },
+  "1fc6f92aee3d2369": {
+    "lang": "kn",
+    "text": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 28416
+  },
+  "203082cbd3a1900d": {
+    "lang": "kn",
+    "text": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 18816
+  },
   "206dc294e6d83701": {
     "lang": "hi",
     "text": "कोई बात नहीं",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 19968
+  },
+  "20ce9cdb65f87373": {
+    "lang": "bn",
+    "text": "মিটারে চলুন",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 26112
+  },
+  "216eeed5f7a7b0d9": {
+    "lang": "bn",
+    "text": "না",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 11904
+  },
+  "24b198435c7482f2": {
+    "lang": "te",
+    "text": "కొంచెం సాయం కావాలి",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 31488
+  },
+  "2819d36c0e9776e3": {
+    "lang": "ta",
+    "text": "மீட்டர் போடுங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 25344
+  },
+  "282ade553d4ea7f9": {
+    "lang": "bn",
+    "text": "এক মিনিট",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 13056
   },
   "2adbe4ac0f5d4fbe": {
     "lang": "hi",
@@ -97,12 +286,40 @@
     "speaker": "ritu",
     "bytes": 13056
   },
+  "2e3dcc0a649247fa": {
+    "lang": "ta",
+    "text": "ஒரு டீ குடுங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 22656
+  },
+  "3050b288cfd2d951": {
+    "lang": "te",
+    "text": "అవును, సరే",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 36864
+  },
+  "3566b2742d788043": {
+    "lang": "bn",
+    "text": "একটু জল লাগবে",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 24192
+  },
   "35826b0e909df488": {
     "lang": "hi",
     "text": "आज नहीं, फिर कभी",
     "pace": 0.75,
     "speaker": "ritu",
     "bytes": 29568
+  },
+  "35db33d47b90837f": {
+    "lang": "bn",
+    "text": "স্টেশন যাবেন?",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 19968
   },
   "37c26ca4cb9e12ee": {
     "lang": "hi",
@@ -111,12 +328,61 @@
     "speaker": "ritu",
     "bytes": 17280
   },
+  "39cda6d93a2099c8": {
+    "lang": "ta",
+    "text": "ஆமா, சரி",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 27648
+  },
+  "3a08b3969541c882": {
+    "lang": "mr",
+    "text": "इथे थांबा",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 13056
+  },
   "3ba3e691e935cfe1": {
     "lang": "hi",
     "text": "थोड़ा काम है",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 16128
+  },
+  "3ca05732326a08e8": {
+    "lang": "ta",
+    "text": "கொஞ்சம் உதவி வேணும்",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 27648
+  },
+  "3d37072cbad260f6": {
+    "lang": "te",
+    "text": "చక్కెర వద్దు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "3dab4df063449e6d": {
+    "lang": "te",
+    "text": "నీళ్లు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 16128
+  },
+  "3df73ba873b4d22f": {
+    "lang": "kn",
+    "text": "ಧನ್ಯವಾದ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
+  },
+  "3efdc0519fc0c61b": {
+    "lang": "te",
+    "text": "మీటర్ వేయండి",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 29568
   },
   "40a42e0a65b8e786": {
     "lang": "hi",
@@ -125,12 +391,68 @@
     "speaker": "ritu",
     "bytes": 22272
   },
+  "4105f5aac5bb250d": {
+    "lang": "kn",
+    "text": "ಎಷ್ಟು?",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 18816
+  },
+  "4a65abb491142504": {
+    "lang": "ta",
+    "text": "சர்க்கரை கம்மி",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 26880
+  },
   "4c1d0e84a968801e": {
     "lang": "hi",
     "text": "चलो चलते हैं",
     "pace": 0.75,
     "speaker": "ritu",
     "bytes": 26496
+  },
+  "4c9105d2fe31ec6a": {
+    "lang": "ta",
+    "text": "எவ்வளவு?",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 29568
+  },
+  "4d47c3f13491df41": {
+    "lang": "kn",
+    "text": "ತುಂಬಾ ದುಬಾರಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
+  },
+  "4e92de628cfc9026": {
+    "lang": "te",
+    "text": "ధన్యవాదాలు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 19968
+  },
+  "4e99c58c31c6766b": {
+    "lang": "mr",
+    "text": "किती?",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 11904
+  },
+  "4fd2105b12799ee8": {
+    "lang": "mr",
+    "text": "काही हरकत नाही",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 17280
+  },
+  "516302ab8ece1157": {
+    "lang": "te",
+    "text": "చక్కెర తక్కువ",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 27648
   },
   "52a9ba599aa4dc9e": {
     "lang": "hi",
@@ -153,6 +475,27 @@
     "speaker": "ritu",
     "bytes": 18816
   },
+  "580a4b1e8189c05d": {
+    "lang": "ta",
+    "text": "முன்னாடி போங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 21504
+  },
+  "5829891b4cbce9c3": {
+    "lang": "mr",
+    "text": "थोडं कमी करा",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 22656
+  },
+  "5859885f1c2fb6a9": {
+    "lang": "mr",
+    "text": "एक मिनिट",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 13056
+  },
   "5b079116000971d2": {
     "lang": "hi",
     "text": "रहने दो",
@@ -174,6 +517,125 @@
     "speaker": "ritu",
     "bytes": 13056
   },
+  "5dad7e2820afa723": {
+    "lang": "kn",
+    "text": "ಪರವಾಗಿಲ್ಲ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 16128
+  },
+  "5ec6fbec04e5b91a": {
+    "lang": "mr",
+    "text": "धन्यवाद",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 11904
+  },
+  "5edc60040e4f849a": {
+    "lang": "bn",
+    "text": "যথেষ্ট",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 18816
+  },
+  "5f18b50c189b6689": {
+    "lang": "ta",
+    "text": "பரவால்ல",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 16896
+  },
+  "5fb503296c8df145": {
+    "lang": "bn",
+    "text": "হ্যাঁ, ঠিক আছে",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 26880
+  },
+  "600e7d17ebdf456b": {
+    "lang": "ta",
+    "text": "நன்றி",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 14592
+  },
+  "60993c1fd4f3d903": {
+    "lang": "bn",
+    "text": "এটা কত?",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 26112
+  },
+  "61310b3a3f1dac8c": {
+    "lang": "ta",
+    "text": "சர்க்கரை கம்மி",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 38784
+  },
+  "641c40aa2ad4ff79": {
+    "lang": "ta",
+    "text": "கொஞ்சம் தண்ணி வேணும்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 21504
+  },
+  "6496f4d225dbc5bc": {
+    "lang": "bn",
+    "text": "এক কাপ চা দিন",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 17280
+  },
+  "64e1e91608744195": {
+    "lang": "kn",
+    "text": "ತುಂಬಾ ದುಬಾರಿ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 24192
+  },
+  "64ef5173c17dbd6f": {
+    "lang": "mr",
+    "text": "नाही",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 10368
+  },
+  "65ece94af3e5b980": {
+    "lang": "kn",
+    "text": "ಈಗ ಬೇಡ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 18816
+  },
+  "6853fda52147367c": {
+    "lang": "bn",
+    "text": "বুঝেছি",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 14592
+  },
+  "687c686ab5e933c4": {
+    "lang": "kn",
+    "text": "ಮೀಟರ್ ಹಾಕಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 19968
+  },
+  "68ba99dff4c1f40d": {
+    "lang": "kn",
+    "text": "ಹೌದು, ಸರಿ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 33024
+  },
+  "68ca78e0b03bb8d5": {
+    "lang": "mr",
+    "text": "किती घेणार?",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 13056
+  },
   "6932ed7d5fa3acce": {
     "lang": "hi",
     "text": "स्टेशन चलोगे?",
@@ -187,6 +649,13 @@
     "pace": 1,
     "speaker": "ritu",
     "bytes": 17280
+  },
+  "6a523b42d1c20f64": {
+    "lang": "kn",
+    "text": "ಇದು ಎಷ್ಟು?",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 67584
   },
   "6f431b45539f9995": {
     "lang": "hi",
@@ -202,12 +671,47 @@
     "speaker": "ritu",
     "bytes": 13056
   },
+  "71d488a1d0d7ed27": {
+    "lang": "kn",
+    "text": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 31488
+  },
+  "727e3e975f92ede7": {
+    "lang": "mr",
+    "text": "साखर कमी",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 27648
+  },
+  "73540c0bea8cd538": {
+    "lang": "ta",
+    "text": "எவ்வளவு ஆகும்?",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 22656
+  },
+  "7484bf7a7b67d021": {
+    "lang": "mr",
+    "text": "आणखी थोडं",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 17280
+  },
   "750aee9070230c1c": {
     "lang": "hi",
     "text": "कम चीनी",
     "pace": 0.75,
     "speaker": "ritu",
     "bytes": 18816
+  },
+  "7543c8de03d8929a": {
+    "lang": "ta",
+    "text": "ரொம்ப அதிகம்",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 22272
   },
   "755eb124f5afa0ef": {
     "lang": "hi",
@@ -216,12 +720,75 @@
     "speaker": "ritu",
     "bytes": 25344
   },
+  "75bfdb9151e03b13": {
+    "lang": "kn",
+    "text": "ಒಂದು ಚಹಾ ಕೊಡಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 26880
+  },
+  "75db6f8912f8f462": {
+    "lang": "te",
+    "text": "ఎక్కువ",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 14592
+  },
+  "76b02b551a88f49d": {
+    "lang": "bn",
+    "text": "চিনি কম",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 11904
+  },
+  "77958c25af6cc2ed": {
+    "lang": "bn",
+    "text": "এখানে থামুন",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 21504
+  },
+  "7804749caf5e43ec": {
+    "lang": "bn",
+    "text": "একটু সাহায্য লাগবে",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 33024
+  },
+  "78402f9a6c693123": {
+    "lang": "ta",
+    "text": "நன்றி",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 18816
+  },
+  "7e79cee27bc0db48": {
+    "lang": "kn",
+    "text": "ಒಂದು ನಿಮಿಷ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 16128
+  },
   "7f691df0954a5ef4": {
     "lang": "hi",
     "text": "चलो चलते हैं",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 22656
+  },
+  "7fbaf0d184db01a5": {
+    "lang": "ta",
+    "text": "அதிகம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 14592
+  },
+  "7fcf825f8686626a": {
+    "lang": "bn",
+    "text": "অনেক বেশি",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 18816
   },
   "80894eb7d55bf4fd": {
     "lang": "hi",
@@ -230,6 +797,20 @@
     "speaker": "ritu",
     "bytes": 19968
   },
+  "830bcb15d951848a": {
+    "lang": "te",
+    "text": "ఇది ఎంత?",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 22272
+  },
+  "840338252672c5c8": {
+    "lang": "kn",
+    "text": "ಸಕ್ಕರೆ ಬೇಡ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
+  },
   "8548553cab26c850": {
     "lang": "hi",
     "text": "पानी",
@@ -237,11 +818,116 @@
     "speaker": "ritu",
     "bytes": 10368
   },
+  "85e86f389c0144c1": {
+    "lang": "mr",
+    "text": "पाणी",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 9216
+  },
+  "89871d9604a22ca5": {
+    "lang": "mr",
+    "text": "काही हरकत नाही",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 24192
+  },
+  "8a0e769528194fda": {
+    "lang": "kn",
+    "text": "ಸಕ್ಕರೆ ಕಡಿಮೆ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 25344
+  },
+  "8c3b68cfb299b0a2": {
+    "lang": "te",
+    "text": "ముందుకు వెళ్లండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 19968
+  },
+  "8d9e25c0e35eb0ea": {
+    "lang": "bn",
+    "text": "ধন্যবাদ",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 17280
+  },
+  "8e2e6e9a33e04bd6": {
+    "lang": "te",
+    "text": "ఒక నిమిషం",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "8f01e020b6feb856": {
+    "lang": "te",
+    "text": "స్టేషన్ వస్తారా?",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 29568
+  },
+  "8f1606e740536679": {
+    "lang": "ta",
+    "text": "இது எவ்வளவு?",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 29952
+  },
+  "8f48e4575b9df213": {
+    "lang": "te",
+    "text": "చక్కెర తక్కువ",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "8f50418e7333ed9c": {
+    "lang": "te",
+    "text": "ఇప్పుడు వద్దు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 16128
+  },
+  "90ee949674a5f58d": {
+    "lang": "kn",
+    "text": "ಸರಿ, ಕೊಡಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 18816
+  },
+  "9163592ed5019766": {
+    "lang": "bn",
+    "text": "কোনো ব্যাপার না",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 18816
+  },
+  "935661d46e7d8371": {
+    "lang": "kn",
+    "text": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗ್ತೀರಾ?",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 25344
+  },
   "936f26b1bf39393d": {
     "lang": "hi",
     "text": "क्या हाल है?",
     "pace": 1,
     "speaker": "ritu",
+    "bytes": 18816
+  },
+  "94387936084bd288": {
+    "lang": "ta",
+    "text": "வேணாம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 17280
+  },
+  "94b09a08933ccf6d": {
+    "lang": "mr",
+    "text": "थोडी मदत हवी",
+    "pace": 1,
+    "speaker": "rupali",
     "bytes": 18816
   },
   "96ad42f2406a627b": {
@@ -251,12 +937,103 @@
     "speaker": "ritu",
     "bytes": 19968
   },
+  "96b75f17ee9cd928": {
+    "lang": "bn",
+    "text": "অবশ্যই",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 13056
+  },
+  "9786e45c126e3efb": {
+    "lang": "ta",
+    "text": "ஸ்டேஷன் வர்றீங்களா?",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 22656
+  },
+  "97b7490e14f0e0b1": {
+    "lang": "kn",
+    "text": "ಬೇಡ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 16128
+  },
+  "98b7c44c6b00c48a": {
+    "lang": "mr",
+    "text": "साखर नको",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 21504
+  },
+  "996fbb6b6f239058": {
+    "lang": "te",
+    "text": "వద్దు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 11904
+  },
   "9bf8fc620cb36b18": {
     "lang": "hi",
     "text": "मीटर से चलो",
     "pace": 0.75,
     "speaker": "ritu",
     "bytes": 20736
+  },
+  "9c75e2caab0182ca": {
+    "lang": "ta",
+    "text": "போதும்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 10368
+  },
+  "9d4633164d273df1": {
+    "lang": "te",
+    "text": "అవును, సరే",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 21504
+  },
+  "9d6516bc21c98fe2": {
+    "lang": "te",
+    "text": "లేదు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "9f0f89f6700ce25c": {
+    "lang": "ta",
+    "text": "சரி, குடுங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 21504
+  },
+  "a07657133078e614": {
+    "lang": "mr",
+    "text": "नक्कीच",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 13056
+  },
+  "a15b56cd004358fb": {
+    "lang": "bn",
+    "text": "চিনি কম",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 16896
+  },
+  "a2ab9f4be8033437": {
+    "lang": "bn",
+    "text": "একটু সাহায্য লাগবে",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 26880
+  },
+  "a623b6d0abc5d86e": {
+    "lang": "kn",
+    "text": "ಎಷ್ಟು ಆಗುತ್ತೆ?",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 21504
   },
   "a715880b565bb13a": {
     "lang": "hi",
@@ -265,12 +1042,61 @@
     "speaker": "ritu",
     "bytes": 14592
   },
+  "a865e495b152dfa0": {
+    "lang": "ta",
+    "text": "சர்க்கரை வேணாம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 26880
+  },
+  "a89104569c9c14b0": {
+    "lang": "mr",
+    "text": "हो, ठीक आहे",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 24192
+  },
+  "a8e52332f3d3ad3a": {
+    "lang": "mr",
+    "text": "थोडी मदत हवी",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 22272
+  },
+  "aadf84b38bf5ae6c": {
+    "lang": "mr",
+    "text": "एक चहा द्या",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 16128
+  },
+  "ac70c5e044a7e790": {
+    "lang": "mr",
+    "text": "ठीक आहे, द्या",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 19968
+  },
   "aca5fb5b0b1173f1": {
     "lang": "hi",
     "text": "फिर मिलेंगे",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 13056
+  },
+  "af5efd4abf90d1e4": {
+    "lang": "te",
+    "text": "చాలా ఎక్కువ",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "afde19fec4a9a0aa": {
+    "lang": "mr",
+    "text": "खूप महाग आहे",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 24192
   },
   "b0aa7cb9a416381f": {
     "lang": "hi",
@@ -279,12 +1105,89 @@
     "speaker": "ritu",
     "bytes": 13056
   },
+  "b109d1232ce50fc6": {
+    "lang": "mr",
+    "text": "समजलं",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 14592
+  },
+  "b3321272f6b644f2": {
+    "lang": "ta",
+    "text": "புரிஞ்சுது",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 11904
+  },
+  "b52dc31561953708": {
+    "lang": "te",
+    "text": "ధన్యవాదాలు",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 24192
+  },
+  "b61251cbe6a3ffc2": {
+    "lang": "mr",
+    "text": "पुरे",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 10368
+  },
+  "b6b6d2b41ded3150": {
+    "lang": "ta",
+    "text": "ஆமா, சரி",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 24192
+  },
   "b71a3fd1f4118a5d": {
     "lang": "hi",
     "text": "हाँ, ठीक है",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 16128
+  },
+  "b9888da674c35f61": {
+    "lang": "mr",
+    "text": "मीटरने चला",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 14592
+  },
+  "bad687177033d4bd": {
+    "lang": "kn",
+    "text": "ಗೊತ್ತಾಯ್ತು",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
+  },
+  "bb39acdf052208ea": {
+    "lang": "mr",
+    "text": "पुढे चला",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 13056
+  },
+  "bc212685a082c503": {
+    "lang": "bn",
+    "text": "চিনি ছাড়া চা",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 16128
+  },
+  "bc73412c0d09ad7f": {
+    "lang": "bn",
+    "text": "এটা কত?",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 14592
+  },
+  "bd63efc8dfc1390e": {
+    "lang": "bn",
+    "text": "আরেকটু",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 9216
   },
   "bd73985c21a7fb4a": {
     "lang": "hi",
@@ -293,12 +1196,40 @@
     "speaker": "ritu",
     "bytes": 14592
   },
+  "bda2a599f815e63e": {
+    "lang": "te",
+    "text": "సరే, ఇవ్వండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 17280
+  },
+  "be910c90398ad6f8": {
+    "lang": "mr",
+    "text": "हो, ठीक आहे",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 17280
+  },
+  "bebf70fe367fd52c": {
+    "lang": "kn",
+    "text": "ಮೀಟರ್ ಹಾಕಿ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 33408
+  },
   "bf09ba4018207d61": {
     "lang": "hi",
     "text": "माफ़ कीजिए",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 16128
+  },
+  "bff327f5a19a0a53": {
+    "lang": "ta",
+    "text": "இன்னும் கொஞ்சம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 26880
   },
   "c02373a515f8f51f": {
     "lang": "hi",
@@ -307,6 +1238,13 @@
     "speaker": "ritu",
     "bytes": 31488
   },
+  "c1488c023f1a0423": {
+    "lang": "mr",
+    "text": "थोडं पाणी हवं",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 16128
+  },
   "c490546c17efa4db": {
     "lang": "hi",
     "text": "फिर मिलेंगे",
@@ -314,12 +1252,68 @@
     "speaker": "ritu",
     "bytes": 16896
   },
+  "c6551bff0f204a7b": {
+    "lang": "ta",
+    "text": "ஒரு நிமிஷம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 18816
+  },
+  "c6a5e2af34e69e63": {
+    "lang": "te",
+    "text": "తప్పకుండా",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 14592
+  },
+  "c721b5d37c01b9f0": {
+    "lang": "mr",
+    "text": "धन्यवाद",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 23808
+  },
   "c74ac4232dd2f100": {
     "lang": "hi",
     "text": "मुझे पानी चाहिए",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 21504
+  },
+  "c85b5678e24d6abd": {
+    "lang": "mr",
+    "text": "महाग",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 10368
+  },
+  "c9b31392a4be8e81": {
+    "lang": "te",
+    "text": "ఇంకా కొంచెం",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 24192
+  },
+  "cbc1f3f73c2a26eb": {
+    "lang": "mr",
+    "text": "स्टेशनला जाल का?",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 34944
+  },
+  "cd187b9b4ce0f822": {
+    "lang": "te",
+    "text": "ఇది ఎంత?",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 21504
+  },
+  "ce1812c9fd63d090": {
+    "lang": "kn",
+    "text": "ಮುಂದೆ ಹೋಗಿ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
   },
   "cf2c8d76ea11cd0a": {
     "lang": "hi",
@@ -335,12 +1329,159 @@
     "speaker": "ritu",
     "bytes": 16128
   },
+  "d10a3f4fb0af6937": {
+    "lang": "te",
+    "text": "ఎంత?",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 17280
+  },
+  "d2bb3bb5b45301e0": {
+    "lang": "bn",
+    "text": "ধন্যবাদ",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 16896
+  },
+  "d415a2e5bb2d6f9b": {
+    "lang": "mr",
+    "text": "हे किती आहे?",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 26112
+  },
+  "d589f3be45cf5318": {
+    "lang": "kn",
+    "text": "ಸ್ವಲ್ಪ ನೀರು ಬೇಕು",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 24192
+  },
+  "d64203a309247e1b": {
+    "lang": "ta",
+    "text": "பரவால்ல",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 14592
+  },
+  "d6c295b7e2ec420a": {
+    "lang": "kn",
+    "text": "ಸಾಕು",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 10368
+  },
+  "d70438c46e9b6281": {
+    "lang": "kn",
+    "text": "ಪರವಾಗಿಲ್ಲ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 18816
+  },
+  "d711de07360ebda7": {
+    "lang": "kn",
+    "text": "ಖಂಡಿತ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 11904
+  },
+  "d732d42d40e58717": {
+    "lang": "bn",
+    "text": "এখন না",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 13056
+  },
+  "d8d2589c73c131f5": {
+    "lang": "te",
+    "text": "కొంచెం సాయం కావాలి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 25344
+  },
+  "d8d365844500b4b5": {
+    "lang": "bn",
+    "text": "কোনো ব্যাপার না",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 22272
+  },
+  "d944967e5e0ef99e": {
+    "lang": "bn",
+    "text": "মিটারে চলুন",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 14592
+  },
+  "d9c9ff770e130304": {
+    "lang": "ta",
+    "text": "மீட்டர் போடுங்க",
+    "pace": 0.75,
+    "speaker": "shruti",
+    "bytes": 26112
+  },
+  "da5e50b830ee4d36": {
+    "lang": "bn",
+    "text": "লাগবে না",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 17280
+  },
+  "dc53a664a8cabf8c": {
+    "lang": "te",
+    "text": "పర్వాలేదు",
+    "pace": 0.75,
+    "speaker": "roopa",
+    "bytes": 16896
+  },
+  "dcb60ddb43881f44": {
+    "lang": "bn",
+    "text": "জল",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 11904
+  },
+  "ddd8fc0201b9c182": {
+    "lang": "bn",
+    "text": "ঠিক আছে, দিন",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 25344
+  },
   "e1de6ccdcda09fcc": {
     "lang": "hi",
     "text": "आप क्या करते हो?",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 17280
+  },
+  "e22ad303112e81a8": {
+    "lang": "te",
+    "text": "చాలు",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 11904
+  },
+  "e33cbd74992abecb": {
+    "lang": "ta",
+    "text": "இங்க நிறுத்துங்க",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 18816
+  },
+  "e403f0b5ebbd9faf": {
+    "lang": "mr",
+    "text": "मीटरने चला",
+    "pace": 0.75,
+    "speaker": "rupali",
+    "bytes": 22272
+  },
+  "e4d4f26c7abf548c": {
+    "lang": "ta",
+    "text": "இது எவ்வளவு?",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 19968
   },
   "e51e2c0d84778f8a": {
     "lang": "hi",
@@ -349,12 +1490,54 @@
     "speaker": "ritu",
     "bytes": 11904
   },
+  "e55ecdf230a361bc": {
+    "lang": "bn",
+    "text": "হ্যাঁ, ঠিক আছে",
+    "pace": 0.75,
+    "speaker": "ishita",
+    "bytes": 31488
+  },
   "e5e5198a7f570ea7": {
     "lang": "hi",
     "text": "समझ गया",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 14592
+  },
+  "e5ebf2d9da83fc36": {
+    "lang": "te",
+    "text": "కొంచెం తగ్గించండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 21504
+  },
+  "e8585add2aae65ef": {
+    "lang": "te",
+    "text": "మీటర్ వేయండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 21504
+  },
+  "e861fc8cc3363412": {
+    "lang": "kn",
+    "text": "ಇದು ಎಷ್ಟು?",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 21504
+  },
+  "ea34998ba575a3b6": {
+    "lang": "bn",
+    "text": "অনেক বেশি",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 17280
+  },
+  "ebf9d0743857a4fc": {
+    "lang": "ta",
+    "text": "ரொம்ப அதிகம்",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 18816
   },
   "ec218e1413912bc2": {
     "lang": "hi",
@@ -384,11 +1567,95 @@
     "speaker": "ritu",
     "bytes": 27648
   },
+  "ef80d0f01b60e387": {
+    "lang": "kn",
+    "text": "ನೀರು",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 17280
+  },
+  "f0bfd445b6af2d9d": {
+    "lang": "bn",
+    "text": "বেশি",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 10368
+  },
+  "f1630925d919af02": {
+    "lang": "te",
+    "text": "ఎంత అవుతుంది?",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 24192
+  },
+  "f257f888c258c677": {
+    "lang": "te",
+    "text": "ఇక్కడ ఆపండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 18816
+  },
+  "f2c1f62de17a0a39": {
+    "lang": "te",
+    "text": "అర్థమైంది",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 16128
+  },
+  "f3327f3ed2177e6b": {
+    "lang": "te",
+    "text": "ఒక టీ ఇవ్వండి",
+    "pace": 1,
+    "speaker": "roopa",
+    "bytes": 22656
+  },
   "f51bb65e873428d0": {
     "lang": "hi",
     "text": "बिना चीनी",
     "pace": 1,
     "speaker": "ritu",
     "bytes": 16128
+  },
+  "f9446ba2249565d4": {
+    "lang": "bn",
+    "text": "চিনি ছাড়া",
+    "pace": 1,
+    "speaker": "ishita",
+    "bytes": 16128
+  },
+  "f9707c33b17b5d31": {
+    "lang": "kn",
+    "text": "ಧನ್ಯವಾದ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 24192
+  },
+  "fb97c3fafa10835d": {
+    "lang": "kn",
+    "text": "ಸಕ್ಕರೆ ಕಡಿಮೆ",
+    "pace": 0.75,
+    "speaker": "kavya",
+    "bytes": 31488
+  },
+  "fbcb2c7a4bdf4a9f": {
+    "lang": "mr",
+    "text": "साखर कमी",
+    "pace": 1,
+    "speaker": "rupali",
+    "bytes": 19968
+  },
+  "fc204dad1ed69a19": {
+    "lang": "ta",
+    "text": "கண்டிப்பா",
+    "pace": 1,
+    "speaker": "shruti",
+    "bytes": 13056
+  },
+  "fee3c8efb8d56611": {
+    "lang": "kn",
+    "text": "ಇನ್ನೂ ಸ್ವಲ್ಪ",
+    "pace": 1,
+    "speaker": "kavya",
+    "bytes": 18816
   }
 }

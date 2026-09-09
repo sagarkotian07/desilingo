@@ -1,6 +1,11 @@
 import { Course } from './schema'
 import type { LangCode } from '@/lib/languages'
 import hi from './hi.json'
+import kn from './kn.json'
+import ta from './ta.json'
+import te from './te.json'
+import bn from './bn.json'
+import mr from './mr.json'
 
 /**
  * Course registry.
@@ -10,7 +15,7 @@ import hi from './hi.json'
  * else (audio generation, validation, routing) derives from this map.
  */
 const RAW: Partial<Record<LangCode, unknown>> = {
-  hi,
+  hi, kn, ta, te, bn, mr,
 }
 
 const cache = new Map<LangCode, Course>()

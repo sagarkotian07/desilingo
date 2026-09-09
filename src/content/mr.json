@@ -1,0 +1,140 @@
+{
+  "lang": "mr",
+  "tagline": "Everyday Marathi. Straight from the street.",
+  "units": [
+    {
+      "id": "unit-1", "title": "Everyday Responses", "emoji": "💬",
+      "lessons": [
+        {
+          "id": "mr-lesson-1-1", "title": "Saying Yes & No",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "नको", "romanized": "Nako", "english": "I don't want it",
+              "hint": "turning something down", "options": ["Yes, please", "Give me more", "I don't want it", "Later"], "answer": 2 },
+            { "id": "e2", "type": "speak-repeat", "target": "हो, ठीक आहे", "romanized": "Ho, theek aahe", "english": "Yes, that's fine" },
+            { "id": "e3", "type": "select-phrase", "target": "आत्ता नको", "romanized": "Aatta nako", "english": "Not right now",
+              "options": [
+                { "text": "नंतर", "romanized": "Nantar" },
+                { "text": "आत्ता नको", "romanized": "Aatta nako" },
+                { "text": "हो, ठीक आहे", "romanized": "Ho, theek aahe" },
+                { "text": "या", "romanized": "Yaa" }
+              ], "answer": 1 },
+            { "id": "e4", "type": "listen-choose", "target": "नक्कीच", "romanized": "Nakkeech", "english": "Definitely",
+              "options": ["Maybe", "Not sure", "Never", "Definitely"], "answer": 3 },
+            { "id": "e5", "type": "word-order", "target": "हो, ठीक आहे", "romanized": "Ho, theek aahe", "english": "Yes, that's fine", "extraWords": ["नाही"] },
+            { "id": "e6", "type": "listen-type-roman", "target": "नाही", "romanized": "Nahi", "english": "No" }
+          ]
+        },
+        {
+          "id": "mr-lesson-1-2", "title": "Quick Replies",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "काही हरकत नाही", "romanized": "Kaahi harkat nahi", "english": "It's okay, no problem",
+              "hint": "waving off an apology", "options": ["Thank you", "It's okay, no problem", "What happened?", "I'm busy"], "answer": 1 },
+            { "id": "e2", "type": "speak-repeat", "target": "धन्यवाद", "romanized": "Dhanyavaad", "english": "Thank you" },
+            { "id": "e3", "type": "select-phrase", "target": "एक मिनिट", "romanized": "Ek minit", "english": "One minute",
+              "options": [
+                { "text": "समजलं", "romanized": "Samajlan" },
+                { "text": "धन्यवाद", "romanized": "Dhanyavaad" },
+                { "text": "एक मिनिट", "romanized": "Ek minit" },
+                { "text": "काही हरकत नाही", "romanized": "Kaahi harkat nahi" }
+              ], "answer": 2 },
+            { "id": "e4", "type": "listen-choose", "target": "समजलं", "romanized": "Samajlan", "english": "Got it",
+              "options": ["Say it again", "I'm coming", "Got it", "I don't know"], "answer": 2 },
+            { "id": "e5", "type": "match-pairs", "pairs": [
+                { "target": "धन्यवाद", "romanized": "Dhanyavaad", "english": "Thank you" },
+                { "target": "एक मिनिट", "romanized": "Ek minit", "english": "One minute" },
+                { "target": "समजलं", "romanized": "Samajlan", "english": "Got it" },
+                { "target": "काही हरकत नाही", "romanized": "Kaahi harkat nahi", "english": "No problem" }
+              ] },
+            { "id": "e6", "type": "speak-repeat", "target": "काही हरकत नाही", "romanized": "Kaahi harkat nahi", "english": "It's okay, no problem" }
+          ]
+        },
+        {
+          "id": "mr-lesson-1-3", "title": "Expressing Needs",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "थोडं पाणी हवं", "romanized": "Thoda paani hava", "english": "I need some water",
+              "options": ["I need some water", "I need some help", "I'm hungry", "I'm leaving"], "answer": 0 },
+            { "id": "e2", "type": "speak-repeat", "target": "थोडी मदत हवी", "romanized": "Thodi madat havi", "english": "I need some help" },
+            { "id": "e3", "type": "select-phrase", "target": "आणखी थोडं", "romanized": "Aankhi thoda", "english": "A little more",
+              "options": [
+                { "text": "पुरे", "romanized": "Pure" },
+                { "text": "पाणी", "romanized": "Paani" },
+                { "text": "थोडी मदत हवी", "romanized": "Thodi madat havi" },
+                { "text": "आणखी थोडं", "romanized": "Aankhi thoda" }
+              ], "answer": 3 },
+            { "id": "e4", "type": "word-order", "target": "थोडं पाणी हवं", "romanized": "Thoda paani hava", "english": "I need some water", "extraWords": ["नाही"] },
+            { "id": "e5", "type": "listen-choose", "target": "पुरे", "romanized": "Pure", "english": "That's enough",
+              "hint": "stopping someone serving you", "options": ["A little more", "One more", "That's enough", "Not for me"], "answer": 2 },
+            { "id": "e6", "type": "listen-type-roman", "target": "पाणी", "romanized": "Paani", "english": "Water" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-2", "title": "Out and About", "emoji": "🛺",
+      "lessons": [
+        {
+          "id": "mr-lesson-2-1", "title": "At the Tea Stall",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "एक चहा द्या", "romanized": "Ek chaha dya", "english": "One tea, please",
+              "options": ["One tea, please", "Two teas", "No tea for me", "How much is the tea?"], "answer": 0 },
+            { "id": "e2", "type": "speak-repeat", "target": "साखर कमी", "romanized": "Saakhar kami", "english": "Less sugar" },
+            { "id": "e3", "type": "select-phrase", "target": "साखर नको", "romanized": "Saakhar nako", "english": "No sugar",
+              "options": [
+                { "text": "साखर कमी", "romanized": "Saakhar kami" },
+                { "text": "किती?", "romanized": "Kiti?" },
+                { "text": "साखर नको", "romanized": "Saakhar nako" },
+                { "text": "एक चहा द्या", "romanized": "Ek chaha dya" }
+              ], "answer": 2 },
+            { "id": "e4", "type": "listen-choose", "target": "किती?", "romanized": "Kiti?", "english": "How much?",
+              "options": ["Where?", "Who?", "How much?", "When?"], "answer": 2 },
+            { "id": "e5", "type": "word-order", "target": "एक चहा द्या", "romanized": "Ek chaha dya", "english": "One tea, please", "extraWords": ["नको"] },
+            { "id": "e6", "type": "match-pairs", "pairs": [
+                { "target": "साखर कमी", "romanized": "Saakhar kami", "english": "Less sugar" },
+                { "target": "साखर नको", "romanized": "Saakhar nako", "english": "No sugar" },
+                { "target": "किती?", "romanized": "Kiti?", "english": "How much?" },
+                { "target": "एक चहा द्या", "romanized": "Ek chaha dya", "english": "One tea, please" }
+              ] }
+          ]
+        },
+        {
+          "id": "mr-lesson-2-2", "title": "At the Market",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "हे किती आहे?", "romanized": "He kiti aahe?", "english": "How much is this?",
+              "options": ["What is this?", "How much is this?", "Do you have this?", "Where is this from?"], "answer": 1 },
+            { "id": "e2", "type": "speak-repeat", "target": "खूप महाग आहे", "romanized": "Khoop mahaag aahe", "english": "That's very expensive" },
+            { "id": "e3", "type": "select-phrase", "target": "थोडं कमी करा", "romanized": "Thoda kami kara", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "खूप महाग आहे", "romanized": "Khoop mahaag aahe" },
+                { "text": "थोडं कमी करा", "romanized": "Thoda kami kara" },
+                { "text": "हे किती आहे?", "romanized": "He kiti aahe?" },
+                { "text": "ठीक आहे, द्या", "romanized": "Theek aahe, dya" }
+              ], "answer": 1 },
+            { "id": "e4", "type": "listen-choose", "target": "ठीक आहे, द्या", "romanized": "Theek aahe, dya", "english": "Fine, I'll take it",
+              "options": ["Show me another", "That's too much", "I'll come back", "Fine, I'll take it"], "answer": 3 },
+            { "id": "e5", "type": "listen-type-roman", "target": "महाग", "romanized": "Mahaag", "english": "Expensive" },
+            { "id": "e6", "type": "speak-repeat", "target": "हे किती आहे?", "romanized": "He kiti aahe?", "english": "How much is this?" }
+          ]
+        },
+        {
+          "id": "mr-lesson-2-3", "title": "Getting Around",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "स्टेशनला जाल का?", "romanized": "Stationla jaal ka?", "english": "Will you go to the station?",
+              "hint": "flagging down a rickshaw", "options": ["Is the station far?", "Where is the station?", "Will you go to the station?", "Stop at the station"], "answer": 2 },
+            { "id": "e2", "type": "speak-repeat", "target": "मीटरने चला", "romanized": "Meetarne chala", "english": "Go by the meter" },
+            { "id": "e3", "type": "select-phrase", "target": "इथे थांबा", "romanized": "Ithe thaamba", "english": "Stop right here",
+              "options": [
+                { "text": "इथे थांबा", "romanized": "Ithe thaamba" },
+                { "text": "पुढे चला", "romanized": "Pudhe chala" },
+                { "text": "किती घेणार?", "romanized": "Kiti ghenaar?" },
+                { "text": "मीटरने चला", "romanized": "Meetarne chala" }
+              ], "answer": 0 },
+            { "id": "e4", "type": "listen-choose", "target": "किती घेणार?", "romanized": "Kiti ghenaar?", "english": "How much will you charge?",
+              "options": ["How far is it?", "How long will it take?", "Which way?", "How much will you charge?"], "answer": 3 },
+            { "id": "e5", "type": "word-order", "target": "इथे थांबा", "romanized": "Ithe thaamba", "english": "Stop right here", "extraWords": ["नको", "पुढे"] },
+            { "id": "e6", "type": "listen-type-roman", "target": "पुढे चला", "romanized": "Pudhe chala", "english": "Keep going" }
+          ]
+        }
+      ]
+    }
+  ]
+}

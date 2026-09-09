@@ -1,0 +1,140 @@
+{
+  "lang": "ta",
+  "tagline": "Spoken Tamil. What people say, not what books print.",
+  "units": [
+    {
+      "id": "unit-1", "title": "Everyday Responses", "emoji": "💬",
+      "lessons": [
+        {
+          "id": "ta-lesson-1-1", "title": "Saying Yes & No",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "வேணாம்", "romanized": "Venaam", "english": "I don't want it",
+              "hint": "turning something down", "options": ["I don't want it", "Give me more", "Yes, please", "Later"], "answer": 0 },
+            { "id": "e2", "type": "speak-repeat", "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine" },
+            { "id": "e3", "type": "select-phrase", "target": "இப்ப வேணாம்", "romanized": "Ippa venaam", "english": "Not right now",
+              "options": [
+                { "text": "அப்புறம்", "romanized": "Appuram" },
+                { "text": "ஆமா, சரி", "romanized": "Aama, sari" },
+                { "text": "இப்ப வேணாம்", "romanized": "Ippa venaam" },
+                { "text": "வாங்க", "romanized": "Vaanga" }
+              ], "answer": 2 },
+            { "id": "e4", "type": "listen-choose", "target": "கண்டிப்பா", "romanized": "Kandippaa", "english": "Definitely",
+              "options": ["Maybe", "Never", "Not sure", "Definitely"], "answer": 3 },
+            { "id": "e5", "type": "word-order", "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine", "extraWords": ["இல்ல"] },
+            { "id": "e6", "type": "listen-type-roman", "target": "இல்ல", "romanized": "Illa", "english": "No" }
+          ]
+        },
+        {
+          "id": "ta-lesson-1-2", "title": "Quick Replies",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem",
+              "hint": "waving off an apology", "options": ["Thank you", "It's okay, no problem", "What happened?", "I'm busy"], "answer": 1 },
+            { "id": "e2", "type": "speak-repeat", "target": "நன்றி", "romanized": "Nandri", "english": "Thank you" },
+            { "id": "e3", "type": "select-phrase", "target": "ஒரு நிமிஷம்", "romanized": "Oru nimisham", "english": "One minute",
+              "options": [
+                { "text": "புரிஞ்சுது", "romanized": "Purinjudhu" },
+                { "text": "நன்றி", "romanized": "Nandri" },
+                { "text": "ஒரு நிமிஷம்", "romanized": "Oru nimisham" },
+                { "text": "பரவால்ல", "romanized": "Paravaalla" }
+              ], "answer": 2 },
+            { "id": "e4", "type": "listen-choose", "target": "புரிஞ்சுது", "romanized": "Purinjudhu", "english": "Got it",
+              "options": ["Got it", "Say it again", "I'm coming", "I don't know"], "answer": 0 },
+            { "id": "e5", "type": "match-pairs", "pairs": [
+                { "target": "நன்றி", "romanized": "Nandri", "english": "Thank you" },
+                { "target": "ஒரு நிமிஷம்", "romanized": "Oru nimisham", "english": "One minute" },
+                { "target": "புரிஞ்சுது", "romanized": "Purinjudhu", "english": "Got it" },
+                { "target": "பரவால்ல", "romanized": "Paravaalla", "english": "No problem" }
+              ] },
+            { "id": "e6", "type": "speak-repeat", "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem" }
+          ]
+        },
+        {
+          "id": "ta-lesson-1-3", "title": "Expressing Needs",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water",
+              "options": ["I need some help", "I'm hungry", "I need some water", "I'm leaving"], "answer": 2 },
+            { "id": "e2", "type": "speak-repeat", "target": "கொஞ்சம் உதவி வேணும்", "romanized": "Konjam udhavi venum", "english": "I need some help" },
+            { "id": "e3", "type": "select-phrase", "target": "இன்னும் கொஞ்சம்", "romanized": "Innum konjam", "english": "A little more",
+              "options": [
+                { "text": "போதும்", "romanized": "Podhum" },
+                { "text": "இன்னும் கொஞ்சம்", "romanized": "Innum konjam" },
+                { "text": "தண்ணி", "romanized": "Thanni" },
+                { "text": "கொஞ்சம் உதவி வேணும்", "romanized": "Konjam udhavi venum" }
+              ], "answer": 1 },
+            { "id": "e4", "type": "word-order", "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water", "extraWords": ["இல்ல"] },
+            { "id": "e5", "type": "listen-choose", "target": "போதும்", "romanized": "Podhum", "english": "That's enough",
+              "hint": "stopping someone serving you", "options": ["A little more", "One more", "That's enough", "Not for me"], "answer": 2 },
+            { "id": "e6", "type": "listen-type-roman", "target": "தண்ணி", "romanized": "Thanni", "english": "Water" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-2", "title": "Out and About", "emoji": "🛺",
+      "lessons": [
+        {
+          "id": "ta-lesson-2-1", "title": "At the Tea Stall",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please",
+              "options": ["Two teas", "One tea, please", "No tea for me", "How much is the tea?"], "answer": 1 },
+            { "id": "e2", "type": "speak-repeat", "target": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi", "english": "Less sugar" },
+            { "id": "e3", "type": "select-phrase", "target": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam", "english": "No sugar",
+              "options": [
+                { "text": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi" },
+                { "text": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga" },
+                { "text": "எவ்வளவு?", "romanized": "Evvalavu?" },
+                { "text": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam" }
+              ], "answer": 3 },
+            { "id": "e4", "type": "listen-choose", "target": "எவ்வளவு?", "romanized": "Evvalavu?", "english": "How much?",
+              "options": ["How much?", "Where?", "Who?", "When?"], "answer": 0 },
+            { "id": "e5", "type": "word-order", "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please", "extraWords": ["வேணாம்"] },
+            { "id": "e6", "type": "match-pairs", "pairs": [
+                { "target": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi", "english": "Less sugar" },
+                { "target": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam", "english": "No sugar" },
+                { "target": "எவ்வளவு?", "romanized": "Evvalavu?", "english": "How much?" },
+                { "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please" }
+              ] }
+          ]
+        },
+        {
+          "id": "ta-lesson-2-2", "title": "At the Market",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?",
+              "options": ["What is this?", "Do you have this?", "Where is this from?", "How much is this?"], "answer": 3 },
+            { "id": "e2", "type": "speak-repeat", "target": "ரொம்ப அதிகம்", "romanized": "Romba adhigam", "english": "That's too much" },
+            { "id": "e3", "type": "select-phrase", "target": "கொஞ்சம் குறையுங்க", "romanized": "Konjam kuraiyunga", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "ரொம்ப அதிகம்", "romanized": "Romba adhigam" },
+                { "text": "கொஞ்சம் குறையுங்க", "romanized": "Konjam kuraiyunga" },
+                { "text": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?" },
+                { "text": "சரி, குடுங்க", "romanized": "Sari, kodunga" }
+              ], "answer": 1 },
+            { "id": "e4", "type": "listen-choose", "target": "சரி, குடுங்க", "romanized": "Sari, kodunga", "english": "Fine, I'll take it",
+              "options": ["Show me another", "Fine, I'll take it", "That's too much", "I'll come back"], "answer": 1 },
+            { "id": "e5", "type": "listen-type-roman", "target": "அதிகம்", "romanized": "Adhigam", "english": "Too much" },
+            { "id": "e6", "type": "speak-repeat", "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?" }
+          ]
+        },
+        {
+          "id": "ta-lesson-2-3", "title": "Getting Around",
+          "exercises": [
+            { "id": "e1", "type": "listen-choose", "target": "ஸ்டேஷன் வர்றீங்களா?", "romanized": "Station varreengalaa?", "english": "Will you go to the station?",
+              "hint": "flagging down an auto", "options": ["Where is the station?", "Is the station far?", "Will you go to the station?", "Stop at the station"], "answer": 2 },
+            { "id": "e2", "type": "speak-repeat", "target": "மீட்டர் போடுங்க", "romanized": "Meter podunga", "english": "Put the meter on" },
+            { "id": "e3", "type": "select-phrase", "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here",
+              "options": [
+                { "text": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga" },
+                { "text": "முன்னாடி போங்க", "romanized": "Munnaadi ponga" },
+                { "text": "மீட்டர் போடுங்க", "romanized": "Meter podunga" },
+                { "text": "எவ்வளவு ஆகும்?", "romanized": "Evvalavu aagum?" }
+              ], "answer": 0 },
+            { "id": "e4", "type": "listen-choose", "target": "எவ்வளவு ஆகும்?", "romanized": "Evvalavu aagum?", "english": "How much will it be?",
+              "options": ["How far is it?", "How much will it be?", "How long will it take?", "Which way?"], "answer": 1 },
+            { "id": "e5", "type": "word-order", "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here", "extraWords": ["வேணாம்", "முன்னாடி"] },
+            { "id": "e6", "type": "listen-type-roman", "target": "முன்னாடி போங்க", "romanized": "Munnaadi ponga", "english": "Keep going" }
+          ]
+        }
+      ]
+    }
+  ]
+}

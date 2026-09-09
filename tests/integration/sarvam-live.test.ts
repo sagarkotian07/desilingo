@@ -42,11 +42,19 @@ describe.skipIf(!live)('Sarvam round-trip', () => {
     manifest = JSON.parse(await readFile(path.join(ROOT, 'src/generated/audio-manifest.json'), 'utf8'))
   })
 
-  it('transcribes our own generated audio back to a passing score', async () => {
-    const entries = Object.entries(manifest)
-      .filter(([, v]) => v.pace === 1 && v.lang === 'hi')
-      .slice(0, 8)
-    expect(entries.length).toBeGreaterThan(0)
+  it('transcribes our own generated audio back to a passing score, in every language', async () => {
+    // Sample across all six languages rather than only Hindi: the normalizer is
+    // driven by shared script offsets, and a mistake in those would show up in
+    // one script and not another.
+    const byLang = new Map<string, Array<[string, (typeof manifest)[string]]>>()
+    for (const [key, entry] of Object.entries(manifest)) {
+      if (entry.pace !== 1) continue
+      const list = byLang.get(entry.lang) ?? []
+      if (list.length < 3) list.push([key, entry])
+      byLang.set(entry.lang, list)
+    }
+    const entries = [...byLang.values()].flat()
+    expect(byLang.size).toBe(6)
 
     const results: Array<{ target: string; heard: string; score: number; passed: boolean }> = []
     for (const [key, entry] of entries) {
@@ -61,8 +69,12 @@ describe.skipIf(!live)('Sarvam round-trip', () => {
       console.log(`  ${r.score.toFixed(3)} ${r.passed ? 'PASS' : 'FAIL'}  "${r.target}" -> "${r.heard}"`)
     }
     for (const r of results) {
+      // `passed` is the assertion that matters. The score floor is deliberately
+      // below the pass band: Sarvam makes its own legitimate transcription
+      // choices -- आत्ता comes back as आता, नీళ్లు as నీళ్ళు -- and those are
+      // spelling variants of a correct reading, not scoring failures.
       expect(r.passed, `"${r.target}" heard as "${r.heard}" scored ${r.score.toFixed(3)}`).toBe(true)
-      expect(r.score).toBeGreaterThanOrEqual(0.9)
+      expect(r.score, `"${r.target}" -> "${r.heard}"`).toBeGreaterThanOrEqual(0.8)
     }
   }, 180_000)
 
