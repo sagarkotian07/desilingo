@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import type { Exercise } from '@/content/schema'
 import type { LangCode } from '@/lib/languages'
 import type { PronunciationResult, Verdict } from '@/lib/scoring/score'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio, PACE_SLOW } from '@/lib/useAudio'
-import { useRecorder } from '@/lib/useRecorder'
+import { useRecorder, type Recording } from '@/lib/useRecorder'
 import { Prompt, ContinueButton } from './shared'
 
 type Ex = Extract<Exercise, { type: 'speak-repeat' }>
@@ -43,21 +43,22 @@ export function SpeakRepeat({
   exercise, lang, onDone,
 }: { exercise: Ex; lang: LangCode; onDone: (correct: boolean) => void }) {
   const audio = useAudio(lang)
-  const recorder = useRecorder()
   const [result, setResult] = useState<PronunciationResult | null>(null)
   const [attempts, setAttempts] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
 
-  const recording = recorder.state === 'recording'
-  const busy = sending || recorder.state === 'processing'
-
-  async function toggle() {
-    setError(null)
-    if (!recording) { await recorder.start(); return }
-
-    const rec = await recorder.stop()
-    if (!rec) return
+  const score = useCallback(async (rec: Recording) => {
+    // Nothing was captured, or the mic was muted. Answer locally rather than
+    // paying for a transcription of silence -- and never phrase it as a mistake.
+    if (rec.durationMs < 250 || rec.rmsPeak < 0.012) {
+      setResult({
+        verdict: 'not-heard', score: 0, orthographicScore: 0, phoneticScore: 0,
+        words: [], heardTranscript: '', passed: false,
+      })
+      setAttempts((n) => n + 1)
+      return
+    }
 
     setSending(true)
     try {
@@ -80,6 +81,20 @@ export function SpeakRepeat({
     } finally {
       setSending(false)
     }
+  }, [lang, exercise.target])
+
+  const recorder = useRecorder(score)
+
+
+  const recording = recorder.state === 'recording'
+  const busy = sending || recorder.state === 'processing'
+
+  async function toggle() {
+    setError(null)
+    if (!recording) { await recorder.start(); return }
+    // Scoring is driven by the recorder's callback, so the 8-second cap and a
+    // manual stop take exactly the same path.
+    await recorder.stop()
   }
 
   const copy = result ? COPY[result.verdict] : null
