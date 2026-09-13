@@ -1,9 +1,16 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { Typewriter } from '@/components/ui/Typewriter'
 
-export function Prompt({ children }: { children: ReactNode }) {
-  return <p className="mb-5 text-center text-sm font-medium tracking-wide text-ink-soft">{children}</p>
+/** Instructions type themselves in. The height is reserved up front, so the
+ *  card below never jumps as the text fills. */
+export function Prompt({ children }: { children: string }) {
+  return (
+    <p className="mb-5 text-center text-sm font-medium tracking-wide text-ink-soft">
+      <Typewriter text={children} />
+    </p>
+  )
 }
 
 export type OptionState = 'idle' | 'correct' | 'wrong' | 'muted'

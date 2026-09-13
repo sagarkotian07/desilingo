@@ -5,7 +5,7 @@ import type { LangCode } from '@/lib/languages'
 import { useProgress } from '@/lib/progress'
 import { ProgressRing } from '@/components/ui/ProgressRing'
 import { Script } from '@/components/ui/Script'
-import { Kolam } from '@/components/ui/Motifs'
+import { Kolam, Letterform } from '@/components/ui/Motifs'
 import { ProgressBackup } from './ProgressBackup'
 
 interface LessonSummary {
@@ -32,7 +32,22 @@ export function HomeDashboard({
 
   return (
     <main className="relative mx-auto w-full max-w-2xl px-4 py-10 text-center">
+      {/* Block-print stripe, the kind stamped along the edge of a textile. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-x-0 top-0 z-30 h-[5px] bg-surface-sunk"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(90deg, transparent 0 12px, var(--marigold) 12px 13px)',
+        }}
+      />
+
       <Kolam className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[460px] -translate-x-1/2 text-indigo opacity-[0.06]" />
+      <Letterform
+        text={greeting.split(' ')[0]}
+        lang={lang}
+        className="pointer-events-none absolute -right-16 top-10 -z-10 text-indigo"
+      />
 
       <ProgressRing
         value={lessons.length ? doneCount / lessons.length : 0}

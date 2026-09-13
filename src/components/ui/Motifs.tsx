@@ -38,3 +38,29 @@ export function BlockPrintRow({ className = '' }: { className?: string }) {
     </svg>
   )
 }
+
+/**
+ * An oversized letterform from the language itself, sitting behind the page.
+ *
+ * The kolam gives the app a place; this gives each course its own. Kept at 4%
+ * and aria-hidden -- it is texture, and a screen reader reading a giant
+ * decorative नमस्ते would be noise.
+ */
+export function Letterform({
+  text, lang, className = '', rotate = 12,
+}: { text: string; lang: string; className?: string; rotate?: number }) {
+  return (
+    <span
+      aria-hidden="true"
+      lang={lang}
+      className={`pointer-events-none select-none font-bold leading-none ${className}`}
+      style={{
+        fontSize: 'clamp(180px, 55vw, 340px)',
+        opacity: 0.04,
+        transform: `rotate(${rotate}deg)`,
+      }}
+    >
+      {text}
+    </span>
+  )
+}

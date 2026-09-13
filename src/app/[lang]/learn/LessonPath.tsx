@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import type { LangCode } from '@/lib/languages'
 import { useProgress } from '@/lib/progress'
-import { BlockPrintRow } from '@/components/ui/Motifs'
+import { BlockPrintRow, Letterform } from '@/components/ui/Motifs'
+import { LANGUAGE_CONFIG } from '@/lib/languages'
 import { lessonIcon } from '@/lib/lesson-icons'
 
 interface UnitSummary {
@@ -47,7 +48,14 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
   let lessonNumber = 0
 
   return (
-    <main className="mx-auto w-full max-w-2xl px-4 py-8">
+    <main className="relative mx-auto w-full max-w-2xl px-4 py-8">
+      <Letterform
+        text={LANGUAGE_CONFIG[lang].nativeName}
+        lang={lang}
+        rotate={-8}
+        className="pointer-events-none absolute -left-10 bottom-1/4 -z-10 text-indigo"
+      />
+
       {units.map((unit, unitIndex) => {
         const done = unit.lessons.filter((l) => progress.lessons[l.id]).length
         const previous = units[unitIndex - 1]

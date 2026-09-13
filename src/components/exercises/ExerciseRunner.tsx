@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { Exercise, Lesson } from '@/content/schema'
 import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
 import { completeLesson, xpFor } from '@/lib/progress'
+import { prefetchClip } from '@/lib/clips'
 import { useIsClient } from '@/lib/useIsClient'
 import { Script } from '@/components/ui/Script'
 import { ListenChoose } from './ListenChoose'
@@ -67,7 +68,11 @@ export function ExerciseRunner({
     if (!mounted) return
     exerciseRef.current?.focus()
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [index, reviewing, mounted])
+
+    // Warm the next clip while the learner works on this one.
+    const upcoming = queue[index + 1]
+    if (upcoming && upcoming.type !== 'match-pairs') prefetchClip(lang, upcoming.target)
+  }, [index, reviewing, mounted, queue, lang])
 
   /** Replay the lesson without leaving the screen. */
   function practiceAgain() {
@@ -130,7 +135,11 @@ export function ExerciseRunner({
     const xp = xpFor(correct, total)
     const perfect = correct === total
     return (
-      <div className="animate-pop mx-auto max-w-md px-4 py-16 text-center">
+      <div className="animate-pop relative mx-auto max-w-md px-4 py-16 text-center">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none fixed inset-x-0 top-0 z-30 h-[5px] bg-gradient-to-r from-marigold via-terracotta to-marigold"
+        />
         <p className="text-6xl" aria-hidden="true">{perfect ? '🎉' : '🌟'}</p>
         <h1 className="mt-4 text-3xl font-extrabold text-ink">Lesson complete</h1>
         <Script lang={lang} className="mt-1 block text-2xl font-bold text-marigold">{cfg.wellDone}</Script>

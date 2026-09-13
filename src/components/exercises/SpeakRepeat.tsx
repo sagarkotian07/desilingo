@@ -5,6 +5,7 @@ import type { Exercise } from '@/content/schema'
 import type { LangCode } from '@/lib/languages'
 import type { PronunciationResult, Verdict } from '@/lib/scoring/score'
 import { Script } from '@/components/ui/Script'
+import { ScriptReveal } from '@/components/ui/ScriptReveal'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio, PACE_NORMAL } from '@/lib/useAudio'
 import { SpeedToggle } from '@/components/ui/SpeedToggle'
@@ -131,10 +132,22 @@ export function SpeakRepeat({
     <div>
       <Prompt>Listen, then say it out loud</Prompt>
 
-      <div className="rounded-3xl border border-line bg-surface p-6 text-center shadow-[var(--shadow)]">
-        <Script lang={lang} className="block text-3xl font-bold sm:text-4xl">{exercise.target}</Script>
+      <div
+        className={`rounded-3xl border-2 bg-surface p-6 text-center shadow-[var(--shadow)] ${
+          audio.loading ? 'animate-border-pulse border-line' : 'border-line'
+        }`}
+      >
+        <ScriptReveal
+          text={exercise.target}
+          lang={lang}
+          active
+          className="block text-3xl font-bold sm:text-4xl"
+        />
         <p className="mt-1 text-sm italic text-terracotta">{exercise.romanized}</p>
         <p className="mt-1 text-sm text-ink-soft">{exercise.english}</p>
+        {audio.loading && (
+          <p className="mt-1 text-xs text-ink-faint">fetching audio, this can take a moment…</p>
+        )}
 
         <div className="mt-4 flex items-center justify-center gap-3">
           <SpeakerButton

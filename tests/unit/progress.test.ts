@@ -21,8 +21,14 @@ function read(lang: 'hi' | 'kn' = 'hi') {
   return JSON.parse(exportProgress(lang))
 }
 
-const iso = (daysAgo: number) =>
-  new Date(Date.now() - daysAgo * 86_400_000).toISOString().slice(0, 10)
+/** Local calendar date N days ago. Must match the store, which switched from
+ *  UTC to local days so streaks follow the learner's calendar. */
+const iso = (daysAgo: number) => {
+  const d = new Date()
+  d.setDate(d.getDate() - daysAgo)
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
 
 describe('xpFor', () => {
   it('scales with correct answers', () => {

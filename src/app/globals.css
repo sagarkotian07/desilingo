@@ -125,3 +125,9 @@ body {
 
 @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--terracotta) 45%, transparent) } 100% { box-shadow: 0 0 0 18px transparent } }
 .animate-pulse-ring { animation: pulse-ring 1.4s ease-out infinite }
+
+@keyframes border-pulse {
+  0%, 100% { border-color: var(--line); }
+  50%      { border-color: var(--marigold); }
+}
+.animate-border-pulse { animation: border-pulse 1.4s ease-in-out infinite }

@@ -30,3 +30,21 @@ export function clipUrl(lang: LangCode, text: string, pace = PACE_NORMAL): strin
 export function repairUrl(key: string): string {
   return `/api/tts?k=${encodeURIComponent(key)}`
 }
+
+const prefetched = new Set<string>()
+
+/**
+ * Warms the next exercise's clip so playback never waits on the network.
+ *
+ * Clips are static and immutable, so once the browser has one it is cached for
+ * good; this just moves the fetch off the critical path.
+ */
+export function prefetchClip(lang: LangCode, text: string, pace = PACE_NORMAL): void {
+  if (typeof window === 'undefined') return
+  const url = clipUrl(lang, text, pace)
+  if (!url || prefetched.has(url)) return
+  prefetched.add(url)
+  const audio = new Audio()
+  audio.preload = 'auto'
+  audio.src = url
+}

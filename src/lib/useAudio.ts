@@ -21,6 +21,9 @@ export function useAudio(lang: LangCode) {
   /** Set when both the static clip and the repair route fail, so the UI can
    *  offer a way out instead of leaving the learner stuck on a silent card. */
   const [failed, setFailed] = useState(false)
+  /** True between asking for a clip and hearing it. Normally imperceptible --
+   *  clips are static files -- but the repair route can take seconds. */
+  const [loading, setLoading] = useState(false)
   const ref = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => () => { ref.current?.pause(); ref.current = null }, [])
@@ -33,17 +36,23 @@ export function useAudio(lang: LangCode) {
 
       ref.current?.pause()
       setFailed(false)
+      setLoading(true)
       const audio = new Audio(src)
       ref.current = audio
       const token = `${text}|${pace}`
       setPlaying(token)
 
-      const done = () => setPlaying((p) => (p === token ? null : p))
+      const done = () => {
+        setLoading(false)
+        setPlaying((p) => (p === token ? null : p))
+      }
       audio.addEventListener('ended', done)
+      audio.addEventListener('playing', () => setLoading(false))
 
       // Static file missing: fall back to synthesizing it once.
       audio.addEventListener('error', () => {
         if (audio.src.includes('/api/tts')) { setFailed(true); done(); return }
+        // Static clip missing: fall back to synthesising it once.
         audio.src = repairUrl(key)
         audio.play().catch(() => done())
       })
@@ -65,6 +74,7 @@ export function useAudio(lang: LangCode) {
   const stop = useCallback(() => {
     ref.current?.pause()
     setPlaying(null)
+    setLoading(false)
   }, [])
 
   /**
@@ -75,7 +85,7 @@ export function useAudio(lang: LangCode) {
    * changed, the effect ran again, and the phrase replayed forever.
    */
   return useMemo(
-    () => ({ play, stop, playing, blocked, failed, isPlaying: playing !== null }),
-    [play, stop, playing, blocked, failed],
+    () => ({ play, stop, playing, blocked, failed, loading, isPlaying: playing !== null }),
+    [play, stop, playing, blocked, failed, loading],
   )
 }

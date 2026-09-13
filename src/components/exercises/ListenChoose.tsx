@@ -5,6 +5,7 @@ import type { Exercise } from '@/content/schema'
 import type { LangCode } from '@/lib/languages'
 import { shuffleOptions } from '@/lib/shuffle'
 import { Script } from '@/components/ui/Script'
+import { ScriptReveal } from '@/components/ui/ScriptReveal'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio } from '@/lib/useAudio'
 import { AudioTrouble } from './AudioTrouble'
@@ -50,16 +51,35 @@ export function ListenChoose({
     <div>
       <Prompt>Listen, then choose what it means</Prompt>
 
-      <div className="rounded-3xl border-2 border-marigold/40 bg-surface p-6 text-center shadow-[var(--shadow)]">
+      <div
+        className={`rounded-3xl border-2 bg-surface p-6 text-center shadow-[var(--shadow)] ${
+          audio.loading ? 'animate-border-pulse border-line' : 'border-marigold/40'
+        }`}
+      >
         <div className="flex items-center justify-center gap-4">
-          <Script lang={lang} className="text-3xl font-bold sm:text-4xl">
-            {/* The phrase stays hidden until answered: this is a listening
-                exercise, and showing the text turns it into a reading one. */}
-            {revealed ? exercise.target : '••••'}
-          </Script>
+          {/* The phrase stays hidden until answered: this is a listening
+              exercise, and showing the text up front turns it into a reading
+              one. Once revealed it fills in grapheme by grapheme, which is
+              where the sound-to-script connection actually gets made. */}
+          {revealed ? (
+            <ScriptReveal
+              text={exercise.target}
+              lang={lang}
+              active
+              className="text-3xl font-bold sm:text-4xl"
+            />
+          ) : (
+            <Script lang={lang} className="text-3xl font-bold sm:text-4xl">••••</Script>
+          )}
           <SpeakerButton onPlay={() => void audio.play(exercise.target)} playing={audio.isPlaying} label="Play the phrase" />
         </div>
         {revealed && <p className="mt-2 text-sm italic text-terracotta">{exercise.romanized}</p>}
+        {/* Clips are static files, so this is normally imperceptible -- but the
+            repair route can take a few seconds, and silence with no explanation
+            reads as a broken app. */}
+        {audio.loading && (
+          <p className="mt-2 text-xs text-ink-faint">fetching audio, this can take a moment…</p>
+        )}
         {exercise.hint && !revealed && (
           <p className="mt-3 text-xs text-ink-faint"><span aria-hidden="true">💡</span> {exercise.hint}</p>
         )}
