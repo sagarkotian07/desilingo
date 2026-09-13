@@ -3,7 +3,7 @@ import manifest from '@/generated/audio-manifest.json'
 import { sarvam } from '@/lib/voice/sarvam'
 import { VoiceError } from '@/lib/voice/types'
 import type { AudioManifest } from '@/lib/audio'
-import { clientIp, rateLimit } from '@/lib/rate-limit'
+import { clientIp, isSameOrigin, rateLimit } from '@/lib/rate-limit'
 
 /**
  * Repair path for lesson audio.
@@ -26,6 +26,14 @@ export const maxDuration = 20
 const CLIPS = manifest as AudioManifest
 
 export async function GET(req: Request) {
+  // This route costs money, so it is not open to arbitrary callers even though
+  // the manifest keys it accepts are public in the client bundle.
+  if (!isSameOrigin(req)) {
+    return NextResponse.json({ error: 'forbidden' }, { status: 403 })
+  }
+
+  // Read only the parameter we understand, so stray query strings cannot be
+  // used to vary the cache key and force repeated synthesis.
   const key = new URL(req.url).searchParams.get('k')
   if (!key) return NextResponse.json({ error: 'missing key' }, { status: 400 })
 

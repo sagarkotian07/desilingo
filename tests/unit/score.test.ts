@@ -99,3 +99,32 @@ describe('feedback quality', () => {
     expect(r.words.find((w) => w.target === 'चाहिए')?.op).toBe('delete')
   })
 })
+
+describe('wrong-language detection', () => {
+  // We pass an explicit language_code to Sarvam, which suppresses its own
+  // detection, so the response field cannot be the only signal.
+  it('flags a Latin-script transcript without needing Sarvam to detect it', () => {
+    const r = scorePronunciation({ target: 'नहीं चाहिए', transcript: 'I do not want it', lang: 'hi' })
+    expect(r.verdict).toBe('wrong-language')
+    expect(r.passed).toBe(false)
+  })
+
+  it('still honours Sarvam when it does report a different language', () => {
+    const r = scorePronunciation({
+      target: 'नहीं चाहिए', transcript: 'কিছু একটা', lang: 'hi', detectedLanguage: 'bn-IN',
+    })
+    expect(r.verdict).toBe('wrong-language')
+  })
+
+  it('does not flag a correct answer in the right script', () => {
+    const r = scorePronunciation({ target: 'नहीं चाहिए', transcript: 'नहीं चाहिए', lang: 'hi' })
+    expect(r.verdict).toBe('perfect')
+  })
+
+  // Sarvam frequently transliterates English into the target script. Script
+  // analysis cannot catch that, and it should not pass as a pronunciation.
+  it('still fails an English answer transliterated into Devanagari', () => {
+    const r = scorePronunciation({ target: 'नहीं चाहिए', transcript: 'आई डू नॉट वांट इट', lang: 'hi' })
+    expect(r.passed).toBe(false)
+  })
+})

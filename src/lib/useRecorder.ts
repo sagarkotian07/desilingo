@@ -94,6 +94,17 @@ export function useRecorder(onRecording?: (recording: Recording) => void) {
     return recording
   }, [teardown])
 
+  /**
+   * Leaving an exercise mid-recording used to leave the microphone live until
+   * the 8s cap fired, and could then submit a paid transcription for a screen
+   * the learner had already navigated away from.
+   */
+  useEffect(() => () => {
+    stoppingRef.current = true
+    chunksRef.current = []
+    teardown()
+  }, [teardown])
+
   const start = useCallback(async (): Promise<boolean> => {
     if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia || typeof AudioContext === 'undefined') {
       setState('unsupported')

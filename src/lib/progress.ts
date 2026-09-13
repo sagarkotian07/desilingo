@@ -184,15 +184,42 @@ export function exportProgress(lang: LangCode): string {
   return JSON.stringify(snapshot(lang), null, 2)
 }
 
+/**
+ * Shape check for imported backups.
+ *
+ * The previous version trusted whatever parsed. An object-valued `totalXP`
+ * would be persisted happily and then crash React when the header tried to
+ * render it -- and `importProgress` still reported success, so the learner had
+ * a broken app and no idea why.
+ */
+function isValidProgress(v: unknown): v is Progress {
+  if (typeof v !== 'object' || v === null) return false
+  const p = v as Record<string, unknown>
+
+  if (typeof p.totalXP !== 'number' || !Number.isFinite(p.totalXP) || p.totalXP < 0) return false
+  if (typeof p.streak !== 'number' || !Number.isFinite(p.streak) || p.streak < 0) return false
+  if (p.lastPlayed !== null && typeof p.lastPlayed !== 'string') return false
+  if (typeof p.lessons !== 'object' || p.lessons === null || Array.isArray(p.lessons)) return false
+
+  for (const entry of Object.values(p.lessons as Record<string, unknown>)) {
+    if (typeof entry !== 'object' || entry === null) return false
+    const e = entry as Record<string, unknown>
+    if (typeof e.accuracy !== 'number' || !Number.isFinite(e.accuracy)) return false
+    if (typeof e.xp !== 'number' || !Number.isFinite(e.xp)) return false
+    if (typeof e.completedAt !== 'string') return false
+  }
+  return true
+}
+
 export function importProgress(lang: LangCode, json: string): boolean {
   try {
-    const parsed = JSON.parse(json) as Partial<Progress>
-    if (typeof parsed !== 'object' || parsed === null) return false
+    const parsed: unknown = JSON.parse(json)
+    if (!isValidProgress(parsed)) return false
     commit(lang, {
-      lessons: parsed.lessons ?? {},
-      totalXP: parsed.totalXP ?? 0,
-      streak: parsed.streak ?? 0,
-      lastPlayed: parsed.lastPlayed ?? null,
+      lessons: parsed.lessons,
+      totalXP: parsed.totalXP,
+      streak: parsed.streak,
+      lastPlayed: parsed.lastPlayed,
     })
     return true
   } catch {

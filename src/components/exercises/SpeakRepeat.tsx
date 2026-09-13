@@ -7,6 +7,7 @@ import type { PronunciationResult, Verdict } from '@/lib/scoring/score'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio, PACE_SLOW } from '@/lib/useAudio'
+import { clipKey } from '@/lib/clips'
 import { useRecorder, type Recording } from '@/lib/useRecorder'
 import { Prompt, ContinueButton } from './shared'
 
@@ -62,11 +63,15 @@ export function SpeakRepeat({
 
     setSending(true)
     try {
+      // Send the phrase's content-addressed key rather than the text itself:
+      // the server resolves it against the manifest, so this endpoint can only
+      // ever be asked to score a phrase we actually ship.
+      const key = clipKey(lang, exercise.target)
+      if (!key) throw new Error('No audio is available for this phrase yet')
+
       const form = new FormData()
       form.append('audio', rec.blob, rec.filename)
-      form.append('filename', rec.filename)
-      form.append('lang', lang)
-      form.append('target', exercise.target)
+      form.append('phraseKey', key)
       form.append('rmsPeak', String(rec.rmsPeak))
 
       const res = await fetch('/api/stt', { method: 'POST', body: form })
@@ -87,17 +92,26 @@ export function SpeakRepeat({
 
 
   const recording = recorder.state === 'recording'
-  const busy = sending || recorder.state === 'processing'
+  const busy = sending || recorder.state === 'processing' || recorder.state === 'requesting'
 
   async function toggle() {
     setError(null)
-    if (!recording) { await recorder.start(); return }
+    if (!recording) {
+      // Clear the previous verdict before recording again, otherwise the old
+      // feedback stays on screen and its "Continue anyway" lets the learner
+      // advance on a result that no longer reflects what they just said.
+      setResult(null)
+      await recorder.start()
+      return
+    }
     // Scoring is driven by the recorder's callback, so the 8-second cap and a
     // manual stop take exactly the same path.
     await recorder.stop()
   }
 
   const copy = result ? COPY[result.verdict] : null
+  // After a few tries we stop asking. Speaking never blocks progress, and an
+  // unbounded retry loop on a phrase the model keeps mishearing is dispiriting.
   const exhausted = attempts >= MAX_ATTEMPTS
 
   return (
@@ -128,7 +142,7 @@ export function SpeakRepeat({
         <button
           type="button"
           onClick={() => void toggle()}
-          disabled={busy}
+          disabled={busy || (exhausted && !result?.passed)}
           aria-pressed={recording}
           aria-label={recording ? 'Stop recording' : 'Start recording'}
           className={`grid h-20 w-20 place-items-center rounded-full border-2 transition-all active:scale-95 disabled:opacity-60 ${

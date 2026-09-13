@@ -25,7 +25,10 @@ export function ListenTypeRoman({
   const [typed, setTyped] = useState('')
   const [checked, setChecked] = useState(false)
 
-  useEffect(() => { void audio.play(exercise.target) }, [exercise.target, audio])
+  // Depends on the play callback only. Depending on the whole `audio` object
+  // used to re-run this on every render and loop the clip.
+  const play = audio.play
+  useEffect(() => { void play(exercise.target) }, [exercise.target, play])
 
   const correct = checked && romanMatches(typed, exercise.romanized)
 

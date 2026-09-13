@@ -144,3 +144,31 @@ export function wordTokens(input: string, lang: LangCode): WordToken[] {
   const compareWords = foldOrthography(display, lang).split(' ').filter(Boolean)
   return displayWords.map((d, i) => ({ display: d, compare: compareWords[i] ?? d }))
 }
+
+/**
+ * Share of letters written in this language's script, 0..1.
+ *
+ * Used to tell "answered in English" apart from "pronounced it badly". We pass
+ * an explicit language_code to Sarvam, which suppresses its own language
+ * detection, so the field it returns cannot be relied on for this.
+ *
+ * Honest about the limit: Sarvam often transliterates English INTO the target
+ * script ("I do not want it" comes back as आई डू नॉट वांट इट), and no amount of
+ * script analysis catches that. Those attempts fall through to a very low
+ * similarity score, which is the right outcome anyway -- this check exists for
+ * the case where the transcript comes back in Latin letters.
+ */
+export function targetScriptShare(text: string, lang: LangCode): number {
+  const base = LANGUAGE_CONFIG[lang].scriptBase
+  let inScript = 0
+  let letters = 0
+  for (const ch of text) {
+    const code = ch.codePointAt(0)!
+    const isLatin = (code >= 0x41 && code <= 0x5a) || (code >= 0x61 && code <= 0x7a)
+    const isTarget = code >= base && code <= base + 0x7f
+    if (!isLatin && !isTarget) continue
+    letters++
+    if (isTarget) inScript++
+  }
+  return letters === 0 ? 1 : inScript / letters
+}

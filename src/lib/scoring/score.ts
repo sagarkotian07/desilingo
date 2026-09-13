@@ -1,7 +1,7 @@
 import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
 import { alignWords, overallScore, type WordJudgement } from './align'
 import { graphemeDistance } from './similarity'
-import { graphemes, wordTokens, normalizeIndic } from './normalize'
+import { graphemes, wordTokens, normalizeIndic, targetScriptShare } from './normalize'
 import { phonemize } from './phonemize'
 
 export type Verdict =
@@ -129,8 +129,15 @@ export function scorePronunciation(input: ScoreInput): PronunciationResult {
   // Language mismatch only counts when the attempt also scored poorly: Sarvam
   // sometimes tags a short correct utterance with the wrong language, and we
   // would rather accept it than reject a learner who was right.
+  //
+  // Two signals, because neither is sufficient alone. Sarvam's detected language
+  // is only meaningful when it actually ran detection, and we pass an explicit
+  // language code (which suppresses it) to keep transcription accurate. The
+  // script check covers the common case it misses: a transcript that came back
+  // in Latin letters.
   const expected = LANGUAGE_CONFIG[lang].sarvam
-  if (detectedLanguage && detectedLanguage !== expected && score < 0.5) {
+  const mostlyLatin = targetScriptShare(transcript, lang) < 0.34
+  if ((mostlyLatin || (detectedLanguage && detectedLanguage !== expected)) && score < 0.5) {
     return {
       verdict: 'wrong-language', score, orthographicScore, phoneticScore,
       words: orthAlign, heardTranscript: heardDisplay, passed: false,

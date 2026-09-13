@@ -48,9 +48,29 @@ export function clientIp(req: Request): string {
   return req.headers.get('x-real-ip') ?? 'unknown'
 }
 
-/** Filters naive curl loops for free. Trivially spoofable, so it is a filter,
- *  not a security boundary. */
+/**
+ * Whether a request plausibly came from our own pages.
+ *
+ * Still spoofable by anything that sets headers deliberately, so this is a
+ * filter rather than a security boundary -- but it now rejects the default
+ * curl/script case instead of welcoming it. The previous version treated a
+ * MISSING Sec-Fetch-Site as same-origin, which is exactly what a bare curl
+ * sends, so the check passed for the traffic it was meant to stop.
+ */
 export function isSameOrigin(req: Request): boolean {
-  const site = req.headers.get('sec-fetch-site')
-  return site === null || site === 'same-origin' || site === 'none'
+  const origin = req.headers.get('origin')
+  const host = req.headers.get('host')
+
+  // Browsers send Origin on cross-origin requests and on same-origin non-GET
+  // fetches, so when it is present it is the strongest signal we have.
+  if (origin) {
+    try {
+      return new URL(origin).host === host
+    } catch {
+      return false
+    }
+  }
+
+  // No Origin: require the browser to vouch for it explicitly.
+  return req.headers.get('sec-fetch-site') === 'same-origin'
 }

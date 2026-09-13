@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { clipKey, clipUrl, repairUrl } from './clips'
 import { PACE_NORMAL, PACE_SLOW } from './audio'
 import type { LangCode } from './languages'
@@ -63,5 +63,15 @@ export function useAudio(lang: LangCode) {
     setPlaying(null)
   }, [])
 
-  return { play, stop, playing, blocked, isPlaying: playing !== null }
+  /**
+   * Memoised so the returned object is referentially stable.
+   *
+   * Returning a fresh object literal made every consumer's autoplay effect
+   * re-fire on each render: the clip ended, state changed, the object identity
+   * changed, the effect ran again, and the phrase replayed forever.
+   */
+  return useMemo(
+    () => ({ play, stop, playing, blocked, isPlaying: playing !== null }),
+    [play, stop, playing, blocked],
+  )
 }

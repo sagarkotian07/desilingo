@@ -25,7 +25,10 @@ export function ListenChoose({
 
   // Play on arrival. If the browser blocks autoplay this quietly does nothing
   // and the learner uses the speaker button instead.
-  useEffect(() => { void audio.play(exercise.target) }, [exercise.target, audio])
+  // Depends on the play callback only. Depending on the whole `audio` object
+  // used to re-run this on every render and loop the clip.
+  const play = audio.play
+  useEffect(() => { void play(exercise.target) }, [exercise.target, play])
 
   const answered = chosen !== null
 
