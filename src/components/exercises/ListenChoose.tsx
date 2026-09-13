@@ -7,6 +7,7 @@ import { shuffleOptions } from '@/lib/shuffle'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio } from '@/lib/useAudio'
+import { AudioTrouble } from './AudioTrouble'
 import { Prompt, OptionButton, Feedback, ContinueButton, type OptionState } from './shared'
 
 type Ex = Extract<Exercise, { type: 'listen-choose' }>
@@ -64,6 +65,8 @@ export function ListenChoose({
         )}
       </div>
 
+
+      {audio.failed && <AudioTrouble onSkip={() => onDone(false)} />}
 
       {/* An audio-only question is unanswerable if you cannot hear it, and
           browsers block autoplay until a gesture. This reveals the script --

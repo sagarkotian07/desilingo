@@ -113,4 +113,57 @@ describe('ExerciseRunner', () => {
     expect(await screen.findByText('Lesson complete')).toBeTruthy()
     expect(screen.getByText('2/2')).toBeTruthy()
   })
+
+  it('skips forward and counts the skipped exercise as not known', async () => {
+    const user = userEvent.setup()
+    renderRunner()
+    await screen.findByText('1/2')
+    await user.click(screen.getByRole('button', { name: /skip/ }))
+    expect(await screen.findByText('2/2')).toBeTruthy()
+  })
+
+  it('goes back to the previous exercise', async () => {
+    const user = userEvent.setup()
+    renderRunner()
+    await user.click(await screen.findByRole('button', { name: 'No' }))
+    await user.click(screen.getByRole('button', { name: /Continue/ }))
+    await screen.findByText('2/2')
+    await user.click(screen.getByRole('button', { name: /prev/ }))
+    expect(await screen.findByText('1/2')).toBeTruthy()
+  })
+
+  it('hides prev on the first exercise', async () => {
+    renderRunner()
+    await screen.findByText('1/2')
+    expect(screen.getByRole('button', { name: /prev/ })).toHaveProperty('disabled', true)
+  })
+
+  /**
+   * Going back re-renders the exercise, so without keying results by id a
+   * learner could answer wrong, go back, answer right, and inflate accuracy.
+   */
+  it('keeps the first answer when an exercise is revisited', async () => {
+    const user = userEvent.setup()
+    renderRunner()
+    // Wrong first.
+    await user.click(await screen.findByRole('button', { name: 'Yes' }))
+    await user.click(screen.getByRole('button', { name: /Continue/ }))
+    await screen.findByText('2/2')
+    // Back, then right.
+    await user.click(screen.getByRole('button', { name: /prev/ }))
+    await user.click(await screen.findByRole('button', { name: 'No' }))
+    await user.click(screen.getByRole('button', { name: /Continue/ }))
+    // Finish the second one correctly.
+    await user.click(await screen.findByRole('button', { name: "Let's go" }))
+    await user.click(screen.getByRole('button', { name: /Continue/ }))
+
+    // Review round for the one first answered wrong.
+    await screen.findByText('review')
+    await user.click(await screen.findByRole('button', { name: 'No' }))
+    await user.click(screen.getByRole('button', { name: /Continue/ }))
+
+    expect(await screen.findByText('Lesson complete')).toBeTruthy()
+    // 1 of 2 on first pass, not 2 of 2.
+    expect(screen.getByText('1/2')).toBeTruthy()
+  })
 })

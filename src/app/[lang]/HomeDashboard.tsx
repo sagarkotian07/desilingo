@@ -46,6 +46,20 @@ export function HomeDashboard({
       </p>
       <p className="mt-4 text-lg text-ink-soft">{tagline}</p>
 
+      {/* Streaks lived only in the header, where they were easy to miss and
+          carried none of the weight they should. */}
+      {progress.streak > 0 && (
+        <div className="mt-6 flex items-center justify-center gap-3 rounded-2xl border border-terracotta/30 bg-terracotta-soft px-5 py-3">
+          <span className="text-2xl" aria-hidden="true">🔥</span>
+          <div className="text-left">
+            <p className="font-bold text-terracotta">
+              {progress.streak} day{progress.streak === 1 ? '' : 's'} in a row
+            </p>
+            <p className="text-xs text-ink-soft">{progress.totalXP} XP earned so far</p>
+          </div>
+        </div>
+      )}
+
       <Link
         href={`/${lang}/lesson/${next.id}`}
         className="mt-8 block rounded-2xl bg-indigo px-6 py-4 text-lg font-bold text-white shadow-[var(--shadow)] transition-transform active:scale-[0.99] dark:text-indigo-soft"

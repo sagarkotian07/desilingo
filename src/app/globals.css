@@ -91,6 +91,17 @@ body {
 .script-te { font-family: var(--font-telu), var(--font-ui), sans-serif; }
 .script-bn { font-family: var(--font-beng), var(--font-ui), sans-serif; }
 
+/*
+ * Large-text mode, toggled by the Aa control.
+ *
+ * Scales the base size (which most of the UI inherits through rem) and then
+ * bumps native-script text specifically -- Indic marks sit above and below the
+ * baseline and are the first thing to become unreadable when text is small.
+ */
+:root { font-size: 16px; }
+[data-fontsize="large"] { font-size: 18px; }
+[data-fontsize="large"] .script { font-size: 1.12em; line-height: 1.75; }
+
 /* One visible focus treatment everywhere. The reference app had none, which made
    the whole quiz unusable from a keyboard. */
 :where(a, button, input, [tabindex]):focus-visible {

@@ -55,9 +55,13 @@ export function SelectPhrase({
 
       {answered && (
         <>
+          {/* Show the phrase either way. Getting it right is exactly when the
+              spelling and romanization are worth a second look, and hiding
+              them rewards a correct guess with less information. */}
           <Feedback correct={chosen === answer}>
-            {chosen === answer ? null : (
-              <>The right one is <Script lang={lang} className="font-bold">{options[answer].text}</Script>.</>
+            <Script lang={lang} className="font-bold">{options[answer].text}</Script>
+            {options[answer].romanized && (
+              <span className="ml-2 italic text-ink-soft">{options[answer].romanized}</span>
             )}
           </Feedback>
           <ContinueButton onClick={() => onDone(chosen === answer)} />

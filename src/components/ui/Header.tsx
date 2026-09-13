@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useProgress } from '@/lib/progress'
 import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
+import { FontSizeToggle } from './FontSizeToggle'
 
 /**
  * Reads from the shared progress store, so XP and streak update the moment a
@@ -30,6 +31,7 @@ export function Header({ lang, back }: { lang: LangCode; back?: { href: string; 
         )}
 
         <div className="ml-auto flex items-center gap-2 text-sm">
+          <FontSizeToggle />
           {progress.streak > 0 && (
             <span
               className="rounded-full bg-terracotta-soft px-2.5 py-1 font-semibold text-terracotta"

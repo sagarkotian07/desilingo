@@ -18,6 +18,9 @@ export { PACE_NORMAL, PACE_SLOW }
 export function useAudio(lang: LangCode) {
   const [playing, setPlaying] = useState<string | null>(null)
   const [blocked, setBlocked] = useState(false)
+  /** Set when both the static clip and the repair route fail, so the UI can
+   *  offer a way out instead of leaving the learner stuck on a silent card. */
+  const [failed, setFailed] = useState(false)
   const ref = useRef<HTMLAudioElement | null>(null)
 
   useEffect(() => () => { ref.current?.pause(); ref.current = null }, [])
@@ -29,6 +32,7 @@ export function useAudio(lang: LangCode) {
       if (!src || !key) return
 
       ref.current?.pause()
+      setFailed(false)
       const audio = new Audio(src)
       ref.current = audio
       const token = `${text}|${pace}`
@@ -39,7 +43,7 @@ export function useAudio(lang: LangCode) {
 
       // Static file missing: fall back to synthesizing it once.
       audio.addEventListener('error', () => {
-        if (audio.src.includes('/api/tts')) { done(); return }
+        if (audio.src.includes('/api/tts')) { setFailed(true); done(); return }
         audio.src = repairUrl(key)
         audio.play().catch(() => done())
       })
@@ -71,7 +75,7 @@ export function useAudio(lang: LangCode) {
    * changed, the effect ran again, and the phrase replayed forever.
    */
   return useMemo(
-    () => ({ play, stop, playing, blocked, isPlaying: playing !== null }),
-    [play, stop, playing, blocked],
+    () => ({ play, stop, playing, blocked, failed, isPlaying: playing !== null }),
+    [play, stop, playing, blocked, failed],
   )
 }

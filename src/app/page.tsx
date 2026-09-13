@@ -3,6 +3,7 @@ import { LANGUAGES, LANGUAGE_CONFIG } from '@/lib/languages'
 import { AVAILABLE_LANGUAGES } from '@/content'
 import { Kolam } from '@/components/ui/Motifs'
 import { Script } from '@/components/ui/Script'
+import { ContinueLearning } from './ContinueLearning'
 
 export default function LanguagePicker() {
   return (
@@ -20,7 +21,11 @@ export default function LanguagePicker() {
         </p>
       </header>
 
-      <h2 className="mt-12 text-center text-sm font-semibold uppercase tracking-widest text-ink-faint">
+      <div className="mt-12">
+        <ContinueLearning />
+      </div>
+
+      <h2 className="text-center text-sm font-semibold uppercase tracking-widest text-ink-faint">
         Pick a language
       </h2>
 

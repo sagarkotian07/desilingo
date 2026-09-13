@@ -48,34 +48,64 @@ export function ExerciseRunner({
   const [queue, setQueue] = useState<Exercise[]>(lesson.exercises)
   const [index, setIndex] = useState(0)
   const [missed, setMissed] = useState<Exercise[]>([])
-  const [firstPassCorrect, setFirstPassCorrect] = useState(0)
+  /**
+   * First-pass result per exercise id.
+   *
+   * Keyed rather than counted so navigating back and re-answering cannot
+   * inflate accuracy: the first answer for an exercise is the one that counts.
+   */
+  const [results, setResults] = useState<Record<string, boolean>>({})
   const [reviewing, setReviewing] = useState(false)
   const [reviewPass, setReviewPass] = useState(0)
   const [finished, setFinished] = useState(false)
   const exerciseRef = useRef<HTMLDivElement>(null)
 
-  // Focus follows the exercise, not the button that disappeared.
+  // Focus follows the exercise, not the button that disappeared. Scrolling
+  // resets too: a long exercise otherwise leaves the next one starting
+  // mid-page.
   useEffect(() => {
-    if (mounted) exerciseRef.current?.focus()
+    if (!mounted) return
+    exerciseRef.current?.focus()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [index, reviewing, mounted])
 
-  function handleDone(correct: boolean) {
-    // Accuracy is measured on the first pass only, so the review round can't
-    // inflate it -- but getting it right in review still clears the exercise.
-    if (!reviewing) {
-      if (correct) setFirstPassCorrect((n) => n + 1)
-      else setMissed((m) => [...m, queue[index]])
-    }
+  /** Replay the lesson without leaving the screen. */
+  function practiceAgain() {
+    setQueue(lesson.exercises)
+    setIndex(0)
+    setMissed([])
+    setResults({})
+    setReviewing(false)
+    setReviewPass(0)
+    setFinished(false)
+  }
 
-    // Track misses in the review round too. Previously anything answered in
-    // review was cleared regardless of whether it was right, so a learner could
-    // get every review answer wrong and still finish the lesson.
-    if (reviewing && !correct) setMissed((m) => [...m, queue[index]])
+  const firstPassCorrect = Object.values(results).filter(Boolean).length
+
+  function handleDone(correct: boolean) {
+    const current = queue[index]
+
+    // Accuracy is measured on the first pass only, so the review round cannot
+    // inflate it -- but getting it right in review still clears the exercise.
+    const recorded = reviewing || current.id in results
+      ? results
+      : { ...results, [current.id]: correct }
+    if (recorded !== results) setResults(recorded)
+
+    // Track misses in the review round too. Anything answered in review used to
+    // be cleared regardless of whether it was right, so a learner could get
+    // every review answer wrong and still finish the lesson.
+    if (!correct) {
+      setMissed((m) => (m.some((x) => x.id === current.id) ? m : [...m, current]))
+    }
 
     const next = index + 1
     if (next < queue.length) { setIndex(next); return }
 
-    const stillMissed = correct ? missed : [...missed, queue[index]]
+    const stillMissed = correct
+      ? missed.filter((x) => x.id !== current.id)
+      : (missed.some((x) => x.id === current.id) ? missed : [...missed, current])
+
     // Cap the number of review rounds: repeating a phrase the learner keeps
     // missing is discouraging, and an uncapped loop is inescapable.
     if (stillMissed.length > 0 && reviewPass < MAX_REVIEW_PASSES) {
@@ -87,9 +117,13 @@ export function ExerciseRunner({
       return
     }
 
-    completeLesson(lang, lesson.id, correct && !reviewing ? firstPassCorrect + 1 : firstPassCorrect, total)
+    completeLesson(lang, lesson.id, Object.values(recorded).filter(Boolean).length, total)
     setFinished(true)
   }
+
+  /** Skipping counts as not knowing it -- it must never earn XP. */
+  const handleSkip = () => handleDone(false)
+  const handlePrev = () => setIndex((i) => Math.max(0, i - 1))
 
   if (finished) {
     const correct = firstPassCorrect
@@ -113,6 +147,13 @@ export function ExerciseRunner({
         </div>
 
         <div className="mt-8 flex flex-col gap-3">
+          <button
+            type="button"
+            onClick={practiceAgain}
+            className="rounded-2xl border-2 border-line px-6 py-3 font-semibold text-ink transition-transform active:scale-[0.99]"
+          >
+            Practice again <span aria-hidden="true">🔄</span>
+          </button>
           {nextLessonId && (
             <Link
               href={`/${lang}/lesson/${nextLessonId}`}
@@ -157,6 +198,27 @@ export function ExerciseRunner({
             One more look at the ones that slipped
           </p>
         )}
+
+        {/* Forward-only navigation makes a mis-tap unrecoverable. Going back
+            re-renders the exercise, but the first answer is what counts, so
+            revisiting can never inflate the score. */}
+        <div className="mt-2 flex items-center justify-between text-xs">
+          <button
+            type="button"
+            onClick={handlePrev}
+            disabled={index === 0}
+            className="rounded px-1.5 py-0.5 font-semibold text-ink-faint hover:text-ink disabled:invisible"
+          >
+            <span aria-hidden="true">←</span> prev
+          </button>
+          <button
+            type="button"
+            onClick={handleSkip}
+            className="rounded px-1.5 py-0.5 font-semibold text-ink-faint hover:text-ink"
+          >
+            skip <span aria-hidden="true">→</span>
+          </button>
+        </div>
       </div>
 
       {/* Moving focus to the new exercise and announcing it: without this the

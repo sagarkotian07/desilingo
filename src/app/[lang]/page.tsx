@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { isLangCode, LANGUAGE_CONFIG } from '@/lib/languages'
 import { getCourse, allLessons } from '@/content'
 import { Header } from '@/components/ui/Header'
+import { RememberLanguage } from '@/components/ui/RememberLanguage'
 import { HomeDashboard } from './HomeDashboard'
 
 export default async function Home({ params }: PageProps<'/[lang]'>) {
@@ -16,6 +17,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
 
   return (
     <>
+      <RememberLanguage lang={lang} />
       <Header lang={lang} />
       <HomeDashboard
         lang={lang}

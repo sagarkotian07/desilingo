@@ -5,8 +5,10 @@ import type { Exercise } from '@/content/schema'
 import type { LangCode } from '@/lib/languages'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
-import { useAudio, PACE_SLOW } from '@/lib/useAudio'
+import { useAudio, PACE_NORMAL } from '@/lib/useAudio'
+import { SpeedToggle } from '@/components/ui/SpeedToggle'
 import { romanMatches } from '@/lib/scoring/roman'
+import { AudioTrouble } from './AudioTrouble'
 import { Prompt, Feedback, ContinueButton } from './shared'
 
 type Ex = Extract<Exercise, { type: 'listen-type-roman' }>
@@ -25,6 +27,7 @@ export function ListenTypeRoman({
   const [typed, setTyped] = useState('')
   const [checked, setChecked] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  const [pace, setPace] = useState(PACE_NORMAL)
 
   // Depends on the play callback only. Depending on the whole `audio` object
   // used to re-run this on every render and loop the clip.
@@ -41,14 +44,15 @@ export function ListenTypeRoman({
 
       <div className="flex flex-col items-center rounded-3xl border border-line bg-surface p-6 shadow-[var(--shadow)]">
         <div className="flex items-center gap-3">
-          <SpeakerButton onPlay={() => void audio.play(exercise.target)} playing={audio.isPlaying} label="Play the phrase" />
-          <button
-            type="button"
-            onClick={() => void audio.play(exercise.target, PACE_SLOW)}
-            className="rounded-full border border-line px-3 py-2 text-xs font-semibold text-ink-soft hover:text-ink"
-          >
-            Slow
-          </button>
+          <SpeakerButton
+            onPlay={() => void audio.play(exercise.target, pace)}
+            playing={audio.isPlaying}
+            label="Play the phrase"
+          />
+          <SpeedToggle
+            pace={pace}
+            onChange={(next) => { setPace(next); void audio.play(exercise.target, next) }}
+          />
         </div>
 
         {revealed && (
@@ -69,6 +73,8 @@ export function ListenTypeRoman({
         />
       </div>
 
+
+      {audio.failed && <AudioTrouble onSkip={() => onDone(false)} />}
 
       {/* An audio-only question is unanswerable if you cannot hear it, and
           browsers block autoplay until a gesture. This reveals the script --

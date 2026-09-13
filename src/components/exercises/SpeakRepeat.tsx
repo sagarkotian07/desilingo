@@ -6,7 +6,8 @@ import type { LangCode } from '@/lib/languages'
 import type { PronunciationResult, Verdict } from '@/lib/scoring/score'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
-import { useAudio, PACE_SLOW } from '@/lib/useAudio'
+import { useAudio, PACE_NORMAL } from '@/lib/useAudio'
+import { SpeedToggle } from '@/components/ui/SpeedToggle'
 import { clipKey } from '@/lib/clips'
 import { useRecorder, type Recording } from '@/lib/useRecorder'
 import { Prompt, ContinueButton } from './shared'
@@ -48,6 +49,7 @@ export function SpeakRepeat({
   const [attempts, setAttempts] = useState(0)
   const [error, setError] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
+  const [pace, setPace] = useState(PACE_NORMAL)
 
   const score = useCallback(async (rec: Recording) => {
     // Nothing was captured, or the mic was muted. Answer locally rather than
@@ -135,14 +137,15 @@ export function SpeakRepeat({
         <p className="mt-1 text-sm text-ink-soft">{exercise.english}</p>
 
         <div className="mt-4 flex items-center justify-center gap-3">
-          <SpeakerButton onPlay={() => void audio.play(exercise.target)} playing={audio.isPlaying} label="Play at normal speed" />
-          <button
-            type="button"
-            onClick={() => void audio.play(exercise.target, PACE_SLOW)}
-            className="rounded-full border border-line bg-surface px-3 py-2 text-xs font-semibold text-ink-soft transition-colors hover:border-indigo/40 hover:text-ink"
-          >
-            Slow
-          </button>
+          <SpeakerButton
+            onPlay={() => void audio.play(exercise.target, pace)}
+            playing={audio.isPlaying}
+            label="Play the phrase"
+          />
+          <SpeedToggle
+            pace={pace}
+            onChange={(next) => { setPace(next); void audio.play(exercise.target, next) }}
+          />
         </div>
       </div>
 
