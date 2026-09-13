@@ -36,6 +36,19 @@ jobs:
         # which would otherwise reach production as silent 404s.
         run: npm run verify:audio
 
+      - name: Ensure the old product name is gone
+        # The rename to Desilingo must not regress. The one permitted mention is
+        # the legacy localStorage key we migrate away from.
+        run: |
+          hits=$(grep -rniI "indiligo" src/ scripts/ tests/ README.md 2>/dev/null \
+                 | grep -v "legacyKey\|indiligo:progress\|Pre-rename key\|progress-migration" || true)
+          if [ -n "$hits" ]; then
+            echo "$hits"
+            echo "::error::Found 'Indiligo'. The product is called Desilingo."
+            exit 1
+          fi
+          echo "OK: no stray references to the old name."
+
       - name: Ensure the API key was never exposed to the client
         run: |
           if grep -rn "NEXT_PUBLIC_SARVAM" src/ scripts/ 2>/dev/null; then

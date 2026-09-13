@@ -25,7 +25,7 @@ export function Header({ lang, back }: { lang: LangCode; back?: { href: string; 
           </Link>
         ) : (
           <Link href={`/${lang}`} className="flex items-center gap-2 font-bold text-ink">
-            <span aria-hidden="true">{cfg.emoji}</span> Indiligo
+            <span aria-hidden="true">{cfg.emoji}</span> Desilingo
           </Link>
         )}
 

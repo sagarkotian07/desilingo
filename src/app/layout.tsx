@@ -14,7 +14,7 @@ const telu = Noto_Sans_Telugu({ variable: '--font-telu', subsets: ['telugu'], di
 const beng = Noto_Sans_Bengali({ variable: '--font-beng', subsets: ['bengali'], display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Indiligo — learn India\'s languages by ear',
+  title: 'Desilingo — learn India\'s languages by ear',
   description:
     'Short, voice-first lessons in Hindi, Kannada, Tamil, Telugu, Bengali and Marathi. ' +
     'Real spoken phrases, native voices, and pronunciation practice that actually listens.',

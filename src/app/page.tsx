@@ -10,7 +10,7 @@ export default function LanguagePicker() {
       <Kolam className="pointer-events-none absolute left-1/2 top-8 -z-10 w-[520px] -translate-x-1/2 text-indigo opacity-[0.07]" />
 
       <header className="text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-marigold">Indiligo</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-marigold">Desilingo</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-ink">
           Learn India&rsquo;s languages by ear
         </h1>

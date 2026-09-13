@@ -1,5 +1,5 @@
 /**
- * The six languages Indiligo teaches, and everything that varies between them.
+ * The six languages Desilingo teaches, and everything that varies between them.
  *
  * Sarvam's bulbul:v3 TTS covers 11 Indian languages; all six of ours are in that
  * set. Speakers are not language-bound — any speaker can read any language — so

@@ -1,4 +1,4 @@
-# Indiligo
+# Desilingo
 
 **Learn India's languages by ear.** Short, voice-first lessons in Hindi, Kannada, Tamil, Telugu, Bengali and Marathi — built on [Sarvam AI](https://sarvam.ai)'s Indian speech models.
 

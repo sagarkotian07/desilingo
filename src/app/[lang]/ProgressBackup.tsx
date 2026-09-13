@@ -20,7 +20,7 @@ export function ProgressBackup({ lang }: { lang: LangCode }) {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `indiligo-${lang}-progress.json`
+    a.download = `desilingo-${lang}-progress.json`
     a.click()
     URL.revokeObjectURL(url)
     setNote('Saved to your downloads.')
@@ -28,7 +28,7 @@ export function ProgressBackup({ lang }: { lang: LangCode }) {
 
   async function restore(file: File) {
     const ok = importProgress(lang, await file.text())
-    setNote(ok ? 'Progress restored.' : "That file didn't look like an Indiligo backup.")
+    setNote(ok ? 'Progress restored.' : "That file didn't look like a Desilingo backup.")
   }
 
   return (

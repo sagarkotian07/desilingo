@@ -36,7 +36,27 @@ export const EMPTY: Progress = { lessons: {}, totalXP: 0, streak: 0, lastPlayed:
 export const XP_PER_CORRECT = 2
 export const XP_PERFECT_BONUS = 5
 
-const key = (lang: LangCode) => `indiligo:progress:${lang}`
+const key = (lang: LangCode) => `desilingo:progress:${lang}`
+/** Pre-rename key. Read once so existing learners don't silently lose everything. */
+const legacyKey = (lang: LangCode) => `indiligo:progress:${lang}`
+
+/**
+ * Moves progress from the old namespace on first read after the rename.
+ *
+ * Renaming the key without this would wipe every existing learner's history --
+ * the data would still be in localStorage, just under a name nothing reads.
+ */
+function migrateLegacy(lang: LangCode): string | null {
+  try {
+    const legacy = localStorage.getItem(legacyKey(lang))
+    if (legacy === null) return null
+    localStorage.setItem(key(lang), legacy)
+    localStorage.removeItem(legacyKey(lang))
+    return legacy
+  } catch {
+    return null
+  }
+}
 
 function today(): string {
   return new Date().toISOString().slice(0, 10)
@@ -64,7 +84,7 @@ function withDecay(p: Progress): Progress {
 
 function read(lang: LangCode): Progress {
   try {
-    const raw = localStorage.getItem(key(lang))
+    const raw = localStorage.getItem(key(lang)) ?? migrateLegacy(lang)
     if (!raw) return EMPTY
     const parsed = JSON.parse(raw) as Partial<Progress>
     return withDecay({
