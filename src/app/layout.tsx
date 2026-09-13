@@ -25,6 +25,9 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="en"
+      // The bootstrap script below sets data-fontsize before React hydrates, so
+      // the server HTML deliberately differs from the client on this element.
+      suppressHydrationWarning
       className={`${ui.variable} ${deva.variable} ${knda.variable} ${taml.variable} ${telu.variable} ${beng.variable} h-full antialiased`}
     >
       <head>
