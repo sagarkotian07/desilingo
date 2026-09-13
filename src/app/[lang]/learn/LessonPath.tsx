@@ -63,16 +63,14 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
   })
   const height = rows.length * ROW
 
-  const path = (pts: typeof points) =>
-    pts.map((p, i) => {
-      if (i === 0) return `M ${p.x} ${p.y}`
-      const prev = pts[i - 1]
-      const cy = (prev.y + p.y) / 2
-      return `C ${prev.x} ${cy}, ${p.x} ${cy}, ${p.x} ${p.y}`
-    }).join(' ')
-
-  const lastDone = points.reduce((acc, p, i) => (p.done ? i : acc), -1)
-  const donePath = lastDone >= 0 ? path(points.slice(0, lastDone + 1)) : ''
+  const segment = (a: (typeof points)[number], b: (typeof points)[number]) => {
+    const cy = (a.y + b.y) / 2
+    return `M ${a.x} ${a.y} C ${a.x} ${cy}, ${b.x} ${cy}, ${b.x} ${b.y}`
+  }
+  // A segment lights up when the node it leaves from is done. Lessons can be
+  // finished out of order, so this is per-segment rather than "up to the last
+  // completed node" -- which drew the course colour through unfinished ones.
+  const segments = points.slice(1).map((b, i) => ({ d: segment(points[i], b), lit: points[i].done }))
 
   return (
     <main className="mx-auto w-full max-w-lg px-5 pb-24 pt-4">
@@ -84,20 +82,15 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
           preserveAspectRatio="xMidYMin meet"
           aria-hidden="true"
         >
-          <path d={path(points)} fill="none" stroke="var(--ink-faint)" strokeOpacity="0.45" strokeWidth="6" strokeLinecap="round" strokeDasharray="1 14" />
-          {donePath && (
-            <path
-              d={donePath}
-              fill="none"
-              stroke="var(--accent)"
-              strokeWidth="6"
-              strokeLinecap="round"
-              pathLength={1}
-              strokeDasharray={1}
-              strokeDashoffset={1}
-              style={{ animation: 'draw 900ms cubic-bezier(.2,.8,.2,1) forwards' }}
+          {segments.map((seg, i) => (
+            <path key={i} d={seg.d} fill="none" strokeWidth="6" strokeLinecap="round"
+              stroke={seg.lit ? 'var(--accent)' : 'var(--ink-faint)'}
+              strokeOpacity={seg.lit ? 1 : 0.45}
+              strokeDasharray={seg.lit ? undefined : '1 14'}
+              pathLength={seg.lit ? 1 : undefined}
+              style={seg.lit ? { strokeDasharray: 1, strokeDashoffset: 1, animation: `draw 700ms ${i * 120}ms cubic-bezier(.2,.8,.2,1) forwards` } : undefined}
             />
-          )}
+          ))}
         </svg>
 
         {rows.map((row, i) => {
