@@ -3,11 +3,10 @@
 import type { ReactNode } from 'react'
 import { Typewriter } from '@/components/ui/Typewriter'
 
-/** Instructions type themselves in. The height is reserved up front, so the
- *  card below never jumps as the text fills. */
+/** One short line above the exercise. Keep it to a few words. */
 export function Prompt({ children }: { children: string }) {
   return (
-    <p className="mb-5 text-center text-sm font-medium tracking-wide text-ink-soft">
+    <p className="mb-6 text-center text-xs font-bold uppercase tracking-[0.18em] text-ink-faint">
       <Typewriter text={children} />
     </p>
   )
@@ -17,25 +16,19 @@ export type OptionState = 'idle' | 'correct' | 'wrong' | 'muted'
 
 export function OptionButton({
   onClick, state, disabled, children,
-}: {
-  onClick: () => void
-  state: OptionState
-  disabled?: boolean
-  children: ReactNode
-}) {
+}: { onClick: () => void; state: OptionState; disabled?: boolean; children: ReactNode }) {
   const styles: Record<OptionState, string> = {
-    idle: 'border-line bg-surface hover:border-indigo/50 hover:bg-indigo-soft/40',
-    correct: 'border-leaf bg-leaf-soft text-ink',
-    wrong: 'border-terracotta bg-terracotta-soft text-ink',
-    muted: 'border-line/60 bg-surface/50 text-ink-faint',
+    idle: 'bg-surface text-ink shadow-[var(--shadow)] hover:shadow-[var(--shadow-lift)] hover:-translate-y-0.5',
+    correct: 'bg-accent text-accent-ink shadow-[var(--shadow-lift)] scale-[1.02]',
+    wrong: 'bg-terracotta-soft text-ink ring-2 ring-terracotta animate-shake',
+    muted: 'bg-surface text-ink-faint opacity-50',
   }
   return (
     <button
       type="button"
       onClick={onClick}
       disabled={disabled}
-      aria-disabled={disabled}
-      className={`min-h-16 rounded-2xl border-2 px-4 py-3 text-center transition-all active:scale-[0.98] disabled:active:scale-100 ${styles[state]}`}
+      className={`press min-h-16 w-full rounded-2xl px-5 py-4 text-left text-base font-semibold transition-all duration-200 ${styles[state]}`}
     >
       {children}
     </button>
@@ -43,36 +36,69 @@ export function OptionButton({
 }
 
 /**
- * Result banner.
+ * The bottom sheet: verdict plus the one button that moves you on.
  *
- * aria-live so a screen reader announces the outcome; the reference app rendered
- * feedback silently, which meant a non-sighted learner got no signal at all.
+ * Fixed to the bottom so the thumb never has to travel, and it slides in so
+ * the moment of feedback has a beat to it.
  */
-export function Feedback({
-  correct, children,
-}: { correct: boolean; children?: ReactNode }) {
+export function ActionBar({
+  correct, detail, label = 'Continue', onClick,
+}: { correct?: boolean; detail?: ReactNode; label?: string; onClick: () => void }) {
+  const hasVerdict = correct !== undefined
   return (
     <div
-      role="status"
-      aria-live="polite"
-      className={`animate-rise mt-5 rounded-2xl border-2 px-4 py-3 text-sm ${
-        correct ? 'border-leaf/40 bg-leaf-soft text-ink' : 'border-terracotta/40 bg-terracotta-soft text-ink'
-      }`}
+      className={`animate-slide-up fixed inset-x-0 bottom-0 z-30 border-t ${
+        !hasVerdict ? 'border-line bg-surface/95' : correct ? 'border-leaf/30 bg-leaf-soft' : 'border-terracotta/30 bg-terracotta-soft'
+      } backdrop-blur`}
     >
-      <span className="font-bold">{correct ? 'Correct' : 'Not quite'}</span>
-      {children ? <span className="ml-2">{children}</span> : null}
+      <div className="mx-auto flex max-w-2xl flex-col gap-3 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+        {hasVerdict && (
+          <div role="status" aria-live="polite" className="flex items-start gap-3">
+            <span className="display text-2xl leading-none" aria-hidden="true">{correct ? '✓' : '✗'}</span>
+            <div className="min-w-0">
+              <p className="display text-lg font-bold text-ink">{correct ? 'Correct' : 'Not quite'}</p>
+              {detail && <div className="mt-0.5 text-sm text-ink-soft">{detail}</div>}
+            </div>
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={onClick}
+          className={`press display w-full rounded-2xl px-6 py-4 text-lg font-bold shadow-[var(--shadow-lift)] ${
+            hasVerdict && !correct ? 'bg-ink text-ground' : 'bg-accent text-accent-ink'
+          }`}
+        >
+          {label}
+        </button>
+      </div>
     </div>
   )
 }
 
-export function ContinueButton({ onClick, label = 'Continue' }: { onClick: () => void; label?: string }) {
+/** For exercises with a Check step before the verdict. */
+export function CheckBar({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="animate-rise mt-4 w-full rounded-2xl bg-indigo px-6 py-4 text-base font-bold text-white shadow-[var(--shadow)] transition-transform active:scale-[0.99] dark:text-indigo-soft"
-    >
-      {label} <span aria-hidden="true">→</span>
-    </button>
+    <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur">
+      <div className="mx-auto max-w-2xl px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+        <button
+          type="button"
+          onClick={onClick}
+          disabled={disabled}
+          className="press display w-full rounded-2xl bg-accent px-6 py-4 text-lg font-bold text-accent-ink shadow-[var(--shadow-lift)] disabled:opacity-40 disabled:shadow-none"
+        >
+          Check
+        </button>
+      </div>
+    </div>
+  )
+}
+
+/** The phrase, large and unboxed. */
+export function Phrase({ children, sub }: { children: ReactNode; sub?: ReactNode }) {
+  return (
+    <div className="my-8 text-center">
+      <div className="display text-4xl font-bold leading-tight text-ink sm:text-5xl">{children}</div>
+      {sub && <div className="mt-3 text-base text-ink-soft">{sub}</div>}
+    </div>
   )
 }

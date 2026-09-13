@@ -23,29 +23,29 @@ export function ProgressBackup({ lang }: { lang: LangCode }) {
     a.download = `desilingo-${lang}-progress.json`
     a.click()
     URL.revokeObjectURL(url)
-    setNote('Saved to your downloads.')
+    setNote('Saved.')
   }
 
   async function restore(file: File) {
     const ok = importProgress(lang, await file.text())
-    setNote(ok ? 'Progress restored.' : "That file didn't look like a Desilingo backup.")
+    setNote(ok ? 'Restored.' : 'Not a Desilingo backup.')
   }
 
   return (
-    <div className="mt-10 border-t border-line pt-5">
+    <div className="mt-16">
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-ink-faint">
         <button type="button" onClick={download} className="underline-offset-4 hover:text-ink hover:underline">
-          Back up progress
+          Back up
         </button>
         <button type="button" onClick={() => fileRef.current?.click()} className="underline-offset-4 hover:text-ink hover:underline">
-          Restore from file
+          Restore
         </button>
         <button
           type="button"
           onClick={() => {
-            if (confirm('Reset all progress for this language?')) {
+            if (confirm('Reset progress for this language?')) {
               resetProgress(lang)
-              setNote('Progress reset.')
+              setNote('Reset.')
             }
           }}
           className="underline-offset-4 hover:text-terracotta hover:underline"

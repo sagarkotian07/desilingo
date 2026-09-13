@@ -36,6 +36,10 @@ export interface LanguageConfig {
   /** Unicode block start, used by the phonemizer's offset arithmetic.
    *  Tamil is handled by a separate table and ignores this. */
   scriptBase: number
+  /** The course's own colour. Light and dark values. */
+  accent: [light: string, dark: string]
+  /** One big glyph that stands for the language on cards and heroes. */
+  glyph: string
 }
 
 export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
@@ -45,6 +49,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'नमस्ते', wellDone: 'शाबाश!',
     speaker: 'ritu', font: 'Noto Sans Devanagari', emoji: '🪔',
     scriptBase: 0x0900,
+    accent: ['#e8a020', '#f5b743'], glyph: 'न',
   },
   kn: {
     code: 'kn', sarvam: 'kn-IN', bcp47: 'kn-IN',
@@ -52,6 +57,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'ನಮಸ್ಕಾರ', wellDone: 'ಭೇಷ್!',
     speaker: 'kavya', font: 'Noto Sans Kannada', emoji: '🌺',
     scriptBase: 0x0C80,
+    accent: ['#c2592f', '#e8845c'], glyph: 'ಕ',
   },
   ta: {
     code: 'ta', sarvam: 'ta-IN', bcp47: 'ta-IN',
@@ -59,6 +65,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'வணக்கம்', wellDone: 'அருமை!',
     speaker: 'shruti', font: 'Noto Sans Tamil', emoji: '🌴',
     scriptBase: 0x0B80,
+    accent: ['#2f7d5c', '#5fb88a'], glyph: 'த',
   },
   te: {
     code: 'te', sarvam: 'te-IN', bcp47: 'te-IN',
@@ -66,6 +73,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'నమస్కారం', wellDone: 'శభాష్!',
     speaker: 'roopa', font: 'Noto Sans Telugu', emoji: '🌾',
     scriptBase: 0x0C00,
+    accent: ['#5b4fcf', '#9a90f0'], glyph: 'తె',
   },
   bn: {
     code: 'bn', sarvam: 'bn-IN', bcp47: 'bn-IN',
@@ -73,6 +81,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'নমস্কার', wellDone: 'দারুণ!',
     speaker: 'ishita', font: 'Noto Sans Bengali', emoji: '🐟',
     scriptBase: 0x0980,
+    accent: ['#1f8a8a', '#4fc3c3'], glyph: 'ব',
   },
   mr: {
     code: 'mr', sarvam: 'mr-IN', bcp47: 'mr-IN',
@@ -80,6 +89,7 @@ export const LANGUAGE_CONFIG: Record<LangCode, LanguageConfig> = {
     greeting: 'नमस्कार', wellDone: 'शाब्बास!',
     speaker: 'rupali', font: 'Noto Sans Devanagari', emoji: '🥭',
     scriptBase: 0x0900,
+    accent: ['#b8336a', '#e86a9c'], glyph: 'म',
   },
 }
 

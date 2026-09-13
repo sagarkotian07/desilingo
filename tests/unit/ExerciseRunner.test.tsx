@@ -76,7 +76,7 @@ describe('ExerciseRunner', () => {
     await user.click(screen.getByRole('button', { name: /Continue/ }))
 
     expect(await screen.findByText('review')).toBeTruthy()
-    expect(screen.getByText(/One more look at the ones that slipped/)).toBeTruthy()
+    expect(screen.getByText('Once more')).toBeTruthy()
   })
 
   /**

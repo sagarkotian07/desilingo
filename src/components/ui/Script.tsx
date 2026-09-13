@@ -1,3 +1,4 @@
+import type { CSSProperties, ReactNode } from 'react'
 import type { LangCode } from '@/lib/languages'
 
 const CLASS: Record<LangCode, string> = {
@@ -10,10 +11,13 @@ export function scriptClass(lang: LangCode): string {
   return CLASS[lang]
 }
 
-/** Native-script text with the right font and `lang` attribute, so screen
- *  readers and the browser's own text handling get it right. */
+/** Native-script text with the right font and `lang` attribute. */
 export function Script({
-  lang, children, className = '',
-}: { lang: LangCode; children: React.ReactNode; className?: string }) {
-  return <span lang={lang} className={`${scriptClass(lang)} ${className}`}>{children}</span>
+  lang, children, className = '', style, ...rest
+}: { lang: LangCode; children: ReactNode; className?: string; style?: CSSProperties } & Record<string, unknown>) {
+  return (
+    <span lang={lang} className={`${scriptClass(lang)} ${className}`} style={style} {...rest}>
+      {children}
+    </span>
+  )
 }

@@ -1,22 +1,15 @@
 # Desilingo
 
-**Learn India's languages by ear.** Short, voice-first lessons in Hindi, Kannada, Tamil, Telugu, Bengali and Marathi — built on [Sarvam AI](https://sarvam.ai)'s Indian speech models.
+Learn India's languages by ear. Hindi, Kannada, Tamil, Telugu, Bengali, Marathi — spoken by [Sarvam AI](https://sarvam.ai) voices, with pronunciation practice that tells you which word slipped.
 
-No signup, no database. Every phrase is spoken by a native voice, and the speaking exercises actually listen to you and tell you which word slipped.
+No signup. No database.
 
----
+- 6 languages · 39 lessons · 234 exercises · 275 clips
+- 6 exercise types, including speak-and-be-scored with a word-level diff
+- Audio is pre-generated and static — nothing waits on an API
+- Phrasebook: "how do you say…" in spoken register
 
-## What's in it
-
-- **6 languages** · 39 lessons · 234 exercises · 237 pre-generated audio clips
-- **6 exercise types** — listen-and-choose, pick-the-phrase, speak-and-be-scored, build-the-sentence, match-pairs, and type-the-romanization
-- **Real pronunciation scoring** — record, transcribe with Sarvam `saaras:v4`, and get a word-level diff rather than a bare number
-- **Instant audio** — clips are generated at build time and served as static files, so nothing waits on an API call
-- **Phrasebook** — "how do I say…?" in colloquial register, with romanization
-
-## Why the phrases sound like this
-
-The content is written in spoken register, not textbook register. Tamil is *இப்ப வேணாம்*, not *இப்பொழுது வேண்டாம்*. Kannada is *ಗೊತ್ತಾಯ್ತು*. Marathi is *समजलं*. The vocabulary is what gets said at a tea stall, in a market, and to an auto driver — the situations you actually need a language for in your first week somewhere new.
+The phrases are how people talk, not how textbooks print. Tamil is *இப்ப வேணாம்*, not *இப்பொழுது வேண்டாம்*.
 
 ---
 

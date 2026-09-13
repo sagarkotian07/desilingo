@@ -1,20 +1,14 @@
 @import "tailwindcss";
 
-/*
- * Desilingo's palette: indigo, marigold and terracotta.
- *
- * Deliberately not Duolingo green, and deliberately not the reference app's
- * orange-on-cream either. Indigo is the dye India traded to the world and gives
- * the app its name; marigold is reserved for progress and reward, terracotta for
- * warnings and near-misses.
- */
+/* Tokens. Indigo is the dye India traded to the world; marigold and terracotta
+   are the market. Each course also gets its own --accent, set on the route. */
 :root {
   --ground: #faf6ef;
   --surface: #ffffff;
-  --surface-sunk: #f3ede2;
-  --ink: #221c33;
-  --ink-soft: #5d5470;
-  --ink-faint: #736a82; /* 4.74:1 on ground, 5.11:1 on surface - AA */
+  --surface-sunk: #f1ebe0;
+  --ink: #1d1830;
+  --ink-soft: #5a5170;
+  --ink-faint: #736a82;
   --line: #e6ddcd;
 
   --indigo: #3b3378;
@@ -27,18 +21,22 @@
   --leaf: #3f7d5c;
   --leaf-soft: #e3f1e8;
 
-  --shadow: 0 1px 2px rgb(34 28 51 / 0.05), 0 8px 24px -12px rgb(34 28 51 / 0.18);
+  --accent: var(--marigold);
+  --accent-ink: #1d1830;
+
+  --shadow: 0 1px 2px rgb(29 24 48 / 0.05), 0 12px 32px -16px rgb(29 24 48 / 0.22);
+  --shadow-lift: 0 2px 4px rgb(29 24 48 / 0.06), 0 20px 40px -20px rgb(29 24 48 / 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --ground: #14111f;
-    --surface: #1d1930;
-    --surface-sunk: #17142575;
-    --ink: #f2eee9;
-    --ink-soft: #b9b1cb;
-    --ink-faint: #9a91b0; /* 6.24:1 on ground, 5.71:1 on surface - AA */
-    --line: #2e2846;
+    --ground: #121019;
+    --surface: #1b1826;
+    --surface-sunk: #15121e;
+    --ink: #f3efe8;
+    --ink-soft: #bcb3cc;
+    --ink-faint: #9a91b0;
+    --line: #2b2540;
 
     --indigo: #a89ef0;
     --indigo-deep: #cec7ff;
@@ -50,7 +48,10 @@
     --leaf: #71b98f;
     --leaf-soft: #17301f;
 
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+    --accent-ink: #121019;
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.7);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 20px 40px -20px rgb(0 0 0 / 0.8);
   }
 }
 
@@ -71,63 +72,71 @@
   --color-terracotta-soft: var(--terracotta-soft);
   --color-leaf: var(--leaf);
   --color-leaf-soft: var(--leaf-soft);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
 
   --font-sans: var(--font-ui), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-ui), ui-sans-serif, sans-serif;
 }
+
+:root { font-size: 16px; }
+[data-fontsize="large"] { font-size: 18px; }
 
 body {
   background: var(--ground);
   color: var(--ink);
+  overflow-x: hidden;
 }
 
-/* Script fonts. Indic text is set larger than Latin at the same nominal size
-   because the matras and conjuncts carry meaning and need the vertical room. */
-.script {
-  font-family: var(--font-deva), var(--font-ui), sans-serif;
-  line-height: 1.7;
-}
+.display { font-family: var(--font-display); letter-spacing: -0.02em; }
+
+/* Script fonts win over .display: Outfit has no Indic glyphs. */
+.script { font-family: var(--font-deva), var(--font-ui), sans-serif; line-height: 1.7; }
 .script-kn { font-family: var(--font-knda), var(--font-ui), sans-serif; }
 .script-ta { font-family: var(--font-taml), var(--font-ui), sans-serif; }
 .script-te { font-family: var(--font-telu), var(--font-ui), sans-serif; }
 .script-bn { font-family: var(--font-beng), var(--font-ui), sans-serif; }
 
-/*
- * Large-text mode, toggled by the Aa control.
- *
- * Scales the base size (which most of the UI inherits through rem) and then
- * bumps native-script text specifically -- Indic marks sit above and below the
- * baseline and are the first thing to become unreadable when text is small.
- */
-:root { font-size: 16px; }
-[data-fontsize="large"] { font-size: 18px; }
-[data-fontsize="large"] .script { font-size: 1.12em; line-height: 1.75; }
-
-/* One visible focus treatment everywhere. The reference app had none, which made
-   the whole quiz unusable from a keyboard. */
-:where(a, button, input, [tabindex]):focus-visible {
-  outline: 2px solid var(--indigo);
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
+
+/* ---- Motion -------------------------------------------------------------- */
+
+/* Every interactive surface gets the same press. */
+.press { transition: transform 120ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms ease; }
+.press:active { transform: scale(0.97); }
+
+@keyframes rise   { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+@keyframes pop    { 0% { transform: scale(.92); opacity: 0 } 60% { transform: scale(1.03) } 100% { transform: scale(1); opacity: 1 } }
+@keyframes slide-up { from { transform: translateY(100%) } to { transform: none } }
+@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent) } 100% { box-shadow: 0 0 0 22px transparent } }
+@keyframes breathe { 0%,100% { transform: scale(1) } 50% { transform: scale(1.06) } }
+@keyframes shake  { 0%,100% { transform: none } 25% { transform: translateX(-5px) } 75% { transform: translateX(5px) } }
+@keyframes draw   { to { stroke-dashoffset: 0 } }
+@keyframes burst  { 0% { transform: translate(0,0) scale(1); opacity: 1 } 100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0 } }
+@keyframes border-pulse { 0%,100% { border-color: var(--line) } 50% { border-color: var(--accent) } }
+
+.animate-rise      { animation: rise .32s cubic-bezier(.2,.8,.2,1) both }
+.animate-pop       { animation: pop .36s cubic-bezier(.2,.8,.2,1) both }
+.animate-slide-up  { animation: slide-up .32s cubic-bezier(.2,.8,.2,1) both }
+.animate-pulse-ring{ animation: pulse-ring 1.4s ease-out infinite }
+.animate-breathe   { animation: breathe 2.4s ease-in-out infinite }
+.animate-shake     { animation: shake .3s ease-in-out }
+.animate-border-pulse { animation: border-pulse 1.4s ease-in-out infinite }
+
+/* Staggered children: add .stagger to a parent, each child rises in turn. */
+.stagger > * { animation: rise .4s cubic-bezier(.2,.8,.2,1) both }
+.stagger > :nth-child(1) { animation-delay: 0ms }
+.stagger > :nth-child(2) { animation-delay: 50ms }
+.stagger > :nth-child(3) { animation-delay: 100ms }
+.stagger > :nth-child(4) { animation-delay: 150ms }
+.stagger > :nth-child(5) { animation-delay: 200ms }
+.stagger > :nth-child(6) { animation-delay: 250ms }
+.stagger > :nth-child(n+7) { animation-delay: 300ms }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
-
-@keyframes rise { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: none } }
-.animate-rise { animation: rise 0.28s ease-out both }
-
-@keyframes pop { 0% { transform: scale(0.94); opacity: 0 } 60% { transform: scale(1.02) } 100% { transform: scale(1); opacity: 1 } }
-.animate-pop { animation: pop 0.3s ease-out both }
-
-@keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--terracotta) 45%, transparent) } 100% { box-shadow: 0 0 0 18px transparent } }
-.animate-pulse-ring { animation: pulse-ring 1.4s ease-out infinite }
-
-@keyframes border-pulse {
-  0%, 100% { border-color: var(--line); }
-  50%      { border-color: var(--marigold); }
-}
-.animate-border-pulse { animation: border-pulse 1.4s ease-in-out infinite }

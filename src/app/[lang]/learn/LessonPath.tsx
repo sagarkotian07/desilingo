@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import type { LangCode } from '@/lib/languages'
 import { useProgress } from '@/lib/progress'
-import { BlockPrintRow, Letterform } from '@/components/ui/Motifs'
-import { LANGUAGE_CONFIG } from '@/lib/languages'
 import { lessonIcon } from '@/lib/lesson-icons'
 
 interface UnitSummary {
@@ -14,158 +12,168 @@ interface UnitSummary {
   lessons: Array<{ id: string; title: string; count: number }>
 }
 
-function UnitProgress({ done, total }: { done: number; total: number }) {
-  const pct = total > 0 ? (done / total) * 100 : 0
-  return (
-    <div className="flex items-center gap-2">
-      <div
-        className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-sunk"
-        role="progressbar"
-        aria-valuenow={done}
-        aria-valuemin={0}
-        aria-valuemax={total}
-        aria-label={`${done} of ${total} lessons complete`}
-      >
-        <div
-          className="h-full rounded-full bg-gradient-to-r from-leaf to-marigold transition-[width] duration-500"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
-      <span className="shrink-0 text-xs font-semibold tabular-nums text-ink-faint">
-        {done}/{total}
-      </span>
-    </div>
-  )
-}
+type NodeState = 'done' | 'current' | 'open' | 'locked'
 
+const ROW = 152          // vertical rhythm between nodes
+const SWING = [0, 64, 96, 64, 0, -64, -96, -64] // horizontal drift, px from centre
+const NODE = 76
+
+/**
+ * Lessons as a trail, not a list.
+ *
+ * Each node drifts left and right down the page, so progress has a shape you
+ * can see at a glance and the next step is always obvious. The trail behind
+ * you fills in your course colour.
+ */
 export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary[] }) {
   const progress = useProgress(lang)
-  const ordered = units.flatMap((u) => u.lessons)
-  const nextId = ordered.find((l) => !progress.lessons[l.id])?.id
 
-  // Lesson numbers run continuously across units, so "Lesson 7" means the same
-  // thing on the path as it does in conversation about the course.
-  let lessonNumber = 0
+  // Flatten into rows: a unit band, then its nodes.
+  type Row =
+    | { kind: 'unit'; unit: UnitSummary; index: number; locked: boolean; done: number }
+    | { kind: 'node'; lesson: UnitSummary['lessons'][number]; state: NodeState; n: number; x: number }
+
+  const rows: Row[] = []
+  let n = 0
+  let nodeIndex = 0
+  let foundCurrent = false
+
+  units.forEach((unit, ui) => {
+    const previous = units[ui - 1]
+    const locked = previous ? previous.lessons.some((l) => !progress.lessons[l.id]) : false
+    const done = unit.lessons.filter((l) => progress.lessons[l.id]).length
+    rows.push({ kind: 'unit', unit, index: ui, locked, done })
+
+    for (const lesson of unit.lessons) {
+      n += 1
+      const isDone = !!progress.lessons[lesson.id]
+      let state: NodeState = 'open'
+      if (locked) state = 'locked'
+      else if (isDone) state = 'done'
+      else if (!foundCurrent) { state = 'current'; foundCurrent = true }
+      rows.push({ kind: 'node', lesson, state, n, x: SWING[nodeIndex % SWING.length] })
+      nodeIndex += 1
+    }
+  })
+
+  // Geometry for the trail line. Unit bands take a row too.
+  const points: Array<{ x: number; y: number; done: boolean }> = []
+  rows.forEach((row, i) => {
+    if (row.kind === 'node') points.push({ x: row.x, y: i * ROW + NODE / 2, done: row.state === 'done' })
+  })
+  const height = rows.length * ROW
+
+  const path = (pts: typeof points) =>
+    pts.map((p, i) => {
+      if (i === 0) return `M ${p.x} ${p.y}`
+      const prev = pts[i - 1]
+      const cy = (prev.y + p.y) / 2
+      return `C ${prev.x} ${cy}, ${p.x} ${cy}, ${p.x} ${p.y}`
+    }).join(' ')
+
+  const lastDone = points.reduce((acc, p, i) => (p.done ? i : acc), -1)
+  const donePath = lastDone >= 0 ? path(points.slice(0, lastDone + 1)) : ''
 
   return (
-    <main className="relative mx-auto w-full max-w-2xl px-4 py-8">
-      <Letterform
-        text={LANGUAGE_CONFIG[lang].nativeName}
-        lang={lang}
-        rotate={-8}
-        className="pointer-events-none absolute -left-10 bottom-1/4 -z-10 text-indigo"
-      />
+    <main className="mx-auto w-full max-w-lg px-5 pb-24 pt-4">
+      <div className="relative" style={{ height }}>
+        {/* The trail. Drawn in the centre column; nodes are offset from it. */}
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
+          viewBox={`-160 0 320 ${height}`}
+          preserveAspectRatio="xMidYMin meet"
+          aria-hidden="true"
+        >
+          <path d={path(points)} fill="none" stroke="var(--ink-faint)" strokeOpacity="0.45" strokeWidth="6" strokeLinecap="round" strokeDasharray="1 14" />
+          {donePath && (
+            <path
+              d={donePath}
+              fill="none"
+              stroke="var(--accent)"
+              strokeWidth="6"
+              strokeLinecap="round"
+              pathLength={1}
+              strokeDasharray={1}
+              strokeDashoffset={1}
+              style={{ animation: 'draw 900ms cubic-bezier(.2,.8,.2,1) forwards' }}
+            />
+          )}
+        </svg>
 
-      {units.map((unit, unitIndex) => {
-        const done = unit.lessons.filter((l) => progress.lessons[l.id]).length
-        const previous = units[unitIndex - 1]
-        const locked = previous ? previous.lessons.some((l) => !progress.lessons[l.id]) : false
-
-        return (
-          <section key={unit.id} className="mb-10">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl" aria-hidden="true">{unit.emoji}</span>
-              <div className="flex-1">
-                <p className="text-[11px] font-semibold uppercase tracking-widest text-leaf">
-                  Unit {unitIndex + 1}
-                </p>
-                <h2 className="font-extrabold text-ink">{unit.title}</h2>
+        {rows.map((row, i) => {
+          const top = i * ROW
+          if (row.kind === 'unit') {
+            return (
+              <div
+                key={row.unit.id}
+                className="absolute inset-x-0 flex items-center justify-center"
+                style={{ top: top + NODE / 2 - 20 }}
+              >
+                <div
+                  className={`animate-rise flex items-center gap-2 rounded-full px-4 py-2 shadow-[var(--shadow)] ${
+                    row.locked ? 'bg-surface-sunk text-ink-faint' : 'bg-surface text-ink'
+                  }`}
+                >
+                  <span aria-hidden="true">{row.locked ? '🔒' : row.unit.emoji}</span>
+                  <span className="display font-bold">{row.unit.title}</span>
+                  <span className="text-xs text-ink-faint">{row.done}/{row.unit.lessons.length}</span>
+                </div>
               </div>
-              {locked && (
-                <span className="rounded-full bg-surface-sunk px-2.5 py-1 text-[11px] font-semibold text-ink-faint">
-                  Finish {previous.title} first
-                </span>
+            )
+          }
+
+          const { lesson, state, x } = row
+          const label = (
+            <span className="mt-2 block w-36 text-center text-xs font-semibold leading-tight text-ink-soft">
+              {lesson.title}
+            </span>
+          )
+
+          const circle: Record<NodeState, string> = {
+            done:    'bg-accent text-accent-ink shadow-[var(--shadow)]',
+            current: 'bg-surface text-ink ring-4 ring-accent shadow-[var(--shadow-lift)] animate-pulse-ring',
+            open:    'bg-surface text-ink shadow-[var(--shadow)]',
+            locked:  'bg-surface-sunk text-ink-faint border-2 border-dashed border-line',
+          }
+
+          const face = (
+            <span
+              className={`grid place-items-center rounded-full text-3xl ${circle[state]}`}
+              style={{ width: NODE, height: NODE }}
+              aria-hidden="true"
+            >
+              {state === 'done' ? '✓' : state === 'locked' ? '' : lessonIcon(lesson.title)}
+            </span>
+          )
+
+          return (
+            <div
+              key={lesson.id}
+              className="absolute flex flex-col items-center"
+              style={{ top, left: `calc(50% + ${x}px)`, transform: 'translateX(-50%)' }}
+            >
+              {state === 'locked' ? (
+                <div aria-disabled="true" className="flex flex-col items-center opacity-60">
+                  {face}{label}
+                </div>
+              ) : (
+                <Link
+                  href={`/${lang}/lesson/${lesson.id}`}
+                  aria-label={`Lesson ${row.n}: ${lesson.title}${state === 'done' ? ', complete' : ''}`}
+                  className="press flex flex-col items-center"
+                >
+                  {state === 'current' && (
+                    <span className="display absolute -top-8 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-ink animate-breathe">
+                      Start
+                    </span>
+                  )}
+                  {face}{label}
+                </Link>
               )}
             </div>
-
-            <div className="mt-2.5"><UnitProgress done={done} total={unit.lessons.length} /></div>
-            <BlockPrintRow className="mt-2 h-3 w-full text-marigold opacity-40" />
-
-            <ul className="mt-4 flex flex-col gap-2.5">
-              {unit.lessons.map((lesson) => {
-                const n = ++lessonNumber
-                const result = progress.lessons[lesson.id]
-                const isNext = lesson.id === nextId
-
-                const body = (
-                  <>
-                    <span
-                      className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-xl ${
-                        result ? 'bg-leaf-soft' : isNext ? 'bg-marigold-soft' : 'bg-surface-sunk'
-                      }`}
-                      aria-hidden="true"
-                    >
-                      {result ? '✅' : lessonIcon(lesson.title)}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-[11px] font-semibold uppercase tracking-widest text-ink-faint">
-                        Lesson {n}
-                      </p>
-                      <p className="truncate font-bold text-ink">{lesson.title}</p>
-                      <p className="text-xs text-ink-faint">
-                        {lesson.count} exercises · ~2 min
-                        {result && ` · ${Math.round(result.accuracy * 100)}% first try`}
-                      </p>
-                    </div>
-                    {result ? (
-                      <span className="shrink-0 rounded-full bg-leaf-soft px-2.5 py-1 text-xs font-bold text-leaf">
-                        +{result.xp} XP
-                      </span>
-                    ) : isNext ? (
-                      <span className="shrink-0 rounded-full bg-indigo px-3 py-1.5 text-xs font-bold text-white dark:text-indigo-soft">
-                        Start →
-                      </span>
-                    ) : (
-                      <span className="shrink-0 text-lg text-ink-faint" aria-hidden="true">›</span>
-                    )}
-                  </>
-                )
-
-                if (locked) {
-                  return (
-                    <li key={lesson.id}>
-                      <div
-                        aria-disabled="true"
-                        className="flex cursor-not-allowed items-center gap-3 rounded-2xl border-2 border-dashed border-line bg-surface/40 px-4 py-3.5 opacity-55"
-                      >
-                        {body}
-                      </div>
-                    </li>
-                  )
-                }
-
-                return (
-                  <li key={lesson.id}>
-                    {isNext && (
-                      <div className="mb-1.5 flex items-center gap-2 rounded-xl bg-marigold-soft px-3 py-1.5">
-                        <span aria-hidden="true">⭐</span>
-                        <span className="text-xs font-bold text-ink">Recommended next</span>
-                        <span className="h-px flex-1 bg-line" />
-                        <span className="text-xs text-ink-faint" aria-hidden="true">↓</span>
-                      </div>
-                    )}
-                    <Link
-                      href={`/${lang}/lesson/${lesson.id}`}
-                      className={`relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 bg-surface px-4 py-3.5 shadow-[var(--shadow)] transition-all hover:-translate-y-0.5 ${
-                        isNext ? 'border-marigold' : result ? 'border-leaf/30' : 'border-line'
-                      }`}
-                    >
-                      {/* Gradient rail marking the lesson to do next. */}
-                      {isNext && (
-                        <span
-                          className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-marigold to-terracotta"
-                          aria-hidden="true"
-                        />
-                      )}
-                      {body}
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </section>
-        )
-      })}
+          )
+        })}
+      </div>
     </main>
   )
 }

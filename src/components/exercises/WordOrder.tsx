@@ -7,18 +7,13 @@ import { seededShuffle } from '@/lib/shuffle'
 import { Script } from '@/components/ui/Script'
 import { SpeakerButton } from '@/components/ui/SpeakerButton'
 import { useAudio } from '@/lib/useAudio'
-import { Prompt, Feedback, ContinueButton } from './shared'
+import { Prompt, ActionBar, CheckBar, Phrase } from './shared'
 
 type Ex = Extract<Exercise, { type: 'word-order' }>
 
-/** Build the sentence from tiles — production practice without a native-script
- *  keyboard. Decoy words make it a real choice rather than a sorting puzzle. */
-export function WordOrder({
-  exercise, lang, onDone,
-}: { exercise: Ex; lang: LangCode; onDone: (correct: boolean) => void }) {
+export function WordOrder({ exercise, lang, onDone }: { exercise: Ex; lang: LangCode; onDone: (correct: boolean) => void }) {
   const audio = useAudio(lang)
   const target = useMemo(() => exercise.target.split(/\s+/).filter(Boolean), [exercise.target])
-
   const tiles = useMemo(() => {
     const all = [...target, ...(exercise.extraWords ?? [])]
     return seededShuffle(all.map((word, i) => ({ word, id: `${i}-${word}` })), exercise.id)
@@ -26,74 +21,55 @@ export function WordOrder({
 
   const [picked, setPicked] = useState<string[]>([])
   const [checked, setChecked] = useState(false)
-
   const pickedWords = picked.map((id) => tiles.find((t) => t.id === id)!.word)
   const correct = checked && pickedWords.join(' ') === target.join(' ')
 
+  const tile = 'press display rounded-xl px-4 py-3 text-lg font-bold shadow-[var(--shadow)]'
+
   return (
     <div>
-      <Prompt>Put the phrase together</Prompt>
+      <Prompt>Build it</Prompt>
+      <Phrase>&ldquo;{exercise.english}&rdquo;</Phrase>
 
-      <div className="rounded-3xl border border-line bg-surface p-6 text-center shadow-[var(--shadow)]">
-        <p className="text-xs uppercase tracking-widest text-ink-faint">Say this</p>
-        <p className="mt-2 text-xl font-bold text-ink">&ldquo;{exercise.english}&rdquo;</p>
-
-        <div
-          className="mt-4 flex min-h-16 flex-wrap items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-ground px-3 py-3"
-          aria-live="polite"
-        >
-          {picked.length === 0 && <span className="text-sm text-ink-faint">tap the words below</span>}
-          {picked.map((id) => {
-            const tile = tiles.find((t) => t.id === id)!
-            return (
-              <button
-                key={id}
-                type="button"
-                onClick={() => !checked && setPicked((p) => p.filter((x) => x !== id))}
-                disabled={checked}
-                aria-label={`Remove ${tile.word}`}
-                className="rounded-xl border border-indigo/30 bg-indigo-soft px-3 py-2"
-              >
-                <Script lang={lang} className="text-lg font-bold text-ink">{tile.word}</Script>
-              </button>
-            )
-          })}
-        </div>
+      <div
+        aria-live="polite"
+        className="flex min-h-20 flex-wrap items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line px-3 py-3"
+      >
+        {picked.map((id) => {
+          const t = tiles.find((x) => x.id === id)!
+          return (
+            <button key={id} type="button" disabled={checked} aria-label={`Remove ${t.word}`}
+              onClick={() => setPicked((p) => p.filter((x) => x !== id))}
+              className={`${tile} bg-accent text-accent-ink`}>
+              <Script lang={lang}>{t.word}</Script>
+            </button>
+          )
+        })}
       </div>
 
-      <div className="mt-5 flex flex-wrap justify-center gap-2">
-        {tiles.filter((t) => !picked.includes(t.id)).map((tile) => (
-          <button
-            key={tile.id}
-            type="button"
-            onClick={() => !checked && setPicked((p) => [...p, tile.id])}
-            disabled={checked}
-            className="rounded-xl border-2 border-line bg-surface px-4 py-3 transition-transform active:scale-95 hover:border-indigo/50"
-          >
-            <Script lang={lang} className="text-lg font-bold text-ink">{tile.word}</Script>
+      <div className="stagger mt-6 flex flex-wrap justify-center gap-2">
+        {tiles.filter((t) => !picked.includes(t.id)).map((t) => (
+          <button key={t.id} type="button" disabled={checked}
+            onClick={() => setPicked((p) => [...p, t.id])}
+            className={`${tile} bg-surface text-ink`}>
+            <Script lang={lang}>{t.word}</Script>
           </button>
         ))}
       </div>
 
       {!checked ? (
-        <button
-          type="button"
-          onClick={() => setChecked(true)}
-          disabled={picked.length === 0}
-          className="mt-6 w-full rounded-2xl bg-indigo px-6 py-4 font-bold text-white shadow-[var(--shadow)] disabled:opacity-40 dark:text-indigo-soft"
-        >
-          Check
-        </button>
+        <CheckBar onClick={() => setChecked(true)} disabled={picked.length === 0} />
       ) : (
-        <>
-          <Feedback correct={correct}>
+        <ActionBar
+          correct={correct}
+          detail={
             <span className="inline-flex items-center gap-2">
-              <Script lang={lang} className="font-bold">{exercise.target}</Script>
-              <SpeakerButton size="sm" onPlay={() => void audio.play(exercise.target)} playing={audio.isPlaying} label="Hear it" />
+              <Script lang={lang} className="font-bold text-ink">{exercise.target}</Script>
+              <SpeakerButton size="sm" onPlay={() => void audio.play(exercise.target)} playing={audio.isPlaying} />
             </span>
-          </Feedback>
-          <ContinueButton onClick={() => onDone(correct)} />
-        </>
+          }
+          onClick={() => onDone(correct)}
+        />
       )}
     </div>
   )

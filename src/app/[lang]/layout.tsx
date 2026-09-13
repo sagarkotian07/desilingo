@@ -1,14 +1,25 @@
 import { notFound } from 'next/navigation'
-import { isLangCode, LANGUAGES } from '@/lib/languages'
+import { isLangCode, LANGUAGES, LANGUAGE_CONFIG } from '@/lib/languages'
 import { hasCourse } from '@/content'
+import { RememberLanguage } from '@/components/ui/RememberLanguage'
 
 export function generateStaticParams() {
   return LANGUAGES.filter(hasCourse).map((lang) => ({ lang }))
 }
 
 export default async function LangLayout({ children, params }: LayoutProps<'/[lang]'>) {
-  // params is a promise in Next 16.
   const { lang } = await params
   if (!isLangCode(lang) || !hasCourse(lang)) notFound()
-  return <>{children}</>
+  const [light, dark] = LANGUAGE_CONFIG[lang].accent
+
+  return (
+    <div
+      className="flex min-h-full flex-1 flex-col"
+      style={{ ['--accent-light' as string]: light, ['--accent-dark' as string]: dark }}
+    >
+      <style>{`:root{--accent:${light}} @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:${dark}}}`}</style>
+      <RememberLanguage lang={lang} />
+      {children}
+    </div>
+  )
 }

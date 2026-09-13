@@ -3,102 +3,74 @@
 import Link from 'next/link'
 import type { LangCode } from '@/lib/languages'
 import { useProgress } from '@/lib/progress'
-import { ProgressRing } from '@/components/ui/ProgressRing'
 import { Script } from '@/components/ui/Script'
-import { Kolam, Letterform } from '@/components/ui/Motifs'
 import { ProgressBackup } from './ProgressBackup'
 
-interface LessonSummary {
-  id: string
-  title: string
-  unitTitle: string
-  count: number
+interface LessonSummary { id: string; title: string; unitTitle: string; count: number }
+
+function Stat({ value, label }: { value: string | number; label: string }) {
+  return (
+    <div className="rounded-2xl bg-surface px-4 py-3 text-center shadow-[var(--shadow)]">
+      <p className="display text-2xl font-extrabold text-ink">{value}</p>
+      <p className="text-xs text-ink-faint">{label}</p>
+    </div>
+  )
 }
 
 export function HomeDashboard({
-  lang, tagline, greeting, nativeName, englishName, lessons,
+  lang, tagline, greeting, glyph, englishName, lessons,
 }: {
-  lang: LangCode
-  tagline: string
-  greeting: string
-  nativeName: string
-  englishName: string
+  lang: LangCode; tagline: string; greeting: string; glyph: string; englishName: string
   lessons: LessonSummary[]
 }) {
   const progress = useProgress(lang)
-  const doneCount = lessons.filter((l) => progress.lessons[l.id]).length
+  const done = lessons.filter((l) => progress.lessons[l.id]).length
   const next = lessons.find((l) => !progress.lessons[l.id]) ?? lessons[0]
-  const started = doneCount > 0
+  const allDone = done === lessons.length
 
   return (
-    <main className="relative mx-auto w-full max-w-2xl px-4 py-10 text-center">
-      {/* Block-print stripe, the kind stamped along the edge of a textile. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 top-0 z-30 h-[5px] bg-surface-sunk"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(90deg, transparent 0 12px, var(--marigold) 12px 13px)',
-        }}
-      />
-
-      <Kolam className="pointer-events-none absolute left-1/2 top-0 -z-10 w-[460px] -translate-x-1/2 text-indigo opacity-[0.06]" />
-      <Letterform
-        text={greeting.split(' ')[0]}
-        lang={lang}
-        className="pointer-events-none absolute -right-16 top-10 -z-10 text-indigo"
-      />
-
-      <ProgressRing
-        value={lessons.length ? doneCount / lessons.length : 0}
-        label={`${Math.round((doneCount / Math.max(1, lessons.length)) * 100)}%`}
-        sublabel={`${doneCount}/${lessons.length} lessons`}
-      />
-
-      <Script lang={lang} className="mt-5 block text-3xl font-extrabold text-ink">{greeting}</Script>
-      <p className="mt-1 text-sm text-ink-faint">
-        {nativeName} · {englishName}
-      </p>
-      <p className="mt-4 text-lg text-ink-soft">{tagline}</p>
-
-      {/* Streaks lived only in the header, where they were easy to miss and
-          carried none of the weight they should. */}
-      {progress.streak > 0 && (
-        <div className="mt-6 flex items-center justify-center gap-3 rounded-2xl border border-terracotta/30 bg-terracotta-soft px-5 py-3">
-          <span className="text-2xl" aria-hidden="true">🔥</span>
-          <div className="text-left">
-            <p className="font-bold text-terracotta">
-              {progress.streak} day{progress.streak === 1 ? '' : 's'} in a row
-            </p>
-            <p className="text-xs text-ink-soft">{progress.totalXP} XP earned so far</p>
+    <main className="relative mx-auto w-full max-w-3xl px-5 pb-20 pt-6">
+      <section className="stagger relative pt-8">
+        <div className="flex items-center gap-5">
+          {/* The language's own letter is the mark. */}
+          <Script
+            lang={lang}
+            aria-hidden="true"
+            className="grid h-24 w-24 shrink-0 place-items-center rounded-3xl bg-accent text-6xl font-bold leading-none text-accent-ink shadow-[var(--shadow-lift)]"
+          >
+            {glyph}
+          </Script>
+          <div className="min-w-0">
+            <Script lang={lang} className="display block text-4xl font-extrabold text-ink sm:text-5xl">{greeting}</Script>
+            <p className="mt-1 text-ink-soft">{tagline}</p>
           </div>
         </div>
-      )}
 
-      <Link
-        href={`/${lang}/lesson/${next.id}`}
-        className="mt-8 block rounded-2xl bg-indigo px-6 py-4 text-lg font-bold text-white shadow-[var(--shadow)] transition-transform active:scale-[0.99] dark:text-indigo-soft"
-      >
-        {started ? 'Continue learning' : 'Start learning'} <span aria-hidden="true">→</span>
-      </Link>
+        <div className="mt-8 grid grid-cols-3 gap-2">
+          <Stat value={progress.streak} label="day streak" />
+          <Stat value={progress.totalXP} label="XP" />
+          <Stat value={`${done}/${lessons.length}`} label="lessons" />
+        </div>
 
-      <div className="mt-4 rounded-2xl border border-line bg-surface p-4 text-left">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-ink-faint">Up next</p>
-        <p className="mt-1 font-bold text-ink">{next.title}</p>
-        <p className="text-sm text-ink-soft">{next.unitTitle} · {next.count} exercises · ~2 min</p>
-      </div>
+        <Link
+          href={`/${lang}/lesson/${next.id}`}
+          className="press mt-6 flex items-center gap-4 rounded-2xl bg-accent px-6 py-5 text-accent-ink shadow-[var(--shadow-lift)]"
+        >
+          <span className="flex-1">
+            <span className="block text-xs font-semibold uppercase tracking-wider opacity-70">
+              {allDone ? 'Practice' : done ? 'Next' : 'Start'}
+            </span>
+            <span className="display block text-xl font-bold">{next.title}</span>
+          </span>
+          <span className="display text-3xl" aria-hidden="true">→</span>
+        </Link>
 
-      <div className="mt-6 flex justify-center gap-4 text-sm">
-        <Link href={`/${lang}/learn`} className="font-semibold text-indigo underline-offset-4 hover:underline">
-          All lessons
-        </Link>
-        <Link href={`/${lang}/phrasebook`} className="font-semibold text-indigo underline-offset-4 hover:underline">
-          Phrasebook
-        </Link>
-        <Link href="/" className="text-ink-faint underline-offset-4 hover:underline">
-          Change language
-        </Link>
-      </div>
+        <nav className="mt-6 flex gap-5 text-sm font-semibold">
+          <Link href={`/${lang}/learn`} className="text-ink underline-offset-4 hover:underline">All lessons</Link>
+          <Link href={`/${lang}/phrasebook`} className="text-ink underline-offset-4 hover:underline">Phrasebook</Link>
+          <Link href="/" className="ml-auto text-ink-faint underline-offset-4 hover:underline">Not {englishName}?</Link>
+        </nav>
+      </section>
 
       <ProgressBackup lang={lang} />
     </main>
