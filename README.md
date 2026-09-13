@@ -85,6 +85,10 @@ A failed pronunciation attempt and a slip in match-pairs count as *seen*, not wr
 
 Why not SM-2: it wants a 0–5 grade per answer, and five of the six exercise types can honestly give only right or wrong.
 
+### Check a spoken line before shipping it
+
+Transcribe the line's own generated clip with Sarvam and score it as `/api/stt` does. If the model writes the phrase differently from the content, a learner who says it correctly is told to retry — the expensive failure. Five of the 71 spoken lines added in the city-life units failed this way: contracted spellings (`ಇನ್ನೊಂದ್ಸಲ` for `ಇನ್ನೊಂದು ಸಲ`), words the model joins (`অন্যদিন`), and a station name it split into "Es planet". Respelling fixed all five.
+
 ### Cost
 
 Real numbers from building this:
