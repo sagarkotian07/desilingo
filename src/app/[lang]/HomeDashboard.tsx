@@ -85,7 +85,7 @@ export function HomeDashboard({
           </Link>
         )}
 
-        <nav className="mt-6 flex gap-5 text-sm font-semibold">
+        <nav className="mt-6 flex gap-5 text-sm font-semibold [&>a]:-my-3 [&>a]:py-3.5">
           <Link href={`/${lang}/learn`} className="text-ink underline-offset-4 hover:underline">All lessons</Link>
           <Link href={`/${lang}/phrasebook`} className="text-ink underline-offset-4 hover:underline">Phrasebook</Link>
           <Link href="/" className="ml-auto text-ink-faint underline-offset-4 hover:underline">Not {englishName}?</Link>

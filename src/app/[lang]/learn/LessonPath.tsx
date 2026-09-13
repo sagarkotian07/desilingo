@@ -122,7 +122,7 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
 
           const { lesson, state, x } = row
           const label = (
-            <span className="mt-2 block w-36 text-center text-xs font-semibold leading-tight text-ink-soft">
+            <span className="mt-2 block w-28 text-center text-xs font-semibold leading-tight text-ink-soft sm:w-36">
               {lesson.scene && <span className="display block text-[10px] font-extrabold uppercase tracking-[0.2em] text-accent">Scene</span>}
               {lesson.title}
             </span>

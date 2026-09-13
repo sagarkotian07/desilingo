@@ -175,7 +175,7 @@ export function SpeakRepeat({ exercise, lang, onDone }: { exercise: Ex; lang: La
         />
       )}
       {attempts === 0 && (
-        <button type="button" onClick={() => onDone(false)} className="mx-auto mt-6 block text-sm text-ink-faint underline-offset-4 hover:underline">
+        <button type="button" onClick={() => onDone(false)} className="mx-auto mt-5 block px-6 py-2.5 text-sm text-ink-faint underline-offset-4 hover:underline">
           Skip
         </button>
       )}

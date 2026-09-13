@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { LangCode } from '@/lib/languages'
 import { FontSizeToggle } from './FontSizeToggle'
 import { ConfirmDialog } from './ConfirmDialog'
@@ -10,13 +10,27 @@ export function LessonHeader({ lang, title, kind = 'lesson' }: { lang: LangCode;
   const router = useRouter()
   const exit = kind === 'review' ? `/${lang}` : `/${lang}/learn`
   const [confirming, setConfirming] = useState(false)
+  const ref = useRef<HTMLElement>(null)
+
+  // The exercise runner sticks its progress bar directly below this header, and
+  // the height moves with text size, a wrapped title, or a landscape phone.
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const root = document.documentElement
+    const set = () => root.style.setProperty('--header-h', `${Math.round(el.getBoundingClientRect().height)}px`)
+    set()
+    const observer = new ResizeObserver(set)
+    observer.observe(el)
+    return () => { observer.disconnect(); root.style.removeProperty('--header-h') }
+  }, [])
 
   return (
     <>
-      <header className="sticky top-0 z-20 bg-ground/85 backdrop-blur">
+      <header ref={ref} className="sticky top-0 z-20 bg-ground/85 backdrop-blur">
         <div className="mx-auto flex w-full max-w-2xl items-center gap-3 px-5 py-3">
           <button type="button" onClick={() => setConfirming(true)} aria-label={`Leave ${kind}`}
-            className="press grid h-9 w-9 place-items-center rounded-full bg-surface text-ink shadow-[var(--shadow)]">
+            className="press grid h-10 w-10 place-items-center rounded-full bg-surface text-ink shadow-[var(--shadow)]">
             <span aria-hidden="true">✕</span>
           </button>
           <p className="display ml-1 truncate font-bold text-ink">{title}</p>

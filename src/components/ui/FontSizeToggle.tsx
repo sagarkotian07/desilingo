@@ -14,7 +14,7 @@ export function FontSizeToggle() {
       aria-pressed={large}
       title={large ? 'Switch to normal text' : 'Switch to large text'}
       aria-label={large ? 'Switch to normal text size' : 'Switch to large text size'}
-      className={`press rounded-full px-2.5 py-1 text-xs font-bold tracking-wide ${
+      className={`press grid h-10 min-w-10 place-items-center rounded-full px-2.5 text-xs font-bold tracking-wide ${
         large ? 'bg-ink text-ground' : 'bg-surface text-ink-faint shadow-[var(--shadow)] hover:text-ink'
       }`}
     >

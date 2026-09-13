@@ -12,11 +12,11 @@ export function Header({ lang, back }: { lang: LangCode; back?: { href: string; 
     <header className="sticky top-0 z-20 bg-ground/85 backdrop-blur">
       <div className="mx-auto flex w-full max-w-3xl items-center gap-3 px-5 py-3">
         {back ? (
-          <Link href={back.href} className="press rounded-full bg-surface px-3 py-1.5 text-sm font-semibold text-ink shadow-[var(--shadow)]">
+          <Link href={back.href} className="press rounded-full bg-surface px-3.5 py-3 text-sm font-semibold text-ink shadow-[var(--shadow)]">
             ← {back.label}
           </Link>
         ) : (
-          <Link href="/" className="display text-lg font-extrabold text-ink">Desilingo</Link>
+          <Link href="/" className="display -my-2 py-2 text-lg font-extrabold text-ink">Desilingo</Link>
         )}
         <div className="ml-auto flex items-center gap-2 text-sm">
           <FontSizeToggle />

@@ -173,7 +173,7 @@ export function ExerciseRunner({
 
   return (
     <div className="mx-auto w-full max-w-2xl px-5 pb-48">
-      <div className="sticky top-[57px] z-10 -mx-5 bg-ground/90 px-5 pb-2 pt-3 backdrop-blur">
+      <div className="sticky z-10 -mx-5 bg-ground/90 px-5 pb-2 pt-3 backdrop-blur" style={{ top: 'var(--header-h, 57px)' }}>
         <div className="flex items-center gap-3">
           <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-surface-sunk" role="progressbar"
             aria-valuenow={reviewing ? total : index} aria-valuemin={0} aria-valuemax={total} aria-label={isReview ? 'Review progress' : 'Lesson progress'}>
@@ -182,11 +182,11 @@ export function ExerciseRunner({
           <span className="display text-xs font-bold tabular-nums text-ink-faint">{reviewing ? 'review' : `${index + 1}/${total}`}</span>
         </div>
         <div className="mt-1.5 flex items-center justify-between text-xs">
-          <button type="button" onClick={handlePrev} disabled={index === 0} className="rounded px-1.5 py-0.5 font-semibold text-ink-faint hover:text-ink disabled:invisible">
+          <button type="button" onClick={handlePrev} disabled={index === 0} className="-my-3 rounded-lg px-3 py-3.5 font-semibold text-ink-faint hover:text-ink disabled:invisible">
             ← prev
           </button>
           {reviewing && <span className="text-ink-faint">Once more</span>}
-          <button type="button" onClick={handleSkip} className="rounded px-1.5 py-0.5 font-semibold text-ink-faint hover:text-ink">
+          <button type="button" onClick={handleSkip} className="-my-3 rounded-lg px-3 py-3.5 font-semibold text-ink-faint hover:text-ink">
             skip →
           </button>
         </div>

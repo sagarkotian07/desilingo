@@ -24,7 +24,7 @@ export function ContinueLearning() {
       <button
         type="button"
         onClick={forgetLanguage}
-        className="text-sm text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+        className="-my-3 px-2 py-3.5 text-sm text-ink-faint underline-offset-4 hover:text-ink hover:underline"
       >
         Switch
       </button>

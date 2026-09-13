@@ -56,7 +56,7 @@ export function ListenChoose({ exercise, lang, onDone }: { exercise: Ex; lang: L
         ) : (
           <div className="-mt-2 flex flex-col items-center gap-1">
             {exercise.hint && <p className="text-sm text-ink-faint">{exercise.hint}</p>}
-            <button type="button" onClick={() => setRevealed(true)} className="text-xs text-ink-faint underline-offset-4 hover:underline">
+            <button type="button" onClick={() => setRevealed(true)} className="-my-2 px-4 py-3.5 text-xs text-ink-faint underline-offset-4 hover:underline">
               {audio.blocked ? 'Show it' : 'Can’t hear? Show it'}
             </button>
           </div>

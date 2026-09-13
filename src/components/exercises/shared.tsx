@@ -51,7 +51,7 @@ export function ActionBar({
         !hasVerdict ? 'border-line bg-surface/95' : correct ? 'border-leaf/30 bg-leaf-soft' : 'border-terracotta/30 bg-terracotta-soft'
       } backdrop-blur`}
     >
-      <div className="mx-auto flex max-w-2xl flex-col gap-3 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+      <div className="mx-auto flex max-w-2xl flex-col gap-3 px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 [@media(max-height:520px)]:gap-2 [@media(max-height:520px)]:pt-2">
         {hasVerdict && (
           <div role="status" aria-live="polite" className="flex items-start gap-3">
             <span className="display text-2xl leading-none" aria-hidden="true">{correct ? '✓' : '✗'}</span>
@@ -64,7 +64,7 @@ export function ActionBar({
         <button
           type="button"
           onClick={onClick}
-          className={`press display w-full rounded-2xl px-6 py-4 text-lg font-bold shadow-[var(--shadow-lift)] ${
+          className={`press display w-full rounded-2xl px-6 py-4 text-lg font-bold shadow-[var(--shadow-lift)] [@media(max-height:520px)]:py-3 ${
             hasVerdict && !correct ? 'bg-ink text-ground' : 'bg-accent text-accent-ink'
           }`}
         >
@@ -79,12 +79,12 @@ export function ActionBar({
 export function CheckBar({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur">
-      <div className="mx-auto max-w-2xl px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
+      <div className="mx-auto max-w-2xl px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 [@media(max-height:520px)]:pt-2">
         <button
           type="button"
           onClick={onClick}
           disabled={disabled}
-          className="press display w-full rounded-2xl bg-accent px-6 py-4 text-lg font-bold text-accent-ink shadow-[var(--shadow-lift)] disabled:opacity-40 disabled:shadow-none"
+          className="press display w-full rounded-2xl bg-accent px-6 py-4 text-lg font-bold text-accent-ink shadow-[var(--shadow-lift)] disabled:opacity-40 disabled:shadow-none [@media(max-height:520px)]:py-3"
         >
           Check
         </button>
