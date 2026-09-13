@@ -9,7 +9,7 @@ interface UnitSummary {
   id: string
   title: string
   emoji: string
-  lessons: Array<{ id: string; title: string; count: number }>
+  lessons: Array<{ id: string; title: string; count: number; scene: boolean }>
 }
 
 type NodeState = 'done' | 'current' | 'open' | 'locked'
@@ -31,6 +31,7 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
   // Flatten into rows: a unit band, then its nodes.
   type Row =
     | { kind: 'unit'; unit: UnitSummary; index: number; locked: boolean; done: number }
+    // n numbers lessons only; a scene is named, not numbered.
     | { kind: 'node'; lesson: UnitSummary['lessons'][number]; state: NodeState; n: number; x: number }
 
   const rows: Row[] = []
@@ -43,13 +44,17 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
     const locked = previous ? previous.lessons.some((l) => !progress.lessons[l.id]) : false
     const done = unit.lessons.filter((l) => progress.lessons[l.id]).length
     rows.push({ kind: 'unit', unit, index: ui, locked, done })
+    // A scene uses the unit's phrases, so it opens once the unit's lessons are done.
+    const lessonsDone = unit.lessons.every((l) => l.scene || progress.lessons[l.id])
 
     for (const lesson of unit.lessons) {
-      n += 1
+      if (!lesson.scene) n += 1
       const isDone = !!progress.lessons[lesson.id]
       let state: NodeState = 'open'
       if (locked) state = 'locked'
       else if (isDone) state = 'done'
+      // "Next lesson" can reach a scene early; once played, it stays played.
+      else if (lesson.scene && !lessonsDone) state = 'locked'
       else if (!foundCurrent) { state = 'current'; foundCurrent = true }
       rows.push({ kind: 'node', lesson, state, n, x: SWING[nodeIndex % SWING.length] })
       nodeIndex += 1
@@ -118,6 +123,7 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
           const { lesson, state, x } = row
           const label = (
             <span className="mt-2 block w-36 text-center text-xs font-semibold leading-tight text-ink-soft">
+              {lesson.scene && <span className="display block text-[10px] font-extrabold uppercase tracking-[0.2em] text-accent">Scene</span>}
               {lesson.title}
             </span>
           )
@@ -131,7 +137,7 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
 
           const face = (
             <span
-              className={`grid place-items-center rounded-full text-3xl ${circle[state]}`}
+              className={`grid place-items-center text-3xl ${lesson.scene ? 'rounded-[28px]' : 'rounded-full'} ${circle[state]}`}
               style={{ width: NODE, height: NODE }}
               aria-hidden="true"
             >
@@ -146,13 +152,13 @@ export function LessonPath({ lang, units }: { lang: LangCode; units: UnitSummary
               style={{ top, left: `calc(50% + ${x}px)`, transform: 'translateX(-50%)' }}
             >
               {state === 'locked' ? (
-                <div aria-disabled="true" className="flex flex-col items-center opacity-60">
+                <div aria-disabled="true" aria-label={`${lesson.scene ? 'Scene' : `Lesson ${row.n}`}: ${lesson.title}, locked`} className="flex flex-col items-center opacity-60">
                   {face}{label}
                 </div>
               ) : (
                 <Link
                   href={`/${lang}/lesson/${lesson.id}`}
-                  aria-label={`Lesson ${row.n}: ${lesson.title}${state === 'done' ? ', complete' : ''}`}
+                  aria-label={`${lesson.scene ? 'Scene' : `Lesson ${row.n}`}: ${lesson.title}${state === 'done' ? ', complete' : ''}`}
                   className="press flex flex-col items-center"
                 >
                   {state === 'current' && (

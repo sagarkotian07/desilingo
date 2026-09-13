@@ -66,6 +66,56 @@
               "hint": "stopping someone serving you", "options": ["A little more", "One more", "That's enough", "Not for me"], "answer": 2 },
             { "id": "e6", "type": "listen-type-roman", "target": "पाणी", "romanized": "Paani", "english": "Water" }
           ]
+        },
+        {
+          "id": "mr-scene-1",
+          "title": "A cup of tea",
+          "scene": { "setting": "A roadside tea stall.", "other": "Tea seller" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "चहा घेणार?", "romanized": "Chaha ghenaar?", "english": "Tea?" },
+              "target": "हो, ठीक आहे", "romanized": "Ho, theek aahe", "english": "Yes, that's fine",
+              "options": [
+                { "text": "हो, ठीक आहे", "romanized": "Ho, theek aahe" },
+                { "text": "नको", "romanized": "Nako" },
+                { "text": "आत्ता नको", "romanized": "Aatta nako" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "lead": { "text": "साखर घालू?", "romanized": "Saakhar ghaalu?", "english": "Sugar in it?" },
+              "target": "नको", "romanized": "Nako", "english": "I don't want it"
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "lead": { "text": "अजून काही?", "romanized": "Ajun kaahi?", "english": "Anything else?" },
+              "target": "थोडं पाणी हवं", "romanized": "Thoda paani hava", "english": "I need some water",
+              "extraWords": ["नाही"]
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "एक मिनिट", "romanized": "Ek minit", "english": "One minute",
+              "options": ["Not now", "One minute", "One more", "Got it"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "target": "काही हरकत नाही", "romanized": "Kaahi harkat nahi", "english": "It's okay, no problem",
+              "options": [
+                { "text": "समजलं", "romanized": "Samajlan" },
+                { "text": "काही हरकत नाही", "romanized": "Kaahi harkat nahi" },
+                { "text": "धन्यवाद", "romanized": "Dhanyavaad" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "दहा रुपये", "romanized": "Daha rupaye", "english": "Ten rupees" },
+              "target": "धन्यवाद", "romanized": "Dhanyavaad", "english": "Thank you"
+            }
+          ]
         }
       ]
     },
@@ -132,6 +182,56 @@
               "options": ["How far is it?", "How long will it take?", "Which way?", "How much will you charge?"], "answer": 3 },
             { "id": "e5", "type": "word-order", "target": "इथे थांबा", "romanized": "Ithe thaamba", "english": "Stop right here", "extraWords": ["नको", "पुढे"] },
             { "id": "e6", "type": "listen-type-roman", "target": "पुढे चला", "romanized": "Pudhe chala", "english": "Keep going" }
+          ]
+        },
+        {
+          "id": "mr-scene-2",
+          "title": "Haggling at the market",
+          "scene": { "setting": "A vegetable market.", "other": "Vendor" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "काय हवंय?", "romanized": "Kaay havay?", "english": "What do you need?" },
+              "target": "हे किती आहे?", "romanized": "He kiti aahe?", "english": "How much is this?",
+              "options": [
+                { "text": "खूप महाग आहे", "romanized": "Khoop mahaag aahe" },
+                { "text": "हे किती आहे?", "romanized": "He kiti aahe?" },
+                { "text": "ठीक आहे, द्या", "romanized": "Theek aahe, dya" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "शंभर रुपये किलो", "romanized": "Shambhar rupaye kilo", "english": "A hundred rupees a kilo",
+              "options": ["Two kilos, please", "Fresh today", "A hundred rupees a kilo", "Sold out"],
+              "answer": 2
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "खूप महाग आहे", "romanized": "Khoop mahaag aahe", "english": "That's very expensive"
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "एकदम ताजी आहे", "romanized": "Ekdam taaji aahe", "english": "It's really fresh" },
+              "target": "थोडं कमी करा", "romanized": "Thoda kami kara", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "ठीक आहे, द्या", "romanized": "Theek aahe, dya" },
+                { "text": "हे किती आहे?", "romanized": "He kiti aahe?" },
+                { "text": "थोडं कमी करा", "romanized": "Thoda kami kara" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "ऐंशी, बस", "romanized": "Ainshi, bas", "english": "Eighty, and that's final",
+              "options": ["Eighty, and that's final", "A hundred, and that's final", "Take two kilos", "Not for sale"],
+              "answer": 0
+            },
+            {
+              "id": "e6", "type": "word-order",
+              "target": "ठीक आहे, द्या", "romanized": "Theek aahe, dya", "english": "Fine, I'll take it",
+              "extraWords": ["नको"]
+            }
           ]
         }
       ]

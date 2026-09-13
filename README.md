@@ -4,8 +4,10 @@ Learn India's languages by ear. Hindi, Kannada, Tamil, Telugu, Bengali, Marathi 
 
 No signup. No database.
 
-- 6 languages · 39 lessons · 234 exercises · 275 clips
+- 6 languages · 39 lessons + 13 scenes · 312 exercises · 333 clips
 - 6 exercise types, including speak-and-be-scored with a word-level diff
+- Scenes: a short conversation closes each unit, using what it taught
+- Review: missed phrases come back when they're due
 - Audio is pre-generated and static — nothing waits on an API
 - Phrasebook: "how do you say…" in spoken register
 
@@ -72,13 +74,21 @@ The interesting part is the metric. Comparison uses a **weighted edit distance o
 
 Thresholds lean forgiving, and a speaking exercise **never blocks progress**. False negatives are the expensive failure: a learner told they're wrong when they weren't concludes the app is broken. "We couldn't hear you" and "that sounded like English" are separate verdicts from "incorrect", and the raw transcript is always shown so a model error is visible as a model error.
 
+### Review remembers what you missed
+
+Every answer updates a per-phrase record in `localStorage`, on a Leitner ladder of boxes 0–6. Right moves a phrase up and waits longer (1, 2, 4 … 32 days); wrong or skipped drops it to 0, due tomorrow. One promotion a day at most, so a lesson that shows a phrase three times can't bury it for a month.
+
+A failed pronunciation attempt and a slip in match-pairs count as *seen*, not wrong: the first is as often the speech model or a muted mic, and the second can't say which pair. When something is due, Home shows a Review card: up to five phrases, rebuilt from exercises already met, never speaking or typing.
+
+Why not SM-2: it wants a 0–5 grade per answer, and five of the six exercise types can honestly give only right or wrong.
+
 ### Cost
 
 Real numbers from building this:
 
 | | |
 |---|---|
-| All 237 clips, 6 languages | **₹7.38**, one-time |
+| All 333 clips, 6 languages | **₹9.92**, one-time |
 | One pronunciation attempt | ~₹0.03 |
 | Repeat visitor | **₹0** — static files |
 
@@ -127,6 +137,8 @@ vercel firewall rules add "Limit STT" \
 3. `npm run validate:content`
 4. `npm run gen:audio -- --lang <lang> --dry-run`, then without `--dry-run`.
 5. Commit the MP3s.
+
+A unit can end with a scene: a lesson with `scene: { setting, other }` whose turns carry the other speaker's line as `lead`. The schema enforces the rest (turn types, one per unit, last in it).
 
 Sarvam's TTS covers 11 Indian languages, so Gujarati, Malayalam, Odia and Punjabi are all available. Its STT covers 23 — you can transcribe more than you can synthesize, so plan around the TTS list.
 

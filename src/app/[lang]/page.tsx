@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { isLangCode, LANGUAGE_CONFIG } from '@/lib/languages'
 import { getCourse, allLessons } from '@/content'
+import { buildReviewPool } from '@/lib/phrase-memory'
 import { Header } from '@/components/ui/Header'
 import { HomeDashboard } from './HomeDashboard'
 
@@ -24,6 +25,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
         glyph={cfg.glyph}
         englishName={cfg.englishName}
         lessons={lessons}
+        known={Object.keys(buildReviewPool(course))}
       />
     </>
   )

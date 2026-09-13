@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import { useMemo } from 'react'
 import type { LangCode } from '@/lib/languages'
-import { useProgress } from '@/lib/progress'
+import { localToday, useProgress } from '@/lib/progress'
+import { selectDue } from '@/lib/phrase-memory'
 import { Script } from '@/components/ui/Script'
 
 interface LessonSummary { id: string; title: string; unitTitle: string; count: number }
@@ -17,12 +19,17 @@ function Stat({ value, label }: { value: string | number; label: string }) {
 }
 
 export function HomeDashboard({
-  lang, tagline, greeting, glyph, englishName, lessons,
+  lang, tagline, greeting, glyph, englishName, lessons, known,
 }: {
   lang: LangCode; tagline: string; greeting: string; glyph: string; englishName: string
   lessons: LessonSummary[]
+  /** Every phrase the course can review. Records for phrases since edited out are ignored. */
+  known: string[]
 }) {
   const progress = useProgress(lang)
+  const knownSet = useMemo(() => new Set(known), [known])
+  // Empty until hydrated (the server snapshot has no phrases), so no mismatch.
+  const due = selectDue(progress.phrases, knownSet, localToday()).length
   const done = lessons.filter((l) => progress.lessons[l.id]).length
   const next = lessons.find((l) => !progress.lessons[l.id]) ?? lessons[0]
   const allDone = done === lessons.length
@@ -63,6 +70,20 @@ export function HomeDashboard({
           </span>
           <span className="display text-3xl" aria-hidden="true">→</span>
         </Link>
+
+        {due > 0 && (
+          <Link
+            href={`/${lang}/review`}
+            className="press mt-3 flex items-center gap-4 rounded-2xl bg-surface px-5 py-4 shadow-[var(--shadow)]"
+          >
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/15 text-xl text-accent" aria-hidden="true">↻</span>
+            <span className="flex-1">
+              <span className="display block font-bold text-ink">Review</span>
+              <span className="block text-sm text-ink-faint">{due} {due === 1 ? 'phrase' : 'phrases'} · 1 min</span>
+            </span>
+            <span className="display text-2xl text-ink-faint" aria-hidden="true">→</span>
+          </Link>
+        )}
 
         <nav className="mt-6 flex gap-5 text-sm font-semibold">
           <Link href={`/${lang}/learn`} className="text-ink underline-offset-4 hover:underline">All lessons</Link>

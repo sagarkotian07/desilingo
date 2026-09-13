@@ -10,10 +10,14 @@
  */
 import { AVAILABLE_LANGUAGES, getCourse } from '../src/content'
 import { collectPhrases, estimateRupees, totalChars } from '../src/lib/phrases'
-import { hasOptions } from '../src/content/schema'
+import { hasOptions, isScene } from '../src/content/schema'
 
 let failures = 0
 const fail = (msg: string) => { console.error(`  ✗ ${msg}`); failures++ }
+const warn = (msg: string) => console.warn(`  ! ${msg}`)
+
+/** Each speak turn is a paid speech-to-text call on a public key. */
+const MAX_SCENE_SPEAK_TURNS = 2
 
 for (const lang of AVAILABLE_LANGUAGES) {
   console.log(`\n${lang}`)
@@ -21,18 +25,46 @@ for (const lang of AVAILABLE_LANGUAGES) {
 
   const lessonIds = new Set<string>()
   const answerPositions: number[] = []
+  const meaningOf = new Map<string, string>()
   let exercises = 0
+  let scenes = 0
+
+  // Audio keys hash the exact text, and phrase memory keys on it too, so a
+  // stray space makes a second, different phrase.
+  const trimmed = (text: string, where: string) => {
+    if (text !== text.trim()) fail(`${where}: "${text}" has leading or trailing space`)
+  }
 
   for (const unit of course.units) {
     for (const lesson of unit.lessons) {
       if (lessonIds.has(lesson.id)) fail(`duplicate lesson id "${lesson.id}"`)
       lessonIds.add(lesson.id)
 
+      // Turn types, leads and position are enforced by the schema.
+      if (isScene(lesson)) {
+        scenes++
+        const speaks = lesson.exercises.filter((e) => e.type === 'speak-repeat').length
+        if (speaks > MAX_SCENE_SPEAK_TURNS) warn(`${lesson.id}: ${speaks} speak turns; keep it to ${MAX_SCENE_SPEAK_TURNS}`)
+      }
+
       const exIds = new Set<string>()
       for (const ex of lesson.exercises) {
         exercises++
         if (exIds.has(ex.id)) fail(`${lesson.id}: duplicate exercise id "${ex.id}"`)
         exIds.add(ex.id)
+
+        const where = `${lesson.id}/${ex.id}`
+        if (ex.type === 'match-pairs') {
+          for (const p of ex.pairs) trimmed(p.target, where)
+        } else {
+          trimmed(ex.target, where)
+          if (ex.lead) trimmed(ex.lead.text, `${where} lead`)
+          // Phrase memory treats one target as one piece of knowledge; two
+          // meanings for it would review against whichever came first.
+          const known = meaningOf.get(ex.target)
+          if (known === undefined) meaningOf.set(ex.target, ex.english)
+          else if (known !== ex.english) warn(`${where}: "${ex.target}" means "${ex.english}" here, "${known}" elsewhere`)
+        }
 
         if (hasOptions(ex)) {
           if (ex.answer >= ex.options.length) {
@@ -75,7 +107,7 @@ for (const lang of AVAILABLE_LANGUAGES) {
 
   // Every clip the UI can request must exist, or a control is silently dead.
   const jobs = collectPhrases(course)
-  console.log(`  ${course.units.length} units, ${lessonIds.size} lessons, ${exercises} exercises`)
+  console.log(`  ${course.units.length} units, ${lessonIds.size} lessons (${scenes} scenes), ${exercises} exercises`)
   console.log(`  answer positions: ${[...counts.entries()].sort().map(([k, v]) => `${k}×${v}`).join(' ')}`)
   console.log(`  ${jobs.length} audio clips, ${totalChars(jobs)} chars, ~₹${estimateRupees(jobs).toFixed(2)}`)
 }

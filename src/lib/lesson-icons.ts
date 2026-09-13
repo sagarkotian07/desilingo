@@ -20,6 +20,11 @@ const ICONS: Record<string, string> = {
   'Making Plans': '📅',
   'Small Talk': '💬',
   'Bowing Out Politely': '🙏',
+  // Scenes
+  'A cup of chai': '☕',
+  'A cup of tea': '☕',
+  'Haggling at the market': '🛒',
+  'An auto to the station': '🛺',
 }
 
 export const FALLBACK_ICON = '📖'

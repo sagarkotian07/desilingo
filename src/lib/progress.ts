@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore, useCallback } from 'react'
 import type { LangCode } from './languages'
+import { schedule, isValidPhraseRecord, type Outcome, type PhraseRecord } from './phrase-memory'
 
 /**
  * Learner progress, kept in localStorage.
@@ -25,13 +26,19 @@ export interface LessonResult {
 
 export interface Progress {
   lessons: Record<string, LessonResult>
+  /** Per-phrase memory, keyed by exact target text. See phrase-memory.ts. */
+  phrases: Record<string, PhraseRecord>
   totalXP: number
   streak: number
-  /** YYYY-MM-DD of the last completed lesson. */
+  /** YYYY-MM-DD of the last completed lesson or review. */
   lastPlayed: string | null
 }
 
-export const EMPTY: Progress = { lessons: {}, totalXP: 0, streak: 0, lastPlayed: null }
+/** Shape of stored or imported progress: saved before phrase memory existed,
+ *  it has no `phrases`. */
+type StoredProgress = Omit<Progress, 'phrases'> & { phrases?: Record<string, PhraseRecord> }
+
+export const EMPTY: Progress = { lessons: {}, phrases: {}, totalXP: 0, streak: 0, lastPlayed: null }
 
 export const XP_PER_CORRECT = 2
 export const XP_PERFECT_BONUS = 5
@@ -72,6 +79,8 @@ function today(): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
 }
 
+export const localToday = today
+
 function daysBetween(a: string, b: string): number {
   const parse = (s: string) => {
     const [y, m, d] = s.split('-').map(Number)
@@ -102,6 +111,7 @@ function read(lang: LangCode): Progress {
     const parsed = JSON.parse(raw) as Partial<Progress>
     return withDecay({
       lessons: parsed.lessons ?? {},
+      phrases: parsed.phrases ?? {},
       totalXP: parsed.totalXP ?? 0,
       streak: parsed.streak ?? 0,
       lastPlayed: parsed.lastPlayed ?? null,
@@ -153,19 +163,20 @@ export function xpFor(correct: number, total: number): number {
   return correct === total && total > 0 ? base + XP_PERFECT_BONUS : base
 }
 
+/** Streak after playing on `day`: +1 the day after, 1 after a gap, unchanged
+ *  on a second session the same day. Shared by lessons and reviews. */
+function advanceStreak(current: Progress, day: string): number {
+  if (current.lastPlayed === day) return current.streak || 1
+  const gap = current.lastPlayed ? daysBetween(current.lastPlayed, day) : Infinity
+  return gap === 1 ? current.streak + 1 : 1
+}
+
 export function completeLesson(lang: LangCode, lessonId: string, correct: number, total: number) {
   const current = snapshot(lang)
   const day = today()
   const accuracy = total > 0 ? correct / total : 0
   const xp = xpFor(correct, total)
-
-  let streak = current.streak
-  if (current.lastPlayed !== day) {
-    const gap = current.lastPlayed ? daysBetween(current.lastPlayed, day) : Infinity
-    streak = gap === 1 ? current.streak + 1 : 1
-  } else if (streak === 0) {
-    streak = 1
-  }
+  const streak = advanceStreak(current, day)
 
   // Replaying a lesson keeps your best result and awards only the improvement,
   // so practice is never punished but grinding the same lesson isn't a loophole.
@@ -173,7 +184,10 @@ export function completeLesson(lang: LangCode, lessonId: string, correct: number
   const bestXp = Math.max(previous?.xp ?? 0, xp)
   const delta = bestXp - (previous?.xp ?? 0)
 
+  // Spread first: building a fresh object here would silently drop any field
+  // this function doesn't know about -- phrase memory included.
   commit(lang, {
+    ...current,
     lessons: {
       ...current.lessons,
       [lessonId]: {
@@ -184,6 +198,33 @@ export function completeLesson(lang: LangCode, lessonId: string, correct: number
     },
     totalXP: current.totalXP + delta,
     streak,
+    lastPlayed: day,
+  })
+}
+
+/** Record the phrases one exercise tested. One commit per exercise, even for
+ *  match-pairs, so subscribers re-render once. */
+export function recordPhrases(lang: LangCode, texts: string[], outcome: Outcome) {
+  if (texts.length === 0) return
+  const current = snapshot(lang)
+  const day = today()
+  const phrases = { ...current.phrases }
+  for (const text of texts) phrases[text] = schedule(phrases[text], outcome, day)
+  commit(lang, { ...current, phrases })
+}
+
+/**
+ * A finished review. Earns XP and counts toward the streak -- it is the reason
+ * to open the app on a day with no new lesson -- but no perfect bonus, so a
+ * one-minute review never out-earns a lesson. Doesn't touch `lessons`.
+ */
+export function recordReview(lang: LangCode, correct: number) {
+  const current = snapshot(lang)
+  const day = today()
+  commit(lang, {
+    ...current,
+    totalXP: current.totalXP + correct * XP_PER_CORRECT,
+    streak: advanceStreak(current, day),
     lastPlayed: day,
   })
 }
@@ -205,7 +246,7 @@ export function exportProgress(lang: LangCode): string {
  * render it -- and `importProgress` still reported success, so the learner had
  * a broken app and no idea why.
  */
-function isValidProgress(v: unknown): v is Progress {
+function isValidProgress(v: unknown): v is StoredProgress {
   if (typeof v !== 'object' || v === null) return false
   const p = v as Record<string, unknown>
 
@@ -221,6 +262,15 @@ function isValidProgress(v: unknown): v is Progress {
     if (typeof e.xp !== 'number' || !Number.isFinite(e.xp)) return false
     if (typeof e.completedAt !== 'string') return false
   }
+
+  // Backups from before phrase memory have no `phrases`; that's fine. A present
+  // but malformed one rejects the whole import, same as any other field.
+  if (p.phrases !== undefined) {
+    if (typeof p.phrases !== 'object' || p.phrases === null || Array.isArray(p.phrases)) return false
+    for (const rec of Object.values(p.phrases as Record<string, unknown>)) {
+      if (!isValidPhraseRecord(rec)) return false
+    }
+  }
   return true
 }
 
@@ -230,6 +280,7 @@ export function importProgress(lang: LangCode, json: string): boolean {
     if (!isValidProgress(parsed)) return false
     commit(lang, {
       lessons: parsed.lessons,
+      phrases: parsed.phrases ?? {},
       totalXP: parsed.totalXP,
       streak: parsed.streak,
       lastPlayed: parsed.lastPlayed,

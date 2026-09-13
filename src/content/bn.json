@@ -66,6 +66,56 @@
               "hint": "stopping someone serving you", "options": ["A little more", "That's enough", "One more", "Not for me"], "answer": 1 },
             { "id": "e6", "type": "listen-type-roman", "target": "জল", "romanized": "Jol", "english": "Water" }
           ]
+        },
+        {
+          "id": "bn-scene-1",
+          "title": "A cup of tea",
+          "scene": { "setting": "A roadside tea stall.", "other": "Tea seller" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "চা খাবেন?", "romanized": "Cha khaben?", "english": "Tea?" },
+              "target": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe", "english": "Yes, that's fine",
+              "options": [
+                { "text": "এখন না", "romanized": "Ekhon na" },
+                { "text": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe" },
+                { "text": "লাগবে না", "romanized": "Laagbe na" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "lead": { "text": "চিনি দেব?", "romanized": "Chini debo?", "english": "Sugar in it?" },
+              "target": "লাগবে না", "romanized": "Laagbe na", "english": "I don't need it"
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "lead": { "text": "আর কিছু?", "romanized": "Aar kichhu?", "english": "Anything else?" },
+              "target": "একটু জল লাগবে", "romanized": "Ektu jol laagbe", "english": "I need some water",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "এক মিনিট", "romanized": "Ek minute", "english": "One minute",
+              "options": ["Not now", "One more", "One minute", "Got it"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem",
+              "options": [
+                { "text": "কোনো ব্যাপার না", "romanized": "Kono byapar na" },
+                { "text": "ধন্যবাদ", "romanized": "Dhonnobad" },
+                { "text": "বুঝেছি", "romanized": "Bujhechhi" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "দশ টাকা", "romanized": "Dosh taka", "english": "Ten rupees" },
+              "target": "ধন্যবাদ", "romanized": "Dhonnobad", "english": "Thank you"
+            }
+          ]
         }
       ]
     },
@@ -132,6 +182,56 @@
               "options": ["How far is it?", "How much will you charge?", "How long will it take?", "Which way?"], "answer": 1 },
             { "id": "e5", "type": "word-order", "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here", "extraWords": ["না", "সামনে"] },
             { "id": "e6", "type": "listen-type-roman", "target": "সামনে চলুন", "romanized": "Shamne cholun", "english": "Keep going" }
+          ]
+        },
+        {
+          "id": "bn-scene-2",
+          "title": "Haggling at the market",
+          "scene": { "setting": "A vegetable market.", "other": "Vendor" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "কী লাগবে?", "romanized": "Ki laagbe?", "english": "What do you need?" },
+              "target": "এটা কত?", "romanized": "Eta koto?", "english": "How much is this?",
+              "options": [
+                { "text": "অনেক বেশি", "romanized": "Onek beshi" },
+                { "text": "ঠিক আছে, দিন", "romanized": "Thik achhe, din" },
+                { "text": "এটা কত?", "romanized": "Eta koto?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "একশো টাকা কিলো", "romanized": "Eksho taka kilo", "english": "A hundred rupees a kilo",
+              "options": ["A hundred rupees a kilo", "Two kilos, please", "Fresh today", "Sold out"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "অনেক বেশি", "romanized": "Onek beshi", "english": "That's too much"
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "একদম টাটকা", "romanized": "Ekdom tatka", "english": "Really fresh" },
+              "target": "একটু কমান", "romanized": "Ektu koman", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "একটু কমান", "romanized": "Ektu koman" },
+                { "text": "এটা কত?", "romanized": "Eta koto?" },
+                { "text": "ঠিক আছে, দিন", "romanized": "Thik achhe, din" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "আশি, শেষ দাম", "romanized": "Aashi, shesh daam", "english": "Eighty, and that's final",
+              "options": ["A hundred, and that's final", "Take two kilos", "Not for sale", "Eighty, and that's final"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "word-order",
+              "target": "ঠিক আছে, দিন", "romanized": "Thik achhe, din", "english": "Fine, I'll take it",
+              "extraWords": ["না"]
+            }
           ]
         }
       ]

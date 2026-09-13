@@ -66,6 +66,56 @@
               "hint": "stopping someone serving you", "options": ["A little more", "One more", "Not for me", "That's enough"], "answer": 3 },
             { "id": "e6", "type": "listen-type-roman", "target": "నీళ్లు", "romanized": "Neellu", "english": "Water" }
           ]
+        },
+        {
+          "id": "te-scene-1",
+          "title": "A cup of tea",
+          "scene": { "setting": "A roadside tea stall.", "other": "Tea seller" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "టీ కావాలా?", "romanized": "Tea kaavaalaa?", "english": "Tea?" },
+              "target": "అవును, సరే", "romanized": "Avunu, sare", "english": "Yes, that's fine",
+              "options": [
+                { "text": "అవును, సరే", "romanized": "Avunu, sare" },
+                { "text": "ఇప్పుడు వద్దు", "romanized": "Ippudu vaddu" },
+                { "text": "వద్దు", "romanized": "Vaddu" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "lead": { "text": "చక్కెర వేయనా?", "romanized": "Chakkera veyanaa?", "english": "Sugar in it?" },
+              "target": "వద్దు", "romanized": "Vaddu", "english": "I don't want it"
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "lead": { "text": "ఇంకేమైనా?", "romanized": "Inkemainaa?", "english": "Anything else?" },
+              "target": "కొంచెం నీళ్లు కావాలి", "romanized": "Konchem neellu kaavaali", "english": "I need some water",
+              "extraWords": ["లేదు"]
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఒక నిమిషం", "romanized": "Oka nimisham", "english": "One minute",
+              "options": ["Not now", "One minute", "One more", "Got it"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem",
+              "options": [
+                { "text": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu" },
+                { "text": "అర్థమైంది", "romanized": "Arthamaindi" },
+                { "text": "పర్వాలేదు", "romanized": "Parvaledu" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "పది రూపాయలు", "romanized": "Padi roopaayalu", "english": "Ten rupees" },
+              "target": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu", "english": "Thank you"
+            }
+          ]
         }
       ]
     },
@@ -132,6 +182,56 @@
               "options": ["How much will it be?", "How far is it?", "How long will it take?", "Which way?"], "answer": 0 },
             { "id": "e5", "type": "word-order", "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here", "extraWords": ["వద్దు", "ముందుకు"] },
             { "id": "e6", "type": "listen-type-roman", "target": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi", "english": "Keep going" }
+          ]
+        },
+        {
+          "id": "te-scene-2",
+          "title": "Haggling at the market",
+          "scene": { "setting": "A vegetable market.", "other": "Vendor" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "ఏం కావాలి?", "romanized": "Em kaavaali?", "english": "What do you need?" },
+              "target": "ఇది ఎంత?", "romanized": "Idi enta?", "english": "How much is this?",
+              "options": [
+                { "text": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi" },
+                { "text": "ఇది ఎంత?", "romanized": "Idi enta?" },
+                { "text": "చాలా ఎక్కువ", "romanized": "Chaalaa ekkuva" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "కిలో వంద రూపాయలు", "romanized": "Kilo vanda roopaayalu", "english": "A hundred rupees a kilo",
+              "options": ["Two kilos, please", "Fresh today", "Sold out", "A hundred rupees a kilo"],
+              "answer": 3
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "చాలా ఎక్కువ", "romanized": "Chaalaa ekkuva", "english": "That's too much"
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "తాజాగా ఉన్నాయి", "romanized": "Taajaagaa unnaayi", "english": "They're fresh" },
+              "target": "కొంచెం తగ్గించండి", "romanized": "Konchem taggincandi", "english": "Bring the price down a bit",
+              "options": [
+                { "text": "కొంచెం తగ్గించండి", "romanized": "Konchem taggincandi" },
+                { "text": "ఇది ఎంత?", "romanized": "Idi enta?" },
+                { "text": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "ఎనభై, అంతే", "romanized": "Enabhai, ante", "english": "Eighty, and that's final",
+              "options": ["A hundred, and that's final", "Take two kilos", "Eighty, and that's final", "Not for sale"],
+              "answer": 2
+            },
+            {
+              "id": "e6", "type": "word-order",
+              "target": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi", "english": "Fine, I'll take it",
+              "extraWords": ["వద్దు"]
+            }
           ]
         }
       ]

@@ -20,8 +20,10 @@ export interface PhraseJob {
  */
 function textsOf(e: Exercise): string[] {
   if (e.type === 'match-pairs') return e.pairs.map((p) => p.target)
-  if (e.type === 'select-phrase') return [e.target, ...e.options.map((o) => o.text)]
-  return [e.target]
+  // A scene's other speaker. Normal pace only: it's heard, never drilled.
+  const lead = e.lead ? [e.lead.text] : []
+  if (e.type === 'select-phrase') return [...lead, e.target, ...e.options.map((o) => o.text)]
+  return [...lead, e.target]
 }
 
 /** Exercises that offer a slow replay, and therefore need a 0.75-pace clip.

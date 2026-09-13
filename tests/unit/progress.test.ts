@@ -14,8 +14,10 @@ const storage = new MemoryStorage()
 vi.stubGlobal('localStorage', storage)
 vi.stubGlobal('window', { addEventListener() {}, removeEventListener() {} })
 
-const { completeLesson, resetProgress, exportProgress, importProgress, xpFor, XP_PERFECT_BONUS } =
-  await import('@/lib/progress')
+const {
+  completeLesson, recordPhrases, recordReview, resetProgress, exportProgress, importProgress,
+  xpFor, XP_PERFECT_BONUS,
+} = await import('@/lib/progress')
 
 function read(lang: 'hi' | 'kn' = 'hi') {
   return JSON.parse(exportProgress(lang))
@@ -112,5 +114,73 @@ describe('progress store', () => {
 
   it('rejects malformed imports instead of corrupting state', () => {
     expect(importProgress('hi', 'not json')).toBe(false)
+  })
+})
+
+describe('phrase memory', () => {
+  beforeEach(() => { storage.clear(); resetProgress('hi'); resetProgress('kn') })
+
+  it('remembers a phrase and schedules it for tomorrow', () => {
+    recordPhrases('hi', ['हाँ'], 'hit')
+    expect(read().phrases['हाँ']).toMatchObject({ box: 1, due: iso(-1), lastSeen: iso(0), seen: 1 })
+  })
+
+  it('saves once for an exercise that tests several phrases', () => {
+    const spy = vi.spyOn(storage, 'setItem')
+    recordPhrases('hi', ['हाँ', 'नहीं', 'शायद'], 'seen')
+    expect(spy).toHaveBeenCalledTimes(1)
+    spy.mockRestore()
+    expect(Object.keys(read().phrases)).toHaveLength(3)
+  })
+
+  it('survives finishing a lesson', () => {
+    recordPhrases('hi', ['हाँ'], 'miss')
+    completeLesson('hi', 'lesson-1-1', 5, 6)
+    expect(read().phrases['हाँ'].misses).toBe(1)
+  })
+
+  it('is cleared by a reset', () => {
+    recordPhrases('hi', ['हाँ'], 'hit')
+    resetProgress('hi')
+    expect(read().phrases).toEqual({})
+  })
+
+  it('accepts a backup saved before phrase memory existed', () => {
+    expect(importProgress('hi', JSON.stringify({ lessons: {}, totalXP: 12, streak: 0, lastPlayed: null }))).toBe(true)
+    expect(read().phrases).toEqual({})
+    expect(read().totalXP).toBe(12)
+  })
+
+  it.each([
+    ['a malformed record', { 'हाँ': { box: 9, due: 'soon', lastSeen: iso(0), seen: 1, misses: 0 } }],
+    ['an array', []],
+    ['null', null],
+  ])('rejects a backup whose phrases are %s', (_, phrases) => {
+    const dump = JSON.stringify({ lessons: {}, totalXP: 0, streak: 0, lastPlayed: null, phrases })
+    expect(importProgress('hi', dump)).toBe(false)
+  })
+})
+
+describe('recordReview', () => {
+  beforeEach(() => { storage.clear(); resetProgress('hi') })
+
+  it('earns XP per correct answer with no clean-run bonus', () => {
+    recordReview('hi', 5)
+    expect(read().totalXP).toBe(10)
+  })
+
+  it('keeps the streak alive without touching lessons', () => {
+    importProgress('hi', JSON.stringify({ lessons: {}, totalXP: 0, streak: 3, lastPlayed: iso(1) }))
+    recordReview('hi', 2)
+    const p = read()
+    expect(p.streak).toBe(4)
+    expect(p.lastPlayed).toBe(iso(0))
+    expect(p.lessons).toEqual({})
+  })
+
+  it('does not count twice on a day that already had a lesson', () => {
+    completeLesson('hi', 'lesson-1-1', 5, 6)
+    recordReview('hi', 3)
+    expect(read().streak).toBe(1)
   })
 })
