@@ -73,6 +73,7 @@ for (const lang of AVAILABLE_LANGUAGES) {
     )
   }
 
+  // Every clip the UI can request must exist, or a control is silently dead.
   const jobs = collectPhrases(course)
   console.log(`  ${course.units.length} units, ${lessonIds.size} lessons, ${exercises} exercises`)
   console.log(`  answer positions: ${[...counts.entries()].sort().map(([k, v]) => `${k}×${v}`).join(' ')}`)

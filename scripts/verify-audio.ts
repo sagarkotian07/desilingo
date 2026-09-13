@@ -37,7 +37,8 @@ async function main() {
     bytes += size
   }
 
-  // And the reverse: every phrase the content needs must be in the manifest.
+  // And the reverse: every clip the UI can request must be in the manifest.
+  // This is what catches a control that renders but has nothing to play.
   for (const lang of AVAILABLE_LANGUAGES) {
     for (const job of collectPhrases(getCourse(lang))) {
       if (!manifest[job.key]) fail(`${lang}: no audio for "${job.text}" at pace ${job.pace}`)

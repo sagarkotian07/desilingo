@@ -11,9 +11,23 @@ export interface PhraseJob {
   speaker: string
 }
 
-/** Every phrase in an exercise that needs audio. */
+/**
+ * Every phrase an exercise can play.
+ *
+ * This must cover what the UI can actually request, not just the headline
+ * phrase. select-phrase plays whichever option you tap -- including the wrong
+ * ones -- so 13 decoys across the six courses were silently soundless.
+ */
 function textsOf(e: Exercise): string[] {
-  return e.type === 'match-pairs' ? e.pairs.map((p) => p.target) : [e.target]
+  if (e.type === 'match-pairs') return e.pairs.map((p) => p.target)
+  if (e.type === 'select-phrase') return [e.target, ...e.options.map((o) => o.text)]
+  return [e.target]
+}
+
+/** Exercises that offer a slow replay, and therefore need a 0.75-pace clip.
+ *  A type predicate so the caller keeps access to `target`. */
+function needsSlow(e: Exercise): e is Extract<Exercise, { type: 'speak-repeat' | 'listen-type-roman' }> {
+  return e.type === 'speak-repeat' || e.type === 'listen-type-roman'
 }
 
 /**
@@ -41,7 +55,7 @@ export function collectPhrases(course: Course): PhraseJob[] {
     for (const lesson of unit.lessons) {
       for (const ex of lesson.exercises) {
         for (const text of textsOf(ex)) add(text, PACE_NORMAL)
-        if (ex.type === 'speak-repeat') add(ex.target, PACE_SLOW)
+        if (needsSlow(ex)) add(ex.target, PACE_SLOW)
       }
     }
   }

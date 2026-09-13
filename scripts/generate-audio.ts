@@ -53,7 +53,9 @@ const maxCharsRaw = value('--max-chars')
 // A bad value used to become NaN, and every comparison against NaN is false --
 // which silently disabled the spending cap on a script that spends real money.
 const maxChars = maxCharsRaw === undefined ? Infinity : Number(maxCharsRaw)
-if (!Number.isFinite(maxChars) || maxChars <= 0) {
+// Validate only when the flag was actually passed: the no-cap default is
+// Infinity, and Number.isFinite(Infinity) is false.
+if (maxCharsRaw !== undefined && (!Number.isFinite(maxChars) || maxChars <= 0)) {
   console.error(`--max-chars must be a positive number (got "${maxCharsRaw}")`)
   process.exit(1)
 }
