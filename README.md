@@ -28,7 +28,7 @@ cp .env.example .env.local     # add your Sarvam key
 npm run dev
 ```
 
-**The app works without an API key.** All lesson audio is committed, so a fresh clone plays every clip offline. A key is only needed for the two live features: pronunciation scoring and the phrasebook.
+**The app works without an API key.** All lesson audio is committed, so a fresh clone plays every clip. A key is only needed for the two live features: pronunciation scoring and the phrasebook — and even those run against a local stand-in with `MOCK_VOICE=1`, so UI work costs nothing.
 
 Get one at [dashboard.sarvam.ai](https://dashboard.sarvam.ai) — signup includes ₹100 of credit, which is more than enough (see *Cost* below).
 
@@ -41,6 +41,8 @@ Get one at [dashboard.sarvam.ai](https://dashboard.sarvam.ai) — signup include
 | `npm run validate:content` | Schema plus the invariants a schema can't express |
 | `npm run gen:audio -- --dry-run` | **Print the exact cost before spending anything** |
 | `npm run gen:audio` | Generate missing clips (idempotent; skips what exists) |
+| `npm run romanize -- --lang hi` | Audit hand-written romanization against Sarvam |
+| `MOCK_VOICE=1 npm run dev` | Run with an offline voice stand-in — no key, no spend |
 | `npm run verify:audio` | Assert every manifest entry has a file. Runs on `prebuild` |
 
 Live API tests are gated so they never run by accident:
@@ -64,6 +66,8 @@ Filenames are a hash of the whole tuple — language, text, speaker, model, pace
 ### Pronunciation scoring
 
 Record → `/api/stt` → Sarvam `saaras:v4` → normalize → align → verdict.
+
+The route takes the phrase's **content-addressed key**, never the text. The server resolves it against the manifest, so the set of phrases a caller can make us pay to score is exactly the set we ship — the same allowlist trick `/api/tts` uses. It also reads the duration from the WAV header rather than trusting byte count, because Sarvam bills by the second and accepts up to 30 s.
 
 The interesting part is the metric. Comparison uses a **weighted edit distance over grapheme clusters**, with:
 
@@ -92,7 +96,7 @@ Slow-pace audio is generated only for speaking drills, not every phrase, which r
 A public deployment proxying a personal API key is a way for a stranger to spend your credits. In order of importance:
 
 1. `/api/tts` accepts a manifest key, not text.
-2. `/api/stt` checks `Content-Length` and rejects oversized uploads **before** reading the body — Vercel's limit is 100 MB and will not save you.
+2. `/api/stt` requires a parseable `Content-Length` and rejects oversized uploads **before** reading the body. A missing or chunked header must be refused, not treated as zero — Vercel's own limit is 100 MB and will not save you.
 3. A Vercel WAF rate-limit rule on `/api/stt` is the load-bearing control; requests it blocks never reach a function.
 4. Per-IP throttling in-process as defence in depth — honestly imperfect, since counters are per instance.
 5. `SARVAM_ENABLED=0` as a kill switch.

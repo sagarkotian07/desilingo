@@ -14,7 +14,7 @@
   --surface-sunk: #f3ede2;
   --ink: #221c33;
   --ink-soft: #5d5470;
-  --ink-faint: #8b829c;
+  --ink-faint: #736a82; /* 4.74:1 on ground, 5.11:1 on surface - AA */
   --line: #e6ddcd;
 
   --indigo: #3b3378;
@@ -37,7 +37,7 @@
     --surface-sunk: #17142575;
     --ink: #f2eee9;
     --ink-soft: #b9b1cb;
-    --ink-faint: #857c9b;
+    --ink-faint: #9a91b0; /* 6.24:1 on ground, 5.71:1 on surface - AA */
     --line: #2e2846;
 
     --indigo: #a89ef0;

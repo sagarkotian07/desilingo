@@ -58,13 +58,26 @@ function migrateLegacy(lang: LangCode): string | null {
   }
 }
 
+/**
+ * The learner's local calendar day, not UTC.
+ *
+ * toISOString() is UTC, so in IST the "day" rolled over at 05:30 local time:
+ * two evening sessions could count as different days, and two consecutive
+ * mornings as the same one. Streaks are a promise about the learner's calendar,
+ * so they have to use it.
+ */
 function today(): string {
-  return new Date().toISOString().slice(0, 10)
+  const d = new Date()
+  const pad = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
 }
 
 function daysBetween(a: string, b: string): number {
-  const ms = Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)
-  return Math.round(ms / 86_400_000)
+  const parse = (s: string) => {
+    const [y, m, d] = s.split('-').map(Number)
+    return new Date(y, m - 1, d).getTime()
+  }
+  return Math.round((parse(b) - parse(a)) / 86_400_000)
 }
 
 /**

@@ -24,6 +24,7 @@ export function ListenTypeRoman({
   const audio = useAudio(lang)
   const [typed, setTyped] = useState('')
   const [checked, setChecked] = useState(false)
+  const [revealed, setRevealed] = useState(false)
 
   // Depends on the play callback only. Depending on the whole `audio` object
   // used to re-run this on every render and loop the clip.
@@ -50,6 +51,10 @@ export function ListenTypeRoman({
           </button>
         </div>
 
+        {revealed && (
+          <Script lang={lang} className="mt-4 block text-2xl font-bold">{exercise.target}</Script>
+        )}
+
         <label htmlFor="roman" className="sr-only">Type what you hear</label>
         <input
           id="roman"
@@ -63,6 +68,20 @@ export function ListenTypeRoman({
           className="mt-5 w-full rounded-xl border-2 border-line bg-ground px-4 py-3 text-center text-lg text-ink outline-none placeholder:text-ink-faint focus:border-indigo disabled:opacity-70"
         />
       </div>
+
+
+      {/* An audio-only question is unanswerable if you cannot hear it, and
+          browsers block autoplay until a gesture. This reveals the script --
+          not the meaning -- so the exercise stays solvable either way. */}
+      {!revealed && (
+        <button
+          type="button"
+          onClick={() => setRevealed(true)}
+          className="mx-auto mt-3 block rounded-lg px-3 py-1 text-xs text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+        >
+          {audio.blocked ? 'Audio is blocked — show the phrase' : "Can't hear it? Show the phrase"}
+        </button>
+      )}
 
       {!checked ? (
         <button

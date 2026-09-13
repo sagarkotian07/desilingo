@@ -64,6 +64,20 @@ export function ListenChoose({
         )}
       </div>
 
+
+      {/* An audio-only question is unanswerable if you cannot hear it, and
+          browsers block autoplay until a gesture. This reveals the script --
+          not the meaning -- so the exercise stays solvable either way. */}
+      {!revealed && (
+        <button
+          type="button"
+          onClick={() => setRevealed(true)}
+          className="mx-auto mt-3 block rounded-lg px-3 py-1 text-xs text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+        >
+          {audio.blocked ? 'Audio is blocked — show the phrase' : "Can't hear it? Show the phrase"}
+        </button>
+      )}
+
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         {options.map((option, i) => (
           <OptionButton key={option} onClick={() => choose(i)} state={stateFor(i)} disabled={answered}>

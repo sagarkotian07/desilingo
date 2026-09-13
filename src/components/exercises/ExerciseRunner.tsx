@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import type { Exercise, Lesson } from '@/content/schema'
 import { LANGUAGE_CONFIG, type LangCode } from '@/lib/languages'
@@ -13,6 +13,9 @@ import { SpeakRepeat } from './SpeakRepeat'
 import { WordOrder } from './WordOrder'
 import { ListenTypeRoman } from './ListenTypeRoman'
 import { MatchPairs } from './MatchPairs'
+
+/** How many times a missed exercise can come back before we move on. */
+const MAX_REVIEW_PASSES = 2
 
 function ExerciseView({
   exercise, lang, onDone,
@@ -47,7 +50,14 @@ export function ExerciseRunner({
   const [missed, setMissed] = useState<Exercise[]>([])
   const [firstPassCorrect, setFirstPassCorrect] = useState(0)
   const [reviewing, setReviewing] = useState(false)
+  const [reviewPass, setReviewPass] = useState(0)
   const [finished, setFinished] = useState(false)
+  const exerciseRef = useRef<HTMLDivElement>(null)
+
+  // Focus follows the exercise, not the button that disappeared.
+  useEffect(() => {
+    if (mounted) exerciseRef.current?.focus()
+  }, [index, reviewing, mounted])
 
   function handleDone(correct: boolean) {
     // Accuracy is measured on the first pass only, so the review round can't
@@ -57,15 +67,23 @@ export function ExerciseRunner({
       else setMissed((m) => [...m, queue[index]])
     }
 
+    // Track misses in the review round too. Previously anything answered in
+    // review was cleared regardless of whether it was right, so a learner could
+    // get every review answer wrong and still finish the lesson.
+    if (reviewing && !correct) setMissed((m) => [...m, queue[index]])
+
     const next = index + 1
     if (next < queue.length) { setIndex(next); return }
 
-    const stillMissed = reviewing ? [] : (correct ? missed : [...missed, queue[index]])
-    if (!reviewing && stillMissed.length > 0) {
+    const stillMissed = correct ? missed : [...missed, queue[index]]
+    // Cap the number of review rounds: repeating a phrase the learner keeps
+    // missing is discouraging, and an uncapped loop is inescapable.
+    if (stillMissed.length > 0 && reviewPass < MAX_REVIEW_PASSES) {
       setQueue(stillMissed)
       setMissed([])
       setIndex(0)
       setReviewing(true)
+      setReviewPass((n) => n + 1)
       return
     }
 
@@ -141,7 +159,19 @@ export function ExerciseRunner({
         )}
       </div>
 
-      <div className="mt-6">
+      {/* Moving focus to the new exercise and announcing it: without this the
+          focused Continue button simply vanished, focus fell back to <body>,
+          and a screen-reader user got no signal that a new question had
+          loaded. */}
+      <p className="sr-only" role="status" aria-live="polite">
+        {reviewing ? 'Review question' : `Question ${index + 1} of ${total}`}
+      </p>
+
+      <div
+        ref={exerciseRef}
+        tabIndex={-1}
+        className="mt-6 outline-none"
+      >
         {mounted ? (
           <ExerciseView exercise={queue[index]} lang={lang} onDone={handleDone} />
         ) : (

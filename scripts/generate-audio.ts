@@ -49,7 +49,14 @@ const value = (flag: string) => {
 
 const dryRun = has('--dry-run')
 const force = has('--force')
-const maxChars = Number(value('--max-chars') ?? Infinity)
+const maxCharsRaw = value('--max-chars')
+// A bad value used to become NaN, and every comparison against NaN is false --
+// which silently disabled the spending cap on a script that spends real money.
+const maxChars = maxCharsRaw === undefined ? Infinity : Number(maxCharsRaw)
+if (!Number.isFinite(maxChars) || maxChars <= 0) {
+  console.error(`--max-chars must be a positive number (got "${maxCharsRaw}")`)
+  process.exit(1)
+}
 const langArg = value('--lang')
 
 if (langArg && !isLangCode(langArg)) {

@@ -64,7 +64,7 @@ export default function LanguagePicker() {
       <ul className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
         <li>✔ Two-minute lessons</li>
         <li>✔ No signup</li>
-        <li>✔ Works offline once loaded</li>
+        <li>✔ Works in your browser</li>
       </ul>
     </main>
   )

@@ -12,6 +12,14 @@ export interface TranscribeRequest {
   audio: Blob
   lang: LangCode
   filename?: string
+  /**
+   * What the learner was asked to say.
+   *
+   * Used ONLY by the mock provider, so local development can exercise the full
+   * scoring UI without a microphone or credits. The Sarvam provider ignores it
+   * -- it must, or we would be grading against the answer sheet.
+   */
+  expect?: string
 }
 
 export interface TranscribeResult {

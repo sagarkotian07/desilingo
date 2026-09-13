@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { sarvam } from '@/lib/voice/sarvam'
+import { voiceProvider } from '@/lib/voice'
 import { VoiceError } from '@/lib/voice/types'
 import { isLangCode } from '@/lib/languages'
 import { clientIp, isSameOrigin, rateLimit } from '@/lib/rate-limit'
@@ -49,8 +49,8 @@ export async function POST(req: Request) {
     // for "How much does this cost?" in Kannada this yields "Idara bele eshtu?"
     // where transliteration gave "Idhaa bele eshtu?".
     const [native, roman] = await Promise.all([
-      sarvam.translate({ text, from: 'en', to, script: 'native' }),
-      sarvam.translate({ text, from: 'en', to, script: 'roman' }),
+      voiceProvider().translate({ text, from: 'en', to, script: 'native' }),
+      voiceProvider().translate({ text, from: 'en', to, script: 'roman' }),
     ])
     return NextResponse.json({ native, roman })
   } catch (err) {

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import manifest from '@/generated/audio-manifest.json'
-import { sarvam } from '@/lib/voice/sarvam'
+import { voiceProvider } from '@/lib/voice'
 import { VoiceError } from '@/lib/voice/types'
 import type { AudioManifest } from '@/lib/audio'
 import { clientIp, isSameOrigin, rateLimit } from '@/lib/rate-limit'
@@ -48,7 +48,7 @@ export async function GET(req: Request) {
   }
 
   try {
-    const audio = await sarvam.synthesize({
+    const audio = await voiceProvider().synthesize({
       text: entry.text, lang: entry.lang, pace: entry.pace, speaker: entry.speaker,
     })
     return new NextResponse(audio, {

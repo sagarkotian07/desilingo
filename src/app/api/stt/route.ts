@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { sarvam } from '@/lib/voice/sarvam'
+import { voiceProvider } from '@/lib/voice'
 import { VoiceError } from '@/lib/voice/types'
 import { scorePronunciation } from '@/lib/scoring/score'
 import { resolvePhrase } from '@/lib/phrase-lookup'
@@ -83,10 +83,11 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { transcript, detectedLanguage } = await sarvam.transcribe({
+    const { transcript, detectedLanguage } = await voiceProvider().transcribe({
       audio: new Blob([bytes], { type: 'audio/wav' }),
       lang: phrase.lang,
       filename: 'attempt.wav',
+      expect: phrase.text, // mock provider only; Sarvam ignores it
     })
     const result = scorePronunciation({
       target: phrase.text, transcript, lang: phrase.lang, detectedLanguage,

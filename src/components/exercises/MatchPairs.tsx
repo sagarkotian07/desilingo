@@ -29,6 +29,7 @@ export function MatchPairs({
   const [matched, setMatched] = useState<Set<number>>(new Set())
   const [wrong, setWrong] = useState<number | null>(null)
   const [mistakes, setMistakes] = useState(0)
+  const [announcement, setAnnouncement] = useState('')
 
   const complete = matched.size === exercise.pairs.length
 
@@ -44,7 +45,9 @@ export function MatchPairs({
     if (selected === i) {
       setMatched((m) => new Set(m).add(i))
       setSelected(null)
+      setAnnouncement('Matched')
     } else {
+      setAnnouncement('Not a match')
       setWrong(i)
       setMistakes((n) => n + 1)
       setTimeout(() => setWrong(null), 550)
@@ -56,6 +59,9 @@ export function MatchPairs({
     <div>
       <Prompt>Match each phrase to its meaning</Prompt>
 
+      {/* Matches and mismatches were signalled by colour alone. */}
+      <p className="sr-only" role="status" aria-live="polite">{announcement}</p>
+
       <div className="grid grid-cols-2 gap-3">
         <div className="flex flex-col gap-2">
           {natives.map((p) => (
@@ -64,6 +70,7 @@ export function MatchPairs({
               type="button"
               onClick={() => tapNative(p.i, p.target)}
               disabled={matched.has(p.i)}
+              aria-pressed={selected === p.i}
               className={`rounded-2xl border-2 px-3 py-3 text-center transition-all active:scale-[0.98] ${
                 matched.has(p.i) ? 'border-leaf/50 bg-leaf-soft opacity-60'
                   : selected === p.i ? 'border-indigo bg-indigo-soft'

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import type { LangCode } from '@/lib/languages'
 import { Script } from '@/components/ui/Script'
 
@@ -13,13 +13,20 @@ import { Script } from '@/components/ui/Script'
  */
 export function Phrasebook({ lang, languageName }: { lang: LangCode; languageName: string }) {
   const [text, setText] = useState('')
-  const [result, setResult] = useState<{ native: string; roman: string } | null>(null)
+  const [result, setResult] = useState<{ query: string; native: string; roman: string } | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
+  // Responses can arrive out of order, and the box stays editable while one is
+  // in flight -- without this you could be shown phrase A's translation sitting
+  // under phrase B.
+  const requestId = useRef(0)
+
   async function lookup(e: React.FormEvent) {
     e.preventDefault()
-    if (!text.trim() || loading) return
+    const query = text.trim()
+    if (!query || loading) return
+    const id = ++requestId.current
     setLoading(true)
     setError(null)
     setResult(null)
@@ -27,15 +34,17 @@ export function Phrasebook({ lang, languageName }: { lang: LangCode; languageNam
       const res = await fetch('/api/translate', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ text: text.trim(), to: lang }),
+        body: JSON.stringify({ text: query, to: lang }),
       })
       const body = (await res.json()) as { native?: string; roman?: string; error?: string }
+      if (id !== requestId.current) return // superseded
       if (!res.ok) throw new Error(body.error ?? 'Could not translate that')
-      setResult({ native: body.native ?? '', roman: body.roman ?? '' })
+      setResult({ query, native: body.native ?? '', roman: body.roman ?? '' })
     } catch (err) {
+      if (id !== requestId.current) return
       setError(err instanceof Error ? err.message : 'Something went wrong')
     } finally {
-      setLoading(false)
+      if (id === requestId.current) setLoading(false)
     }
   }
 
@@ -72,6 +81,7 @@ export function Phrasebook({ lang, languageName }: { lang: LangCode; languageNam
 
       {result && (
         <div className="animate-rise mt-6 rounded-3xl border border-line bg-surface p-6 text-center shadow-[var(--shadow)]">
+          <p className="mb-3 text-xs text-ink-faint">&ldquo;{result.query}&rdquo;</p>
           <Script lang={lang} className="block text-3xl font-bold text-ink">{result.native}</Script>
           <p className="mt-2 text-sm italic text-terracotta">{result.roman}</p>
         </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import type { Exercise } from '@/content/schema'
 import type { LangCode } from '@/lib/languages'
 import type { PronunciationResult, Verdict } from '@/lib/scoring/score'
@@ -92,6 +92,17 @@ export function SpeakRepeat({
 
 
   const recording = recorder.state === 'recording'
+
+  // The 8-second cap used to fire with no warning. Showing the remaining time
+  // turns a surprise cut-off into a deadline the learner can see.
+  const [elapsedMs, setElapsedMs] = useState(0)
+  useEffect(() => {
+    if (!recording) return
+    const startedAt = Date.now()
+    const id = setInterval(() => setElapsedMs(Date.now() - startedAt), 100)
+    return () => clearInterval(id)
+  }, [recording])
+  const remainingMs = recording ? Math.max(0, recorder.maxMs - elapsedMs) : recorder.maxMs
   const busy = sending || recorder.state === 'processing' || recorder.state === 'requesting'
 
   async function toggle() {
@@ -161,13 +172,24 @@ export function SpeakRepeat({
           )}
         </button>
         <p className="mt-2 text-xs text-ink-faint" aria-live="polite">
+          {recorder.state === 'requesting' && 'Allow microphone access to continue…'}
           {recorder.state === 'denied' && 'Microphone permission was denied.'}
           {recorder.state === 'unsupported' && "This browser can't record audio."}
-          {recording && 'Listening — tap again when done'}
+          {recording && `Listening — ${Math.ceil(remainingMs / 1000)}s left, tap again when done`}
           {busy && 'Checking your pronunciation…'}
           {!recording && !busy && recorder.state === 'idle' && (attempts ? 'Try again' : 'Tap to record')}
         </p>
       </div>
+
+      {recording && (
+        <button
+          type="button"
+          onClick={() => recorder.cancel()}
+          className="mx-auto mt-2 block rounded-lg px-3 py-1 text-xs text-ink-faint underline-offset-4 hover:text-ink hover:underline"
+        >
+          Cancel
+        </button>
+      )}
 
       {error && (
         <p role="status" className="mt-4 rounded-xl bg-terracotta-soft px-4 py-2 text-center text-sm text-ink">{error}</p>
