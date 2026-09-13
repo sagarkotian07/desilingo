@@ -4,7 +4,6 @@ import Link from 'next/link'
 import type { LangCode } from '@/lib/languages'
 import { useProgress } from '@/lib/progress'
 import { Script } from '@/components/ui/Script'
-import { ProgressBackup } from './ProgressBackup'
 
 interface LessonSummary { id: string; title: string; unitTitle: string; count: number }
 
@@ -72,7 +71,6 @@ export function HomeDashboard({
         </nav>
       </section>
 
-      <ProgressBackup lang={lang} />
     </main>
   )
 }
