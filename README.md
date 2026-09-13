@@ -89,6 +89,15 @@ Why not SM-2: it wants a 0–5 grade per answer, and five of the six exercise ty
 
 Transcribe the line's own generated clip with Sarvam and score it as `/api/stt` does. If the model writes the phrase differently from the content, a learner who says it correctly is told to retry — the expensive failure. Five of the 71 spoken lines added in the city-life units failed this way: contracted spellings (`ಇನ್ನೊಂದ್ಸಲ` for `ಇನ್ನೊಂದು ಸಲ`), words the model joins (`অন্যদিন`), and a station name it split into "Es planet". Respelling fixed all five.
 
+### Small screens
+
+Audited by rendering each route in an iframe of a phone's width and measuring, at 320/360/390/768/1024 and landscape, in both text sizes. What that keeps honest:
+
+- Nothing may extend past the viewport at 320px. `body` hides horizontal overflow, so a regression here is invisible without measuring.
+- Interactive elements stay at least 40px tall. Several were 18-36px.
+- `LessonHeader` publishes its measured height as `--header-h` and the runner's progress bar sticks to it. A hardcoded offset broke as soon as the header grew with the text-size setting.
+- `viewport-fit=cover` is what makes `env(safe-area-inset-*)` non-zero; the fixed answer bar depends on it, and `body` pads the left and right insets for landscape.
+
 ### Cost
 
 Real numbers from building this:
