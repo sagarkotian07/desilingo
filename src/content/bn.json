@@ -680,7 +680,7 @@
             },
             {
               "id": "e2", "type": "speak-repeat",
-              "target": "এসপ্ল্যানেড যাব", "romanized": "Esplanade jabo", "english": "I need to go to Esplanade"
+              "target": "কালীঘাট যেতে হবে", "romanized": "Kalighat jete hobe", "english": "I need to go to Kalighat"
             },
             {
               "id": "e3", "type": "select-phrase",
@@ -821,7 +821,7 @@
             },
             {
               "id": "e2", "type": "speak-repeat",
-              "target": "আজ না, অন্য দিন", "romanized": "Aaj na, onno din", "english": "Not today, some other time"
+              "target": "আজ না, অন্যদিন", "romanized": "Aaj na, onnodin", "english": "Not today, some other time"
             },
             {
               "id": "e3", "type": "select-phrase",

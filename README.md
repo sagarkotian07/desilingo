@@ -91,7 +91,7 @@ Real numbers from building this:
 
 | | |
 |---|---|
-| All 735 clips, 6 languages | **₹30.78**, one-time |
+| All 735 clips, 6 languages | **₹30.75**, one-time |
 | One pronunciation attempt | ~₹0.03 |
 | Repeat visitor | **₹0** — static files |
 

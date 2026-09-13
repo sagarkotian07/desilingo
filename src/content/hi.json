@@ -716,15 +716,9 @@
           "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
           "exercises": [
             {
-              "id": "e1", "type": "select-phrase",
+              "id": "e1", "type": "speak-repeat",
               "lead": { "text": "आपका पार्सल है। कहाँ आऊँ?", "romanized": "Aapka parcel hai. Kahaan aaoon?", "english": "Your parcel. Where do I come?" },
-              "target": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye", "english": "Come to gate number two",
-              "options": [
-                { "text": "मेडिकल स्टोर के बगल में", "romanized": "Medical store ke bagal mein" },
-                { "text": "आप किस गेट पर हैं?", "romanized": "Aap kis gate par hain?" },
-                { "text": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye" }
-              ],
-              "answer": 2
+              "target": "मैं मेन गेट पर हूँ", "romanized": "Main main gate par hoon", "english": "I'm at the main gate"
             },
             {
               "id": "e2", "type": "listen-choose",
@@ -755,8 +749,14 @@
               "answer": 3
             },
             {
-              "id": "e6", "type": "speak-repeat",
-              "target": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?", "english": "Can I pay by UPI?"
+              "id": "e6", "type": "select-phrase",
+              "target": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?", "english": "Can I pay by UPI?",
+              "options": [
+                { "text": "पेमेंट हो गया", "romanized": "Payment ho gaya" },
+                { "text": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?" },
+                { "text": "आपको मिला?", "romanized": "Aapko mila?" }
+              ],
+              "answer": 1
             }
           ]
         }

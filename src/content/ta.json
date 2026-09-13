@@ -637,7 +637,7 @@
             },
             {
               "id": "e2", "type": "speak-repeat",
-              "target": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga", "english": "Come to gate number two"
+              "target": "ரெண்டாவது கேட் கிட்ட வாங்க", "romanized": "Rendaavadhu gate kitta vaanga", "english": "Come to gate number two"
             },
             {
               "id": "e3", "type": "select-phrase",
@@ -645,7 +645,7 @@
               "options": [
                 { "text": "அங்கேயே இருங்க", "romanized": "Angeye irunga" },
                 { "text": "செக்யூரிட்டி கிட்ட குடுத்துடுங்க", "romanized": "Security kitta kuduthudunga" },
-                { "text": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga" },
+                { "text": "ரெண்டாவது கேட் கிட்ட வாங்க", "romanized": "Rendaavadhu gate kitta vaanga" },
                 { "text": "லொகேஷன் அனுப்புங்க", "romanized": "Location anuppunga" }
               ],
               "answer": 1
@@ -717,11 +717,11 @@
             {
               "id": "e1", "type": "select-phrase",
               "lead": { "text": "உங்க பார்சல் இருக்கு. எங்க வரணும்?", "romanized": "Unga parcel irukku. Enga varanum?", "english": "Your parcel. Where do I come?" },
-              "target": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga", "english": "Come to gate number two",
+              "target": "ரெண்டாவது கேட் கிட்ட வாங்க", "romanized": "Rendaavadhu gate kitta vaanga", "english": "Come to gate number two",
               "options": [
                 { "text": "மெடிக்கல் ஷாப் பக்கத்துல", "romanized": "Medical shop pakkathula" },
                 { "text": "எந்த கேட்ல இருக்கீங்க?", "romanized": "Endha gatela irukeenga?" },
-                { "text": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga" }
+                { "text": "ரெண்டாவது கேட் கிட்ட வாங்க", "romanized": "Rendaavadhu gate kitta vaanga" }
               ],
               "answer": 2
             },
@@ -821,7 +821,7 @@
             },
             {
               "id": "e2", "type": "speak-repeat",
-              "target": "இன்னைக்கு வேணாம், இன்னொரு நாள்", "romanized": "Innaikku venaam, innoru naal", "english": "Not today, some other time"
+              "target": "இன்னைக்கு வேணாம், வேற ஒரு நாள்", "romanized": "Innaikku venaam, vera oru naal", "english": "Not today, some other time"
             },
             {
               "id": "e3", "type": "select-phrase",

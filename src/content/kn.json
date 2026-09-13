@@ -443,13 +443,13 @@
             },
             {
               "id": "e2", "type": "speak-repeat",
-              "target": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli", "english": "Please say that again"
+              "target": "ಇನ್ನೊಂದು ಸಲ ಹೇಳಿ", "romanized": "Innondu sala heli", "english": "Please say that again"
             },
             {
               "id": "e3", "type": "select-phrase",
               "target": "ಲೊಕೇಶನ್ ಕಳಿಸಿ", "romanized": "Location kalisi", "english": "Please send the location",
               "options": [
-                { "text": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli" },
+                { "text": "ಇನ್ನೊಂದು ಸಲ ಹೇಳಿ", "romanized": "Innondu sala heli" },
                 { "text": "ಲೊಕೇಶನ್ ಕಳಿಸಿ", "romanized": "Location kalisi" },
                 { "text": "ನೆಟ್‌ವರ್ಕ್ ಸರಿ ಇಲ್ಲ", "romanized": "Network sari illa" },
                 { "text": "ಕೇಳಿಸ್ತಾ ಇಲ್ಲ", "romanized": "Kelista illa" }
@@ -566,7 +566,7 @@
               "options": [
                 { "text": "ಹೋಗೋಣ", "romanized": "Hogona" },
                 { "text": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri" },
-                { "text": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli" }
+                { "text": "ಇನ್ನೊಂದು ಸಲ ಹೇಳಿ", "romanized": "Innondu sala heli" }
               ],
               "answer": 0
             }
