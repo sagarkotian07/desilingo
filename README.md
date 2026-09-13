@@ -2,9 +2,10 @@
 
 Learn India's languages by ear. Hindi, Kannada, Tamil, Telugu, Bengali, Marathi — spoken by [Sarvam AI](https://sarvam.ai) voices, with pronunciation practice that tells you which word slipped.
 
-No signup. No database.
+No signup. No database. Live at **[desilingo-omega.vercel.app](https://desilingo-omega.vercel.app)**.
 
-- 6 languages · 39 lessons + 13 scenes · 312 exercises · 333 clips
+- 6 languages · 84 lessons + 30 scenes · 684 exercises · 735 clips
+- Every language, five units: yes and no, the chai stall, calls and pickups, UPI and deliveries, small talk
 - 6 exercise types, including speak-and-be-scored with a word-level diff
 - Scenes: a short conversation closes each unit, using what it taught
 - Review: missed phrases come back when they're due
@@ -12,6 +13,8 @@ No signup. No database.
 - Phrasebook: "how do you say…" in spoken register
 
 The phrases are how people talk, not how textbooks print. Tamil is *இப்ப வேணாம்*, not *இப்பொழுது வேண்டாம்*.
+
+The Kannada, Tamil, Telugu, Bengali and Marathi courses haven't had a native speaker's review yet. Corrections welcome.
 
 ---
 
@@ -88,7 +91,7 @@ Real numbers from building this:
 
 | | |
 |---|---|
-| All 333 clips, 6 languages | **₹9.92**, one-time |
+| All 735 clips, 6 languages | **₹30.78**, one-time |
 | One pronunciation attempt | ~₹0.03 |
 | Repeat visitor | **₹0** — static files |
 
@@ -123,8 +126,11 @@ Add the rate-limit rule once:
 vercel firewall rules add "Limit STT" \
   --condition '{"type":"path","op":"pre","value":"/api/stt"}' \
   --action rate_limit --rate-limit-window 60 --rate-limit-requests 12 \
-  --rate-limit-keys ip --rate-limit-action deny
+  --rate-limit-keys ip --yes
+vercel firewall publish --yes
 ```
+
+Rules are staged until published. Set `MOCK_VOICE=1` for Preview so preview deploys never spend credits.
 
 **Never run `gen:audio` in CI or the Vercel build** — every preview deploy would re-spend credits. Generation is local and deliberate; `verify:audio` runs on `prebuild` instead and makes no API calls.
 

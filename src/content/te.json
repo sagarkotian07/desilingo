@@ -3,68 +3,141 @@
   "tagline": "Spoken Telugu. The everyday kind.",
   "units": [
     {
-      "id": "unit-1", "title": "Everyday Responses", "emoji": "💬",
+      "id": "unit-1",
+      "title": "Everyday Responses",
+      "emoji": "💬",
       "lessons": [
         {
-          "id": "te-lesson-1-1", "title": "Saying Yes & No",
+          "id": "te-lesson-1-1",
+          "title": "Saying Yes & No",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "వద్దు", "romanized": "Vaddu", "english": "I don't want it",
-              "hint": "turning something down", "options": ["Give me more", "Yes, please", "I don't want it", "Later"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "అవును, సరే", "romanized": "Avunu, sare", "english": "Yes, that's fine" },
-            { "id": "e3", "type": "select-phrase", "target": "ఇప్పుడు వద్దు", "romanized": "Ippudu vaddu", "english": "Not right now",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "వద్దు", "romanized": "Vaddu", "english": "I don't want it",
+              "hint": "turning something down",
+              "options": ["Give me more", "Yes, please", "I don't want it", "Later"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "అవును, సరే", "romanized": "Avunu, sare", "english": "Yes, that's fine"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ఇప్పుడు వద్దు", "romanized": "Ippudu vaddu", "english": "Not right now",
               "options": [
                 { "text": "తర్వాత", "romanized": "Tarvaata" },
                 { "text": "ఇప్పుడు వద్దు", "romanized": "Ippudu vaddu" },
                 { "text": "అవును, సరే", "romanized": "Avunu, sare" },
                 { "text": "రండి", "romanized": "Randi" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "listen-choose", "target": "తప్పకుండా", "romanized": "Tappakundaa", "english": "Definitely",
-              "options": ["Maybe", "Definitely", "Never", "Not sure"], "answer": 1 },
-            { "id": "e5", "type": "word-order", "target": "అవును, సరే", "romanized": "Avunu, sare", "english": "Yes, that's fine", "extraWords": ["లేదు"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "లేదు", "romanized": "Ledu", "english": "No" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "తప్పకుండా", "romanized": "Tappakundaa", "english": "Definitely",
+              "options": ["Maybe", "Definitely", "Never", "Not sure"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "అవును, సరే", "romanized": "Avunu, sare", "english": "Yes, that's fine",
+              "extraWords": ["లేదు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "లేదు", "romanized": "Ledu", "english": "No"
+            }
           ]
         },
         {
-          "id": "te-lesson-1-2", "title": "Quick Replies",
+          "id": "te-lesson-1-2",
+          "title": "Quick Replies",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem",
-              "hint": "waving off an apology", "options": ["It's okay, no problem", "Thank you", "What happened?", "I'm busy"], "answer": 0 },
-            { "id": "e2", "type": "speak-repeat", "target": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu", "english": "Thank you" },
-            { "id": "e3", "type": "select-phrase", "target": "ఒక నిమిషం", "romanized": "Oka nimisham", "english": "One minute",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem",
+              "hint": "waving off an apology",
+              "options": ["It's okay, no problem", "Thank you", "What happened?", "I'm busy"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu", "english": "Thank you"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ఒక నిమిషం", "romanized": "Oka nimisham", "english": "One minute",
               "options": [
                 { "text": "అర్థమైంది", "romanized": "Arthamaindi" },
                 { "text": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu" },
                 { "text": "పర్వాలేదు", "romanized": "Parvaledu" },
                 { "text": "ఒక నిమిషం", "romanized": "Oka nimisham" }
-              ], "answer": 3 },
-            { "id": "e4", "type": "listen-choose", "target": "అర్థమైంది", "romanized": "Arthamaindi", "english": "Got it",
-              "options": ["Say it again", "Got it", "I'm coming", "I don't know"], "answer": 1 },
-            { "id": "e5", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "అర్థమైంది", "romanized": "Arthamaindi", "english": "Got it",
+              "options": ["Say it again", "Got it", "I'm coming", "I don't know"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
                 { "target": "ధన్యవాదాలు", "romanized": "Dhanyavaadaalu", "english": "Thank you" },
                 { "target": "ఒక నిమిషం", "romanized": "Oka nimisham", "english": "One minute" },
                 { "target": "అర్థమైంది", "romanized": "Arthamaindi", "english": "Got it" },
-                { "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "No problem" }
-              ] },
-            { "id": "e6", "type": "speak-repeat", "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem" }
+                { "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "పర్వాలేదు", "romanized": "Parvaledu", "english": "It's okay, no problem"
+            }
           ]
         },
         {
-          "id": "te-lesson-1-3", "title": "Expressing Needs",
+          "id": "te-lesson-1-3",
+          "title": "Expressing Needs",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "కొంచెం నీళ్లు కావాలి", "romanized": "Konchem neellu kaavaali", "english": "I need some water",
-              "options": ["I need some help", "I need some water", "I'm hungry", "I'm leaving"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "కొంచెం సాయం కావాలి", "romanized": "Konchem saayam kaavaali", "english": "I need some help" },
-            { "id": "e3", "type": "select-phrase", "target": "ఇంకా కొంచెం", "romanized": "Inkaa konchem", "english": "A little more",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "కొంచెం నీళ్లు కావాలి", "romanized": "Konchem neellu kaavaali", "english": "I need some water",
+              "options": ["I need some help", "I need some water", "I'm hungry", "I'm leaving"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "కొంచెం సాయం కావాలి", "romanized": "Konchem saayam kaavaali", "english": "I need some help"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ఇంకా కొంచెం", "romanized": "Inkaa konchem", "english": "A little more",
               "options": [
                 { "text": "ఇంకా కొంచెం", "romanized": "Inkaa konchem" },
                 { "text": "చాలు", "romanized": "Chaalu" },
                 { "text": "నీళ్లు", "romanized": "Neellu" },
                 { "text": "కొంచెం సాయం కావాలి", "romanized": "Konchem saayam kaavaali" }
-              ], "answer": 0 },
-            { "id": "e4", "type": "word-order", "target": "కొంచెం నీళ్లు కావాలి", "romanized": "Konchem neellu kaavaali", "english": "I need some water", "extraWords": ["లేదు"] },
-            { "id": "e5", "type": "listen-choose", "target": "చాలు", "romanized": "Chaalu", "english": "That's enough",
-              "hint": "stopping someone serving you", "options": ["A little more", "One more", "Not for me", "That's enough"], "answer": 3 },
-            { "id": "e6", "type": "listen-type-roman", "target": "నీళ్లు", "romanized": "Neellu", "english": "Water" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "కొంచెం నీళ్లు కావాలి", "romanized": "Konchem neellu kaavaali", "english": "I need some water",
+              "extraWords": ["లేదు"]
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "చాలు", "romanized": "Chaalu", "english": "That's enough",
+              "hint": "stopping someone serving you",
+              "options": ["A little more", "One more", "Not for me", "That's enough"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "నీళ్లు", "romanized": "Neellu", "english": "Water"
+            }
           ]
         },
         {
@@ -120,68 +193,139 @@
       ]
     },
     {
-      "id": "unit-2", "title": "Out and About", "emoji": "🛺",
+      "id": "unit-2",
+      "title": "Out and About",
+      "emoji": "🛺",
       "lessons": [
         {
-          "id": "te-lesson-2-1", "title": "At the Tea Stall",
+          "id": "te-lesson-2-1",
+          "title": "At the Tea Stall",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi", "english": "One tea, please",
-              "options": ["One tea, please", "Two teas", "No tea for me", "How much is the tea?"], "answer": 0 },
-            { "id": "e2", "type": "speak-repeat", "target": "చక్కెర తక్కువ", "romanized": "Chakkera takkuva", "english": "Less sugar" },
-            { "id": "e3", "type": "select-phrase", "target": "చక్కెర వద్దు", "romanized": "Chakkera vaddu", "english": "No sugar",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi", "english": "One tea, please",
+              "options": ["One tea, please", "Two teas", "No tea for me", "How much is the tea?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "చక్కెర తక్కువ", "romanized": "Chakkera takkuva", "english": "Less sugar"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "చక్కెర వద్దు", "romanized": "Chakkera vaddu", "english": "No sugar",
               "options": [
                 { "text": "చక్కెర తక్కువ", "romanized": "Chakkera takkuva" },
                 { "text": "చక్కెర వద్దు", "romanized": "Chakkera vaddu" },
                 { "text": "ఎంత?", "romanized": "Enta?" },
                 { "text": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "listen-choose", "target": "ఎంత?", "romanized": "Enta?", "english": "How much?",
-              "options": ["Where?", "How much?", "Who?", "When?"], "answer": 1 },
-            { "id": "e5", "type": "word-order", "target": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi", "english": "One tea, please", "extraWords": ["వద్దు"] },
-            { "id": "e6", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఎంత?", "romanized": "Enta?", "english": "How much?",
+              "options": ["Where?", "How much?", "Who?", "When?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi", "english": "One tea, please",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "match-pairs",
+              "pairs": [
                 { "target": "చక్కెర తక్కువ", "romanized": "Chakkera takkuva", "english": "Less sugar" },
                 { "target": "చక్కెర వద్దు", "romanized": "Chakkera vaddu", "english": "No sugar" },
                 { "target": "ఎంత?", "romanized": "Enta?", "english": "How much?" },
                 { "target": "ఒక టీ ఇవ్వండి", "romanized": "Oka tea ivvandi", "english": "One tea, please" }
-              ] }
+              ]
+            }
           ]
         },
         {
-          "id": "te-lesson-2-2", "title": "At the Market",
+          "id": "te-lesson-2-2",
+          "title": "At the Market",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "ఇది ఎంత?", "romanized": "Idi enta?", "english": "How much is this?",
-              "options": ["What is this?", "How much is this?", "Do you have this?", "Where is this from?"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "చాలా ఎక్కువ", "romanized": "Chaalaa ekkuva", "english": "That's too much" },
-            { "id": "e3", "type": "select-phrase", "target": "కొంచెం తగ్గించండి", "romanized": "Konchem taggincandi", "english": "Bring the price down a bit",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఇది ఎంత?", "romanized": "Idi enta?", "english": "How much is this?",
+              "options": ["What is this?", "How much is this?", "Do you have this?", "Where is this from?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "చాలా ఎక్కువ", "romanized": "Chaalaa ekkuva", "english": "That's too much"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "కొంచెం తగ్గించండి", "romanized": "Konchem taggincandi", "english": "Bring the price down a bit",
               "options": [
                 { "text": "చాలా ఎక్కువ", "romanized": "Chaalaa ekkuva" },
                 { "text": "ఇది ఎంత?", "romanized": "Idi enta?" },
                 { "text": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi" },
                 { "text": "కొంచెం తగ్గించండి", "romanized": "Konchem taggincandi" }
-              ], "answer": 3 },
-            { "id": "e4", "type": "listen-choose", "target": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi", "english": "Fine, I'll take it",
-              "options": ["Show me another", "That's too much", "Fine, I'll take it", "I'll come back"], "answer": 2 },
-            { "id": "e5", "type": "listen-type-roman", "target": "ఎక్కువ", "romanized": "Ekkuva", "english": "Too much" },
-            { "id": "e6", "type": "speak-repeat", "target": "ఇది ఎంత?", "romanized": "Idi enta?", "english": "How much is this?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi", "english": "Fine, I'll take it",
+              "options": ["Show me another", "That's too much", "Fine, I'll take it", "I'll come back"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "listen-type-roman",
+              "target": "ఎక్కువ", "romanized": "Ekkuva", "english": "Too much"
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ఇది ఎంత?", "romanized": "Idi enta?", "english": "How much is this?"
+            }
           ]
         },
         {
-          "id": "te-lesson-2-3", "title": "Getting Around",
+          "id": "te-lesson-2-3",
+          "title": "Getting Around",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "స్టేషన్ వస్తారా?", "romanized": "Station vastaaraa?", "english": "Will you go to the station?",
-              "hint": "flagging down an auto", "options": ["Where is the station?", "Is the station far?", "Stop at the station", "Will you go to the station?"], "answer": 3 },
-            { "id": "e2", "type": "speak-repeat", "target": "మీటర్ వేయండి", "romanized": "Meter veyandi", "english": "Put the meter on" },
-            { "id": "e3", "type": "select-phrase", "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "స్టేషన్ వస్తారా?", "romanized": "Station vastaaraa?", "english": "Will you go to the station?",
+              "hint": "flagging down an auto",
+              "options": ["Where is the station?", "Is the station far?", "Stop at the station", "Will you go to the station?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "మీటర్ వేయండి", "romanized": "Meter veyandi", "english": "Put the meter on"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here",
               "options": [
                 { "text": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi" },
                 { "text": "ఎంత అవుతుంది?", "romanized": "Enta avutundi?" },
                 { "text": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi" },
                 { "text": "మీటర్ వేయండి", "romanized": "Meter veyandi" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "listen-choose", "target": "ఎంత అవుతుంది?", "romanized": "Enta avutundi?", "english": "How much will it be?",
-              "options": ["How much will it be?", "How far is it?", "How long will it take?", "Which way?"], "answer": 0 },
-            { "id": "e5", "type": "word-order", "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here", "extraWords": ["వద్దు", "ముందుకు"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi", "english": "Keep going" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఎంత అవుతుంది?", "romanized": "Enta avutundi?", "english": "How much will it be?",
+              "options": ["How much will it be?", "How far is it?", "How long will it take?", "Which way?"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here",
+              "extraWords": ["వద్దు", "ముందుకు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi", "english": "Keep going"
+            }
           ]
         },
         {
@@ -231,6 +375,528 @@
               "id": "e6", "type": "word-order",
               "target": "సరే, ఇవ్వండి", "romanized": "Sare, ivvandi", "english": "Fine, I'll take it",
               "extraWords": ["వద్దు"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Calls & Pickups",
+      "emoji": "📞",
+      "lessons": [
+        {
+          "id": "te-making-plans",
+          "title": "Making Plans",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఎప్పుడు కలుద్దాం?", "romanized": "Eppudu kaluddaam?", "english": "When shall we meet?",
+              "options": ["Where shall we meet?", "When shall we meet?", "Shall we go?", "Did you meet him?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "రేపు కలుద్దాం", "romanized": "Repu kaluddaam", "english": "Let's meet tomorrow"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "తర్వాత మాట్లాడదాం", "romanized": "Tarvaata maatlaadadaam", "english": "Let's talk later",
+              "options": [
+                { "text": "తర్వాత మాట్లాడదాం", "romanized": "Tarvaata maatlaadadaam" },
+                { "text": "రేపు కలుద్దాం", "romanized": "Repu kaluddaam" },
+                { "text": "ఇంట్లో ఉన్నారా?", "romanized": "Intlo unnaaraa?" },
+                { "text": "పదండి, వెళ్దాం", "romanized": "Padandi, veldaam" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఇంట్లో ఉన్నారా?", "romanized": "Intlo unnaaraa?", "english": "Are you at home?",
+              "options": ["Are you coming?", "Are you free?", "Are you at home?", "Are you alone?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "ఎప్పుడు కలుద్దాం?", "romanized": "Eppudu kaluddaam?", "english": "When shall we meet?" },
+                { "target": "రేపు కలుద్దాం", "romanized": "Repu kaluddaam", "english": "Let's meet tomorrow" },
+                { "target": "ఇంట్లో ఉన్నారా?", "romanized": "Intlo unnaaraa?", "english": "Are you at home?" },
+                { "target": "పదండి, వెళ్దాం", "romanized": "Padandi, veldaam", "english": "Let's get going" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "పదండి, వెళ్దాం", "romanized": "Padandi, veldaam", "english": "Let's get going"
+            }
+          ]
+        },
+        {
+          "id": "te-phone-and-whatsapp",
+          "title": "Phone & WhatsApp",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "వినిపించట్లేదు", "romanized": "Vinipinchatledu", "english": "I can't hear you",
+              "options": ["I can't see you", "Call me later", "I can't hear you", "Who's this?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "మళ్ళీ చెప్పండి", "romanized": "Malli cheppandi", "english": "Please say that again"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "లొకేషన్ పంపండి", "romanized": "Location pampandi", "english": "Please send the location",
+              "options": [
+                { "text": "మళ్ళీ చెప్పండి", "romanized": "Malli cheppandi" },
+                { "text": "లొకేషన్ పంపండి", "romanized": "Location pampandi" },
+                { "text": "నెట్‌వర్క్ సరిగ్గా లేదు", "romanized": "Network sariggaa ledu" },
+                { "text": "వినిపించట్లేదు", "romanized": "Vinipinchatledu" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "నెట్‌వర్క్ సరిగ్గా లేదు", "romanized": "Network sariggaa ledu", "english": "The network is bad",
+              "options": ["The network is bad", "The phone is off", "The battery is low", "The line is busy"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "రెండు నిమిషాల తర్వాత ఫోన్ చేయండి", "romanized": "Rendu nimishaala tarvaata phone cheyandi", "english": "Call again in two minutes",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "హలో, ఎవరు?", "romanized": "Hello, evaru?", "english": "Hello, who's this?"
+            }
+          ]
+        },
+        {
+          "id": "te-meeting-your-ride",
+          "title": "Meeting Your Ride",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఎక్కడ ఉన్నారు?", "romanized": "Ekkada unnaaru?", "english": "Where are you?",
+              "options": ["Who are you?", "How are you?", "Where is it?", "Where are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "నేను మెయిన్ గేట్ దగ్గర ఉన్నాను", "romanized": "Nenu main gate daggara unnaanu", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "అక్కడే ఉండండి", "romanized": "Akkade undandi", "english": "Please wait there",
+              "options": [
+                { "text": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi" },
+                { "text": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi" },
+                { "text": "అక్కడే ఉండండి", "romanized": "Akkade undandi" },
+                { "text": "ఎక్కడ ఉన్నారు?", "romanized": "Ekkada unnaaru?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "రెండు నిమిషాల్లో వస్తాను", "romanized": "Rendu nimishaallo vastaanu", "english": "I'll be there in two minutes",
+              "hint": "the driver, on the phone",
+              "options": ["I'm two minutes late", "I'll be there in two minutes", "I just left", "Wait ten minutes"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "బండి నంబర్ ఎంత?", "romanized": "Bandi number enta?", "english": "What's the car number?",
+              "extraWords": ["ఎక్కడ"]
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "target": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ఓటీపీ ఏడు మూడు నాలుగు ఒకటి", "romanized": "OTP edu moodu naalugu okati" },
+                { "text": "ఓటీపీ మూడు ఏడు ఒకటి నాలుగు", "romanized": "OTP moodu edu okati naalugu" },
+                { "text": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu" }
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "te-finding-your-pickup",
+          "title": "Finding your pickup",
+          "scene": { "setting": "Your cab is here. Somewhere.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఎక్కడ ఉన్నారు?", "romanized": "Ekkada unnaaru?", "english": "Where are you?",
+              "options": ["Where are you?", "Who are you?", "How are you?", "Where is it?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "నేను మెయిన్ గేట్ దగ్గర ఉన్నాను", "romanized": "Nenu main gate daggara unnaanu", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "listen-choose",
+              "target": "నేను రెండో గేట్ దగ్గర ఉన్నాను", "romanized": "Nenu rendo gate daggara unnaanu", "english": "I'm at gate number two",
+              "options": ["I'm at the main gate", "I'm two minutes away", "I'm at gate number two", "I'm on the second floor"],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "అక్కడే ఉండండి", "romanized": "Akkade undandi", "english": "Please wait there",
+              "extraWords": ["ముందుకు"]
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "lead": { "text": "ఓటీపీ చెప్పండి", "romanized": "OTP cheppandi", "english": "Tell me the OTP" },
+              "target": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ఓటీపీ మూడు ఏడు ఒకటి నాలుగు", "romanized": "OTP moodu edu okati naalugu" },
+                { "text": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu" },
+                { "text": "ఓటీపీ ఏడు మూడు నాలుగు ఒకటి", "romanized": "OTP edu moodu naalugu okati" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "lead": { "text": "సరే, ఎక్కండి", "romanized": "Sare, ekkandi", "english": "Okay, hop in" },
+              "target": "పదండి, వెళ్దాం", "romanized": "Padandi, veldaam", "english": "Let's get going",
+              "options": [
+                { "text": "పదండి, వెళ్దాం", "romanized": "Padandi, veldaam" },
+                { "text": "అక్కడే ఉండండి", "romanized": "Akkade undandi" },
+                { "text": "మళ్ళీ చెప్పండి", "romanized": "Malli cheppandi" }
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "City Life Now",
+      "emoji": "🏙️",
+      "lessons": [
+        {
+          "id": "te-paying-by-upi",
+          "title": "Paying by UPI",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "యూపీఐ చేయనా?", "romanized": "UPI cheyanaa?", "english": "Can I pay by UPI?",
+              "options": ["Can I pay later?", "Can I pay by UPI?", "Do you have change?", "Is it paid?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "పేమెంట్ అయిపోయింది", "romanized": "Payment aipoyindi", "english": "The payment's done"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "క్యూఆర్ కోడ్ ఎక్కడ?", "romanized": "QR code ekkada?", "english": "Where's the QR code?",
+              "options": [
+                { "text": "పేమెంట్ అయిపోయింది", "romanized": "Payment aipoyindi" },
+                { "text": "యూపీఐ చేయనా?", "romanized": "UPI cheyanaa?" },
+                { "text": "మీకు వచ్చిందా?", "romanized": "Meeku vachchindaa?" },
+                { "text": "క్యూఆర్ కోడ్ ఎక్కడ?", "romanized": "QR code ekkada?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "పేమెంట్ ఫెయిల్ అయింది", "romanized": "Payment fail ayindi", "english": "The payment failed",
+              "options": ["The payment's done", "The phone is off", "The payment failed", "The network is bad"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "యూపీఐ చేయనా?", "romanized": "UPI cheyanaa?", "english": "Can I pay by UPI?" },
+                { "target": "పేమెంట్ అయిపోయింది", "romanized": "Payment aipoyindi", "english": "The payment's done" },
+                { "target": "మీకు వచ్చిందా?", "romanized": "Meeku vachchindaa?", "english": "Did you get it?" },
+                { "target": "క్యూఆర్ కోడ్ ఎక్కడ?", "romanized": "QR code ekkada?", "english": "Where's the QR code?" }
+              ]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "మీకు వచ్చిందా?", "romanized": "Meeku vachchindaa?", "english": "Did you get it?"
+            }
+          ]
+        },
+        {
+          "id": "te-at-your-door",
+          "title": "At Your Door",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "మీ పార్సెల్ వచ్చింది", "romanized": "Mee parcel vachchindi", "english": "Your parcel is here",
+              "options": ["Your parcel is here", "Your order is late", "Your parcel is lost", "Your cab is here"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "రెండో గేట్ దగ్గరికి రండి", "romanized": "Rendo gate daggariki randi", "english": "Come to gate number two"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "సెక్యూరిటీ దగ్గర ఇచ్చేయండి", "romanized": "Security daggara ichcheyandi", "english": "Leave it with security",
+              "options": [
+                { "text": "అక్కడే ఉండండి", "romanized": "Akkade undandi" },
+                { "text": "సెక్యూరిటీ దగ్గర ఇచ్చేయండి", "romanized": "Security daggara ichcheyandi" },
+                { "text": "రెండో గేట్ దగ్గరికి రండి", "romanized": "Rendo gate daggariki randi" },
+                { "text": "లొకేషన్ పంపండి", "romanized": "Location pampandi" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఏ గేట్ దగ్గర ఉన్నారు?", "romanized": "E gate daggara unnaaru?", "english": "Which gate are you at?",
+              "options": ["Which floor are you on?", "Where is the gate?", "Which gate are you at?", "Is the gate open?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "మెడికల్ షాప్ పక్కన", "romanized": "Medical shop pakkana", "english": "Next to the medical shop",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "రెండో గేట్", "romanized": "Rendo gate", "english": "Gate number two"
+            }
+          ]
+        },
+        {
+          "id": "te-metro-and-landmarks",
+          "title": "Metro & Landmarks",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "తదుపరి స్టేషన్ అమీర్‌పేట్", "romanized": "Tadupari station Ameerpet", "english": "The next station is Ameerpet",
+              "hint": "the announcement on the train",
+              "options": ["This train ends at Ameerpet", "The next station is Ameerpet", "Change here for Ameerpet", "Ameerpet is closed"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "అమీర్‌పేట్ వెళ్లాలి", "romanized": "Ameerpet vellaali", "english": "I need to go to Ameerpet"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "లైన్ ఎక్కడ మారాలి?", "romanized": "Line ekkada maaraali?", "english": "Where do I change lines?",
+              "options": [
+                { "text": "లైన్ ఎక్కడ మారాలి?", "romanized": "Line ekkada maaraali?" },
+                { "text": "ఏ ప్లాట్‌ఫామ్?", "romanized": "E platform?" },
+                { "text": "దగ్గర్లో మెట్రో స్టేషన్ ఎక్కడ ఉంది?", "romanized": "Daggarlo metro station ekkada undi?" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "దగ్గర్లో మెట్రో స్టేషన్ ఎక్కడ ఉంది?", "romanized": "Daggarlo metro station ekkada undi?", "english": "Where's the nearest metro station?",
+              "options": ["How far is the station?", "When is the next train?", "Where's the bus stop?", "Where's the nearest metro station?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ఎగ్జిట్ ఎక్కడ?", "romanized": "Exit ekkada?", "english": "Where's the exit?",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ఏ ప్లాట్‌ఫామ్?", "romanized": "E platform?", "english": "Which platform?"
+            }
+          ]
+        },
+        {
+          "id": "te-your-orders-here",
+          "title": "Your order's here",
+          "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "మీ పార్సెల్ ఉంది. ఎక్కడికి రావాలి?", "romanized": "Mee parcel undi. Ekkadiki raavaali?", "english": "Your parcel. Where do I come?" },
+              "target": "రెండో గేట్ దగ్గరికి రండి", "romanized": "Rendo gate daggariki randi", "english": "Come to gate number two",
+              "options": [
+                { "text": "మెడికల్ షాప్ పక్కన", "romanized": "Medical shop pakkana" },
+                { "text": "ఏ గేట్ దగ్గర ఉన్నారు?", "romanized": "E gate daggara unnaaru?" },
+                { "text": "రెండో గేట్ దగ్గరికి రండి", "romanized": "Rendo gate daggariki randi" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "సెక్యూరిటీ లోపలికి రానివ్వట్లేదు", "romanized": "Security lopaliki raanivvatledu", "english": "Security isn't letting me in",
+              "options": ["Security isn't letting me in", "Security is asking for you", "The gate is closed", "I'm at the gate"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "target": "సెక్యూరిటీ దగ్గర ఇచ్చేయండి", "romanized": "Security daggara ichcheyandi", "english": "Leave it with security",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "ఓటీపీ చెప్పండి", "romanized": "OTP cheppandi", "english": "Tell me the OTP" },
+              "target": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ఓటీపీ మూడు ఏడు ఒకటి నాలుగు", "romanized": "OTP moodu edu okati naalugu" },
+                { "text": "ఓటీపీ ఏడు మూడు ఒకటి నాలుగు", "romanized": "OTP edu moodu okati naalugu" },
+                { "text": "ఓటీపీ ఏడు మూడు నాలుగు ఒకటి", "romanized": "OTP edu moodu naalugu okati" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "పేమెంట్ ఇంకా బాకీ ఉంది", "romanized": "Payment inkaa baakee undi", "english": "The payment's still due",
+              "options": ["The payment's done", "The payment failed", "No payment needed", "The payment's still due"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "యూపీఐ చేయనా?", "romanized": "UPI cheyanaa?", "english": "Can I pay by UPI?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
+        {
+          "id": "te-small-talk",
+          "title": "Small Talk",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ఎలా ఉన్నారు?", "romanized": "Elaa unnaaru?", "english": "How are you?",
+              "options": ["How are you?", "What happened?", "What is this?", "Where were you?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "నేను బాగున్నాను", "romanized": "Nenu baagunnaanu", "english": "I'm doing well"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "మీరు ఏం చేస్తుంటారు?", "romanized": "Meeru em chestuntaaru?", "english": "What do you do?",
+              "options": [
+                { "text": "ఎలా ఉన్నారు?", "romanized": "Elaa unnaaru?" },
+                { "text": "మీరు ఏం చేస్తుంటారు?", "romanized": "Meeru em chestuntaaru?" },
+                { "text": "నేను బాగున్నాను", "romanized": "Nenu baagunnaanu" },
+                { "text": "చాలా రోజులైంది!", "romanized": "Chaalaa rojulaindi!" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "చాలా రోజులైంది!", "romanized": "Chaalaa rojulaindi!", "english": "Long time no see!",
+              "hint": "greeting someone you haven't seen in a while",
+              "options": ["See you soon!", "Long time no see!", "Come again!", "Where have you been?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "నేను బాగున్నాను", "romanized": "Nenu baagunnaanu", "english": "I'm doing well",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ఎలా ఉన్నారు?", "romanized": "Elaa unnaaru?", "english": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "te-bowing-out",
+          "title": "Bowing Out Politely",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "క్షమించండి", "romanized": "Kshaminchandi", "english": "Excuse me / sorry",
+              "options": ["Thank you", "Excuse me / sorry", "Please come", "Never mind"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ఈరోజు వద్దు, ఇంకోసారి", "romanized": "Eeroju vaddu, inkosaari", "english": "Not today, some other time"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "కొంచెం పని ఉంది", "romanized": "Konchem pani undi", "english": "I'm a bit tied up",
+              "options": [
+                { "text": "వదిలేయండి, పర్వాలేదు", "romanized": "Vadileyandi, parvaledu" },
+                { "text": "క్షమించండి", "romanized": "Kshaminchandi" },
+                { "text": "కొంచెం పని ఉంది", "romanized": "Konchem pani undi" },
+                { "text": "మళ్ళీ కలుద్దాం", "romanized": "Malli kaluddaam" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "వదిలేయండి, పర్వాలేదు", "romanized": "Vadileyandi, parvaledu", "english": "Leave it, never mind",
+              "hint": "waving something off",
+              "options": ["Keep it", "Leave it, never mind", "Let's do it", "Bring it here"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "క్షమించండి", "romanized": "Kshaminchandi", "english": "Excuse me / sorry" },
+                { "target": "వదిలేయండి, పర్వాలేదు", "romanized": "Vadileyandi, parvaledu", "english": "Leave it, never mind" },
+                { "target": "కొంచెం పని ఉంది", "romanized": "Konchem pani undi", "english": "I'm a bit tied up" },
+                { "target": "మళ్ళీ కలుద్దాం", "romanized": "Malli kaluddaam", "english": "See you again" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "మళ్ళీ కలుద్దాం", "romanized": "Malli kaluddaam", "english": "See you again"
+            }
+          ]
+        },
+        {
+          "id": "te-ride-to-the-station",
+          "title": "An auto to the station",
+          "scene": { "setting": "Late evening, flagging an auto.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "ఎక్కడికి వెళ్ళాలి?", "romanized": "Ekkadiki vellaali?", "english": "Where to?" },
+              "target": "స్టేషన్ వస్తారా?", "romanized": "Station vastaaraa?", "english": "Will you go to the station?",
+              "options": [
+                { "text": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi" },
+                { "text": "స్టేషన్ వస్తారా?", "romanized": "Station vastaaraa?" },
+                { "text": "ముందుకు వెళ్లండి", "romanized": "Munduku vellandi" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "రెండొందలు అవుతుంది", "romanized": "Rendondalu avutundi", "english": "It'll be two hundred",
+              "options": ["It'll be two hundred", "Only two people", "Get in, quick", "It's not far"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "మీటర్ వేయండి", "romanized": "Meter veyandi", "english": "Put the meter on"
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ఎలా ఉన్నారు?", "romanized": "Elaa unnaaru?", "english": "How are you?",
+              "options": ["What happened?", "What is this?", "Where were you?", "How are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "నేను బాగున్నాను", "romanized": "Nenu baagunnaanu", "english": "I'm doing well",
+              "extraWords": ["వద్దు"]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "స్టేషన్ వచ్చింది", "romanized": "Station vachchindi", "english": "Here's the station" },
+              "target": "ఇక్కడ ఆపండి", "romanized": "Ikkada aapandi", "english": "Stop right here"
             }
           ]
         }

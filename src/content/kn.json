@@ -12,83 +12,41 @@
           "title": "Saying Yes & No",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಬೇಡ",
-              "romanized": "Beda",
-              "english": "I don't want it",
+              "id": "e1", "type": "listen-choose",
+              "target": "ಬೇಡ", "romanized": "Beda", "english": "I don't want it",
               "hint": "turning something down",
-              "options": [
-                "Give me more",
-                "I don't want it",
-                "Yes, please",
-                "Later"
-              ],
+              "options": ["Give me more", "I don't want it", "Yes, please", "Later"],
               "answer": 1
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ಹೌದು, ಸರಿ",
-              "romanized": "Haudu, sari",
-              "english": "Yes, that's fine"
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಹೌದು, ಸರಿ", "romanized": "Haudu, sari", "english": "Yes, that's fine"
             },
             {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಈಗ ಬೇಡ",
-              "romanized": "Eega beda",
-              "english": "Not right now",
+              "id": "e3", "type": "select-phrase",
+              "target": "ಈಗ ಬೇಡ", "romanized": "Eega beda", "english": "Not right now",
               "options": [
-                {
-                  "text": "ಆಮೇಲೆ",
-                  "romanized": "Aamele"
-                },
-                {
-                  "text": "ಹೌದು, ಸರಿ",
-                  "romanized": "Haudu, sari"
-                },
-                {
-                  "text": "ಈಗ ಬೇಡ",
-                  "romanized": "Eega beda"
-                },
-                {
-                  "text": "ಬನ್ನಿ",
-                  "romanized": "Banni"
-                }
+                { "text": "ಆಮೇಲೆ", "romanized": "Aamele" },
+                { "text": "ಹೌದು, ಸರಿ", "romanized": "Haudu, sari" },
+                { "text": "ಈಗ ಬೇಡ", "romanized": "Eega beda" },
+                { "text": "ಬನ್ನಿ", "romanized": "Banni" }
               ],
               "answer": 2
             },
             {
-              "id": "e4",
-              "type": "listen-choose",
-              "target": "ಖಂಡಿತ",
-              "romanized": "Khandita",
-              "english": "Definitely",
-              "options": [
-                "Maybe",
-                "Never",
-                "Definitely",
-                "Not sure"
-              ],
+              "id": "e4", "type": "listen-choose",
+              "target": "ಖಂಡಿತ", "romanized": "Khandita", "english": "Definitely",
+              "options": ["Maybe", "Never", "Definitely", "Not sure"],
               "answer": 2
             },
             {
-              "id": "e5",
-              "type": "word-order",
-              "target": "ಹೌದು, ಸರಿ",
-              "romanized": "Haudu, sari",
-              "english": "Yes, that's fine",
-              "extraWords": [
-                "ಇಲ್ಲ"
-              ]
+              "id": "e5", "type": "word-order",
+              "target": "ಹೌದು, ಸರಿ", "romanized": "Haudu, sari", "english": "Yes, that's fine",
+              "extraWords": ["ಇಲ್ಲ"]
             },
             {
-              "id": "e6",
-              "type": "listen-type-roman",
-              "target": "ಇಲ್ಲ",
-              "romanized": "Illa",
-              "english": "No"
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಇಲ್ಲ", "romanized": "Illa", "english": "No"
             }
           ]
         },
@@ -97,99 +55,45 @@
           "title": "Quick Replies",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಪರವಾಗಿಲ್ಲ",
-              "romanized": "Paravaagilla",
-              "english": "It's okay, no problem",
+              "id": "e1", "type": "listen-choose",
+              "target": "ಪರವಾಗಿಲ್ಲ", "romanized": "Paravaagilla", "english": "It's okay, no problem",
               "hint": "waving off an apology",
-              "options": [
-                "Thank you",
-                "What happened?",
-                "It's okay, no problem",
-                "I'm busy"
-              ],
+              "options": ["Thank you", "What happened?", "It's okay, no problem", "I'm busy"],
               "answer": 2
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ಧನ್ಯವಾದ",
-              "romanized": "Dhanyavaada",
-              "english": "Thank you"
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಧನ್ಯವಾದ", "romanized": "Dhanyavaada", "english": "Thank you"
             },
             {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಒಂದು ನಿಮಿಷ",
-              "romanized": "Ondu nimisha",
-              "english": "One minute",
+              "id": "e3", "type": "select-phrase",
+              "target": "ಒಂದು ನಿಮಿಷ", "romanized": "Ondu nimisha", "english": "One minute",
               "options": [
-                {
-                  "text": "ಗೊತ್ತಾಯ್ತು",
-                  "romanized": "Gottaaytu"
-                },
-                {
-                  "text": "ಒಂದು ನಿಮಿಷ",
-                  "romanized": "Ondu nimisha"
-                },
-                {
-                  "text": "ಧನ್ಯವಾದ",
-                  "romanized": "Dhanyavaada"
-                },
-                {
-                  "text": "ಪರವಾಗಿಲ್ಲ",
-                  "romanized": "Paravaagilla"
-                }
+                { "text": "ಗೊತ್ತಾಯ್ತು", "romanized": "Gottaaytu" },
+                { "text": "ಒಂದು ನಿಮಿಷ", "romanized": "Ondu nimisha" },
+                { "text": "ಧನ್ಯವಾದ", "romanized": "Dhanyavaada" },
+                { "text": "ಪರವಾಗಿಲ್ಲ", "romanized": "Paravaagilla" }
               ],
               "answer": 1
             },
             {
-              "id": "e4",
-              "type": "listen-choose",
-              "target": "ಗೊತ್ತಾಯ್ತು",
-              "romanized": "Gottaaytu",
-              "english": "Got it",
-              "options": [
-                "Say it again",
-                "I'm coming",
-                "I don't know",
-                "Got it"
-              ],
+              "id": "e4", "type": "listen-choose",
+              "target": "ಗೊತ್ತಾಯ್ತು", "romanized": "Gottaaytu", "english": "Got it",
+              "options": ["Say it again", "I'm coming", "I don't know", "Got it"],
               "answer": 3
             },
             {
-              "id": "e5",
-              "type": "match-pairs",
+              "id": "e5", "type": "match-pairs",
               "pairs": [
-                {
-                  "target": "ಧನ್ಯವಾದ",
-                  "romanized": "Dhanyavaada",
-                  "english": "Thank you"
-                },
-                {
-                  "target": "ಒಂದು ನಿಮಿಷ",
-                  "romanized": "Ondu nimisha",
-                  "english": "One minute"
-                },
-                {
-                  "target": "ಗೊತ್ತಾಯ್ತು",
-                  "romanized": "Gottaaytu",
-                  "english": "Got it"
-                },
-                {
-                  "target": "ಪರವಾಗಿಲ್ಲ",
-                  "romanized": "Paravaagilla",
-                  "english": "No problem"
-                }
+                { "target": "ಧನ್ಯವಾದ", "romanized": "Dhanyavaada", "english": "Thank you" },
+                { "target": "ಒಂದು ನಿಮಿಷ", "romanized": "Ondu nimisha", "english": "One minute" },
+                { "target": "ಗೊತ್ತಾಯ್ತು", "romanized": "Gottaaytu", "english": "Got it" },
+                { "target": "ಪರವಾಗಿಲ್ಲ", "romanized": "Paravaagilla", "english": "It's okay, no problem" }
               ]
             },
             {
-              "id": "e6",
-              "type": "speak-repeat",
-              "target": "ಪರವಾಗಿಲ್ಲ",
-              "romanized": "Paravaagilla",
-              "english": "It's okay, no problem"
+              "id": "e6", "type": "speak-repeat",
+              "target": "ಪರವಾಗಿಲ್ಲ", "romanized": "Paravaagilla", "english": "It's okay, no problem"
             }
           ]
         },
@@ -198,83 +102,41 @@
           "title": "Expressing Needs",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಸ್ವಲ್ಪ ನೀರು ಬೇಕು",
-              "romanized": "Swalpa neeru beku",
-              "english": "I need some water",
+              "id": "e1", "type": "listen-choose",
+              "target": "ಸ್ವಲ್ಪ ನೀರು ಬೇಕು", "romanized": "Swalpa neeru beku", "english": "I need some water",
+              "options": ["I need some help", "I need some water", "I'm hungry", "I'm leaving"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು", "romanized": "Swalpa sahaaya beku", "english": "I need some help"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಇನ್ನೂ ಸ್ವಲ್ಪ", "romanized": "Innu swalpa", "english": "A little more",
               "options": [
-                "I need some help",
-                "I need some water",
-                "I'm hungry",
-                "I'm leaving"
+                { "text": "ಸಾಕು", "romanized": "Saaku" },
+                { "text": "ಇನ್ನೂ ಸ್ವಲ್ಪ", "romanized": "Innu swalpa" },
+                { "text": "ನೀರು", "romanized": "Neeru" },
+                { "text": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು", "romanized": "Swalpa sahaaya beku" }
               ],
               "answer": 1
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು",
-              "romanized": "Swalpa sahaaya beku",
-              "english": "I need some help"
+              "id": "e4", "type": "word-order",
+              "target": "ಸ್ವಲ್ಪ ನೀರು ಬೇಕು", "romanized": "Swalpa neeru beku", "english": "I need some water",
+              "extraWords": ["ಇಲ್ಲ"]
             },
             {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಇನ್ನೂ ಸ್ವಲ್ಪ",
-              "romanized": "Innu swalpa",
-              "english": "A little more",
-              "options": [
-                {
-                  "text": "ಸಾಕು",
-                  "romanized": "Saaku"
-                },
-                {
-                  "text": "ಇನ್ನೂ ಸ್ವಲ್ಪ",
-                  "romanized": "Innu swalpa"
-                },
-                {
-                  "text": "ನೀರು",
-                  "romanized": "Neeru"
-                },
-                {
-                  "text": "ಸ್ವಲ್ಪ ಸಹಾಯ ಬೇಕು",
-                  "romanized": "Swalpa sahaaya beku"
-                }
-              ],
-              "answer": 1
-            },
-            {
-              "id": "e4",
-              "type": "word-order",
-              "target": "ಸ್ವಲ್ಪ ನೀರು ಬೇಕು",
-              "romanized": "Swalpa neeru beku",
-              "english": "I need some water",
-              "extraWords": [
-                "ಇಲ್ಲ"
-              ]
-            },
-            {
-              "id": "e5",
-              "type": "listen-choose",
-              "target": "ಸಾಕು",
-              "romanized": "Saaku",
-              "english": "That's enough",
+              "id": "e5", "type": "listen-choose",
+              "target": "ಸಾಕು", "romanized": "Saaku", "english": "That's enough",
               "hint": "stopping someone serving you",
-              "options": [
-                "A little more",
-                "That's enough",
-                "One more",
-                "Not for me"
-              ],
+              "options": ["A little more", "That's enough", "One more", "Not for me"],
               "answer": 1
             },
             {
-              "id": "e6",
-              "type": "listen-type-roman",
-              "target": "ನೀರು",
-              "romanized": "Neeru",
-              "english": "Water"
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ನೀರು", "romanized": "Neeru", "english": "Water"
             }
           ]
         },
@@ -340,100 +202,44 @@
           "title": "At the Tea Stall",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಒಂದು ಚಹಾ ಕೊಡಿ",
-              "romanized": "Ondu chahaa kodi",
-              "english": "One tea, please",
-              "options": [
-                "Two teas",
-                "No tea for me",
-                "One tea, please",
-                "How much is the tea?"
-              ],
+              "id": "e1", "type": "listen-choose",
+              "target": "ಒಂದು ಚಹಾ ಕೊಡಿ", "romanized": "Ondu chahaa kodi", "english": "One tea, please",
+              "options": ["Two teas", "No tea for me", "One tea, please", "How much is the tea?"],
               "answer": 2
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ಸಕ್ಕರೆ ಕಡಿಮೆ",
-              "romanized": "Sakkare kadime",
-              "english": "Less sugar"
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಸಕ್ಕರೆ ಕಡಿಮೆ", "romanized": "Sakkare kadime", "english": "Less sugar"
             },
             {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಸಕ್ಕರೆ ಬೇಡ",
-              "romanized": "Sakkare beda",
-              "english": "No sugar",
+              "id": "e3", "type": "select-phrase",
+              "target": "ಸಕ್ಕರೆ ಬೇಡ", "romanized": "Sakkare beda", "english": "No sugar",
               "options": [
-                {
-                  "text": "ಸಕ್ಕರೆ ಕಡಿಮೆ",
-                  "romanized": "Sakkare kadime"
-                },
-                {
-                  "text": "ಸಕ್ಕರೆ ಬೇಡ",
-                  "romanized": "Sakkare beda"
-                },
-                {
-                  "text": "ಒಂದು ಚಹಾ ಕೊಡಿ",
-                  "romanized": "Ondu chahaa kodi"
-                },
-                {
-                  "text": "ಎಷ್ಟು?",
-                  "romanized": "Eshtu?"
-                }
+                { "text": "ಸಕ್ಕರೆ ಕಡಿಮೆ", "romanized": "Sakkare kadime" },
+                { "text": "ಸಕ್ಕರೆ ಬೇಡ", "romanized": "Sakkare beda" },
+                { "text": "ಒಂದು ಚಹಾ ಕೊಡಿ", "romanized": "Ondu chahaa kodi" },
+                { "text": "ಎಷ್ಟು?", "romanized": "Eshtu?" }
               ],
               "answer": 1
             },
             {
-              "id": "e4",
-              "type": "listen-choose",
-              "target": "ಎಷ್ಟು?",
-              "romanized": "Eshtu?",
-              "english": "How much?",
-              "options": [
-                "Where?",
-                "Who?",
-                "When?",
-                "How much?"
-              ],
+              "id": "e4", "type": "listen-choose",
+              "target": "ಎಷ್ಟು?", "romanized": "Eshtu?", "english": "How much?",
+              "options": ["Where?", "Who?", "When?", "How much?"],
               "answer": 3
             },
             {
-              "id": "e5",
-              "type": "word-order",
-              "target": "ಒಂದು ಚಹಾ ಕೊಡಿ",
-              "romanized": "Ondu chahaa kodi",
-              "english": "One tea, please",
-              "extraWords": [
-                "ಬೇಡ"
-              ]
+              "id": "e5", "type": "word-order",
+              "target": "ಒಂದು ಚಹಾ ಕೊಡಿ", "romanized": "Ondu chahaa kodi", "english": "One tea, please",
+              "extraWords": ["ಬೇಡ"]
             },
             {
-              "id": "e6",
-              "type": "match-pairs",
+              "id": "e6", "type": "match-pairs",
               "pairs": [
-                {
-                  "target": "ಸಕ್ಕರೆ ಕಡಿಮೆ",
-                  "romanized": "Sakkare kadime",
-                  "english": "Less sugar"
-                },
-                {
-                  "target": "ಸಕ್ಕರೆ ಬೇಡ",
-                  "romanized": "Sakkare beda",
-                  "english": "No sugar"
-                },
-                {
-                  "target": "ಎಷ್ಟು?",
-                  "romanized": "Eshtu?",
-                  "english": "How much?"
-                },
-                {
-                  "target": "ಒಂದು ಚಹಾ ಕೊಡಿ",
-                  "romanized": "Ondu chahaa kodi",
-                  "english": "One tea, please"
-                }
+                { "target": "ಸಕ್ಕರೆ ಕಡಿಮೆ", "romanized": "Sakkare kadime", "english": "Less sugar" },
+                { "target": "ಸಕ್ಕರೆ ಬೇಡ", "romanized": "Sakkare beda", "english": "No sugar" },
+                { "target": "ಎಷ್ಟು?", "romanized": "Eshtu?", "english": "How much?" },
+                { "target": "ಒಂದು ಚಹಾ ಕೊಡಿ", "romanized": "Ondu chahaa kodi", "english": "One tea, please" }
               ]
             }
           ]
@@ -443,79 +249,39 @@
           "title": "At the Market",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಇದು ಎಷ್ಟು?",
-              "romanized": "Idu eshtu?",
-              "english": "How much is this?",
-              "options": [
-                "What is this?",
-                "How much is this?",
-                "Do you have this?",
-                "Where is this from?"
-              ],
+              "id": "e1", "type": "listen-choose",
+              "target": "ಇದು ಎಷ್ಟು?", "romanized": "Idu eshtu?", "english": "How much is this?",
+              "options": ["What is this?", "How much is this?", "Do you have this?", "Where is this from?"],
               "answer": 1
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ತುಂಬಾ ದುಬಾರಿ",
-              "romanized": "Tumba dubaari",
-              "english": "That's very expensive"
+              "id": "e2", "type": "speak-repeat",
+              "target": "ತುಂಬಾ ದುಬಾರಿ", "romanized": "Tumba dubaari", "english": "That's very expensive"
             },
             {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ",
-              "romanized": "Swalpa kadime maadi",
-              "english": "Bring the price down a bit",
+              "id": "e3", "type": "select-phrase",
+              "target": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ", "romanized": "Swalpa kadime maadi", "english": "Bring the price down a bit",
               "options": [
-                {
-                  "text": "ತುಂಬಾ ದುಬಾರಿ",
-                  "romanized": "Tumba dubaari"
-                },
-                {
-                  "text": "ಇದು ಎಷ್ಟು?",
-                  "romanized": "Idu eshtu?"
-                },
-                {
-                  "text": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ",
-                  "romanized": "Swalpa kadime maadi"
-                },
-                {
-                  "text": "ಸರಿ, ಕೊಡಿ",
-                  "romanized": "Sari, kodi"
-                }
+                { "text": "ತುಂಬಾ ದುಬಾರಿ", "romanized": "Tumba dubaari" },
+                { "text": "ಇದು ಎಷ್ಟು?", "romanized": "Idu eshtu?" },
+                { "text": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ", "romanized": "Swalpa kadime maadi" },
+                { "text": "ಸರಿ, ಕೊಡಿ", "romanized": "Sari, kodi" }
               ],
               "answer": 2
             },
             {
-              "id": "e4",
-              "type": "listen-choose",
-              "target": "ಸರಿ, ಕೊಡಿ",
-              "romanized": "Sari, kodi",
-              "english": "Fine, I'll take it",
-              "options": [
-                "Fine, I'll take it",
-                "That's too much",
-                "Show me another",
-                "I'll come back"
-              ],
+              "id": "e4", "type": "listen-choose",
+              "target": "ಸರಿ, ಕೊಡಿ", "romanized": "Sari, kodi", "english": "Fine, I'll take it",
+              "options": ["Fine, I'll take it", "That's too much", "Show me another", "I'll come back"],
               "answer": 0
             },
             {
-              "id": "e5",
-              "type": "listen-type-roman",
-              "target": "ದುಬಾರಿ",
-              "romanized": "Dubaari",
-              "english": "Expensive"
+              "id": "e5", "type": "listen-type-roman",
+              "target": "ದುಬಾರಿ", "romanized": "Dubaari", "english": "Expensive"
             },
             {
-              "id": "e6",
-              "type": "speak-repeat",
-              "target": "ಇದು ಎಷ್ಟು?",
-              "romanized": "Idu eshtu?",
-              "english": "How much is this?"
+              "id": "e6", "type": "speak-repeat",
+              "target": "ಇದು ಎಷ್ಟು?", "romanized": "Idu eshtu?", "english": "How much is this?"
             }
           ]
         },
@@ -524,84 +290,41 @@
           "title": "Getting Around",
           "exercises": [
             {
-              "id": "e1",
-              "type": "listen-choose",
-              "target": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗ್ತೀರಾ?",
-              "romanized": "Majestic hogteera?",
-              "english": "Will you go to Majestic?",
+              "id": "e1", "type": "listen-choose",
+              "target": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗ್ತೀರಾ?", "romanized": "Majestic hogteera?", "english": "Will you go to Majestic?",
               "hint": "flagging down an auto",
+              "options": ["Where is Majestic?", "Will you go to Majestic?", "Is Majestic far?", "Stop at Majestic"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಮೀಟರ್ ಹಾಕಿ", "romanized": "Meter haaki", "english": "Put the meter on"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi", "english": "Stop right here",
               "options": [
-                "Where is Majestic?",
-                "Will you go to Majestic?",
-                "Is Majestic far?",
-                "Stop at Majestic"
+                { "text": "ಮುಂದೆ ಹೋಗಿ", "romanized": "Munde hogi" },
+                { "text": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi" },
+                { "text": "ಮೀಟರ್ ಹಾಕಿ", "romanized": "Meter haaki" },
+                { "text": "ಎಷ್ಟು ಆಗುತ್ತೆ?", "romanized": "Eshtu aagutte?" }
               ],
               "answer": 1
             },
             {
-              "id": "e2",
-              "type": "speak-repeat",
-              "target": "ಮೀಟರ್ ಹಾಕಿ",
-              "romanized": "Meter haaki",
-              "english": "Put the meter on"
-            },
-            {
-              "id": "e3",
-              "type": "select-phrase",
-              "target": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
-              "romanized": "Illi nillisi",
-              "english": "Stop right here",
-              "options": [
-                {
-                  "text": "ಮುಂದೆ ಹೋಗಿ",
-                  "romanized": "Munde hogi"
-                },
-                {
-                  "text": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
-                  "romanized": "Illi nillisi"
-                },
-                {
-                  "text": "ಮೀಟರ್ ಹಾಕಿ",
-                  "romanized": "Meter haaki"
-                },
-                {
-                  "text": "ಎಷ್ಟು ಆಗುತ್ತೆ?",
-                  "romanized": "Eshtu aagutte?"
-                }
-              ],
-              "answer": 1
-            },
-            {
-              "id": "e4",
-              "type": "listen-choose",
-              "target": "ಎಷ್ಟು ಆಗುತ್ತೆ?",
-              "romanized": "Eshtu aagutte?",
-              "english": "How much will it be?",
-              "options": [
-                "How far is it?",
-                "How long will it take?",
-                "How much will it be?",
-                "Which way?"
-              ],
+              "id": "e4", "type": "listen-choose",
+              "target": "ಎಷ್ಟು ಆಗುತ್ತೆ?", "romanized": "Eshtu aagutte?", "english": "How much will it be?",
+              "options": ["How far is it?", "How long will it take?", "How much will it be?", "Which way?"],
               "answer": 2
             },
             {
-              "id": "e5",
-              "type": "word-order",
-              "target": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
-              "romanized": "Illi nillisi",
-              "english": "Stop right here",
-              "extraWords": [
-                "ಬೇಡ",
-                "ಮುಂದೆ"
-              ]
+              "id": "e5", "type": "word-order",
+              "target": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi", "english": "Stop right here",
+              "extraWords": ["ಬೇಡ", "ಮುಂದೆ"]
             },
             {
-              "id": "e6",
-              "type": "listen-type-roman",
-              "target": "ಮುಂದೆ ಹೋಗಿ",
-              "romanized": "Munde hogi",
-              "english": "Keep going"
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಮುಂದೆ ಹೋಗಿ", "romanized": "Munde hogi", "english": "Keep going"
             }
           ]
         },
@@ -652,6 +375,528 @@
               "id": "e6", "type": "word-order",
               "target": "ಸರಿ, ಕೊಡಿ", "romanized": "Sari, kodi", "english": "Fine, I'll take it",
               "extraWords": ["ಬೇಡ"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Calls & Pickups",
+      "emoji": "📞",
+      "lessons": [
+        {
+          "id": "kn-making-plans",
+          "title": "Making Plans",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಯಾವಾಗ ಸಿಗೋಣ?", "romanized": "Yaavaga sigona?", "english": "When shall we meet?",
+              "options": ["Where shall we meet?", "When shall we meet?", "Shall we go?", "Did you meet him?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ನಾಳೆ ಸಿಗೋಣ", "romanized": "Naale sigona", "english": "Let's meet tomorrow"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಆಮೇಲೆ ಮಾತಾಡೋಣ", "romanized": "Aamele maataadona", "english": "Let's talk later",
+              "options": [
+                { "text": "ಆಮೇಲೆ ಮಾತಾಡೋಣ", "romanized": "Aamele maataadona" },
+                { "text": "ನಾಳೆ ಸಿಗೋಣ", "romanized": "Naale sigona" },
+                { "text": "ಮನೇಲಿ ಇದ್ದೀರಾ?", "romanized": "Maneli iddeera?" },
+                { "text": "ಹೋಗೋಣ", "romanized": "Hogona" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಮನೇಲಿ ಇದ್ದೀರಾ?", "romanized": "Maneli iddeera?", "english": "Are you at home?",
+              "options": ["Are you coming?", "Are you free?", "Are you at home?", "Are you alone?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "ಯಾವಾಗ ಸಿಗೋಣ?", "romanized": "Yaavaga sigona?", "english": "When shall we meet?" },
+                { "target": "ನಾಳೆ ಸಿಗೋಣ", "romanized": "Naale sigona", "english": "Let's meet tomorrow" },
+                { "target": "ಮನೇಲಿ ಇದ್ದೀರಾ?", "romanized": "Maneli iddeera?", "english": "Are you at home?" },
+                { "target": "ಹೋಗೋಣ", "romanized": "Hogona", "english": "Let's get going" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ಹೋಗೋಣ", "romanized": "Hogona", "english": "Let's get going"
+            }
+          ]
+        },
+        {
+          "id": "kn-phone-and-whatsapp",
+          "title": "Phone & WhatsApp",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಕೇಳಿಸ್ತಾ ಇಲ್ಲ", "romanized": "Kelista illa", "english": "I can't hear you",
+              "options": ["I can't see you", "Call me later", "I can't hear you", "Who's this?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli", "english": "Please say that again"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಲೊಕೇಶನ್ ಕಳಿಸಿ", "romanized": "Location kalisi", "english": "Please send the location",
+              "options": [
+                { "text": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli" },
+                { "text": "ಲೊಕೇಶನ್ ಕಳಿಸಿ", "romanized": "Location kalisi" },
+                { "text": "ನೆಟ್‌ವರ್ಕ್ ಸರಿ ಇಲ್ಲ", "romanized": "Network sari illa" },
+                { "text": "ಕೇಳಿಸ್ತಾ ಇಲ್ಲ", "romanized": "Kelista illa" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ನೆಟ್‌ವರ್ಕ್ ಸರಿ ಇಲ್ಲ", "romanized": "Network sari illa", "english": "The network is bad",
+              "options": ["The network is bad", "The phone is off", "The battery is low", "The line is busy"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಎರಡು ನಿಮಿಷ ಬಿಟ್ಟು ಫೋನ್ ಮಾಡಿ", "romanized": "Eradu nimisha bittu phone maadi", "english": "Call again in two minutes",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಹಲೋ, ಯಾರು?", "romanized": "Hello, yaaru?", "english": "Hello, who's this?"
+            }
+          ]
+        },
+        {
+          "id": "kn-meeting-your-ride",
+          "title": "Meeting Your Ride",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಎಲ್ಲಿದ್ದೀರಾ?", "romanized": "Elliddeera?", "english": "Where are you?",
+              "options": ["Who are you?", "How are you?", "Where is it?", "Where are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ನಾನು ಮೇನ್ ಗೇಟ್ ಹತ್ರ ಇದ್ದೀನಿ", "romanized": "Naanu main gate hatra iddeeni", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri", "english": "Please wait there",
+              "options": [
+                { "text": "ಮುಂದೆ ಹೋಗಿ", "romanized": "Munde hogi" },
+                { "text": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi" },
+                { "text": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri" },
+                { "text": "ಎಲ್ಲಿದ್ದೀರಾ?", "romanized": "Elliddeera?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಎರಡು ನಿಮಿಷದಲ್ಲಿ ಬರ್ತೀನಿ", "romanized": "Eradu nimishadalli barteeni", "english": "I'll be there in two minutes",
+              "hint": "the driver, on the phone",
+              "options": ["I'm two minutes late", "I'll be there in two minutes", "I just left", "Wait ten minutes"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಗಾಡಿ ನಂಬರ್ ಎಷ್ಟು?", "romanized": "Gaadi number eshtu?", "english": "What's the car number?",
+              "extraWords": ["ಎಲ್ಲಿ"]
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "target": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ನಾಲ್ಕು ಒಂದು", "romanized": "OTP elu mooru naalku ondu" },
+                { "text": "ಓಟಿಪಿ ಮೂರು ಏಳು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP mooru elu ondu naalku" },
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku" }
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "kn-finding-your-pickup",
+          "title": "Finding your pickup",
+          "scene": { "setting": "Your cab is here. Somewhere.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಎಲ್ಲಿದ್ದೀರಾ?", "romanized": "Elliddeera?", "english": "Where are you?",
+              "options": ["Where are you?", "Who are you?", "How are you?", "Where is it?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ನಾನು ಮೇನ್ ಗೇಟ್ ಹತ್ರ ಇದ್ದೀನಿ", "romanized": "Naanu main gate hatra iddeeni", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "listen-choose",
+              "target": "ನಾನು ಗೇಟ್ ನಂಬರ್ ಎರಡರ ಹತ್ರ ಇದ್ದೀನಿ", "romanized": "Naanu gate number eradara hatra iddeeni", "english": "I'm at gate number two",
+              "options": ["I'm at the main gate", "I'm two minutes away", "I'm at gate number two", "I'm on the second floor"],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri", "english": "Please wait there",
+              "extraWords": ["ಮುಂದೆ"]
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "lead": { "text": "ಓಟಿಪಿ ಹೇಳಿ", "romanized": "OTP heli", "english": "Tell me the OTP" },
+              "target": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ಓಟಿಪಿ ಮೂರು ಏಳು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP mooru elu ondu naalku" },
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku" },
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ನಾಲ್ಕು ಒಂದು", "romanized": "OTP elu mooru naalku ondu" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "lead": { "text": "ಸರಿ, ಕೂತ್ಕೊಳ್ಳಿ", "romanized": "Sari, koothkolli", "english": "Okay, hop in" },
+              "target": "ಹೋಗೋಣ", "romanized": "Hogona", "english": "Let's get going",
+              "options": [
+                { "text": "ಹೋಗೋಣ", "romanized": "Hogona" },
+                { "text": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri" },
+                { "text": "ಇನ್ನೊಂದ್ಸಲ ಹೇಳಿ", "romanized": "Innondsala heli" }
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "City Life Now",
+      "emoji": "🏙️",
+      "lessons": [
+        {
+          "id": "kn-paying-by-upi",
+          "title": "Paying by UPI",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಯುಪಿಐ ಮಾಡ್ಲಾ?", "romanized": "UPI maadla?", "english": "Can I pay by UPI?",
+              "options": ["Can I pay later?", "Can I pay by UPI?", "Do you have change?", "Is it paid?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಪೇಮೆಂಟ್ ಆಯ್ತು", "romanized": "Payment aaytu", "english": "The payment's done"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಕ್ಯೂಆರ್ ಕೋಡ್ ಎಲ್ಲಿದೆ?", "romanized": "QR code ellide?", "english": "Where's the QR code?",
+              "options": [
+                { "text": "ಪೇಮೆಂಟ್ ಆಯ್ತು", "romanized": "Payment aaytu" },
+                { "text": "ಯುಪಿಐ ಮಾಡ್ಲಾ?", "romanized": "UPI maadla?" },
+                { "text": "ನಿಮಗೆ ಬಂತಾ?", "romanized": "Nimage bantaa?" },
+                { "text": "ಕ್ಯೂಆರ್ ಕೋಡ್ ಎಲ್ಲಿದೆ?", "romanized": "QR code ellide?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಪೇಮೆಂಟ್ ಫೇಲ್ ಆಯ್ತು", "romanized": "Payment fail aaytu", "english": "The payment failed",
+              "options": ["The payment's done", "The phone is off", "The payment failed", "The network is bad"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "ಯುಪಿಐ ಮಾಡ್ಲಾ?", "romanized": "UPI maadla?", "english": "Can I pay by UPI?" },
+                { "target": "ಪೇಮೆಂಟ್ ಆಯ್ತು", "romanized": "Payment aaytu", "english": "The payment's done" },
+                { "target": "ನಿಮಗೆ ಬಂತಾ?", "romanized": "Nimage bantaa?", "english": "Did you get it?" },
+                { "target": "ಕ್ಯೂಆರ್ ಕೋಡ್ ಎಲ್ಲಿದೆ?", "romanized": "QR code ellide?", "english": "Where's the QR code?" }
+              ]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ನಿಮಗೆ ಬಂತಾ?", "romanized": "Nimage bantaa?", "english": "Did you get it?"
+            }
+          ]
+        },
+        {
+          "id": "kn-at-your-door",
+          "title": "At Your Door",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ನಿಮ್ಮ ಪಾರ್ಸೆಲ್ ಬಂದಿದೆ", "romanized": "Nimma parcel bandide", "english": "Your parcel is here",
+              "options": ["Your parcel is here", "Your order is late", "Your parcel is lost", "Your cab is here"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಗೇಟ್ ನಂಬರ್ ಎರಡಕ್ಕೆ ಬನ್ನಿ", "romanized": "Gate number eradakke banni", "english": "Come to gate number two"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಸೆಕ್ಯುರಿಟಿ ಹತ್ರ ಕೊಡಿ", "romanized": "Security hatra kodi", "english": "Leave it with security",
+              "options": [
+                { "text": "ಅಲ್ಲೇ ಇರಿ", "romanized": "Alle iri" },
+                { "text": "ಸೆಕ್ಯುರಿಟಿ ಹತ್ರ ಕೊಡಿ", "romanized": "Security hatra kodi" },
+                { "text": "ಗೇಟ್ ನಂಬರ್ ಎರಡಕ್ಕೆ ಬನ್ನಿ", "romanized": "Gate number eradakke banni" },
+                { "text": "ಲೊಕೇಶನ್ ಕಳಿಸಿ", "romanized": "Location kalisi" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಯಾವ ಗೇಟ್ ಹತ್ರ ಇದ್ದೀರಾ?", "romanized": "Yaava gate hatra iddeera?", "english": "Which gate are you at?",
+              "options": ["Which floor are you on?", "Where is the gate?", "Which gate are you at?", "Is the gate open?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಮೆಡಿಕಲ್ ಸ್ಟೋರ್ ಪಕ್ಕ", "romanized": "Medical store pakka", "english": "Next to the medical store",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಗೇಟ್ ನಂಬರ್ ಎರಡು", "romanized": "Gate number eradu", "english": "Gate number two"
+            }
+          ]
+        },
+        {
+          "id": "kn-metro-and-landmarks",
+          "title": "Metro & Landmarks",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಮುಂದಿನ ನಿಲ್ದಾಣ ಮೆಜೆಸ್ಟಿಕ್", "romanized": "Mundina nildaana Majestic", "english": "The next station is Majestic",
+              "hint": "the announcement on the train",
+              "options": ["This train ends at Majestic", "The next station is Majestic", "Change here for Majestic", "Majestic is closed"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗಬೇಕು", "romanized": "Majestic hogabeku", "english": "I need to go to Majestic"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಎಲ್ಲಿ ಚೇಂಜ್ ಮಾಡಬೇಕು?", "romanized": "Elli change maadabeku?", "english": "Where do I change lines?",
+              "options": [
+                { "text": "ಎಲ್ಲಿ ಚೇಂಜ್ ಮಾಡಬೇಕು?", "romanized": "Elli change maadabeku?" },
+                { "text": "ಯಾವ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್?", "romanized": "Yaava platform?" },
+                { "text": "ಹತ್ತಿರದ ಮೆಟ್ರೋ ಸ್ಟೇಷನ್ ಎಲ್ಲಿದೆ?", "romanized": "Hattirada metro station ellide?" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಹತ್ತಿರದ ಮೆಟ್ರೋ ಸ್ಟೇಷನ್ ಎಲ್ಲಿದೆ?", "romanized": "Hattirada metro station ellide?", "english": "Where's the nearest metro station?",
+              "options": ["How far is the station?", "When is the next train?", "Where's the bus stop?", "Where's the nearest metro station?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಎಕ್ಸಿಟ್ ಎಲ್ಲಿದೆ?", "romanized": "Exit ellide?", "english": "Where's the exit?",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಯಾವ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್?", "romanized": "Yaava platform?", "english": "Which platform?"
+            }
+          ]
+        },
+        {
+          "id": "kn-your-orders-here",
+          "title": "Your order's here",
+          "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "ನಿಮ್ಮ ಪಾರ್ಸೆಲ್ ಇದೆ. ಎಲ್ಲಿಗೆ ಬರಲಿ?", "romanized": "Nimma parcel ide. Ellige barali?", "english": "Your parcel. Where do I come?" },
+              "target": "ಗೇಟ್ ನಂಬರ್ ಎರಡಕ್ಕೆ ಬನ್ನಿ", "romanized": "Gate number eradakke banni", "english": "Come to gate number two",
+              "options": [
+                { "text": "ಮೆಡಿಕಲ್ ಸ್ಟೋರ್ ಪಕ್ಕ", "romanized": "Medical store pakka" },
+                { "text": "ಯಾವ ಗೇಟ್ ಹತ್ರ ಇದ್ದೀರಾ?", "romanized": "Yaava gate hatra iddeera?" },
+                { "text": "ಗೇಟ್ ನಂಬರ್ ಎರಡಕ್ಕೆ ಬನ್ನಿ", "romanized": "Gate number eradakke banni" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "ಸೆಕ್ಯುರಿಟಿ ಒಳಗೆ ಬಿಡ್ತಿಲ್ಲ", "romanized": "Security olage bidtilla", "english": "Security isn't letting me in",
+              "options": ["Security isn't letting me in", "Security is asking for you", "The gate is closed", "I'm at the gate"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "target": "ಸೆಕ್ಯುರಿಟಿ ಹತ್ರ ಕೊಡಿ", "romanized": "Security hatra kodi", "english": "Leave it with security",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "ಓಟಿಪಿ ಹೇಳಿ", "romanized": "OTP heli", "english": "Tell me the OTP" },
+              "target": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ಓಟಿಪಿ ಮೂರು ಏಳು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP mooru elu ondu naalku" },
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ಒಂದು ನಾಲ್ಕು", "romanized": "OTP elu mooru ondu naalku" },
+                { "text": "ಓಟಿಪಿ ಏಳು ಮೂರು ನಾಲ್ಕು ಒಂದು", "romanized": "OTP elu mooru naalku ondu" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "ಪೇಮೆಂಟ್ ಇನ್ನೂ ಬಾಕಿ ಇದೆ", "romanized": "Payment innu baaki ide", "english": "The payment's still due",
+              "options": ["The payment's done", "The payment failed", "No payment needed", "The payment's still due"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ಯುಪಿಐ ಮಾಡ್ಲಾ?", "romanized": "UPI maadla?", "english": "Can I pay by UPI?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
+        {
+          "id": "kn-small-talk",
+          "title": "Small Talk",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಹೇಗಿದ್ದೀರಾ?", "romanized": "Hegiddeera?", "english": "How are you?",
+              "options": ["How are you?", "What happened?", "What is this?", "Where were you?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಎಲ್ಲಾ ಚೆನ್ನಾಗಿದೆ", "romanized": "Ella chennaagide", "english": "All good"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ನೀವು ಏನು ಮಾಡ್ತೀರಾ?", "romanized": "Neevu enu maadteera?", "english": "What do you do?",
+              "options": [
+                { "text": "ಹೇಗಿದ್ದೀರಾ?", "romanized": "Hegiddeera?" },
+                { "text": "ನೀವು ಏನು ಮಾಡ್ತೀರಾ?", "romanized": "Neevu enu maadteera?" },
+                { "text": "ಎಲ್ಲಾ ಚೆನ್ನಾಗಿದೆ", "romanized": "Ella chennaagide" },
+                { "text": "ತುಂಬಾ ದಿನ ಆಯ್ತು!", "romanized": "Tumba dina aaytu!" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ತುಂಬಾ ದಿನ ಆಯ್ತು!", "romanized": "Tumba dina aaytu!", "english": "Long time no see!",
+              "hint": "greeting someone you haven't seen in a while",
+              "options": ["See you soon!", "Long time no see!", "Come again!", "Where have you been?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಎಲ್ಲಾ ಚೆನ್ನಾಗಿದೆ", "romanized": "Ella chennaagide", "english": "All good",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ಹೇಗಿದ್ದೀರಾ?", "romanized": "Hegiddeera?", "english": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "kn-bowing-out",
+          "title": "Bowing Out Politely",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ಕ್ಷಮಿಸಿ", "romanized": "Kshamisi", "english": "Excuse me / sorry",
+              "options": ["Thank you", "Excuse me / sorry", "Please come", "Never mind"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ಇವತ್ತು ಬೇಡ, ಇನ್ನೊಂದಿನ", "romanized": "Ivattu beda, innondina", "english": "Not today, some other time"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ಸ್ವಲ್ಪ ಕೆಲಸ ಇದೆ", "romanized": "Swalpa kelasa ide", "english": "I'm a bit tied up",
+              "options": [
+                { "text": "ಬಿಡಿ, ಪರವಾಗಿಲ್ಲ", "romanized": "Bidi, paravaagilla" },
+                { "text": "ಕ್ಷಮಿಸಿ", "romanized": "Kshamisi" },
+                { "text": "ಸ್ವಲ್ಪ ಕೆಲಸ ಇದೆ", "romanized": "Swalpa kelasa ide" },
+                { "text": "ಮತ್ತೆ ಸಿಗೋಣ", "romanized": "Matte sigona" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಬಿಡಿ, ಪರವಾಗಿಲ್ಲ", "romanized": "Bidi, paravaagilla", "english": "Leave it, never mind",
+              "hint": "waving something off",
+              "options": ["Keep it", "Leave it, never mind", "Let's do it", "Bring it here"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "ಕ್ಷಮಿಸಿ", "romanized": "Kshamisi", "english": "Excuse me / sorry" },
+                { "target": "ಬಿಡಿ, ಪರವಾಗಿಲ್ಲ", "romanized": "Bidi, paravaagilla", "english": "Leave it, never mind" },
+                { "target": "ಸ್ವಲ್ಪ ಕೆಲಸ ಇದೆ", "romanized": "Swalpa kelasa ide", "english": "I'm a bit tied up" },
+                { "target": "ಮತ್ತೆ ಸಿಗೋಣ", "romanized": "Matte sigona", "english": "See you again" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ಮತ್ತೆ ಸಿಗೋಣ", "romanized": "Matte sigona", "english": "See you again"
+            }
+          ]
+        },
+        {
+          "id": "kn-ride-to-the-station",
+          "title": "An auto to Majestic",
+          "scene": { "setting": "Late evening, flagging an auto.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "ಎಲ್ಲಿಗೆ ಹೋಗಬೇಕು?", "romanized": "Ellige hogabeku?", "english": "Where to?" },
+              "target": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗ್ತೀರಾ?", "romanized": "Majestic hogteera?", "english": "Will you go to Majestic?",
+              "options": [
+                { "text": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi" },
+                { "text": "ಮೆಜೆಸ್ಟಿಕ್ ಹೋಗ್ತೀರಾ?", "romanized": "Majestic hogteera?" },
+                { "text": "ಮುಂದೆ ಹೋಗಿ", "romanized": "Munde hogi" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "ಇನ್ನೂರು ರೂಪಾಯಿ ಆಗುತ್ತೆ", "romanized": "Innooru roopaayi aagutte", "english": "It'll be two hundred",
+              "options": ["It'll be two hundred", "Only two people", "Get in, quick", "It's not far"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "ಮೀಟರ್ ಹಾಕಿ", "romanized": "Meter haaki", "english": "Put the meter on"
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ಹೇಗಿದ್ದೀರಾ?", "romanized": "Hegiddeera?", "english": "How are you?",
+              "options": ["What happened?", "What is this?", "Where were you?", "How are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ಎಲ್ಲಾ ಚೆನ್ನಾಗಿದೆ", "romanized": "Ella chennaagide", "english": "All good",
+              "extraWords": ["ಬೇಡ"]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "ಮೆಜೆಸ್ಟಿಕ್ ಬಂತು", "romanized": "Majestic bantu", "english": "Here's Majestic" },
+              "target": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ", "romanized": "Illi nillisi", "english": "Stop right here"
             }
           ]
         }

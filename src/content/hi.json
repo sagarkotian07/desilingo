@@ -70,7 +70,7 @@
               "id": "e3", "type": "select-phrase",
               "target": "एक मिनट", "romanized": "Ek minute", "english": "One minute",
               "options": [
-                { "text": "समझ गया", "romanized": "Samajh gaya" },
+                { "text": "समझ आ गया", "romanized": "Samajh aa gaya" },
                 { "text": "कोई बात नहीं", "romanized": "Koi baat nahin" },
                 { "text": "शुक्रिया", "romanized": "Shukriya" },
                 { "text": "एक मिनट", "romanized": "Ek minute" }
@@ -79,7 +79,7 @@
             },
             {
               "id": "e4", "type": "listen-choose",
-              "target": "समझ गया", "romanized": "Samajh gaya", "english": "Got it",
+              "target": "समझ आ गया", "romanized": "Samajh aa gaya", "english": "Got it",
               "options": ["Got it", "Say that again", "I'm coming", "I'm not sure"],
               "answer": 0
             },
@@ -88,8 +88,8 @@
               "pairs": [
                 { "target": "शुक्रिया", "romanized": "Shukriya", "english": "Thank you" },
                 { "target": "एक मिनट", "romanized": "Ek minute", "english": "One minute" },
-                { "target": "समझ गया", "romanized": "Samajh gaya", "english": "Got it" },
-                { "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "No problem" }
+                { "target": "समझ आ गया", "romanized": "Samajh aa gaya", "english": "Got it" },
+                { "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "It's okay, no problem" }
               ]
             },
             {
@@ -179,7 +179,7 @@
               "target": "कोई बात नहीं", "romanized": "Koi baat nahin", "english": "It's okay, no problem",
               "options": [
                 { "text": "शुक्रिया", "romanized": "Shukriya" },
-                { "text": "समझ गया", "romanized": "Samajh gaya" },
+                { "text": "समझ आ गया", "romanized": "Samajh aa gaya" },
                 { "text": "कोई बात नहीं", "romanized": "Koi baat nahin" }
               ],
               "answer": 2
@@ -383,8 +383,8 @@
     },
     {
       "id": "unit-3",
-      "title": "Real Conversations",
-      "emoji": "🗣️",
+      "title": "Calls & Pickups",
+      "emoji": "📞",
       "lessons": [
         {
           "id": "lesson-3-1",
@@ -402,9 +402,9 @@
             },
             {
               "id": "e3", "type": "select-phrase",
-              "target": "बाद में फ़ोन करता हूँ", "romanized": "Baad mein phone karta hoon", "english": "I'll call you later",
+              "target": "बाद में बात करते हैं", "romanized": "Baad mein baat karte hain", "english": "Let's talk later",
               "options": [
-                { "text": "बाद में फ़ोन करता हूँ", "romanized": "Baad mein phone karta hoon" },
+                { "text": "बाद में बात करते हैं", "romanized": "Baad mein baat karte hain" },
                 { "text": "कल मिलते हैं", "romanized": "Kal milte hain" },
                 { "text": "घर पर हो?", "romanized": "Ghar par ho?" },
                 { "text": "चलो चलते हैं", "romanized": "Chalo chalte hain" }
@@ -432,6 +432,341 @@
             }
           ]
         },
+        {
+          "id": "phone-and-whatsapp",
+          "title": "Phone & WhatsApp",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "आपकी आवाज़ नहीं आ रही", "romanized": "Aapki aawaaz nahin aa rahi", "english": "I can't hear you",
+              "options": ["I can't see you", "Call me later", "I can't hear you", "Who's this?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "फिर से बोलिए", "romanized": "Phir se boliye", "english": "Please say that again"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "लोकेशन भेज दीजिए", "romanized": "Location bhej dijiye", "english": "Please send the location",
+              "options": [
+                { "text": "फिर से बोलिए", "romanized": "Phir se boliye" },
+                { "text": "लोकेशन भेज दीजिए", "romanized": "Location bhej dijiye" },
+                { "text": "नेटवर्क ठीक नहीं है", "romanized": "Network theek nahin hai" },
+                { "text": "आपकी आवाज़ नहीं आ रही", "romanized": "Aapki aawaaz nahin aa rahi" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "नेटवर्क ठीक नहीं है", "romanized": "Network theek nahin hai", "english": "The network is bad",
+              "options": ["The network is bad", "The phone is off", "The battery is low", "The line is busy"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "दो मिनट बाद फ़ोन कीजिए", "romanized": "Do minute baad phone kijiye", "english": "Call again in two minutes",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "हैलो, कौन?", "romanized": "Hello, kaun?", "english": "Hello, who's this?"
+            }
+          ]
+        },
+        {
+          "id": "meeting-your-ride",
+          "title": "Meeting Your Ride",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "आप कहाँ हैं?", "romanized": "Aap kahaan hain?", "english": "Where are you?",
+              "options": ["Who are you?", "How are you?", "Where is it?", "Where are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "मैं मेन गेट पर हूँ", "romanized": "Main main gate par hoon", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "वहीं रुकिए", "romanized": "Wahin rukiye", "english": "Please wait there",
+              "options": [
+                { "text": "आगे चलो", "romanized": "Aage chalo" },
+                { "text": "यहीं रोक दो", "romanized": "Yahin rok do" },
+                { "text": "वहीं रुकिए", "romanized": "Wahin rukiye" },
+                { "text": "आप कहाँ हैं?", "romanized": "Aap kahaan hain?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "दो मिनट में पहुँच रहा हूँ", "romanized": "Do minute mein pahunch raha hoon", "english": "I'll be there in two minutes",
+              "hint": "the driver, on the phone",
+              "options": ["I'm two minutes late", "I'll be there in two minutes", "I just left", "Wait ten minutes"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "गाड़ी का नंबर क्या है?", "romanized": "Gaadi ka number kya hai?", "english": "What's the car number?",
+              "extraWords": ["कहाँ"]
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "target": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ओटीपी सात तीन चार एक है", "romanized": "OTP saat teen chaar ek hai" },
+                { "text": "ओटीपी तीन सात एक चार है", "romanized": "OTP teen saat ek chaar hai" },
+                { "text": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai" }
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "finding-your-pickup",
+          "title": "Finding your pickup",
+          "scene": { "setting": "Your cab is here. Somewhere.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "आप कहाँ हैं?", "romanized": "Aap kahaan hain?", "english": "Where are you?",
+              "options": ["Where are you?", "Who are you?", "How are you?", "Where is it?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "मैं मेन गेट पर हूँ", "romanized": "Main main gate par hoon", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "listen-choose",
+              "target": "मैं गेट नंबर दो पर हूँ", "romanized": "Main gate number do par hoon", "english": "I'm at gate number two",
+              "options": ["I'm at the main gate", "I'm two minutes away", "I'm at gate number two", "I'm on the second floor"],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "वहीं रुकिए", "romanized": "Wahin rukiye", "english": "Please wait there",
+              "extraWords": ["आगे"]
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "lead": { "text": "ओटीपी बताइए", "romanized": "OTP bataiye", "english": "Tell me the OTP" },
+              "target": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ओटीपी तीन सात एक चार है", "romanized": "OTP teen saat ek chaar hai" },
+                { "text": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai" },
+                { "text": "ओटीपी सात तीन चार एक है", "romanized": "OTP saat teen chaar ek hai" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "lead": { "text": "ठीक है, बैठिए", "romanized": "Theek hai, baithiye", "english": "Okay, hop in" },
+              "target": "चलिए", "romanized": "Chaliye", "english": "Let's go",
+              "options": [
+                { "text": "चलिए", "romanized": "Chaliye" },
+                { "text": "वहीं रुकिए", "romanized": "Wahin rukiye" },
+                { "text": "फिर से बोलिए", "romanized": "Phir se boliye" }
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "City Life Now",
+      "emoji": "🏙️",
+      "lessons": [
+        {
+          "id": "paying-by-upi",
+          "title": "Paying by UPI",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?", "english": "Can I pay by UPI?",
+              "options": ["Can I pay later?", "Can I pay by UPI?", "Do you have change?", "Is it paid?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "पेमेंट हो गया", "romanized": "Payment ho gaya", "english": "The payment's done"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "क्यूआर कोड कहाँ है?", "romanized": "QR code kahaan hai?", "english": "Where's the QR code?",
+              "options": [
+                { "text": "पेमेंट हो गया", "romanized": "Payment ho gaya" },
+                { "text": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?" },
+                { "text": "आपको मिला?", "romanized": "Aapko mila?" },
+                { "text": "क्यूआर कोड कहाँ है?", "romanized": "QR code kahaan hai?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "पेमेंट फेल हो गया", "romanized": "Payment fail ho gaya", "english": "The payment failed",
+              "options": ["The payment's done", "The phone is off", "The payment failed", "The network is bad"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?", "english": "Can I pay by UPI?" },
+                { "target": "पेमेंट हो गया", "romanized": "Payment ho gaya", "english": "The payment's done" },
+                { "target": "आपको मिला?", "romanized": "Aapko mila?", "english": "Did you get it?" },
+                { "target": "क्यूआर कोड कहाँ है?", "romanized": "QR code kahaan hai?", "english": "Where's the QR code?" }
+              ]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "आपको मिला?", "romanized": "Aapko mila?", "english": "Did you get it?"
+            }
+          ]
+        },
+        {
+          "id": "at-your-door",
+          "title": "At Your Door",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "आपका पार्सल आया है", "romanized": "Aapka parcel aaya hai", "english": "Your parcel is here",
+              "options": ["Your parcel is here", "Your order is late", "Your parcel is lost", "Your cab is here"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye", "english": "Come to gate number two"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "सिक्योरिटी पर छोड़ दीजिए", "romanized": "Security par chhod dijiye", "english": "Leave it with security",
+              "options": [
+                { "text": "वहीं रुकिए", "romanized": "Wahin rukiye" },
+                { "text": "सिक्योरिटी पर छोड़ दीजिए", "romanized": "Security par chhod dijiye" },
+                { "text": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye" },
+                { "text": "लोकेशन भेज दीजिए", "romanized": "Location bhej dijiye" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "आप किस गेट पर हैं?", "romanized": "Aap kis gate par hain?", "english": "Which gate are you at?",
+              "options": ["Which floor are you on?", "Where is the gate?", "Which gate are you at?", "Is the gate open?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "मेडिकल स्टोर के बगल में", "romanized": "Medical store ke bagal mein", "english": "Next to the medical store",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "गेट नंबर दो", "romanized": "Gate number do", "english": "Gate number two"
+            }
+          ]
+        },
+        {
+          "id": "metro-and-landmarks",
+          "title": "Metro & Landmarks",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "अगला स्टेशन राजीव चौक है", "romanized": "Agla station Rajiv Chowk hai", "english": "The next station is Rajiv Chowk",
+              "hint": "the announcement on the train",
+              "options": ["This train ends at Rajiv Chowk", "The next station is Rajiv Chowk", "Change here for Rajiv Chowk", "Rajiv Chowk is closed"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "राजीव चौक जाना है", "romanized": "Rajiv Chowk jaana hai", "english": "I need to go to Rajiv Chowk"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "लाइन कहाँ बदलनी है?", "romanized": "Line kahaan badalni hai?", "english": "Where do I change lines?",
+              "options": [
+                { "text": "लाइन कहाँ बदलनी है?", "romanized": "Line kahaan badalni hai?" },
+                { "text": "कौन-सा प्लेटफ़ॉर्म?", "romanized": "Kaun sa platform?" },
+                { "text": "सबसे पास मेट्रो स्टेशन कहाँ है?", "romanized": "Sabse paas metro station kahaan hai?" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "सबसे पास मेट्रो स्टेशन कहाँ है?", "romanized": "Sabse paas metro station kahaan hai?", "english": "Where's the nearest metro station?",
+              "options": ["How far is the station?", "When is the next train?", "Where's the bus stop?", "Where's the nearest metro station?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "किस गेट से निकलना है?", "romanized": "Kis gate se nikalna hai?", "english": "Which exit do I take?",
+              "extraWords": ["कहाँ"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "कौन-सा प्लेटफ़ॉर्म?", "romanized": "Kaun sa platform?", "english": "Which platform?"
+            }
+          ]
+        },
+        {
+          "id": "your-orders-here",
+          "title": "Your order's here",
+          "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "आपका पार्सल है। कहाँ आऊँ?", "romanized": "Aapka parcel hai. Kahaan aaoon?", "english": "Your parcel. Where do I come?" },
+              "target": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye", "english": "Come to gate number two",
+              "options": [
+                { "text": "मेडिकल स्टोर के बगल में", "romanized": "Medical store ke bagal mein" },
+                { "text": "आप किस गेट पर हैं?", "romanized": "Aap kis gate par hain?" },
+                { "text": "गेट नंबर दो पर आइए", "romanized": "Gate number do par aaiye" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "सिक्योरिटी अंदर नहीं आने दे रही", "romanized": "Security andar nahin aane de rahi", "english": "Security isn't letting me in",
+              "options": ["Security isn't letting me in", "Security is asking for you", "The gate is closed", "I'm at the gate"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "target": "सिक्योरिटी पर छोड़ दीजिए", "romanized": "Security par chhod dijiye", "english": "Leave it with security",
+              "extraWords": ["नहीं"]
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "ओटीपी बताइए", "romanized": "OTP bataiye", "english": "Tell me the OTP" },
+              "target": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ओटीपी तीन सात एक चार है", "romanized": "OTP teen saat ek chaar hai" },
+                { "text": "ओटीपी सात तीन एक चार है", "romanized": "OTP saat teen ek chaar hai" },
+                { "text": "ओटीपी सात तीन चार एक है", "romanized": "OTP saat teen chaar ek hai" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "पेमेंट अभी बाकी है", "romanized": "Payment abhi baaki hai", "english": "The payment's still due",
+              "options": ["The payment's done", "The payment failed", "No payment needed", "The payment's still due"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "यूपीआई कर दूँ?", "romanized": "UPI kar doon?", "english": "Can I pay by UPI?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
         {
           "id": "lesson-3-2",
           "title": "Small Talk",
@@ -510,8 +845,8 @@
             {
               "id": "e5", "type": "match-pairs",
               "pairs": [
-                { "target": "माफ़ कीजिए", "romanized": "Maaf kijiye", "english": "Excuse me" },
-                { "target": "रहने दो", "romanized": "Rehne do", "english": "Never mind" },
+                { "target": "माफ़ कीजिए", "romanized": "Maaf kijiye", "english": "Excuse me / sorry" },
+                { "target": "रहने दो", "romanized": "Rehne do", "english": "Leave it, never mind" },
                 { "target": "थोड़ा काम है", "romanized": "Thoda kaam hai", "english": "I'm a bit tied up" },
                 { "target": "फिर मिलेंगे", "romanized": "Phir milenge", "english": "See you again" }
               ]

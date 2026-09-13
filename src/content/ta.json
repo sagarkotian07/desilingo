@@ -3,68 +3,141 @@
   "tagline": "Spoken Tamil. What people say, not what books print.",
   "units": [
     {
-      "id": "unit-1", "title": "Everyday Responses", "emoji": "💬",
+      "id": "unit-1",
+      "title": "Everyday Responses",
+      "emoji": "💬",
       "lessons": [
         {
-          "id": "ta-lesson-1-1", "title": "Saying Yes & No",
+          "id": "ta-lesson-1-1",
+          "title": "Saying Yes & No",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "வேணாம்", "romanized": "Venaam", "english": "I don't want it",
-              "hint": "turning something down", "options": ["I don't want it", "Give me more", "Yes, please", "Later"], "answer": 0 },
-            { "id": "e2", "type": "speak-repeat", "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine" },
-            { "id": "e3", "type": "select-phrase", "target": "இப்ப வேணாம்", "romanized": "Ippa venaam", "english": "Not right now",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "வேணாம்", "romanized": "Venaam", "english": "I don't want it",
+              "hint": "turning something down",
+              "options": ["I don't want it", "Give me more", "Yes, please", "Later"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "இப்ப வேணாம்", "romanized": "Ippa venaam", "english": "Not right now",
               "options": [
                 { "text": "அப்புறம்", "romanized": "Appuram" },
                 { "text": "ஆமா, சரி", "romanized": "Aama, sari" },
                 { "text": "இப்ப வேணாம்", "romanized": "Ippa venaam" },
                 { "text": "வாங்க", "romanized": "Vaanga" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "listen-choose", "target": "கண்டிப்பா", "romanized": "Kandippaa", "english": "Definitely",
-              "options": ["Maybe", "Never", "Not sure", "Definitely"], "answer": 3 },
-            { "id": "e5", "type": "word-order", "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine", "extraWords": ["இல்ல"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "இல்ல", "romanized": "Illa", "english": "No" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "கண்டிப்பா", "romanized": "Kandippaa", "english": "Definitely",
+              "options": ["Maybe", "Never", "Not sure", "Definitely"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ஆமா, சரி", "romanized": "Aama, sari", "english": "Yes, that's fine",
+              "extraWords": ["இல்ல"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "இல்ல", "romanized": "Illa", "english": "No"
+            }
           ]
         },
         {
-          "id": "ta-lesson-1-2", "title": "Quick Replies",
+          "id": "ta-lesson-1-2",
+          "title": "Quick Replies",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem",
-              "hint": "waving off an apology", "options": ["Thank you", "It's okay, no problem", "What happened?", "I'm busy"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "நன்றி", "romanized": "Nandri", "english": "Thank you" },
-            { "id": "e3", "type": "select-phrase", "target": "ஒரு நிமிஷம்", "romanized": "Oru nimisham", "english": "One minute",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem",
+              "hint": "waving off an apology",
+              "options": ["Thank you", "It's okay, no problem", "What happened?", "I'm busy"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "நன்றி", "romanized": "Nandri", "english": "Thank you"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ஒரு நிமிஷம்", "romanized": "Oru nimisham", "english": "One minute",
               "options": [
                 { "text": "புரிஞ்சுது", "romanized": "Purinjudhu" },
                 { "text": "நன்றி", "romanized": "Nandri" },
                 { "text": "ஒரு நிமிஷம்", "romanized": "Oru nimisham" },
                 { "text": "பரவால்ல", "romanized": "Paravaalla" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "listen-choose", "target": "புரிஞ்சுது", "romanized": "Purinjudhu", "english": "Got it",
-              "options": ["Got it", "Say it again", "I'm coming", "I don't know"], "answer": 0 },
-            { "id": "e5", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "புரிஞ்சுது", "romanized": "Purinjudhu", "english": "Got it",
+              "options": ["Got it", "Say it again", "I'm coming", "I don't know"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
                 { "target": "நன்றி", "romanized": "Nandri", "english": "Thank you" },
                 { "target": "ஒரு நிமிஷம்", "romanized": "Oru nimisham", "english": "One minute" },
                 { "target": "புரிஞ்சுது", "romanized": "Purinjudhu", "english": "Got it" },
-                { "target": "பரவால்ல", "romanized": "Paravaalla", "english": "No problem" }
-              ] },
-            { "id": "e6", "type": "speak-repeat", "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem" }
+                { "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "பரவால்ல", "romanized": "Paravaalla", "english": "It's okay, no problem"
+            }
           ]
         },
         {
-          "id": "ta-lesson-1-3", "title": "Expressing Needs",
+          "id": "ta-lesson-1-3",
+          "title": "Expressing Needs",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water",
-              "options": ["I need some help", "I'm hungry", "I need some water", "I'm leaving"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "கொஞ்சம் உதவி வேணும்", "romanized": "Konjam udhavi venum", "english": "I need some help" },
-            { "id": "e3", "type": "select-phrase", "target": "இன்னும் கொஞ்சம்", "romanized": "Innum konjam", "english": "A little more",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water",
+              "options": ["I need some help", "I'm hungry", "I need some water", "I'm leaving"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "கொஞ்சம் உதவி வேணும்", "romanized": "Konjam udhavi venum", "english": "I need some help"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "இன்னும் கொஞ்சம்", "romanized": "Innum konjam", "english": "A little more",
               "options": [
                 { "text": "போதும்", "romanized": "Podhum" },
                 { "text": "இன்னும் கொஞ்சம்", "romanized": "Innum konjam" },
                 { "text": "தண்ணி", "romanized": "Thanni" },
                 { "text": "கொஞ்சம் உதவி வேணும்", "romanized": "Konjam udhavi venum" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "word-order", "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water", "extraWords": ["இல்ல"] },
-            { "id": "e5", "type": "listen-choose", "target": "போதும்", "romanized": "Podhum", "english": "That's enough",
-              "hint": "stopping someone serving you", "options": ["A little more", "One more", "That's enough", "Not for me"], "answer": 2 },
-            { "id": "e6", "type": "listen-type-roman", "target": "தண்ணி", "romanized": "Thanni", "english": "Water" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "கொஞ்சம் தண்ணி வேணும்", "romanized": "Konjam thanni venum", "english": "I need some water",
+              "extraWords": ["இல்ல"]
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "போதும்", "romanized": "Podhum", "english": "That's enough",
+              "hint": "stopping someone serving you",
+              "options": ["A little more", "One more", "That's enough", "Not for me"],
+              "answer": 2
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "தண்ணி", "romanized": "Thanni", "english": "Water"
+            }
           ]
         },
         {
@@ -120,68 +193,139 @@
       ]
     },
     {
-      "id": "unit-2", "title": "Out and About", "emoji": "🛺",
+      "id": "unit-2",
+      "title": "Out and About",
+      "emoji": "🛺",
       "lessons": [
         {
-          "id": "ta-lesson-2-1", "title": "At the Tea Stall",
+          "id": "ta-lesson-2-1",
+          "title": "At the Tea Stall",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please",
-              "options": ["Two teas", "One tea, please", "No tea for me", "How much is the tea?"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi", "english": "Less sugar" },
-            { "id": "e3", "type": "select-phrase", "target": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam", "english": "No sugar",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please",
+              "options": ["Two teas", "One tea, please", "No tea for me", "How much is the tea?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi", "english": "Less sugar"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam", "english": "No sugar",
               "options": [
                 { "text": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi" },
                 { "text": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga" },
                 { "text": "எவ்வளவு?", "romanized": "Evvalavu?" },
                 { "text": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam" }
-              ], "answer": 3 },
-            { "id": "e4", "type": "listen-choose", "target": "எவ்வளவு?", "romanized": "Evvalavu?", "english": "How much?",
-              "options": ["How much?", "Where?", "Who?", "When?"], "answer": 0 },
-            { "id": "e5", "type": "word-order", "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please", "extraWords": ["வேணாம்"] },
-            { "id": "e6", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "எவ்வளவு?", "romanized": "Evvalavu?", "english": "How much?",
+              "options": ["How much?", "Where?", "Who?", "When?"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "match-pairs",
+              "pairs": [
                 { "target": "சர்க்கரை கம்மி", "romanized": "Sarkkarai kammi", "english": "Less sugar" },
                 { "target": "சர்க்கரை வேணாம்", "romanized": "Sarkkarai venaam", "english": "No sugar" },
                 { "target": "எவ்வளவு?", "romanized": "Evvalavu?", "english": "How much?" },
                 { "target": "ஒரு டீ குடுங்க", "romanized": "Oru tea kodunga", "english": "One tea, please" }
-              ] }
+              ]
+            }
           ]
         },
         {
-          "id": "ta-lesson-2-2", "title": "At the Market",
+          "id": "ta-lesson-2-2",
+          "title": "At the Market",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?",
-              "options": ["What is this?", "Do you have this?", "Where is this from?", "How much is this?"], "answer": 3 },
-            { "id": "e2", "type": "speak-repeat", "target": "ரொம்ப அதிகம்", "romanized": "Romba adhigam", "english": "That's too much" },
-            { "id": "e3", "type": "select-phrase", "target": "கொஞ்சம் குறையுங்க", "romanized": "Konjam kuraiyunga", "english": "Bring the price down a bit",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?",
+              "options": ["What is this?", "Do you have this?", "Where is this from?", "How much is this?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ரொம்ப அதிகம்", "romanized": "Romba adhigam", "english": "That's too much"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "கொஞ்சம் குறையுங்க", "romanized": "Konjam kuraiyunga", "english": "Bring the price down a bit",
               "options": [
                 { "text": "ரொம்ப அதிகம்", "romanized": "Romba adhigam" },
                 { "text": "கொஞ்சம் குறையுங்க", "romanized": "Konjam kuraiyunga" },
                 { "text": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?" },
                 { "text": "சரி, குடுங்க", "romanized": "Sari, kodunga" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "listen-choose", "target": "சரி, குடுங்க", "romanized": "Sari, kodunga", "english": "Fine, I'll take it",
-              "options": ["Show me another", "Fine, I'll take it", "That's too much", "I'll come back"], "answer": 1 },
-            { "id": "e5", "type": "listen-type-roman", "target": "அதிகம்", "romanized": "Adhigam", "english": "Too much" },
-            { "id": "e6", "type": "speak-repeat", "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "சரி, குடுங்க", "romanized": "Sari, kodunga", "english": "Fine, I'll take it",
+              "options": ["Show me another", "Fine, I'll take it", "That's too much", "I'll come back"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-type-roman",
+              "target": "அதிகம்", "romanized": "Adhigam", "english": "Too much"
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "இது எவ்வளவு?", "romanized": "Idhu evvalavu?", "english": "How much is this?"
+            }
           ]
         },
         {
-          "id": "ta-lesson-2-3", "title": "Getting Around",
+          "id": "ta-lesson-2-3",
+          "title": "Getting Around",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "ஸ்டேஷன் வர்றீங்களா?", "romanized": "Station varreengalaa?", "english": "Will you go to the station?",
-              "hint": "flagging down an auto", "options": ["Where is the station?", "Is the station far?", "Will you go to the station?", "Stop at the station"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "மீட்டர் போடுங்க", "romanized": "Meter podunga", "english": "Put the meter on" },
-            { "id": "e3", "type": "select-phrase", "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ஸ்டேஷன் வர்றீங்களா?", "romanized": "Station varreengalaa?", "english": "Will you go to the station?",
+              "hint": "flagging down an auto",
+              "options": ["Where is the station?", "Is the station far?", "Will you go to the station?", "Stop at the station"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "மீட்டர் போடுங்க", "romanized": "Meter podunga", "english": "Put the meter on"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here",
               "options": [
                 { "text": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga" },
                 { "text": "முன்னாடி போங்க", "romanized": "Munnaadi ponga" },
                 { "text": "மீட்டர் போடுங்க", "romanized": "Meter podunga" },
                 { "text": "எவ்வளவு ஆகும்?", "romanized": "Evvalavu aagum?" }
-              ], "answer": 0 },
-            { "id": "e4", "type": "listen-choose", "target": "எவ்வளவு ஆகும்?", "romanized": "Evvalavu aagum?", "english": "How much will it be?",
-              "options": ["How far is it?", "How much will it be?", "How long will it take?", "Which way?"], "answer": 1 },
-            { "id": "e5", "type": "word-order", "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here", "extraWords": ["வேணாம்", "முன்னாடி"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "முன்னாடி போங்க", "romanized": "Munnaadi ponga", "english": "Keep going" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "எவ்வளவு ஆகும்?", "romanized": "Evvalavu aagum?", "english": "How much will it be?",
+              "options": ["How far is it?", "How much will it be?", "How long will it take?", "Which way?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here",
+              "extraWords": ["வேணாம்", "முன்னாடி"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "முன்னாடி போங்க", "romanized": "Munnaadi ponga", "english": "Keep going"
+            }
           ]
         },
         {
@@ -231,6 +375,528 @@
               "id": "e6", "type": "word-order",
               "target": "சரி, குடுங்க", "romanized": "Sari, kodunga", "english": "Fine, I'll take it",
               "extraWords": ["வேணாம்"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Calls & Pickups",
+      "emoji": "📞",
+      "lessons": [
+        {
+          "id": "ta-making-plans",
+          "title": "Making Plans",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "எப்போ பாக்கலாம்?", "romanized": "Eppo paakkalaam?", "english": "When shall we meet?",
+              "options": ["Where shall we meet?", "When shall we meet?", "Shall we go?", "Did you meet him?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "நாளைக்கு பாக்கலாம்", "romanized": "Naalaikku paakkalaam", "english": "Let's meet tomorrow"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "அப்புறம் பேசலாம்", "romanized": "Appuram pesalaam", "english": "Let's talk later",
+              "options": [
+                { "text": "அப்புறம் பேசலாம்", "romanized": "Appuram pesalaam" },
+                { "text": "நாளைக்கு பாக்கலாம்", "romanized": "Naalaikku paakkalaam" },
+                { "text": "வீட்ல இருக்கீங்களா?", "romanized": "Veetla irukeengalaa?" },
+                { "text": "சரி, போலாம்", "romanized": "Sari, polaam" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "வீட்ல இருக்கீங்களா?", "romanized": "Veetla irukeengalaa?", "english": "Are you at home?",
+              "options": ["Are you coming?", "Are you free?", "Are you at home?", "Are you alone?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "எப்போ பாக்கலாம்?", "romanized": "Eppo paakkalaam?", "english": "When shall we meet?" },
+                { "target": "நாளைக்கு பாக்கலாம்", "romanized": "Naalaikku paakkalaam", "english": "Let's meet tomorrow" },
+                { "target": "வீட்ல இருக்கீங்களா?", "romanized": "Veetla irukeengalaa?", "english": "Are you at home?" },
+                { "target": "சரி, போலாம்", "romanized": "Sari, polaam", "english": "Let's get going" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "சரி, போலாம்", "romanized": "Sari, polaam", "english": "Let's get going"
+            }
+          ]
+        },
+        {
+          "id": "ta-phone-and-whatsapp",
+          "title": "Phone & WhatsApp",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "சரியா கேக்கல", "romanized": "Sariyaa kekkala", "english": "I can't hear you",
+              "options": ["I can't see you", "Call me later", "I can't hear you", "Who's this?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "இன்னொரு தடவை சொல்லுங்க", "romanized": "Innoru thadavai sollunga", "english": "Please say that again"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "லொகேஷன் அனுப்புங்க", "romanized": "Location anuppunga", "english": "Please send the location",
+              "options": [
+                { "text": "இன்னொரு தடவை சொல்லுங்க", "romanized": "Innoru thadavai sollunga" },
+                { "text": "லொகேஷன் அனுப்புங்க", "romanized": "Location anuppunga" },
+                { "text": "நெட்வொர்க் சரியில்ல", "romanized": "Network sariyilla" },
+                { "text": "சரியா கேக்கல", "romanized": "Sariyaa kekkala" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "நெட்வொர்க் சரியில்ல", "romanized": "Network sariyilla", "english": "The network is bad",
+              "options": ["The network is bad", "The phone is off", "The battery is low", "The line is busy"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ரெண்டு நிமிஷம் கழிச்சு கால் பண்ணுங்க", "romanized": "Rendu nimisham kazhichu call pannunga", "english": "Call again in two minutes",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ஹலோ, யாரு?", "romanized": "Hello, yaaru?", "english": "Hello, who's this?"
+            }
+          ]
+        },
+        {
+          "id": "ta-meeting-your-ride",
+          "title": "Meeting Your Ride",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "எங்க இருக்கீங்க?", "romanized": "Enga irukeenga?", "english": "Where are you?",
+              "options": ["Who are you?", "How are you?", "Where is it?", "Where are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "நான் மெயின் கேட்ல இருக்கேன்", "romanized": "Naan main gatela irukken", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "அங்கேயே இருங்க", "romanized": "Angeye irunga", "english": "Please wait there",
+              "options": [
+                { "text": "முன்னாடி போங்க", "romanized": "Munnaadi ponga" },
+                { "text": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga" },
+                { "text": "அங்கேயே இருங்க", "romanized": "Angeye irunga" },
+                { "text": "எங்க இருக்கீங்க?", "romanized": "Enga irukeenga?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ரெண்டு நிமிஷத்துல வந்துடறேன்", "romanized": "Rendu nimishathula vandhudren", "english": "I'll be there in two minutes",
+              "hint": "the driver, on the phone",
+              "options": ["I'm two minutes late", "I'll be there in two minutes", "I just left", "Wait ten minutes"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "வண்டி நம்பர் என்ன?", "romanized": "Vandi number enna?", "english": "What's the car number?",
+              "extraWords": ["எங்க"]
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "target": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ஓடிபி ஏழு மூணு நாலு ஒண்ணு", "romanized": "OTP ezhu moonu naalu onnu" },
+                { "text": "ஓடிபி மூணு ஏழு ஒண்ணு நாலு", "romanized": "OTP moonu ezhu onnu naalu" },
+                { "text": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu" }
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "ta-finding-your-pickup",
+          "title": "Finding your pickup",
+          "scene": { "setting": "Your cab is here. Somewhere.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "எங்க இருக்கீங்க?", "romanized": "Enga irukeenga?", "english": "Where are you?",
+              "options": ["Where are you?", "Who are you?", "How are you?", "Where is it?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "நான் மெயின் கேட்ல இருக்கேன்", "romanized": "Naan main gatela irukken", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "listen-choose",
+              "target": "நான் ரெண்டாவது கேட்ல இருக்கேன்", "romanized": "Naan rendaavadhu gatela irukken", "english": "I'm at gate number two",
+              "options": ["I'm at the main gate", "I'm two minutes away", "I'm at gate number two", "I'm on the second floor"],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "அங்கேயே இருங்க", "romanized": "Angeye irunga", "english": "Please wait there",
+              "extraWords": ["முன்னாடி"]
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "lead": { "text": "ஓடிபி சொல்லுங்க", "romanized": "OTP sollunga", "english": "Tell me the OTP" },
+              "target": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ஓடிபி மூணு ஏழு ஒண்ணு நாலு", "romanized": "OTP moonu ezhu onnu naalu" },
+                { "text": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu" },
+                { "text": "ஓடிபி ஏழு மூணு நாலு ஒண்ணு", "romanized": "OTP ezhu moonu naalu onnu" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "lead": { "text": "சரி, ஏறுங்க", "romanized": "Sari, erunga", "english": "Okay, hop in" },
+              "target": "சரி, போலாம்", "romanized": "Sari, polaam", "english": "Let's get going",
+              "options": [
+                { "text": "சரி, போலாம்", "romanized": "Sari, polaam" },
+                { "text": "அங்கேயே இருங்க", "romanized": "Angeye irunga" },
+                { "text": "இன்னொரு தடவை சொல்லுங்க", "romanized": "Innoru thadavai sollunga" }
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "City Life Now",
+      "emoji": "🏙️",
+      "lessons": [
+        {
+          "id": "ta-paying-by-upi",
+          "title": "Paying by UPI",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "யுபிஐ பண்ணட்டுமா?", "romanized": "UPI pannattumaa?", "english": "Can I pay by UPI?",
+              "options": ["Can I pay later?", "Can I pay by UPI?", "Do you have change?", "Is it paid?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "பேமெண்ட் ஆயிடுச்சு", "romanized": "Payment aayiduchu", "english": "The payment's done"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "க்யூஆர் கோட் எங்க?", "romanized": "QR code enga?", "english": "Where's the QR code?",
+              "options": [
+                { "text": "பேமெண்ட் ஆயிடுச்சு", "romanized": "Payment aayiduchu" },
+                { "text": "யுபிஐ பண்ணட்டுமா?", "romanized": "UPI pannattumaa?" },
+                { "text": "வந்துச்சா?", "romanized": "Vandhuchaa?" },
+                { "text": "க்யூஆர் கோட் எங்க?", "romanized": "QR code enga?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "பேமெண்ட் ஃபெயில் ஆயிடுச்சு", "romanized": "Payment fail aayiduchu", "english": "The payment failed",
+              "options": ["The payment's done", "The phone is off", "The payment failed", "The network is bad"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "யுபிஐ பண்ணட்டுமா?", "romanized": "UPI pannattumaa?", "english": "Can I pay by UPI?" },
+                { "target": "பேமெண்ட் ஆயிடுச்சு", "romanized": "Payment aayiduchu", "english": "The payment's done" },
+                { "target": "வந்துச்சா?", "romanized": "Vandhuchaa?", "english": "Did you get it?" },
+                { "target": "க்யூஆர் கோட் எங்க?", "romanized": "QR code enga?", "english": "Where's the QR code?" }
+              ]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "வந்துச்சா?", "romanized": "Vandhuchaa?", "english": "Did you get it?"
+            }
+          ]
+        },
+        {
+          "id": "ta-at-your-door",
+          "title": "At Your Door",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "உங்க பார்சல் வந்திருக்கு", "romanized": "Unga parcel vandhirukku", "english": "Your parcel is here",
+              "options": ["Your parcel is here", "Your order is late", "Your parcel is lost", "Your cab is here"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga", "english": "Come to gate number two"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "செக்யூரிட்டி கிட்ட குடுத்துடுங்க", "romanized": "Security kitta kuduthudunga", "english": "Leave it with security",
+              "options": [
+                { "text": "அங்கேயே இருங்க", "romanized": "Angeye irunga" },
+                { "text": "செக்யூரிட்டி கிட்ட குடுத்துடுங்க", "romanized": "Security kitta kuduthudunga" },
+                { "text": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga" },
+                { "text": "லொகேஷன் அனுப்புங்க", "romanized": "Location anuppunga" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "எந்த கேட்ல இருக்கீங்க?", "romanized": "Endha gatela irukeenga?", "english": "Which gate are you at?",
+              "options": ["Which floor are you on?", "Where is the gate?", "Which gate are you at?", "Is the gate open?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "மெடிக்கல் ஷாப் பக்கத்துல", "romanized": "Medical shop pakkathula", "english": "Next to the medical shop",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "ரெண்டாவது கேட்", "romanized": "Rendaavadhu gate", "english": "Gate number two"
+            }
+          ]
+        },
+        {
+          "id": "ta-metro-and-landmarks",
+          "title": "Metro & Landmarks",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "அடுத்த நிலையம் சென்ட்ரல்", "romanized": "Adutha nilaiyam Central", "english": "The next station is Central",
+              "hint": "the announcement on the train",
+              "options": ["This train ends at Central", "The next station is Central", "Change here for Central", "Central is closed"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "சென்ட்ரல் போகணும்", "romanized": "Central poganum", "english": "I need to go to Central"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "எங்க லைன் மாறணும்?", "romanized": "Enga line maaranum?", "english": "Where do I change lines?",
+              "options": [
+                { "text": "எங்க லைன் மாறணும்?", "romanized": "Enga line maaranum?" },
+                { "text": "எந்த பிளாட்பாரம்?", "romanized": "Endha platform?" },
+                { "text": "பக்கத்துல மெட்ரோ ஸ்டேஷன் எங்க இருக்கு?", "romanized": "Pakkathula metro station enga irukku?" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "பக்கத்துல மெட்ரோ ஸ்டேஷன் எங்க இருக்கு?", "romanized": "Pakkathula metro station enga irukku?", "english": "Where's the nearest metro station?",
+              "options": ["How far is the station?", "When is the next train?", "Where's the bus stop?", "Where's the nearest metro station?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "எக்ஸிட் எங்க?", "romanized": "Exit enga?", "english": "Where's the exit?",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "எந்த பிளாட்பாரம்?", "romanized": "Endha platform?", "english": "Which platform?"
+            }
+          ]
+        },
+        {
+          "id": "ta-your-orders-here",
+          "title": "Your order's here",
+          "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "உங்க பார்சல் இருக்கு. எங்க வரணும்?", "romanized": "Unga parcel irukku. Enga varanum?", "english": "Your parcel. Where do I come?" },
+              "target": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga", "english": "Come to gate number two",
+              "options": [
+                { "text": "மெடிக்கல் ஷாப் பக்கத்துல", "romanized": "Medical shop pakkathula" },
+                { "text": "எந்த கேட்ல இருக்கீங்க?", "romanized": "Endha gatela irukeenga?" },
+                { "text": "ரெண்டாவது கேட்டுக்கு வாங்க", "romanized": "Rendaavadhu gatekku vaanga" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "செக்யூரிட்டி உள்ள விட மாட்டேங்கறாங்க", "romanized": "Security ulla vida maattengaraanga", "english": "Security isn't letting me in",
+              "options": ["Security isn't letting me in", "Security is asking for you", "The gate is closed", "I'm at the gate"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "target": "செக்யூரிட்டி கிட்ட குடுத்துடுங்க", "romanized": "Security kitta kuduthudunga", "english": "Leave it with security",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "ஓடிபி சொல்லுங்க", "romanized": "OTP sollunga", "english": "Tell me the OTP" },
+              "target": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ஓடிபி மூணு ஏழு ஒண்ணு நாலு", "romanized": "OTP moonu ezhu onnu naalu" },
+                { "text": "ஓடிபி ஏழு மூணு ஒண்ணு நாலு", "romanized": "OTP ezhu moonu onnu naalu" },
+                { "text": "ஓடிபி ஏழு மூணு நாலு ஒண்ணு", "romanized": "OTP ezhu moonu naalu onnu" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "பேமெண்ட் இன்னும் பாக்கி இருக்கு", "romanized": "Payment innum baakki irukku", "english": "The payment's still due",
+              "options": ["The payment's done", "The payment failed", "No payment needed", "The payment's still due"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "யுபிஐ பண்ணட்டுமா?", "romanized": "UPI pannattumaa?", "english": "Can I pay by UPI?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
+        {
+          "id": "ta-small-talk",
+          "title": "Small Talk",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "எப்படி இருக்கீங்க?", "romanized": "Eppadi irukeenga?", "english": "How are you?",
+              "options": ["How are you?", "What happened?", "What is this?", "Where were you?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "நல்லா இருக்கேன்", "romanized": "Nallaa irukken", "english": "I'm doing well"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "நீங்க என்ன பண்றீங்க?", "romanized": "Neenga enna panreenga?", "english": "What do you do?",
+              "options": [
+                { "text": "எப்படி இருக்கீங்க?", "romanized": "Eppadi irukeenga?" },
+                { "text": "நீங்க என்ன பண்றீங்க?", "romanized": "Neenga enna panreenga?" },
+                { "text": "நல்லா இருக்கேன்", "romanized": "Nallaa irukken" },
+                { "text": "ரொம்ப நாளாச்சு!", "romanized": "Romba naalaachu!" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ரொம்ப நாளாச்சு!", "romanized": "Romba naalaachu!", "english": "Long time no see!",
+              "hint": "greeting someone you haven't seen in a while",
+              "options": ["See you soon!", "Long time no see!", "Come again!", "Where have you been?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "நல்லா இருக்கேன்", "romanized": "Nallaa irukken", "english": "I'm doing well",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "எப்படி இருக்கீங்க?", "romanized": "Eppadi irukeenga?", "english": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "ta-bowing-out",
+          "title": "Bowing Out Politely",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "மன்னிச்சுக்கோங்க", "romanized": "Mannichukkonga", "english": "Excuse me / sorry",
+              "options": ["Thank you", "Excuse me / sorry", "Please come", "Never mind"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "இன்னைக்கு வேணாம், இன்னொரு நாள்", "romanized": "Innaikku venaam, innoru naal", "english": "Not today, some other time"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "கொஞ்சம் வேலை இருக்கு", "romanized": "Konjam velai irukku", "english": "I'm a bit tied up",
+              "options": [
+                { "text": "விடுங்க, பரவால்ல", "romanized": "Vidunga, paravaalla" },
+                { "text": "மன்னிச்சுக்கோங்க", "romanized": "Mannichukkonga" },
+                { "text": "கொஞ்சம் வேலை இருக்கு", "romanized": "Konjam velai irukku" },
+                { "text": "அப்புறம் பாக்கலாம்", "romanized": "Appuram paakkalaam" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "விடுங்க, பரவால்ல", "romanized": "Vidunga, paravaalla", "english": "Leave it, never mind",
+              "hint": "waving something off",
+              "options": ["Keep it", "Leave it, never mind", "Let's do it", "Bring it here"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "மன்னிச்சுக்கோங்க", "romanized": "Mannichukkonga", "english": "Excuse me / sorry" },
+                { "target": "விடுங்க, பரவால்ல", "romanized": "Vidunga, paravaalla", "english": "Leave it, never mind" },
+                { "target": "கொஞ்சம் வேலை இருக்கு", "romanized": "Konjam velai irukku", "english": "I'm a bit tied up" },
+                { "target": "அப்புறம் பாக்கலாம்", "romanized": "Appuram paakkalaam", "english": "See you later" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "அப்புறம் பாக்கலாம்", "romanized": "Appuram paakkalaam", "english": "See you later"
+            }
+          ]
+        },
+        {
+          "id": "ta-ride-to-the-station",
+          "title": "An auto to the station",
+          "scene": { "setting": "Late evening, flagging an auto.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "எங்க போகணும்?", "romanized": "Enga poganum?", "english": "Where to?" },
+              "target": "ஸ்டேஷன் வர்றீங்களா?", "romanized": "Station varreengalaa?", "english": "Will you go to the station?",
+              "options": [
+                { "text": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga" },
+                { "text": "ஸ்டேஷன் வர்றீங்களா?", "romanized": "Station varreengalaa?" },
+                { "text": "முன்னாடி போங்க", "romanized": "Munnaadi ponga" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "இருநூறு ஆகும்", "romanized": "Irunooru aagum", "english": "It'll be two hundred",
+              "options": ["It'll be two hundred", "Only two people", "Get in, quick", "It's not far"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "மீட்டர் போடுங்க", "romanized": "Meter podunga", "english": "Put the meter on"
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "எப்படி இருக்கீங்க?", "romanized": "Eppadi irukeenga?", "english": "How are you?",
+              "options": ["What happened?", "What is this?", "Where were you?", "How are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "நல்லா இருக்கேன்", "romanized": "Nallaa irukken", "english": "I'm doing well",
+              "extraWords": ["வேணாம்"]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "ஸ்டேஷன் வந்துடுச்சு", "romanized": "Station vandhuduchu", "english": "Here's the station" },
+              "target": "இங்க நிறுத்துங்க", "romanized": "Inga niruthunga", "english": "Stop right here"
             }
           ]
         }

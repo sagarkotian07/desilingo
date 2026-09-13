@@ -25,6 +25,16 @@ const ICONS: Record<string, string> = {
   'A cup of tea': '☕',
   'Haggling at the market': '🛒',
   'An auto to the station': '🛺',
+  'An auto to Majestic': '🛺',
+  'A taxi to the station': '🚕',
+  'A rickshaw to the station': '🛺',
+  'Phone & WhatsApp': '📱',
+  'Meeting Your Ride': '🚕',
+  'Finding your pickup': '📍',
+  'Paying by UPI': '💸',
+  'At Your Door': '🚪',
+  'Metro & Landmarks': '🚇',
+  "Your order's here": '📦',
 }
 
 export const FALLBACK_ICON = '📖'

@@ -3,68 +3,141 @@
   "tagline": "Everyday Bengali. The way it's actually spoken.",
   "units": [
     {
-      "id": "unit-1", "title": "Everyday Responses", "emoji": "💬",
+      "id": "unit-1",
+      "title": "Everyday Responses",
+      "emoji": "💬",
       "lessons": [
         {
-          "id": "bn-lesson-1-1", "title": "Saying Yes & No",
+          "id": "bn-lesson-1-1",
+          "title": "Saying Yes & No",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "লাগবে না", "romanized": "Laagbe na", "english": "I don't need it",
-              "hint": "turning something down", "options": ["Give me more", "I don't need it", "Yes, please", "Later"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe", "english": "Yes, that's fine" },
-            { "id": "e3", "type": "select-phrase", "target": "এখন না", "romanized": "Ekhon na", "english": "Not right now",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "লাগবে না", "romanized": "Laagbe na", "english": "I don't need it",
+              "hint": "turning something down",
+              "options": ["Give me more", "I don't need it", "Yes, please", "Later"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe", "english": "Yes, that's fine"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "এখন না", "romanized": "Ekhon na", "english": "Not right now",
               "options": [
                 { "text": "পরে", "romanized": "Pore" },
                 { "text": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe" },
                 { "text": "এখন না", "romanized": "Ekhon na" },
                 { "text": "আসুন", "romanized": "Aashun" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "listen-choose", "target": "অবশ্যই", "romanized": "Oboshshoi", "english": "Definitely",
-              "options": ["Maybe", "Never", "Definitely", "Not sure"], "answer": 2 },
-            { "id": "e5", "type": "word-order", "target": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe", "english": "Yes, that's fine", "extraWords": ["না"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "না", "romanized": "Na", "english": "No" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "অবশ্যই", "romanized": "Oboshshoi", "english": "Definitely",
+              "options": ["Maybe", "Never", "Definitely", "Not sure"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "হ্যাঁ, ঠিক আছে", "romanized": "Haan, thik achhe", "english": "Yes, that's fine",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "না", "romanized": "Na", "english": "No"
+            }
           ]
         },
         {
-          "id": "bn-lesson-1-2", "title": "Quick Replies",
+          "id": "bn-lesson-1-2",
+          "title": "Quick Replies",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem",
-              "hint": "waving off an apology", "options": ["Thank you", "What happened?", "It's okay, no problem", "I'm busy"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "ধন্যবাদ", "romanized": "Dhonnobad", "english": "Thank you" },
-            { "id": "e3", "type": "select-phrase", "target": "এক মিনিট", "romanized": "Ek minute", "english": "One minute",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem",
+              "hint": "waving off an apology",
+              "options": ["Thank you", "What happened?", "It's okay, no problem", "I'm busy"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ধন্যবাদ", "romanized": "Dhonnobad", "english": "Thank you"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "এক মিনিট", "romanized": "Ek minute", "english": "One minute",
               "options": [
                 { "text": "বুঝেছি", "romanized": "Bujhechhi" },
                 { "text": "এক মিনিট", "romanized": "Ek minute" },
                 { "text": "ধন্যবাদ", "romanized": "Dhonnobad" },
                 { "text": "কোনো ব্যাপার না", "romanized": "Kono byapar na" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "listen-choose", "target": "বুঝেছি", "romanized": "Bujhechhi", "english": "Got it",
-              "options": ["Got it", "Say it again", "I'm coming", "I don't know"], "answer": 0 },
-            { "id": "e5", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "বুঝেছি", "romanized": "Bujhechhi", "english": "Got it",
+              "options": ["Got it", "Say it again", "I'm coming", "I don't know"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
                 { "target": "ধন্যবাদ", "romanized": "Dhonnobad", "english": "Thank you" },
                 { "target": "এক মিনিট", "romanized": "Ek minute", "english": "One minute" },
                 { "target": "বুঝেছি", "romanized": "Bujhechhi", "english": "Got it" },
-                { "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "No problem" }
-              ] },
-            { "id": "e6", "type": "speak-repeat", "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem" }
+                { "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "কোনো ব্যাপার না", "romanized": "Kono byapar na", "english": "It's okay, no problem"
+            }
           ]
         },
         {
-          "id": "bn-lesson-1-3", "title": "Expressing Needs",
+          "id": "bn-lesson-1-3",
+          "title": "Expressing Needs",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "একটু জল লাগবে", "romanized": "Ektu jol laagbe", "english": "I need some water",
-              "options": ["I need some help", "I'm hungry", "I need some water", "I'm leaving"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "একটু সাহায্য লাগবে", "romanized": "Ektu shahajjo laagbe", "english": "I need some help" },
-            { "id": "e3", "type": "select-phrase", "target": "আরেকটু", "romanized": "Arektu", "english": "A little more",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "একটু জল লাগবে", "romanized": "Ektu jol laagbe", "english": "I need some water",
+              "options": ["I need some help", "I'm hungry", "I need some water", "I'm leaving"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "একটু সাহায্য লাগবে", "romanized": "Ektu shahajjo laagbe", "english": "I need some help"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "আরেকটু", "romanized": "Arektu", "english": "A little more",
               "options": [
                 { "text": "যথেষ্ট", "romanized": "Jothesto" },
                 { "text": "জল", "romanized": "Jol" },
                 { "text": "আরেকটু", "romanized": "Arektu" },
                 { "text": "একটু সাহায্য লাগবে", "romanized": "Ektu shahajjo laagbe" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "word-order", "target": "একটু জল লাগবে", "romanized": "Ektu jol laagbe", "english": "I need some water", "extraWords": ["না"] },
-            { "id": "e5", "type": "listen-choose", "target": "যথেষ্ট", "romanized": "Jothesto", "english": "That's enough",
-              "hint": "stopping someone serving you", "options": ["A little more", "That's enough", "One more", "Not for me"], "answer": 1 },
-            { "id": "e6", "type": "listen-type-roman", "target": "জল", "romanized": "Jol", "english": "Water" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "একটু জল লাগবে", "romanized": "Ektu jol laagbe", "english": "I need some water",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "যথেষ্ট", "romanized": "Jothesto", "english": "That's enough",
+              "hint": "stopping someone serving you",
+              "options": ["A little more", "That's enough", "One more", "Not for me"],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "জল", "romanized": "Jol", "english": "Water"
+            }
           ]
         },
         {
@@ -120,68 +193,139 @@
       ]
     },
     {
-      "id": "unit-2", "title": "Out and About", "emoji": "🛺",
+      "id": "unit-2",
+      "title": "Out and About",
+      "emoji": "🛺",
       "lessons": [
         {
-          "id": "bn-lesson-2-1", "title": "At the Tea Stall",
+          "id": "bn-lesson-2-1",
+          "title": "At the Tea Stall",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "এক কাপ চা দিন", "romanized": "Ek cup cha din", "english": "One cup of tea, please",
-              "options": ["Two teas", "No tea for me", "One cup of tea, please", "How much is the tea?"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "চিনি কম", "romanized": "Chini kom", "english": "Less sugar" },
-            { "id": "e3", "type": "select-phrase", "target": "চিনি ছাড়া", "romanized": "Chini chhara", "english": "Without sugar",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "এক কাপ চা দিন", "romanized": "Ek cup cha din", "english": "One cup of tea, please",
+              "options": ["Two teas", "No tea for me", "One cup of tea, please", "How much is the tea?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "চিনি কম", "romanized": "Chini kom", "english": "Less sugar"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "চিনি ছাড়া", "romanized": "Chini chhara", "english": "Without sugar",
               "options": [
                 { "text": "চিনি কম", "romanized": "Chini kom" },
                 { "text": "চিনি ছাড়া", "romanized": "Chini chhara" },
                 { "text": "কত?", "romanized": "Koto?" },
                 { "text": "এক কাপ চা দিন", "romanized": "Ek cup cha din" }
-              ], "answer": 1 },
-            { "id": "e4", "type": "listen-choose", "target": "কত?", "romanized": "Koto?", "english": "How much?",
-              "options": ["How much?", "Where?", "Who?", "When?"], "answer": 0 },
-            { "id": "e5", "type": "word-order", "target": "চিনি ছাড়া চা", "romanized": "Chini chhara cha", "english": "Tea without sugar", "extraWords": ["না"] },
-            { "id": "e6", "type": "match-pairs", "pairs": [
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "কত?", "romanized": "Koto?", "english": "How much?",
+              "options": ["How much?", "Where?", "Who?", "When?"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "চিনি ছাড়া চা", "romanized": "Chini chhara cha", "english": "Tea without sugar",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "match-pairs",
+              "pairs": [
                 { "target": "চিনি কম", "romanized": "Chini kom", "english": "Less sugar" },
                 { "target": "চিনি ছাড়া", "romanized": "Chini chhara", "english": "Without sugar" },
                 { "target": "কত?", "romanized": "Koto?", "english": "How much?" },
-                { "target": "এক কাপ চা দিন", "romanized": "Ek cup cha din", "english": "One cup of tea" }
-              ] }
+                { "target": "এক কাপ চা দিন", "romanized": "Ek cup cha din", "english": "One cup of tea, please" }
+              ]
+            }
           ]
         },
         {
-          "id": "bn-lesson-2-2", "title": "At the Market",
+          "id": "bn-lesson-2-2",
+          "title": "At the Market",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "এটা কত?", "romanized": "Eta koto?", "english": "How much is this?",
-              "options": ["What is this?", "Do you have this?", "How much is this?", "Where is this from?"], "answer": 2 },
-            { "id": "e2", "type": "speak-repeat", "target": "অনেক বেশি", "romanized": "Onek beshi", "english": "That's too much" },
-            { "id": "e3", "type": "select-phrase", "target": "একটু কমান", "romanized": "Ektu koman", "english": "Bring the price down a bit",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "এটা কত?", "romanized": "Eta koto?", "english": "How much is this?",
+              "options": ["What is this?", "Do you have this?", "How much is this?", "Where is this from?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "অনেক বেশি", "romanized": "Onek beshi", "english": "That's too much"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "একটু কমান", "romanized": "Ektu koman", "english": "Bring the price down a bit",
               "options": [
                 { "text": "অনেক বেশি", "romanized": "Onek beshi" },
                 { "text": "এটা কত?", "romanized": "Eta koto?" },
                 { "text": "একটু কমান", "romanized": "Ektu koman" },
                 { "text": "ঠিক আছে, দিন", "romanized": "Thik achhe, din" }
-              ], "answer": 2 },
-            { "id": "e4", "type": "listen-choose", "target": "ঠিক আছে, দিন", "romanized": "Thik achhe, din", "english": "Fine, I'll take it",
-              "options": ["Fine, I'll take it", "Show me another", "That's too much", "I'll come back"], "answer": 0 },
-            { "id": "e5", "type": "listen-type-roman", "target": "বেশি", "romanized": "Beshi", "english": "Too much" },
-            { "id": "e6", "type": "speak-repeat", "target": "এটা কত?", "romanized": "Eta koto?", "english": "How much is this?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "ঠিক আছে, দিন", "romanized": "Thik achhe, din", "english": "Fine, I'll take it",
+              "options": ["Fine, I'll take it", "Show me another", "That's too much", "I'll come back"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "listen-type-roman",
+              "target": "বেশি", "romanized": "Beshi", "english": "Too much"
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "এটা কত?", "romanized": "Eta koto?", "english": "How much is this?"
+            }
           ]
         },
         {
-          "id": "bn-lesson-2-3", "title": "Getting Around",
+          "id": "bn-lesson-2-3",
+          "title": "Getting Around",
           "exercises": [
-            { "id": "e1", "type": "listen-choose", "target": "স্টেশন যাবেন?", "romanized": "Station jaben?", "english": "Will you go to the station?",
-              "hint": "flagging down a taxi", "options": ["Where is the station?", "Will you go to the station?", "Is the station far?", "Stop at the station"], "answer": 1 },
-            { "id": "e2", "type": "speak-repeat", "target": "মিটারে চলুন", "romanized": "Meetare cholun", "english": "Go by the meter" },
-            { "id": "e3", "type": "select-phrase", "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here",
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "স্টেশন যাবেন?", "romanized": "Station jaben?", "english": "Will you go to the station?",
+              "hint": "flagging down a taxi",
+              "options": ["Where is the station?", "Will you go to the station?", "Is the station far?", "Stop at the station"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "মিটারে চলুন", "romanized": "Meetare cholun", "english": "Go by the meter"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here",
               "options": [
                 { "text": "সামনে চলুন", "romanized": "Shamne cholun" },
                 { "text": "কত নেবেন?", "romanized": "Koto neben?" },
                 { "text": "মিটারে চলুন", "romanized": "Meetare cholun" },
                 { "text": "এখানে থামুন", "romanized": "Ekhane thamun" }
-              ], "answer": 3 },
-            { "id": "e4", "type": "listen-choose", "target": "কত নেবেন?", "romanized": "Koto neben?", "english": "How much will you charge?",
-              "options": ["How far is it?", "How much will you charge?", "How long will it take?", "Which way?"], "answer": 1 },
-            { "id": "e5", "type": "word-order", "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here", "extraWords": ["না", "সামনে"] },
-            { "id": "e6", "type": "listen-type-roman", "target": "সামনে চলুন", "romanized": "Shamne cholun", "english": "Keep going" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "কত নেবেন?", "romanized": "Koto neben?", "english": "How much will you charge?",
+              "options": ["How far is it?", "How much will you charge?", "How long will it take?", "Which way?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here",
+              "extraWords": ["না", "সামনে"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "সামনে চলুন", "romanized": "Shamne cholun", "english": "Keep going"
+            }
           ]
         },
         {
@@ -231,6 +375,528 @@
               "id": "e6", "type": "word-order",
               "target": "ঠিক আছে, দিন", "romanized": "Thik achhe, din", "english": "Fine, I'll take it",
               "extraWords": ["না"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-3",
+      "title": "Calls & Pickups",
+      "emoji": "📞",
+      "lessons": [
+        {
+          "id": "bn-making-plans",
+          "title": "Making Plans",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "কবে দেখা করব?", "romanized": "Kobe dekha korbo?", "english": "When shall we meet?",
+              "options": ["Where shall we meet?", "When shall we meet?", "Shall we go?", "Did you meet him?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "কাল দেখা হবে", "romanized": "Kaal dekha hobe", "english": "Let's meet tomorrow"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "পরে কথা বলব", "romanized": "Pore kotha bolbo", "english": "Let's talk later",
+              "options": [
+                { "text": "পরে কথা বলব", "romanized": "Pore kotha bolbo" },
+                { "text": "কাল দেখা হবে", "romanized": "Kaal dekha hobe" },
+                { "text": "বাড়িতে আছেন?", "romanized": "Barite achhen?" },
+                { "text": "চলুন, যাওয়া যাক", "romanized": "Cholun, jaoa jak" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "বাড়িতে আছেন?", "romanized": "Barite achhen?", "english": "Are you at home?",
+              "options": ["Are you coming?", "Are you free?", "Are you at home?", "Are you alone?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "কবে দেখা করব?", "romanized": "Kobe dekha korbo?", "english": "When shall we meet?" },
+                { "target": "কাল দেখা হবে", "romanized": "Kaal dekha hobe", "english": "Let's meet tomorrow" },
+                { "target": "বাড়িতে আছেন?", "romanized": "Barite achhen?", "english": "Are you at home?" },
+                { "target": "চলুন, যাওয়া যাক", "romanized": "Cholun, jaoa jak", "english": "Let's get going" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "চলুন, যাওয়া যাক", "romanized": "Cholun, jaoa jak", "english": "Let's get going"
+            }
+          ]
+        },
+        {
+          "id": "bn-phone-and-whatsapp",
+          "title": "Phone & WhatsApp",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "শুনতে পাচ্ছি না", "romanized": "Shunte pachchhi na", "english": "I can't hear you",
+              "options": ["I can't see you", "Call me later", "I can't hear you", "Who's this?"],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "আরেকবার বলুন", "romanized": "Arekbar bolun", "english": "Please say that again"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "লোকেশন পাঠান", "romanized": "Location pathan", "english": "Please send the location",
+              "options": [
+                { "text": "আরেকবার বলুন", "romanized": "Arekbar bolun" },
+                { "text": "লোকেশন পাঠান", "romanized": "Location pathan" },
+                { "text": "নেটওয়ার্ক ভালো নেই", "romanized": "Network bhalo nei" },
+                { "text": "শুনতে পাচ্ছি না", "romanized": "Shunte pachchhi na" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "নেটওয়ার্ক ভালো নেই", "romanized": "Network bhalo nei", "english": "The network is bad",
+              "options": ["The network is bad", "The phone is off", "The battery is low", "The line is busy"],
+              "answer": 0
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "দুই মিনিট পরে ফোন করুন", "romanized": "Dui minute pore phone korun", "english": "Call again in two minutes",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "হ্যালো, কে বলছেন?", "romanized": "Hello, ke bolchhen?", "english": "Hello, who's this?"
+            }
+          ]
+        },
+        {
+          "id": "bn-meeting-your-ride",
+          "title": "Meeting Your Ride",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "আপনি কোথায়?", "romanized": "Apni kothay?", "english": "Where are you?",
+              "options": ["Who are you?", "How are you?", "Where is it?", "Where are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "আমি মেন গেটে আছি", "romanized": "Ami main gete achhi", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "ওখানেই দাঁড়ান", "romanized": "Okhanei daran", "english": "Please wait there",
+              "options": [
+                { "text": "সামনে চলুন", "romanized": "Shamne cholun" },
+                { "text": "এখানে থামুন", "romanized": "Ekhane thamun" },
+                { "text": "ওখানেই দাঁড়ান", "romanized": "Okhanei daran" },
+                { "text": "আপনি কোথায়?", "romanized": "Apni kothay?" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "দুই মিনিটে আসছি", "romanized": "Dui minite aschhi", "english": "I'll be there in two minutes",
+              "hint": "the driver, on the phone",
+              "options": ["I'm two minutes late", "I'll be there in two minutes", "I just left", "Wait ten minutes"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "গাড়ির নম্বর কত?", "romanized": "Garir nombor koto?", "english": "What's the car number?",
+              "extraWords": ["কোথায়"]
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "target": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ওটিপি সাত তিন চার এক", "romanized": "OTP saat tin char ek" },
+                { "text": "ওটিপি তিন সাত এক চার", "romanized": "OTP tin saat ek char" },
+                { "text": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char" }
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "bn-finding-your-pickup",
+          "title": "Finding your pickup",
+          "scene": { "setting": "Your cab is here. Somewhere.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "আপনি কোথায়?", "romanized": "Apni kothay?", "english": "Where are you?",
+              "options": ["Where are you?", "Who are you?", "How are you?", "Where is it?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "আমি মেন গেটে আছি", "romanized": "Ami main gete achhi", "english": "I'm at the main gate"
+            },
+            {
+              "id": "e3", "type": "listen-choose",
+              "target": "আমি দুই নম্বর গেটে আছি", "romanized": "Ami dui nombor gete achhi", "english": "I'm at gate number two",
+              "options": ["I'm at the main gate", "I'm two minutes away", "I'm at gate number two", "I'm on the second floor"],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "word-order",
+              "target": "ওখানেই দাঁড়ান", "romanized": "Okhanei daran", "english": "Please wait there",
+              "extraWords": ["সামনে"]
+            },
+            {
+              "id": "e5", "type": "select-phrase",
+              "lead": { "text": "ওটিপি বলুন", "romanized": "OTP bolun", "english": "Tell me the OTP" },
+              "target": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ওটিপি তিন সাত এক চার", "romanized": "OTP tin saat ek char" },
+                { "text": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char" },
+                { "text": "ওটিপি সাত তিন চার এক", "romanized": "OTP saat tin char ek" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e6", "type": "select-phrase",
+              "lead": { "text": "ঠিক আছে, উঠুন", "romanized": "Thik achhe, uthun", "english": "Okay, hop in" },
+              "target": "চলুন, যাওয়া যাক", "romanized": "Cholun, jaoa jak", "english": "Let's get going",
+              "options": [
+                { "text": "চলুন, যাওয়া যাক", "romanized": "Cholun, jaoa jak" },
+                { "text": "ওখানেই দাঁড়ান", "romanized": "Okhanei daran" },
+                { "text": "আরেকবার বলুন", "romanized": "Arekbar bolun" }
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-4",
+      "title": "City Life Now",
+      "emoji": "🏙️",
+      "lessons": [
+        {
+          "id": "bn-paying-by-upi",
+          "title": "Paying by UPI",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "ইউপিআই করে দিই?", "romanized": "UPI kore dii?", "english": "Can I pay by UPI?",
+              "options": ["Can I pay later?", "Can I pay by UPI?", "Do you have change?", "Is it paid?"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "পেমেন্ট হয়ে গেছে", "romanized": "Payment hoye gechhe", "english": "The payment's done"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "কিউআর কোড কোথায়?", "romanized": "QR code kothay?", "english": "Where's the QR code?",
+              "options": [
+                { "text": "পেমেন্ট হয়ে গেছে", "romanized": "Payment hoye gechhe" },
+                { "text": "ইউপিআই করে দিই?", "romanized": "UPI kore dii?" },
+                { "text": "পেয়েছেন?", "romanized": "Peyechhen?" },
+                { "text": "কিউআর কোড কোথায়?", "romanized": "QR code kothay?" }
+              ],
+              "answer": 3
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "পেমেন্ট ফেল করেছে", "romanized": "Payment fail korechhe", "english": "The payment failed",
+              "options": ["The payment's done", "The phone is off", "The payment failed", "The network is bad"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "ইউপিআই করে দিই?", "romanized": "UPI kore dii?", "english": "Can I pay by UPI?" },
+                { "target": "পেমেন্ট হয়ে গেছে", "romanized": "Payment hoye gechhe", "english": "The payment's done" },
+                { "target": "পেয়েছেন?", "romanized": "Peyechhen?", "english": "Did you get it?" },
+                { "target": "কিউআর কোড কোথায়?", "romanized": "QR code kothay?", "english": "Where's the QR code?" }
+              ]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "পেয়েছেন?", "romanized": "Peyechhen?", "english": "Did you get it?"
+            }
+          ]
+        },
+        {
+          "id": "bn-at-your-door",
+          "title": "At Your Door",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "আপনার পার্সেল এসেছে", "romanized": "Apnar parcel eshechhe", "english": "Your parcel is here",
+              "options": ["Your parcel is here", "Your order is late", "Your parcel is lost", "Your cab is here"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "দুই নম্বর গেটে আসুন", "romanized": "Dui nombor gete asun", "english": "Come to gate number two"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "সিকিউরিটির কাছে রেখে দিন", "romanized": "Securityr kachhe rekhe din", "english": "Leave it with security",
+              "options": [
+                { "text": "ওখানেই দাঁড়ান", "romanized": "Okhanei daran" },
+                { "text": "সিকিউরিটির কাছে রেখে দিন", "romanized": "Securityr kachhe rekhe din" },
+                { "text": "দুই নম্বর গেটে আসুন", "romanized": "Dui nombor gete asun" },
+                { "text": "লোকেশন পাঠান", "romanized": "Location pathan" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "কোন গেটে আছেন?", "romanized": "Kon gete achhen?", "english": "Which gate are you at?",
+              "options": ["Which floor are you on?", "Where is the gate?", "Which gate are you at?", "Is the gate open?"],
+              "answer": 2
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ওষুধের দোকানের পাশে", "romanized": "Oshudher dokaner pashe", "english": "Next to the medicine shop",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "দুই নম্বর গেট", "romanized": "Dui nombor gate", "english": "Gate number two"
+            }
+          ]
+        },
+        {
+          "id": "bn-metro-and-landmarks",
+          "title": "Metro & Landmarks",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "পরবর্তী স্টেশন এসপ্ল্যানেড", "romanized": "Porobortii station Esplanade", "english": "The next station is Esplanade",
+              "hint": "the announcement on the train",
+              "options": ["This train ends at Esplanade", "The next station is Esplanade", "Change here for Esplanade", "Esplanade is closed"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "এসপ্ল্যানেড যাব", "romanized": "Esplanade jabo", "english": "I need to go to Esplanade"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "কোথায় লাইন বদলাতে হবে?", "romanized": "Kothay line bodlate hobe?", "english": "Where do I change lines?",
+              "options": [
+                { "text": "কোথায় লাইন বদলাতে হবে?", "romanized": "Kothay line bodlate hobe?" },
+                { "text": "কোন প্ল্যাটফর্ম?", "romanized": "Kon platform?" },
+                { "text": "কাছের মেট্রো স্টেশন কোথায়?", "romanized": "Kachher metro station kothay?" }
+              ],
+              "answer": 0
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "কাছের মেট্রো স্টেশন কোথায়?", "romanized": "Kachher metro station kothay?", "english": "Where's the nearest metro station?",
+              "options": ["How far is the station?", "When is the next train?", "Where's the bus stop?", "Where's the nearest metro station?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "বেরোনোর গেট কোথায়?", "romanized": "Beronor gate kothay?", "english": "Where's the exit?",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "কোন প্ল্যাটফর্ম?", "romanized": "Kon platform?", "english": "Which platform?"
+            }
+          ]
+        },
+        {
+          "id": "bn-your-orders-here",
+          "title": "Your order's here",
+          "scene": { "setting": "A parcel. Cash on delivery.", "other": "Delivery partner" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "আপনার পার্সেল আছে। কোথায় আসব?", "romanized": "Apnar parcel achhe. Kothay asbo?", "english": "Your parcel. Where do I come?" },
+              "target": "দুই নম্বর গেটে আসুন", "romanized": "Dui nombor gete asun", "english": "Come to gate number two",
+              "options": [
+                { "text": "ওষুধের দোকানের পাশে", "romanized": "Oshudher dokaner pashe" },
+                { "text": "কোন গেটে আছেন?", "romanized": "Kon gete achhen?" },
+                { "text": "দুই নম্বর গেটে আসুন", "romanized": "Dui nombor gete asun" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "সিকিউরিটি ভেতরে ঢুকতে দিচ্ছে না", "romanized": "Security bhetore dhukte dichchhe na", "english": "Security isn't letting me in",
+              "options": ["Security isn't letting me in", "Security is asking for you", "The gate is closed", "I'm at the gate"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "word-order",
+              "target": "সিকিউরিটির কাছে রেখে দিন", "romanized": "Securityr kachhe rekhe din", "english": "Leave it with security",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e4", "type": "select-phrase",
+              "lead": { "text": "ওটিপি বলুন", "romanized": "OTP bolun", "english": "Tell me the OTP" },
+              "target": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char", "english": "The OTP is 7314",
+              "options": [
+                { "text": "ওটিপি তিন সাত এক চার", "romanized": "OTP tin saat ek char" },
+                { "text": "ওটিপি সাত তিন এক চার", "romanized": "OTP saat tin ek char" },
+                { "text": "ওটিপি সাত তিন চার এক", "romanized": "OTP saat tin char ek" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "listen-choose",
+              "target": "পেমেন্ট এখনও বাকি আছে", "romanized": "Payment ekhono baki achhe", "english": "The payment's still due",
+              "options": ["The payment's done", "The payment failed", "No payment needed", "The payment's still due"],
+              "answer": 3
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "ইউপিআই করে দিই?", "romanized": "UPI kore dii?", "english": "Can I pay by UPI?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit-5",
+      "title": "Real Conversations",
+      "emoji": "🗣️",
+      "lessons": [
+        {
+          "id": "bn-small-talk",
+          "title": "Small Talk",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "কেমন আছেন?", "romanized": "Kemon achhen?", "english": "How are you?",
+              "options": ["How are you?", "What happened?", "What is this?", "Where were you?"],
+              "answer": 0
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "ভালো আছি", "romanized": "Bhalo achhi", "english": "I'm doing well"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "আপনি কী করেন?", "romanized": "Apni ki koren?", "english": "What do you do?",
+              "options": [
+                { "text": "কেমন আছেন?", "romanized": "Kemon achhen?" },
+                { "text": "আপনি কী করেন?", "romanized": "Apni ki koren?" },
+                { "text": "ভালো আছি", "romanized": "Bhalo achhi" },
+                { "text": "অনেক দিন পর!", "romanized": "Onek din por!" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "অনেক দিন পর!", "romanized": "Onek din por!", "english": "Long time no see!",
+              "hint": "greeting someone you haven't seen in a while",
+              "options": ["See you soon!", "Long time no see!", "Come again!", "Where have you been?"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ভালো আছি", "romanized": "Bhalo achhi", "english": "I'm doing well",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "listen-type-roman",
+              "target": "কেমন আছেন?", "romanized": "Kemon achhen?", "english": "How are you?"
+            }
+          ]
+        },
+        {
+          "id": "bn-bowing-out",
+          "title": "Bowing Out Politely",
+          "exercises": [
+            {
+              "id": "e1", "type": "listen-choose",
+              "target": "মাফ করবেন", "romanized": "Maaf korben", "english": "Excuse me / sorry",
+              "options": ["Thank you", "Excuse me / sorry", "Please come", "Never mind"],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "speak-repeat",
+              "target": "আজ না, অন্য দিন", "romanized": "Aaj na, onno din", "english": "Not today, some other time"
+            },
+            {
+              "id": "e3", "type": "select-phrase",
+              "target": "একটু কাজ আছে", "romanized": "Ektu kaaj achhe", "english": "I'm a bit tied up",
+              "options": [
+                { "text": "থাক, ছেড়ে দিন", "romanized": "Thak, chhere din" },
+                { "text": "মাফ করবেন", "romanized": "Maaf korben" },
+                { "text": "একটু কাজ আছে", "romanized": "Ektu kaaj achhe" },
+                { "text": "আবার দেখা হবে", "romanized": "Abar dekha hobe" }
+              ],
+              "answer": 2
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "থাক, ছেড়ে দিন", "romanized": "Thak, chhere din", "english": "Leave it, never mind",
+              "hint": "waving something off",
+              "options": ["Keep it", "Leave it, never mind", "Let's do it", "Bring it here"],
+              "answer": 1
+            },
+            {
+              "id": "e5", "type": "match-pairs",
+              "pairs": [
+                { "target": "মাফ করবেন", "romanized": "Maaf korben", "english": "Excuse me / sorry" },
+                { "target": "থাক, ছেড়ে দিন", "romanized": "Thak, chhere din", "english": "Leave it, never mind" },
+                { "target": "একটু কাজ আছে", "romanized": "Ektu kaaj achhe", "english": "I'm a bit tied up" },
+                { "target": "আবার দেখা হবে", "romanized": "Abar dekha hobe", "english": "See you again" }
+              ]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "target": "আবার দেখা হবে", "romanized": "Abar dekha hobe", "english": "See you again"
+            }
+          ]
+        },
+        {
+          "id": "bn-ride-to-the-station",
+          "title": "A taxi to the station",
+          "scene": { "setting": "Late evening, flagging a taxi.", "other": "Driver" },
+          "exercises": [
+            {
+              "id": "e1", "type": "select-phrase",
+              "lead": { "text": "কোথায় যাবেন?", "romanized": "Kothay jaben?", "english": "Where to?" },
+              "target": "স্টেশন যাবেন?", "romanized": "Station jaben?", "english": "Will you go to the station?",
+              "options": [
+                { "text": "এখানে থামুন", "romanized": "Ekhane thamun" },
+                { "text": "স্টেশন যাবেন?", "romanized": "Station jaben?" },
+                { "text": "সামনে চলুন", "romanized": "Shamne cholun" }
+              ],
+              "answer": 1
+            },
+            {
+              "id": "e2", "type": "listen-choose",
+              "target": "দুশো টাকা লাগবে", "romanized": "Dusho taka lagbe", "english": "It'll be two hundred",
+              "options": ["It'll be two hundred", "Only two people", "Get in, quick", "It's not far"],
+              "answer": 0
+            },
+            {
+              "id": "e3", "type": "speak-repeat",
+              "target": "মিটারে চলুন", "romanized": "Meetare cholun", "english": "Go by the meter"
+            },
+            {
+              "id": "e4", "type": "listen-choose",
+              "target": "কেমন আছেন?", "romanized": "Kemon achhen?", "english": "How are you?",
+              "options": ["What happened?", "What is this?", "Where were you?", "How are you?"],
+              "answer": 3
+            },
+            {
+              "id": "e5", "type": "word-order",
+              "target": "ভালো আছি", "romanized": "Bhalo achhi", "english": "I'm doing well",
+              "extraWords": ["না"]
+            },
+            {
+              "id": "e6", "type": "speak-repeat",
+              "lead": { "text": "স্টেশন এসে গেছে", "romanized": "Station eshe gechhe", "english": "Here's the station" },
+              "target": "এখানে থামুন", "romanized": "Ekhane thamun", "english": "Stop right here"
             }
           ]
         }
