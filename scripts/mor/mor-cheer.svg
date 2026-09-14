@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Mor — hooray!</title>
+  <desc id="desc">A round blue peacock celebrates with both wings raised, joyful closed eyes and feet kicked out in a happy jump. Seven emerald tail feathers have gold and teal eye spots. He wears an ivory dhoti with a gold zari border and pleated front fall, above orange feet.</desc>
+  <defs>
+    <g id="feather">
+      <path d="M256 335C233 301 217 189 225 105C228 65 241 39 256 38C272 39 285 65 288 105C296 189 279 301 256 335Z" fill="#26b88d" stroke="#075c59" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M256 283V139" fill="none" stroke="#087768" stroke-width="6" stroke-linecap="round"/>
+      <path d="M256 62C239 73 235 91 237 108C239 125 248 137 256 140C265 137 274 125 276 108C278 91 273 73 256 62Z" fill="#f6c554"/>
+      <path d="M256 78C244 88 242 98 244 109C246 119 251 126 256 128C263 125 269 116 269 107C269 97 264 84 256 78Z" fill="#087c89"/>
+      <ellipse cx="257" cy="106" rx="8" ry="12" fill="#103c53"/>
+      <ellipse cx="260" cy="102" rx="3" ry="4" fill="#a1ebc2"/>
+    </g>
+  </defs>
+  <g transform="translate(0 -9)">
+  <!-- Seven individually rotated feathers form the recognizable fan silhouette. -->
+  <g>
+    <use href="#feather" transform="rotate(-66 256 313)"/>
+    <use href="#feather" transform="rotate(66 256 313)"/>
+    <use href="#feather" transform="rotate(-44 256 313)"/>
+    <use href="#feather" transform="rotate(44 256 313)"/>
+    <use href="#feather" transform="rotate(-22 256 313)"/>
+    <use href="#feather" transform="rotate(22 256 313)"/>
+    <use href="#feather"/>
+  </g>
+  <!-- Feet and wings sit behind the body. -->
+  <g fill="#ff962f" stroke="#123d57" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M208 390L191 418C175 415 157 418 154 429C153 439 175 447 194 443L235 406Z"/>
+    <path d="M278 404L316 441C336 445 358 435 356 425C353 415 336 413 320 416L304 388Z"/>
+  </g>
+  <!-- Both wings lifted; the broad feather fingers remain visible against the fan. -->
+  <g fill="#078aca" stroke="#123d57" stroke-width="7" stroke-linejoin="round">
+    <path d="M324 275C348 267 356 241 356 221L354 184C354 171 366 169 371 184L377 201L380 164C381 151 395 152 396 167L396 201L402 181C407 169 420 174 417 187L410 225C404 262 378 296 343 307Z"/>
+    <path d="M188 275C164 267 154 244 152 223L153 192C153 178 141 177 136 190L131 203L129 173C128 159 115 161 114 175L114 205L108 186C103 173 90 179 94 192L100 231C106 267 134 297 169 308Z"/>
+  </g>
+  <path d="M377 223Q385 231 397 224M116 230Q128 237 137 228" fill="none" stroke="#006aaa" stroke-width="6" stroke-linecap="round"/>
+  <path d="M201 243C175 267 167 305 179 345C195 378 314 378 334 345C349 303 336 265 312 243Z" fill="#087dc1" stroke="#123d57" stroke-width="7"/>
+  <path d="M228 270C208 287 207 317 218 339C233 351 280 354 298 338C311 317 301 286 284 273Z" fill="#29b6dd"/>
+  <!-- Three soft, spoon-shaped crest tips. -->
+  <g fill="none" stroke="#123d57" stroke-width="7" stroke-linecap="round">
+    <path d="M242 154L225 119M256 148V106M271 151L288 118"/>
+  </g>
+  <g fill="#23b8dc" stroke="#123d57" stroke-width="6">
+    <ellipse cx="222" cy="113" rx="10" ry="13" transform="rotate(-27 222 113)"/>
+    <ellipse cx="256" cy="101" rx="10" ry="14"/>
+    <ellipse cx="291" cy="112" rx="10" ry="13" transform="rotate(27 291 112)"/>
+  </g>
+  <!-- The oversized head and slightly uneven eyes give Mor his comic personality. -->
+  <path d="M256 140C195 133 164 163 166 213C168 262 196 288 256 287C316 288 345 261 347 213C349 164 317 133 256 140Z" fill="#078aca" stroke="#123d57" stroke-width="7"/>
+  <path d="M183 208C179 178 195 157 224 155" fill="none" stroke="#32bce3" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="218" cy="208" rx="33" ry="41" fill="#fffdf7"/>
+  <ellipse cx="292" cy="206" rx="32" ry="38" fill="#fffdf7"/>
+  <path d="M201 216Q217 190 236 214M275 212Q291 188 308 211" fill="none" stroke="#123149" stroke-width="10" stroke-linecap="round"/>
+  <g fill="#42c4df">
+    <ellipse cx="192" cy="247" rx="13" ry="7" transform="rotate(16 192 247)"/>
+    <ellipse cx="322" cy="244" rx="12" ry="7" transform="rotate(-16 322 244)"/>
+  </g>
+  <path d="M235 232Q259 219 286 229Q290 266 265 275Q239 270 235 232Z" fill="#ff962f" stroke="#123d57" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M243 237Q262 246 280 236Q280 261 265 266Q248 262 243 237Z" fill="#123149"/>
+  <path d="M253 260Q267 249 276 258Q267 273 253 260Z" fill="#ff8580"/>
+  <path d="M232 232Q252 210 276 220L288 231Q263 242 232 232Z" fill="#ffbc44" stroke="#123d57" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Dhoti: one wrapped cloth hanging to the feet, a zari hem, a wrap-over edge, and a pleated front fall below the hem. -->
+  <path d="M176 332Q256 350 336 332L328 400Q256 428 184 400Z" fill="#fff5dc"/>
+  <path d="M188 395Q256 421 324 395L328 400Q256 428 184 400Z" fill="#efb63f"/>
+  <path d="M191 391Q256 415 321 391" fill="none" stroke="#b8452f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M196 352Q222 380 238 410" fill="none" stroke="#efb63f" stroke-width="6" stroke-linecap="round"/>
+  <path d="M302 354Q318 372 322 390" fill="none" stroke="#dbc79f" stroke-width="5" stroke-linecap="round"/>
+  <path d="M176 332Q256 350 336 332L328 400Q256 428 184 400Z" fill="none" stroke="#123d57" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M238 350L278 350L290 428Q258 446 226 428Z" fill="#fff5dc"/>
+  <path d="M228 418Q258 434 288 418L290 428Q258 446 226 428Z" fill="#efb63f"/>
+  <path d="M248 362L243 416M258 362L258 420M268 362L273 416" fill="none" stroke="#d9c398" stroke-width="4" stroke-linecap="round"/>
+  <path d="M238 350L278 350L290 428Q258 446 226 428Z" fill="none" stroke="#123d57" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M178 332Q254 349 335 332L333 351Q255 366 178 351Z" fill="#fff9e9" stroke="#123d57" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M182 345Q255 360 330 345" fill="none" stroke="#efb63f" stroke-width="7"/>
+  <path d="M239 349Q255 337 274 347L267 359L248 359Z" fill="#fff9e9" stroke="#123d57" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <!-- A few large graphic sparks keep celebration legible without visual clutter. -->
+  <g fill="#ffbc44">
+    <path d="M87 73L93 88L108 94L93 100L87 115L81 100L66 94L81 88Z"/>
+    <path d="M424 67L430 81L444 87L430 93L424 107L418 93L404 87L418 81Z"/>
+    <path d="M414 342L419 354L431 359L419 364L414 376L409 364L397 359L409 354Z"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-width="8">
+    <path d="M66 324L57 338M444 299L454 309" stroke="#26b88d"/>
+    <path d="M180 452L167 462M329 453L342 463" stroke="#ffbc44"/>
+  </g>
+</svg>

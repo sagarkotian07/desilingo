@@ -14,6 +14,7 @@
     "gen:audio": "tsx scripts/generate-audio.ts",
     "verify:audio": "tsx scripts/verify-audio.ts",
     "romanize": "tsx scripts/romanize.ts",
+    "gen:mor": "tsx scripts/mor/svg2tsx.ts",
     "prebuild": "npm run verify:audio"
   },
   "dependencies": {

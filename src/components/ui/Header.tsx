@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useProgress } from '@/lib/progress'
 import type { LangCode } from '@/lib/languages'
 import { FontSizeToggle } from './FontSizeToggle'
+import { Mor } from './Mor'
 
 export function Header({ lang, back }: { lang: LangCode; back?: { href: string; label: string } }) {
   const progress = useProgress(lang)
@@ -16,7 +17,10 @@ export function Header({ lang, back }: { lang: LangCode; back?: { href: string; 
             ← {back.label}
           </Link>
         ) : (
-          <Link href="/" className="display -my-2 py-2 text-lg font-extrabold text-ink">Desilingo</Link>
+          <Link href="/" className="display -my-2 flex items-center gap-2 py-2 text-lg font-extrabold text-ink">
+            <Mor pose="mark" className="h-7 w-7" />
+            Desilingo
+          </Link>
         )}
         <div className="ml-auto flex items-center gap-2 text-sm">
           <FontSizeToggle />

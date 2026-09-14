@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Mor — Desilingo logo</title>
+  <desc id="desc">A blue peacock head with three turquoise crest tips, two big white eyes and an orange smiling beak. Simplified for use at 24 pixels.</desc>
+  <!-- Broad shapes and only three facial colors preserve the expression at favicon size. -->
+  <path d="M26 20L21 9M32 18V6M38 20L43 9" fill="none" stroke="#123d57" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#29b6dd" stroke="#123d57" stroke-width="2">
+    <ellipse cx="20" cy="7" rx="4" ry="5" transform="rotate(-25 20 7)"/>
+    <ellipse cx="32" cy="5" rx="4" ry="4"/>
+    <ellipse cx="44" cy="7" rx="4" ry="5" transform="rotate(25 44 7)"/>
+  </g>
+  <path d="M32 17C14 14 5 23 5 37C5 53 14 61 32 61C50 61 59 53 59 37C59 23 50 14 32 17Z" fill="#078aca" stroke="#123d57" stroke-width="2.5"/>
+  <ellipse cx="21" cy="35" rx="10" ry="13" fill="#fffdf7"/>
+  <ellipse cx="43" cy="34" rx="10" ry="12" fill="#fffdf7"/>
+  <ellipse cx="24" cy="37" rx="5" ry="7" fill="#123149"/>
+  <ellipse cx="46" cy="36" rx="5" ry="7" fill="#123149"/>
+  <path d="M25 46Q32 40 42 45Q41 55 34 57Q27 55 25 46Z" fill="#ff962f"/>
+  <path d="M29 48Q35 51 39 47Q37 54 34 54Q31 53 29 48Z" fill="#123149"/>
+  <path d="M24 46Q32 39 42 45Q34 50 24 46Z" fill="#ffbc44"/>
+</svg>

@@ -2,14 +2,20 @@ import Link from 'next/link'
 import { LANGUAGES, LANGUAGE_CONFIG } from '@/lib/languages'
 import { AVAILABLE_LANGUAGES } from '@/content'
 import { Script } from '@/components/ui/Script'
+import { Mor } from '@/components/ui/Mor'
 import { ContinueLearning } from './ContinueLearning'
 
 export default function LanguagePicker() {
   return (
-    <main className="mx-auto w-full max-w-3xl px-5 pb-20 pt-16 sm:pt-24">
-      <header className="animate-rise">
-        <p className="display text-5xl font-extrabold text-ink sm:text-6xl">Desilingo</p>
-        <p className="mt-2 text-lg text-ink-soft">Learn India&rsquo;s languages by ear.</p>
+    <main className="mx-auto w-full max-w-3xl px-5 pb-20 pt-12 sm:pt-20">
+      {/* Mor stands beside the name on wide screens and above it on a phone,
+          where "Desilingo" at this size needs the whole width. */}
+      <header className="animate-rise flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:gap-6">
+        <Mor pose="wave" className="mor-wave -ml-3 w-32 shrink-0 sm:-ml-4 sm:w-44" title="Mor, the Desilingo peacock, waving hello" />
+        <div className="sm:pb-3">
+          <p className="display text-5xl font-extrabold text-ink sm:text-6xl">Desilingo</p>
+          <p className="mt-2 text-lg text-ink-soft">Learn India&rsquo;s languages by ear.</p>
+        </div>
       </header>
 
       <div className="mt-10">

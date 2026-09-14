@@ -11,6 +11,7 @@ No signup. No database. Live at **[desilingo-omega.vercel.app](https://desilingo
 - Review: missed phrases come back when they're due
 - Audio is pre-generated and static — nothing waits on an API
 - Phrasebook: "how do you say…" in spoken register
+- Mor, a peacock in a dhoti, waves you in and cheers every finished lesson
 
 The phrases are how people talk, not how textbooks print. Tamil is *இப்ப வேணாம்*, not *இப்பொழுது வேண்டாம்*.
 
@@ -186,6 +187,8 @@ Several field names in circulation are out of date. Current as of `bulbul:v3` / 
 ## Acknowledgements
 
 The idea, and the shape of the lesson flow, come from [`03shraddha/indian-duolingo`](https://github.com/03shraddha/indian-duolingo). This is an independent rebuild.
+
+Mor, the mascot, was drawn as SVG by OpenAI's `gpt-6-astra` (through Codex) from a brief written with Claude; the dhoti was redrawn by hand. The source drawings live in `scripts/mor/`, and `npm run gen:mor` regenerates `src/components/ui/Mor.tsx` from them.
 
 ## License
 

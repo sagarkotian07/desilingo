@@ -11,6 +11,7 @@ import { useIsClient } from '@/lib/useIsClient'
 import { Script } from '@/components/ui/Script'
 import { CountUp } from '@/components/ui/CountUp'
 import { Burst } from '@/components/ui/Burst'
+import { Mor } from '@/components/ui/Mor'
 import { ListenChoose } from './ListenChoose'
 import { SelectPhrase } from './SelectPhrase'
 import { SpeakRepeat } from './SpeakRepeat'
@@ -117,6 +118,7 @@ export function ExerciseRunner({
       <div className="relative mx-auto max-w-md px-5 pb-16 pt-20 text-center">
         <Burst />
         <div className="stagger">
+          <Mor pose="cheer" className="mx-auto -mb-2 w-44 sm:w-52" title="Mor cheering" />
           <Script lang={lang} className="display block text-6xl font-extrabold text-accent">{cfg.wellDone}</Script>
           <h1 className="display mt-3 text-2xl font-bold text-ink">
             {isReview ? 'Review done' : scene ? 'Scene complete' : 'Lesson complete'}

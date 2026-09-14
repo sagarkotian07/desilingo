@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import type { LangCode } from '@/lib/languages'
 import { Script } from '@/components/ui/Script'
+import { Mor } from '@/components/ui/Mor'
 
 export function Phrasebook({ lang, languageName }: { lang: LangCode; languageName: string }) {
   const [text, setText] = useState('')
@@ -35,7 +36,10 @@ export function Phrasebook({ lang, languageName }: { lang: LangCode; languageNam
 
   return (
     <main className="mx-auto w-full max-w-2xl px-5 pb-20 pt-8">
-      <h1 className="display text-3xl font-extrabold text-ink">How do you say…</h1>
+      <div className="flex items-center gap-3">
+        <Mor pose="wave" className="-my-2 -ml-2 w-16 shrink-0" />
+        <h1 className="display text-3xl font-extrabold text-ink">How do you say…</h1>
+      </div>
 
       <form onSubmit={lookup} className="mt-6 flex gap-2">
         <label htmlFor="phrase" className="sr-only">Phrase in English</label>

@@ -6,6 +6,7 @@ import type { LangCode } from '@/lib/languages'
 import { localToday, useProgress } from '@/lib/progress'
 import { selectDue } from '@/lib/phrase-memory'
 import { Script } from '@/components/ui/Script'
+import { Mor } from '@/components/ui/Mor'
 
 interface LessonSummary { id: string; title: string; unitTitle: string; count: number }
 
@@ -68,6 +69,7 @@ export function HomeDashboard({
             </span>
             <span className="display block text-xl font-bold">{next.title}</span>
           </span>
+          <Mor pose="wave" className="-my-3 w-16 shrink-0 sm:w-20" />
           <span className="display text-3xl" aria-hidden="true">→</span>
         </Link>
 
