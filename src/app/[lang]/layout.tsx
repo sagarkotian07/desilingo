@@ -14,7 +14,7 @@ export default async function LangLayout({ children, params }: LayoutProps<'/[la
 
   return (
     <div className="flex min-h-full flex-1 flex-col">
-      {/* The course colour. globals.css resolves --accent from these per theme. */}
+      {/* The course colour. globals.css resolves --accent from these per season. */}
       <style>{`:root{--accent-light:${light};--accent-dark:${dark}}`}</style>
       <RememberLanguage lang={lang} />
       {children}

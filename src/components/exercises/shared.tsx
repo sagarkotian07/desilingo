@@ -37,7 +37,7 @@ export function OptionButton({
 
 /**
  * The bars are fixed to the bottom of the viewport, so anything else living
- * down there (the theme toggle) needs to know how tall they are. Same trick
+ * down there (the season toggle) needs to know how tall they are. Same trick
  * as LessonHeader's --header-h. jsdom has no ResizeObserver, hence the guard.
  */
 function useBarHeight() {

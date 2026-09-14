@@ -98,6 +98,12 @@ Audited by rendering each route in an iframe of a phone's width and measuring, a
 - `LessonHeader` publishes its measured height as `--header-h` and the runner's progress bar sticks to it. A hardcoded offset broke as soon as the header grew with the text-size setting.
 - `viewport-fit=cover` is what makes `env(safe-area-inset-*)` non-zero; the fixed answer bar depends on it, and `body` pads the left and right insets for landscape.
 
+### Seasons
+
+Spring is the light palette and winter the dark one. The app follows the OS until the button in the bottom-right corner picks a season; picking the one the OS already shows goes back to following it. A pick is applied as `data-season` on `<html>` by an inline script before first paint, and Tailwind's `dark:` variant is redefined to read it, so there is one definition of dark.
+
+Petals and snow are one full-viewport canvas behind the page. Particle count scales with viewport area, the loop stops while the tab is hidden, and `prefers-reduced-motion` gets a single still frame.
+
 ### Cost
 
 Real numbers from building this:

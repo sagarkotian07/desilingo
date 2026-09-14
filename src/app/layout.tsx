@@ -6,8 +6,9 @@ import {
 } from 'next/font/google'
 import './globals.css'
 import { FONT_SIZE_BOOTSTRAP } from '@/lib/font-size'
-import { GROUND, THEME_BOOTSTRAP } from '@/lib/theme'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { GROUND, SEASON_BOOTSTRAP } from '@/lib/season'
+import { SeasonBackdrop } from '@/components/ui/SeasonBackdrop'
+import { SeasonToggle } from '@/components/ui/SeasonToggle'
 
 const ui = Nunito({ variable: '--font-ui', subsets: ['latin'], display: 'swap' })
 const display = Outfit({ variable: '--font-display', subsets: ['latin'], display: 'swap' })
@@ -28,10 +29,10 @@ export const viewport: Viewport = {
   // Draw into the notch area so env(safe-area-inset-*) reports real values --
   // the fixed answer bar reserves space with them.
   viewportFit: 'cover',
-  // The theme store rewrites both of these when the user pins a theme.
+  // The season store rewrites both of these when the user pins a season.
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: GROUND.light },
-    { media: '(prefers-color-scheme: dark)', color: GROUND.dark },
+    { media: '(prefers-color-scheme: light)', color: GROUND.spring },
+    { media: '(prefers-color-scheme: dark)', color: GROUND.winter },
   ],
 }
 
@@ -39,20 +40,21 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="en"
-      // The bootstrap script below sets data-fontsize and data-theme before
+      // The bootstrap script below sets data-fontsize and data-season before
       // React hydrates, so the server HTML deliberately differs from the
       // client on this element.
       suppressHydrationWarning
       className={`${ui.variable} ${display.variable} ${deva.variable} ${knda.variable} ${taml.variable} ${telu.variable} ${beng.variable} h-full antialiased`}
     >
       <head>
-        {/* Applies the saved text size and theme before first paint, so the
+        {/* Applies the saved text size and season before first paint, so the
             page never flashes at the wrong size or colour on load. */}
-        <script dangerouslySetInnerHTML={{ __html: FONT_SIZE_BOOTSTRAP + THEME_BOOTSTRAP }} />
+        <script dangerouslySetInnerHTML={{ __html: FONT_SIZE_BOOTSTRAP + SEASON_BOOTSTRAP }} />
       </head>
       <body className="min-h-full flex flex-col font-sans">
+        <SeasonBackdrop />
         {children}
-        <ThemeToggle />
+        <SeasonToggle />
       </body>
     </html>
   )

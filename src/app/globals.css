@@ -1,27 +1,29 @@
 @import "tailwindcss";
 
-/* Dark is the OS asking for it with nothing pinned, or the user pinning it.
-   The toggle writes data-theme; the tokens below and every `dark:` utility
+/* Two seasons: spring is the light palette, winter the dark one. Winter is
+   the OS asking for dark with nothing pinned, or the user pinning winter.
+   The toggle writes data-season; the tokens below and every `dark:` utility
    read it through this one variant, so there is a single definition of dark. */
 @custom-variant dark {
   @media (prefers-color-scheme: dark) {
-    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) { @slot }
+    &:where(:root:not([data-season="spring"]), :root:not([data-season="spring"]) *) { @slot }
   }
-  &:where(:root[data-theme="dark"], :root[data-theme="dark"] *) { @slot }
+  &:where(:root[data-season="winter"], :root[data-season="winter"] *) { @slot }
 }
 
-/* Tokens. Indigo is the dye India traded to the world; marigold and terracotta
-   are the market. Each course also gets its own --accent: the route sets
-   --accent-light and --accent-dark, and the theme picks one. */
+/* Tokens. Spring is cream warmed toward blossom; winter is a deep snowy blue.
+   Indigo is the dye India traded to the world; marigold and terracotta are
+   the market. Each course also gets its own --accent: the route sets
+   --accent-light and --accent-dark, and the season picks one. */
 :root {
   color-scheme: light;
-  --ground: #faf6ef;
+  --ground: #fcf3f1;
   --surface: #ffffff;
-  --surface-sunk: #f1ebe0;
+  --surface-sunk: #f5e4e4;
   --ink: #1d1830;
   --ink-soft: #5a5170;
   --ink-faint: #736a82;
-  --line: #e6ddcd;
+  --line: #eed6d8;
 
   --indigo: #3b3378;
   --indigo-deep: #241f4d;
@@ -36,34 +38,43 @@
   --accent: var(--accent-light, var(--marigold));
   --accent-ink: #1d1830;
 
-  --shadow: 0 1px 2px rgb(29 24 48 / 0.05), 0 12px 32px -16px rgb(29 24 48 / 0.22);
-  --shadow-lift: 0 2px 4px rgb(29 24 48 / 0.06), 0 20px 40px -20px rgb(29 24 48 / 0.3);
+  /* The corner button shows the season you would switch to, in its colour. */
+  --season-icon: #3f76c2;
+  /* A blossom-pink bloom at the top of the viewport; sits on the backdrop. */
+  --ground-glow: radial-gradient(80% 45% at 50% -8%, #ffe0e8 0%, rgb(255 224 232 / 0) 70%);
+
+  --shadow: 0 1px 2px rgb(74 38 58 / 0.05), 0 12px 32px -16px rgb(74 38 58 / 0.22);
+  --shadow-lift: 0 2px 4px rgb(74 38 58 / 0.06), 0 20px 40px -20px rgb(74 38 58 / 0.3);
 
   @variant dark {
     color-scheme: dark;
-    --ground: #121019;
-    --surface: #1b1826;
-    --surface-sunk: #15121e;
-    --ink: #f3efe8;
-    --ink-soft: #bcb3cc;
-    --ink-faint: #9a91b0;
-    --line: #2b2540;
+    --ground: #0b1424;
+    --surface: #14213a;
+    --surface-sunk: #0f1a2e;
+    --ink: #e9f0fa;
+    --ink-soft: #b4c3dc;
+    --ink-faint: #8ea1c0;
+    --line: #24344f;
 
-    --indigo: #a89ef0;
-    --indigo-deep: #cec7ff;
-    --indigo-soft: #241f4d;
+    --indigo: #a9b6f5;
+    --indigo-deep: #cdd6ff;
+    --indigo-soft: #1f2b4d;
     --marigold: #f5b743;
-    --marigold-soft: #3a2c11;
-    --terracotta: #e8845c;
-    --terracotta-soft: #3d2119;
-    --leaf: #71b98f;
-    --leaf-soft: #17301f;
+    --marigold-soft: #3a2f14;
+    --terracotta: #ea8a62;
+    --terracotta-soft: #3d2420;
+    --leaf: #75bd94;
+    --leaf-soft: #173324;
 
     --accent: var(--accent-dark, var(--marigold));
-    --accent-ink: #121019;
+    --accent-ink: #0b1424;
 
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.7);
-    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.5), 0 20px 40px -20px rgb(0 0 0 / 0.8);
+    --season-icon: #f3a7bd;
+    /* Snow-lit ground: a faint blue glow low on the screen. */
+    --ground-glow: radial-gradient(90% 55% at 50% 108%, #1a2f57 0%, rgb(26 47 87 / 0) 70%);
+
+    --shadow: 0 1px 2px rgb(0 6 20 / 0.45), 0 12px 32px -16px rgb(0 6 20 / 0.75);
+    --shadow-lift: 0 2px 4px rgb(0 6 20 / 0.55), 0 20px 40px -20px rgb(0 6 20 / 0.85);
   }
 }
 
@@ -129,13 +140,27 @@ body {
 }
 .press:active { transform: scale(0.97); }
 
-/* The theme toggle sits in the bottom-right corner and rides above the lesson
+/* The season toggle sits in the bottom-right corner and rides above the lesson
    answer bar, which publishes its height as --bar-h. Its move is timed to the
    bar's slide so the two read as one motion. */
-.theme-toggle {
+.season-toggle {
+  color: var(--season-icon);
   right: max(1rem, env(safe-area-inset-right));
   bottom: calc(var(--bar-h, 0px) + max(1rem, env(safe-area-inset-bottom)));
   transition: transform 120ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms ease, bottom .32s cubic-bezier(.2,.8,.2,1);
+}
+
+/* Petals or snow, drawn on a canvas that fills the viewport. A negative
+   z-index in the root stacking context puts it above the page ground and
+   below everything in flow, so cards cover it and gaps show it. */
+.season-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: var(--ground-glow);
 }
 
 @keyframes rise   { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
