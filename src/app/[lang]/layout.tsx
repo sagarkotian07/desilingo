@@ -13,11 +13,9 @@ export default async function LangLayout({ children, params }: LayoutProps<'/[la
   const [light, dark] = LANGUAGE_CONFIG[lang].accent
 
   return (
-    <div
-      className="flex min-h-full flex-1 flex-col"
-      style={{ ['--accent-light' as string]: light, ['--accent-dark' as string]: dark }}
-    >
-      <style>{`:root{--accent:${light}} @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:${dark}}}`}</style>
+    <div className="flex min-h-full flex-1 flex-col">
+      {/* The course colour. globals.css resolves --accent from these per theme. */}
+      <style>{`:root{--accent-light:${light};--accent-dark:${dark}}`}</style>
       <RememberLanguage lang={lang} />
       {children}
     </div>

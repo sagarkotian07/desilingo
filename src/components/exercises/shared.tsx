@@ -1,6 +1,6 @@
 'use client'
 
-import type { ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { Typewriter } from '@/components/ui/Typewriter'
 
 /** One short line above the exercise. Keep it to a few words. */
@@ -36,6 +36,26 @@ export function OptionButton({
 }
 
 /**
+ * The bars are fixed to the bottom of the viewport, so anything else living
+ * down there (the theme toggle) needs to know how tall they are. Same trick
+ * as LessonHeader's --header-h. jsdom has no ResizeObserver, hence the guard.
+ */
+function useBarHeight() {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || typeof ResizeObserver === 'undefined') return
+    const root = document.documentElement
+    const set = () => root.style.setProperty('--bar-h', `${Math.round(el.getBoundingClientRect().height)}px`)
+    set()
+    const observer = new ResizeObserver(set)
+    observer.observe(el)
+    return () => { observer.disconnect(); root.style.removeProperty('--bar-h') }
+  }, [])
+  return ref
+}
+
+/**
  * The bottom sheet: verdict plus the one button that moves you on.
  *
  * Fixed to the bottom so the thumb never has to travel, and it slides in so
@@ -45,8 +65,10 @@ export function ActionBar({
   correct, detail, label = 'Continue', onClick,
 }: { correct?: boolean; detail?: ReactNode; label?: string; onClick: () => void }) {
   const hasVerdict = correct !== undefined
+  const ref = useBarHeight()
   return (
     <div
+      ref={ref}
       className={`animate-slide-up fixed inset-x-0 bottom-0 z-30 border-t ${
         !hasVerdict ? 'border-line bg-surface/95' : correct ? 'border-leaf/30 bg-leaf-soft' : 'border-terracotta/30 bg-terracotta-soft'
       } backdrop-blur`}
@@ -77,8 +99,9 @@ export function ActionBar({
 
 /** For exercises with a Check step before the verdict. */
 export function CheckBar({ onClick, disabled }: { onClick: () => void; disabled?: boolean }) {
+  const ref = useBarHeight()
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur">
+    <div ref={ref} className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur">
       <div className="mx-auto max-w-2xl px-5 pb-[max(1rem,env(safe-area-inset-bottom))] pt-4 [@media(max-height:520px)]:pt-2">
         <button
           type="button"

@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useSyncExternalStore } from 'react'
+import { FONT_SIZE_KEY, type FontSize } from './font-size'
 
 /**
  * Text-size preference.
@@ -13,10 +14,6 @@ import { useCallback, useSyncExternalStore } from 'react'
  * Applied as `data-fontsize` on <html> so CSS can scale everything at once,
  * including the clamped script sizes that inline styles would otherwise win.
  */
-
-export type FontSize = 'normal' | 'large'
-
-export const FONT_SIZE_KEY = 'desilingo:font-size'
 
 function read(): FontSize {
   try {
@@ -55,9 +52,3 @@ export function useFontSize() {
   }, [])
   return { fontSize, toggle }
 }
-
-/**
- * Runs before React hydrates so the page never flashes at the wrong size.
- * Inlined into <head>; kept tiny and failure-tolerant because it is blocking.
- */
-export const FONT_SIZE_BOOTSTRAP = `try{var s=localStorage.getItem('${FONT_SIZE_KEY}');if(s==='large')document.documentElement.setAttribute('data-fontsize','large')}catch(e){}`

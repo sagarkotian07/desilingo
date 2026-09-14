@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
+/* Dark is the OS asking for it with nothing pinned, or the user pinning it.
+   The toggle writes data-theme; the tokens below and every `dark:` utility
+   read it through this one variant, so there is a single definition of dark. */
+@custom-variant dark {
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) { @slot }
+  }
+  &:where(:root[data-theme="dark"], :root[data-theme="dark"] *) { @slot }
+}
+
 /* Tokens. Indigo is the dye India traded to the world; marigold and terracotta
-   are the market. Each course also gets its own --accent, set on the route. */
+   are the market. Each course also gets its own --accent: the route sets
+   --accent-light and --accent-dark, and the theme picks one. */
 :root {
+  color-scheme: light;
   --ground: #faf6ef;
   --surface: #ffffff;
   --surface-sunk: #f1ebe0;
@@ -21,15 +33,14 @@
   --leaf: #3f7d5c;
   --leaf-soft: #e3f1e8;
 
-  --accent: var(--marigold);
+  --accent: var(--accent-light, var(--marigold));
   --accent-ink: #1d1830;
 
   --shadow: 0 1px 2px rgb(29 24 48 / 0.05), 0 12px 32px -16px rgb(29 24 48 / 0.22);
   --shadow-lift: 0 2px 4px rgb(29 24 48 / 0.06), 0 20px 40px -20px rgb(29 24 48 / 0.3);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  @variant dark {
+    color-scheme: dark;
     --ground: #121019;
     --surface: #1b1826;
     --surface-sunk: #15121e;
@@ -48,6 +59,7 @@
     --leaf: #71b98f;
     --leaf-soft: #17301f;
 
+    --accent: var(--accent-dark, var(--marigold));
     --accent-ink: #121019;
 
     --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px -16px rgb(0 0 0 / 0.7);
@@ -116,6 +128,15 @@ body {
   touch-action: manipulation;
 }
 .press:active { transform: scale(0.97); }
+
+/* The theme toggle sits in the bottom-right corner and rides above the lesson
+   answer bar, which publishes its height as --bar-h. Its move is timed to the
+   bar's slide so the two read as one motion. */
+.theme-toggle {
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: calc(var(--bar-h, 0px) + max(1rem, env(safe-area-inset-bottom)));
+  transition: transform 120ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms ease, bottom .32s cubic-bezier(.2,.8,.2,1);
+}
 
 @keyframes rise   { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
 @keyframes pop    { 0% { transform: scale(.92); opacity: 0 } 60% { transform: scale(1.03) } 100% { transform: scale(1); opacity: 1 } }
