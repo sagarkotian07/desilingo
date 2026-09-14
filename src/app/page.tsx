@@ -40,6 +40,18 @@ export default function LanguagePicker() {
           )
         })}
       </ul>
+
+      <footer className="mt-16 text-xs text-ink-faint">
+        Indian Duolingo by{' '}
+        <a
+          href="https://www.linkedin.com/in/sagar-kotian-/"
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-ink-soft underline-offset-4 hover:text-ink hover:underline"
+        >
+          Sagar Kotian
+        </a>
+      </footer>
     </main>
   )
 }
